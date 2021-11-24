@@ -54,6 +54,15 @@ info:
     artifactId: "@project.artifactId@"
     version: "@project.version@"
 
+logging:
+  level:
+    com.openFeign.service : debug
+
 feign:
   hystrix:
     enabled: true
+
+#openFeign的超时连接
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000

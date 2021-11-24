@@ -57,3 +57,5 @@ info:
 feign:
   hystrix:
     enabled: true
+
+
