@@ -22,6 +22,11 @@
         <module>cloud-provider-payment8001</module>
         <module>cloud-common</module>
         <module>cloud-order80</module>
+
+        <module>eureka6890</module>
+        <module>eurekaconsumer8087</module>
+        <module>openFeignProvider8101</module>
+        <module>openFeignConsumer8102</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -100,6 +105,12 @@
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>2.1.2.RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

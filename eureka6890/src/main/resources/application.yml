@@ -1,0 +1,26 @@
+server:
+  port: 6890
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@127.0.0.1:${server.port}/eureka/
+management:
+  health:
+    redis:
+      enabled: false
+spring:
+  resources.static-locations: classpath:/templates/,classpath:/static/
+  security:
+    user:
+      password: ${REGISTRY_SERVER_PASSWORD:password}
+      name: user
+  datasource:
+    url: jdbc:mysql://localhost:3306/sm?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+
