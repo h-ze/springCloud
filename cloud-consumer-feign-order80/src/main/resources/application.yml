@@ -1,10 +1,10 @@
 server :
-  port : 8101
+  port : 80
   #servlet.context-path : /eurekaconsumer
 
 spring:
   application:
-    name: openFeignProvider
+    name: feignorder
   resources:
     static-locations: classpath:/templates/,classpath:/static/
   datasource:
@@ -33,7 +33,7 @@ eureka:
       enabled: true
 
   instance:
-    instance-id: openFeignProvider-8101
+    instance-id: feignorder-80
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
@@ -53,7 +53,6 @@ info:
     artifactId: "@project.artifactId@"
     version: "@project.version@"
 
-#开启feign的hystrix支持,默认是false
 feign:
   hystrix:
     enabled: true
