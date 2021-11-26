@@ -19,17 +19,19 @@
     <!-- packaging pom 总工程-->
 
     <modules>
-        <module>cloud-provider-payment8001</module>
         <module>cloud-common</module>
         <module>cloud-order80</module>
+        <module>cloud-eureka6890</module>
+        <module>cloud-provider-payment8001</module>
 
-        <module>eureka6890</module>
-        <module>eurekaconsumer8087</module>
-        <module>openFeignProvider8101</module>
-        <module>openFeignConsumer8102</module>
-        <module>hystrix8103</module>
+        <module>cloud-eurekaconsumer8087</module>
+        <module>cloud-openFeignProvider8101</module>
+        <module>cloud-openFeignConsumer8102</module>
+        <module>cloud-hystrix8103</module>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-feign-order80</module>
+        <module>cloud-hystrix-dashboard9001</module>
+        <module>cloud-gateway9100</module>
     </modules>
 
     <!--统一管理jar包版本-->

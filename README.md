@@ -14,3 +14,9 @@ hystrix.command.default.execution.timeout.enabled=true  是否开启超时熔断
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=300   设置超时熔断时间
 
 服务的降级 熔断 限流
+
+nginx +网关 +微服务
+
+zuul1 是阻塞框架
+gateway是异步非阻塞
+Spring WebFlux是spring5.0之后引入的新的响应式框架，区别于springmvc，它不需要依赖于servlet api，是完全的异步非阻塞的，并且是基于Reactor来实现响应式流规范

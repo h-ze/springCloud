@@ -9,9 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>eurekaconsumer</artifactId>
-    <name>eurekaconsumer</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>cloud-eurekaconsumer8087</artifactId>
 
     <dependencies>
         <dependency>

@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hystrix8103</artifactId>
-
+    <artifactId>cloud-hystrix-dashboard9001</artifactId>
 
     <dependencies>
         <!--包含了sleuth+zipkin-->
@@ -19,10 +18,10 @@
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>-->
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!--hystrix-->
         <dependency>
@@ -32,12 +31,17 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.hz.springcloud</groupId>
-            <artifactId>cloud-entities</artifactId>
+            <artifactId>cloud-common</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -50,7 +54,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
@@ -59,16 +63,16 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
-        <!--mysql-connector-java-->
+        &lt;!&ndash;mysql-connector-java&ndash;&gt;
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-        <!--jdbc-->
+        &lt;!&ndash;jdbc&ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!-- 热部署 -->
         <dependency>

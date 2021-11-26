@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class HystrixServiceImpl implements HystrixService {
     @Override
     public String getTest() {
-        return "熔断了";
+        return "降级了";
     }
 
 
