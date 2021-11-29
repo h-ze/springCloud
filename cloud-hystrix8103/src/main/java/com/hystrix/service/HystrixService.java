@@ -1,7 +1,7 @@
 package com.hystrix.service;
 
 
-public interface TestService {
+public interface HystrixService {
     String getTrueMessage();
     String getErrorMessage();
 }
