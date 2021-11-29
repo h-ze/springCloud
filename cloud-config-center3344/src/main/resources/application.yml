@@ -12,6 +12,16 @@ spring:
             - springcloud-config
       label: main
 
+  #rabbitmq相关配置
+  rabbitmq:
+    addresses: 8.142.46.67:5672
+    username: hz
+    password: hz15858
+#    virtual-host: /
+#    publisher-confirms: true
+#    publisher-returns: true
+#    template:
+#      mandatory: true
 eureka:
   client:
     serviceUrl:
@@ -23,3 +33,10 @@ eureka:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
+
+#rabbitmq相关配置，暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
