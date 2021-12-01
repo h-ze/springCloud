@@ -28,7 +28,7 @@ eureka:
     healthcheck:
       enabled: true
   instance:
-    instance-id: eurekaconsumer-8087
+    instance-id: gateway-9100
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
