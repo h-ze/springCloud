@@ -7,12 +7,11 @@ spring:
   #profiles.active: "@profileActive@"
   application:
     name: cloudAlibaba-provider-payment
-
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
-
+        #server-addr: localhost:8848
+        server-addr: 8.142.46.67:8848
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:

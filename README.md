@@ -123,3 +123,5 @@ ps -ef|grep nacos|grep -v grep|wc -l
 3.使用docker
 
 
+sentinel
+

@@ -1,26 +1,24 @@
 server:
-  port: 3377
+  port: 8401
 #  servlet:
 #    context-path: provider-payment
 
 spring:
+  #profiles.active: "@profileActive@"
   application:
-    name: nacos-config-client
+    name: cloudAlibaba-sentinel-service
 
   cloud:
     nacos:
       discovery:
         server-addr: 8.142.46.67:8848
-        #namespace: 4ca6004f-88b2-4443-8672-fc342698b42f
         #server-addr: localhost:8848
-      config:
-        server-addr: 8.142.46.67:8848
-        #server-addr: localhost:8848
-        file-extension: yaml  #指定yaml格式的配置
-        #nacos上的Data ID对应的是spring.application.name
-        group: DEV_GROUP
-        #namespace: f51f825b-4b22-4bf7-8bbf-9f2f53c476e3
-        namespace: 4ca6004f-88b2-4443-8672-fc342698b42f
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        #端口号默认为8719
+        port: 8719
+
 
   servlet:
     multipart.max-file-size: 500MB
@@ -30,6 +28,9 @@ spring:
 #    port: 6379
 #    host: localhost
 #    database: 0
+
+
+
 
 logging:
   level:
