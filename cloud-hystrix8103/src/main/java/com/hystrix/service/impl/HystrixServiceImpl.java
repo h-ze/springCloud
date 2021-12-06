@@ -1,13 +1,13 @@
 package com.hystrix.service.impl;
 
-import com.hystrix.service.TestService;
+import com.hystrix.service.HystrixService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
-public class TestServiceImpl implements TestService {
+public class HystrixServiceImpl implements HystrixService {
 
     //最初的降级处理
     @HystrixCommand(fallbackMethod = "fallbackErrorMessage",commandProperties = {
