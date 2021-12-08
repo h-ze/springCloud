@@ -19,6 +19,15 @@ spring:
         #端口号默认为8719
         port: 8719
 
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 8.142.46.67:8848
+            dataId: cloudAlibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+
 
   servlet:
     multipart.max-file-size: 500MB

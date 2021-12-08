@@ -42,6 +42,13 @@
         <module>cloudAlibaba-server6000</module>
         <module>cloudAlibaba-config-nacos-client3377</module>
         <module>cloudAlibaba-sentinel-service8401</module>
+        <module>cloudAlibaba-sentinel-provider9004</module>
+        <module>cloudAlibaba-sentinel-provider9005</module>
+        <module>cloudAlibaba-customer84</module>
+        <module>cloudAlibaba-seata-order-service2001</module>
+        <module>cloudAlibaba-seata-storage-service</module>
+        <module>cloudAlibaba-seata-storage-service2002</module>
+        <module>cloudAlibaba-seata-account-service2003</module>
 
     </modules>
 
@@ -92,7 +99,9 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.1.0.RELEASE</version>
+                <version>2.2.1.RELEASE</version>
+                <!--如果需要使用seata1.2版本以上的，这里的alibabab-dependencies版本需要改变！！！巨坑啊，搞了一晚上。。。-->
+                <!-- <version>2.1.0.RELEASE</version>-->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

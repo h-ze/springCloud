@@ -124,4 +124,12 @@ ps -ef|grep nacos|grep -v grep|wc -l
 
 
 sentinel
+Sentinel是阿里开源的项目,提供了流量控制、熔断降级、系统负载保护等多个维度来保障服务之间的稳定性
+git官方地址:
+https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6#%E5%9F%BA%E4%BA%8E%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E7%9A%84%E9%99%90%E6%B5%81
 
+需要了解：如何将sentinel导入到nacos
+
+
+seata
+分布式事务解决方案是业务层面的解决方案，只依赖于单台数据库的事务能力
