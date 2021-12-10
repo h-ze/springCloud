@@ -1,7 +1,9 @@
 package com.hz.auth.service;
 
+import cn.hutool.core.collection.CollUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.common.entity.UserDTO;
 import com.hz.auth.util.AESUtil;
 import com.hz.common.auth.RoleDto;
 import com.hz.common.auth.SecurityUser;
@@ -24,33 +26,48 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * 用户管理业务类
+ * 实现Spring Security的UserDetailsService接口，用于加载用户信息
  */
 @Service
 public class UserService implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-    @Autowired
-    private RedisTemplate<String,Object> redisTemplate;
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    //@Autowired
+    //private RedisTemplate<String,Object> redisTemplate;
+    //@Autowired
+    //private JdbcTemplate jdbcTemplate;
+
+    private List<UserDto> userList;
+
+
     /**
      * 刷新角色资源权限数据存入redis
      * 用来方便gateway鉴权认证时使用
      * 这里可以使用mysql相关操作
      */
     public void refreshAllRoleUrls(){
-        List<RoleDto> roleList= jdbcTemplate.query("select DISTINCT id,role_id code,name from role where status=1 and name like '%商城%'",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
+        String password = passwordEncoder.encode("123456");
+        userList = new ArrayList<>();
+
+        userList.add(new UserDto("1","macro", password,1, CollUtil.toList(new RoleDto())));
+        userList.add(new UserDto("2","andy", password,1,CollUtil.toList(new RoleDto())));
+        //userList.add(new UserDTO(1L,"macro", password,1, CollUtil.toList("ADMIN")));
+        //userList.add(new UserDTO(2L,"andy", password,1, CollUtil.toList("TEST")));
+
+        /*List<RoleDto> roleList= jdbcTemplate.query("select DISTINCT id,role_id code,name from role where status=1 and name like '%商城%'",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
         if(CollectionUtils.isNotEmpty(roleList)){
             for (RoleDto role:roleList) {
                 role.setUrls(jdbcTemplate.queryForList("select distinct url from permission where status=1 and type=2 and permission_id in(select permission_id from role_permission where role_id in('"+role.getCode()+"'))",String.class));
             }
         }
-        redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleList, SerializerFeature.WriteMapNullValue));
+        redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleList, SerializerFeature.WriteMapNullValue));*/
     }
 
     /**
@@ -74,7 +91,7 @@ public class UserService implements UserDetailsService {
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserDto userDto = jdbcTemplate.queryForObject("select distinct  user_id 'userId',username,oauth_password 'password',status from user where status=1 and username='"+username+"'",new BeanPropertyRowMapper<UserDto>(UserDto.class));
+        /*UserDto userDto = jdbcTemplate.queryForObject("select distinct  user_id 'userId',username,oauth_password 'password',status from user where status=1 and username='"+username+"'",new BeanPropertyRowMapper<UserDto>(UserDto.class));
         List<RoleDto> userRoles = jdbcTemplate.query("select distinct id,role_id code,name from role where status=1 and name like '%商城%'and role_id in(select ur.role_id from user_role ur,user u where  u.user_id=ur.user_id and u.status=1 and u.username='"+username+"')",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
         if (ObjectUtils.isEmpty(userDto)) {
             throw new UsernameNotFoundException(Constant.USERNAME_PASSWORD_ERROR);
@@ -85,8 +102,14 @@ public class UserService implements UserDetailsService {
             }
         }
         userDto.setPassword(passwordEncoder.encode(AESUtil.decrypt(userDto.getPassword(),null)));
-        userDto.setRoles(userRoles);
+        userDto.setRoles(userRoles);*/
+        List<UserDto> findUserList = userList.stream().filter(item -> item.getUsername().equals(username)).collect(Collectors.toList());
+        if (CollUtil.isEmpty(findUserList)) {
+            throw new UsernameNotFoundException(Constant.USERNAME_PASSWORD_ERROR);
+        }
+        UserDto userDto = findUserList.get(0);
         SecurityUser securityUser = new SecurityUser(userDto);
+        //SecurityUser securityUser = new SecurityUser(userDto);
         if (!securityUser.isEnabled()) {
             throw new DisabledException(Constant.ACCOUNT_DISABLED);
         } else if (!securityUser.isAccountNonLocked()) {

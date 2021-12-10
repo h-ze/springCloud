@@ -18,7 +18,7 @@ public class RoleRightHandler {
     /**
      *定时任务每隔5分钟更新角色权限数据
      */
-    @Scheduled(cron = "0 0/5 * * * ?")
+    //@Scheduled(cron = "0 0/5 * * * ?")
     public void execute() {
         userService.refreshAllRoleUrls();
     }

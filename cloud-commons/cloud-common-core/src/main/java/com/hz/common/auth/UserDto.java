@@ -9,10 +9,9 @@ import java.util.List;
  * 用户信息
  */
 @Data
-@Builder
+@NoArgsConstructor                 //无参构造
+@AllArgsConstructor                //有参构造
 @EqualsAndHashCode(callSuper = false)
-@AllArgsConstructor
-@NoArgsConstructor
 public class UserDto implements Serializable {
     private String userId;
     private String username;
