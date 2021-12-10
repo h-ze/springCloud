@@ -133,3 +133,13 @@ https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6#%E
 
 seata
 分布式事务解决方案是业务层面的解决方案，只依赖于单台数据库的事务能力
+
+
+
+
+springcloud认证授权
+我们理想的解决方案应该是这样的，认证服务负责认证，网关负责校验认证和鉴权，其他API服务负责处理自己的业务逻辑。安全相关的逻辑只存在于认证服务和网关服务中，其他服务只是单纯地提供服务而没有任何安全相关逻辑。
+相关服务划分：
+    cloud-gateway-oauth2-nacos9101：网关服务，负责请求转发和鉴权功能，整合Spring Security+Oauth2；
+    cloud-auth8888：Oauth2认证服务，负责对登录用户进行认证，整合Spring Security+Oauth2；
+    其余服务只需要进行系统间的调用 用户鉴权通过后可以访问其他服务，不整合Spring Security+Oauth2。
