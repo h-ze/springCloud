@@ -52,6 +52,7 @@
         <module>cloud-commons</module>
         <module>cloud-gateway-oauth2-nacos9101</module>
         <module>cloud-auth8888</module>
+        <module>cloud-auth-gateway-service8888</module>
 
     </modules>
 

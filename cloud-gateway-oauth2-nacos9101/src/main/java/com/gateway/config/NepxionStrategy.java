@@ -2,9 +2,6 @@ package com.gateway.config;
 
 
 import com.hz.common.constant.Constant;
-import com.nepxion.discovery.plugin.framework.adapter.PluginAdapter;
-import com.nepxion.discovery.plugin.strategy.adapter.DiscoveryEnabledStrategy;
-import com.nepxion.discovery.plugin.strategy.gateway.context.GatewayStrategyContextHolder;
 import com.netflix.loadbalancer.Server;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.skywalking.apm.toolkit.trace.Trace;
@@ -15,6 +12,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 
 // 实现了组合策略，版本路由策略+区域路由策略+IP地址和端口路由策略+自定义策略
+/*
 @Configuration
 @ConditionalOnProperty(prefix = "nepxion.custom.strategy", name = "enable", havingValue = "true", matchIfMissing = false)
 public class NepxionStrategy implements DiscoveryEnabledStrategy {
@@ -38,15 +36,19 @@ public class NepxionStrategy implements DiscoveryEnabledStrategy {
         String mobile = gatewayStrategyContextHolder.getHeader("mobile");
         //header传递的期望版本，这里只是演示全局统一版本号
         String targetVersion = gatewayStrategyContextHolder.getHeader("version");
-        /*//当前网关服务版本
-        String currentVersion=gatewayStrategyContextHolder.getHeader("n-d-service-version");*/
+        */
+/*//*
+/当前网关服务版本
+        String currentVersion=gatewayStrategyContextHolder.getHeader("n-d-service-version");*//*
+
         String serviceId = pluginAdapter.getServerServiceId(server);
         String version = pluginAdapter.getServerVersion(server);
         String region = pluginAdapter.getServerRegion(server);
         String environment = pluginAdapter.getServerEnvironment(server);
         String address = server.getHost() + ":" + server.getPort();
         LOG.info("负载均衡用户定制触发：mobile={}, serviceId={}, version={}, region={}, env={}, address={}", mobile, serviceId, version, region, environment, address);
-        /*if (StringUtils.isNotEmpty(mobile)) {
+        */
+/*if (StringUtils.isNotEmpty(mobile)) {
             // 手机号以移动138开头，路由到1.0版本的服务上
             if (mobile.startsWith("138") && StringUtils.equals(version, "1.0.0")) {
                 return true;
@@ -57,7 +59,8 @@ public class NepxionStrategy implements DiscoveryEnabledStrategy {
                 // 其它情况，直接拒绝请求
                 return false;
             }
-        }*/
+        }*//*
+
         //授权服务直接放行，不需要版本号
         if (serviceId.equals(Constant.INNER_AUTH_VERIFY_NAME)) {
             return true;
@@ -71,4 +74,4 @@ public class NepxionStrategy implements DiscoveryEnabledStrategy {
         }
         return true;
     }
-}
+}*/

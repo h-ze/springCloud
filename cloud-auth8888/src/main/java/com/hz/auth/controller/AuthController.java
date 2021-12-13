@@ -3,6 +3,7 @@ package com.hz.auth.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.hz.auth.service.UserService;
+import com.hz.common.auth.Oauth2TokenDto;
 import com.hz.common.auth.RoleDto;
 import com.hz.common.constant.Constant;
 import com.hz.common.entity.Result;
@@ -11,6 +12,7 @@ import com.nimbusds.jose.JWSObject;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,7 @@ import java.util.Map;
  * 自定义Oauth2获取令牌接口
  */
 @RestController
+@Slf4j
 public class AuthController {
 
     @Autowired
@@ -66,17 +69,20 @@ public class AuthController {
      */
     @PostMapping(value = "/oauth/token")
     public Result postAccessToken(Principal principal, @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
+        //绑定数据库相关
         //每次登录重新刷新token，当客户资源发生修改时，客户需要重新登录刷新token
-        /*tokenStore.removeAccessToken(tokenEndpoint.postAccessToken(principal, parameters).getBody());*/
-        consumerTokenServices.revokeToken(tokenEndpoint.postAccessToken(principal, parameters).getBody().getValue());
-        return Result.success(tokenEndpoint.postAccessToken(principal, parameters).getBody());
-        /*OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
+        /*consumerTokenServices.revokeToken(tokenEndpoint.postAccessToken(principal, parameters).getBody().getValue());
+        return Result.success(tokenEndpoint.postAccessToken(principal, parameters).getBody());*/
+
+        //未绑定数据库
+        tokenStore.removeAccessToken(tokenEndpoint.postAccessToken(principal, parameters).getBody());
+        OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
         Oauth2TokenDto oauth2TokenDto = Oauth2TokenDto.builder()
                 .token(oAuth2AccessToken.getValue())
                 .refreshToken(oAuth2AccessToken.getRefreshToken().getValue())
                 .expiresIn(oAuth2AccessToken.getExpiresIn())
                 .tokenHead("Bearer ").build();
-        return Result.success(oauth2TokenDto);*/
+        return Result.success(oauth2TokenDto);
     }
 
     /**

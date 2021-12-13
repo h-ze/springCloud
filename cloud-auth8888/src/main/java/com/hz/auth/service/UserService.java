@@ -9,11 +9,10 @@ import com.hz.common.auth.RoleDto;
 import com.hz.common.auth.SecurityUser;
 import com.hz.common.auth.UserDto;
 import com.hz.common.constant.Constant;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.authentication.DisabledException;
@@ -35,14 +34,17 @@ import java.util.stream.Collectors;
  * 实现Spring Security的UserDetailsService接口，用于加载用户信息
  */
 @Service
+@Slf4j
 public class UserService implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-    //@Autowired
-    //private RedisTemplate<String,Object> redisTemplate;
-    //@Autowired
-    //private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private RedisTemplate<String,Object> redisTemplate;
+
+    /*@Autowired
+    private JdbcTemplate jdbcTemplate;*/
 
     private List<UserDto> userList;
 
@@ -53,14 +55,14 @@ public class UserService implements UserDetailsService {
      * 这里可以使用mysql相关操作
      */
     public void refreshAllRoleUrls(){
+
+        //本地未绑定数据库
         String password = passwordEncoder.encode("123456");
         userList = new ArrayList<>();
-
         userList.add(new UserDto("1","macro", password,1, CollUtil.toList(new RoleDto())));
         userList.add(new UserDto("2","andy", password,1,CollUtil.toList(new RoleDto())));
-        //userList.add(new UserDTO(1L,"macro", password,1, CollUtil.toList("ADMIN")));
-        //userList.add(new UserDTO(2L,"andy", password,1, CollUtil.toList("TEST")));
 
+        //绑定数据库相关
         /*List<RoleDto> roleList= jdbcTemplate.query("select DISTINCT id,role_id code,name from role where status=1 and name like '%商城%'",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
         if(CollectionUtils.isNotEmpty(roleList)){
             for (RoleDto role:roleList) {
@@ -91,6 +93,7 @@ public class UserService implements UserDetailsService {
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        //绑定数据库相关
         /*UserDto userDto = jdbcTemplate.queryForObject("select distinct  user_id 'userId',username,oauth_password 'password',status from user where status=1 and username='"+username+"'",new BeanPropertyRowMapper<UserDto>(UserDto.class));
         List<RoleDto> userRoles = jdbcTemplate.query("select distinct id,role_id code,name from role where status=1 and name like '%商城%'and role_id in(select ur.role_id from user_role ur,user u where  u.user_id=ur.user_id and u.status=1 and u.username='"+username+"')",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
         if (ObjectUtils.isEmpty(userDto)) {
@@ -102,14 +105,24 @@ public class UserService implements UserDetailsService {
             }
         }
         userDto.setPassword(passwordEncoder.encode(AESUtil.decrypt(userDto.getPassword(),null)));
-        userDto.setRoles(userRoles);*/
+        userDto.setRoles(userRoles);
+        SecurityUser securityUser = new SecurityUser(userDto);
+        if (!securityUser.isEnabled()) {
+            throw new DisabledException(Constant.ACCOUNT_DISABLED);
+        } else if (!securityUser.isAccountNonLocked()) {
+            throw new LockedException(Constant.ACCOUNT_LOCKED);
+        } else if (!securityUser.isAccountNonExpired()) {
+            throw new AccountExpiredException(Constant.ACCOUNT_EXPIRED);
+        } else if (!securityUser.isCredentialsNonExpired()) {
+            throw new CredentialsExpiredException(Constant.CREDENTIALS_EXPIRED);
+        }*/
+
+        //未绑定数据库
         List<UserDto> findUserList = userList.stream().filter(item -> item.getUsername().equals(username)).collect(Collectors.toList());
         if (CollUtil.isEmpty(findUserList)) {
             throw new UsernameNotFoundException(Constant.USERNAME_PASSWORD_ERROR);
         }
-        UserDto userDto = findUserList.get(0);
-        SecurityUser securityUser = new SecurityUser(userDto);
-        //SecurityUser securityUser = new SecurityUser(userDto);
+        SecurityUser securityUser = new SecurityUser(findUserList.get(0));
         if (!securityUser.isEnabled()) {
             throw new DisabledException(Constant.ACCOUNT_DISABLED);
         } else if (!securityUser.isAccountNonLocked()) {
@@ -119,6 +132,8 @@ public class UserService implements UserDetailsService {
         } else if (!securityUser.isCredentialsNonExpired()) {
             throw new CredentialsExpiredException(Constant.CREDENTIALS_EXPIRED);
         }
+
+
         return securityUser;
     }
 

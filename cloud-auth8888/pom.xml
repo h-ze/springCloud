@@ -13,16 +13,6 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-
-        <!--hystrix-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.hz.springcloud</groupId>
@@ -41,10 +31,10 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!--web 模块-->
         <dependency>
@@ -108,7 +98,7 @@
             <artifactId>jackson-dataformat-yaml</artifactId>
         </dependency>
         <!-- nepxion -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.nepxion</groupId>
             <artifactId>discovery-plugin-register-center-starter-nacos</artifactId>
             <version>${nepxion.version}</version>
@@ -122,7 +112,7 @@
             <groupId>com.nepxion</groupId>
             <artifactId>discovery-plugin-strategy-starter-service</artifactId>
             <version>${nepxion.version}</version>
-        </dependency>
+        </dependency>-->
         <!-- spring boot admin-->
         <!--        <dependency>
                     <groupId>com.nepxion</groupId>
@@ -167,6 +157,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

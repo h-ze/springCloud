@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
- * SpringSecurity配置
+ * SpringSecurity配置 允许获取公钥接口的访问
  */
 @Configuration
 @EnableWebSecurity

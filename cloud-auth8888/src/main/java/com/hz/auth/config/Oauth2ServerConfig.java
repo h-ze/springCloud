@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -32,6 +33,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 认证服务器配置
+ * 添加认证服务相关配置Oauth2ServerConfig，需要配置加载用户信息的服务UserServiceImpl及RSA的钥匙对KeyPair
  */
 @AllArgsConstructor
 @Configuration
@@ -41,17 +43,21 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     private final UserService userDetailsService;
     private final AuthenticationManager authenticationManager;
     private final JwtTokenEnhancer jwtTokenEnhancer;
+    private final PasswordEncoder passwordEncoder;
+
     @Autowired
     RedisConnectionFactory redisConnectionFactory;
 
     @Autowired
     private DataSource dataSource;
 
+
     // 声明 ClientDetails实现
-    @Bean
+    //绑定数据库相关
+    /*@Bean
     public ClientDetailsService clientDetailsService() {
         return new JdbcClientDetailsService(dataSource);
-    }
+    }*/
 
     /**
      * client配置在数据库
@@ -60,14 +66,18 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
      */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        /*clients.inMemory()
+        //inMemory是存储到内存中 并未到数据库
+        //未绑定数据库
+        clients.inMemory()
                 .withClient("client-app")
                 .secret(passwordEncoder.encode("123456"))
                 .scopes("all")
                 .authorizedGrantTypes("password", "refresh_token")
                 .accessTokenValiditySeconds(3600)
-                .refreshTokenValiditySeconds(86400);*/
-        clients.withClientDetails(clientDetailsService());
+                .refreshTokenValiditySeconds(86400);
+
+        //绑定数据库相关
+        /*clients.withClientDetails(clientDetailsService())*/;
     }
 
     @Override

@@ -14,6 +14,11 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.hz.springcloud</groupId>
             <artifactId>cloud-common-core</artifactId>
             <version>${project.version}</version>
@@ -24,6 +29,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
+
         <!--actuator 监控-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -50,14 +56,10 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-actuator</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!-- JMX-bean Manager-->
         <dependency>
@@ -65,7 +67,7 @@
             <artifactId>jolokia-core</artifactId>
         </dependency>
         <!--nepxion -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.nepxion</groupId>
             <artifactId>discovery-plugin-register-center-starter-nacos</artifactId>
             <version>${nepxion.version}</version>
@@ -79,7 +81,7 @@
             <groupId>com.nepxion</groupId>
             <artifactId>discovery-plugin-strategy-starter-gateway</artifactId>
             <version>${nepxion.version}</version>
-        </dependency>
+        </dependency>-->
         <!-- spring boot admin-->
         <dependency>
             <groupId>de.codecentric</groupId>
@@ -116,6 +118,20 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- 自定义的元数据依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

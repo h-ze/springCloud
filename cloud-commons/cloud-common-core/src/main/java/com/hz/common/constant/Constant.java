@@ -5,7 +5,7 @@ package com.hz.common.constant;
  */
 public class Constant {
 
-    public static final String  X_AMZ_SECURITY_TOKEN = "X_AMZ_SECURITY_TOKEN";//全局请求token
+    public static final String  X_AMZ_SECURITY_TOKEN = "token";//全局请求token
 
     public static final String GLOBAL_LOG_PRIFIX = "GLOBAL_LOG_PRIFIX";//全局日志前缀，从网关过来的整个链路请求，打印日志时，需要在最前面打印全局日志前缀，方便业务纠错
 
