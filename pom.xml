@@ -14,7 +14,7 @@
     <!-- packaging pom 总工程-->
 
     <modules>
-        <module>cloud-common</module>
+        <module>cloud-commons</module>
         <module>cloud-order80</module>
         <module>cloud-server6001</module>
         <module>cloud-eureka6890</module>
@@ -42,6 +42,17 @@
         <module>cloudAlibaba-server6000</module>
         <module>cloudAlibaba-config-nacos-client3377</module>
         <module>cloudAlibaba-sentinel-service8401</module>
+        <module>cloudAlibaba-sentinel-provider9004</module>
+        <module>cloudAlibaba-sentinel-provider9005</module>
+        <module>cloudAlibaba-customer84</module>
+        <module>cloudAlibaba-seata-order-service2001</module>
+        <module>cloudAlibaba-seata-storage-service2002</module>
+        <module>cloudAlibaba-seata-account-service2003</module>
+        <module>cloud-gatewayOauth2-9999</module>
+        <module>cloud-commons</module>
+        <module>cloud-gateway-oauth2-nacos9101</module>
+        <module>cloud-auth8888</module>
+        <module>cloud-auth-gateway-service8888</module>
 
     </modules>
 
@@ -61,6 +72,23 @@
         <http.version>4.5.6</http.version>
         <fastjson.version>1.2.51</fastjson.version>
         <swagger.version>2.7.0</swagger.version>
+
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <skywalking.version>8.7.0</skywalking.version>
+        <xxljob.version>2.3.0</xxljob.version>
+        <nepxion.version>6.11.0</nepxion.version>
+        <knife4j.version>3.0.3</knife4j.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <spring.boot.admin.version>2.3.1</spring.boot.admin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven.jar.version>3.2.0</maven.jar.version>
+        <maven.surefire.version>2.22.2</maven.surefire.version>
+        <maven.versions.plugin.version>2.8.1</maven.versions.plugin.version>
+        <maven.sonar.version>3.6.0.1398</maven.sonar.version>
+        <maven.jacoco.version>0.8.3</maven.jacoco.version>
     </properties>
 
     <!--子模块继承之后，提供作用：锁定版本+子module不用写groupId和version-->
@@ -92,7 +120,9 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.1.0.RELEASE</version>
+                <version>2.2.1.RELEASE</version>
+                <!--如果需要使用seata1.2版本以上的，这里的alibabab-dependencies版本需要改变！！！巨坑啊，搞了一晚上。。。-->
+                <!-- <version>2.1.0.RELEASE</version>-->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -188,20 +218,95 @@
         </plugins>
     </build>
 
+    <!-- 对于yaml文件properties可以直接打包替换，yaml有问题，暂时写死吧
+            可以在profile里面写死固定的环境参数，yaml读取pom参数
+            生产环境的时候，只需要spring.profiles.active=@profile.active@，打包即可
+            目前分为4套环境，dev:开发环境  fat:测试环境 uat:集成环境 pro:生产环境
+            https://docs.spring.io/spring-boot/docs/2.5.3/maven-plugin/reference/htmlsingle
+       -->
     <profiles>
         <profile>
             <id>dev</id>
             <properties>
-                <profileActive>dev</profileActive>
+                <profile.active>dev</profile.active>
+                <service.nacos.host>106.12.32.225</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>dev</service.nacos.username>
+                <service.nacos.password>123456</service.nacos.password>
+                <service.nacos.namespace>5c34b722-fb10-4ae3-872a-c7e46d40f2da</service.nacos.namespace>
+                <service.group>MALL_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
             </properties>
             <activation>
+                <jdk>[1.8,)</jdk>
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
         <profile>
-            <id>prod</id>
+            <id>fat</id>
             <properties>
-                <profileActive>prod</profileActive>
+                <profile.active>fat</profile.active>
+                <service.nacos.host>127.0.0.1</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>fat</service.nacos.username>
+                <service.nacos.password>123456</service.nacos.password>
+                <service.nacos.namespace>77bf9103-a8b8-43fa-a65d-0c0f9b88ae49</service.nacos.namespace>
+                <service.group>MALL_GROUP</service.group>
+                <service.metadata.group>MALL_GROUP</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <profile.active>uat</profile.active>
+                <service.nacos.host>127.0.0.1</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>uat</service.nacos.username>
+                <service.nacos.password>123456</service.nacos.password>
+                <service.nacos.namespace>d6a6a5ee-533a-47a4-82e8-dd0a1cfc0bab</service.nacos.namespace>
+                <service.group>MALL_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profile.active>pro</profile.active>
+                <service.nacos.host>127.0.0.1</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>pro</service.nacos.username>
+                <service.nacos.password>123456</service.nacos.password>
+                <service.nacos.namespace>6526a5ee-533a-47a4-82e8-dd0a1cfc0bab</service.nacos.namespace>
+                <service.group>MALL_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
             </properties>
         </profile>
     </profiles>

@@ -1,0 +1,42 @@
+server:
+  port: 8888
+
+spring:
+  #profiles:
+  #  active: dev
+  application:
+    name: auth
+
+  cloud:
+    nacos:
+      discovery:
+        #server-addr: localhost:8848
+        server-addr: 8.142.46.67:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  main:
+    allow-bean-definition-overriding: true
+
+  resources.static-locations: classpath:/templates/,classpath:/static/
+  datasource:
+    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
+    driver-class-name: org.gjt.mm.mysql.Driver
+    username: root
+    password: hz15858
+    type: com.alibaba.druid.pool.DruidDataSource
+  #redis:
+  #  database: 0
+  #  port: 6379
+  #  host: localhost
+  #  password:
+
+  redis:
+    port: 6379
+    host: 8.142.46.67
+    database: 0
+    password: hz15858
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

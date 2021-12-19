@@ -130,5 +130,26 @@ ps -ef|grep nacos|grep -v grep|wc -l
 
 
 sentinel
+Sentinel是阿里开源的项目,提供了流量控制、熔断降级、系统负载保护等多个维度来保障服务之间的稳定性
+git官方地址:
+https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6#%E5%9F%BA%E4%BA%8E%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E7%9A%84%E9%99%90%E6%B5%81
 
+<<<<<<< HEAD
 >>>>>>> eda5264d677af1f9c7e6e7a9b3777c1b77d7a48c
+=======
+需要了解：如何将sentinel导入到nacos
+
+
+seata
+分布式事务解决方案是业务层面的解决方案，只依赖于单台数据库的事务能力
+
+
+
+
+springcloud认证授权
+我们理想的解决方案应该是这样的，认证服务负责认证，网关负责校验认证和鉴权，其他API服务负责处理自己的业务逻辑。安全相关的逻辑只存在于认证服务和网关服务中，其他服务只是单纯地提供服务而没有任何安全相关逻辑。
+相关服务划分：
+    cloud-gateway-oauth2-nacos9101：网关服务，负责请求转发和鉴权功能，整合Spring Security+Oauth2；
+    cloud-auth8888：Oauth2认证服务，负责对登录用户进行认证，整合Spring Security+Oauth2；
+    其余服务只需要进行系统间的调用 用户鉴权通过后可以访问其他服务，不整合Spring Security+Oauth2。
+>>>>>>> 4d040d781b6611fce8211f3c1b5c7b7da9a9f3e0

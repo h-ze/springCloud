@@ -1,8 +1,9 @@
 package com.sentinel.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.sentinel.config.CustomerBlockHandler;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,4 +24,27 @@ public class FlowLimitController {
     public String getTestB(){
         return "test B";
     }
+
+    @GetMapping("/testHotKey")
+    @SentinelResource(value = "testHotKey",blockHandler = "deal_testHotKey")
+    public String testHotKey(@RequestParam(value = "p1",required = false)String p1,
+                             @RequestParam(value = "p2",required = false)String p2){
+        return "testHotKey";
+    }
+
+    public String deal_testHotKey(String p1,String p2, BlockException e){
+        return "dealTestHotKey";
+    }
+
+    @GetMapping("/testHotKey1/{id}")
+    public String testHotKey1(@PathVariable("id")String id){
+        return "testHotKey";
+    }
+
+    @GetMapping("/testHotKey1")
+    @SentinelResource(value = "testHotKey1",blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handler1")
+    public String testHotKey1(){
+        return "testHotKey1";
+    }
+
 }
