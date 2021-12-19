@@ -2,12 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!--<parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
-    </parent>-->
+
     <groupId>com.hz.springcloud</groupId>
     <artifactId>springcloudParent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -21,9 +16,9 @@
     <modules>
         <module>cloud-common</module>
         <module>cloud-order80</module>
+        <module>cloud-server6001</module>
         <module>cloud-eureka6890</module>
         <module>cloud-provider-payment8001</module>
-
         <module>cloud-eurekaconsumer8087</module>
         <module>cloud-openFeignProvider8101</module>
         <module>cloud-openFeignConsumer8102</module>
@@ -35,6 +30,19 @@
         <module>cloud-config-center3344</module>
         <module>cloud-config-client3355</module>
         <module>cloud-config-client3366</module>
+        <module>cloud-server6001</module>
+        <module>cloud-stream-rabbitmq-provider8801</module>
+        <module>cloud-stream-rabbitmq-consumer8802</module>
+        <module>cloud-stream-rabbitmq-consumer8803</module>
+
+
+        <module>cloudAlibaba-provider-payment9001</module>
+        <module>cloudAlibaba-provider-payment9003</module>
+        <module>cloudAlibaba-order80</module>
+        <module>cloudAlibaba-server6000</module>
+        <module>cloudAlibaba-config-nacos-client3377</module>
+        <module>cloudAlibaba-sentinel-service8401</module>
+
     </modules>
 
     <!--统一管理jar包版本-->
@@ -50,6 +58,9 @@
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
         <commons.version>3.12.0</commons.version>
         <openfeign.version>2.1.2.RELEASE</openfeign.version>
+        <http.version>4.5.6</http.version>
+        <fastjson.version>1.2.51</fastjson.version>
+        <swagger.version>2.7.0</swagger.version>
     </properties>
 
     <!--子模块继承之后，提供作用：锁定版本+子module不用写groupId和version-->
@@ -129,6 +140,37 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openfeign.version}</version>
             </dependency>
+
+            <!-- 引入httpClient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${http.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${http.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- 引入swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <!--热启动插件-->
@@ -145,6 +187,24 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+            </properties>
+        </profile>
+    </profiles>
 
 
 </project>

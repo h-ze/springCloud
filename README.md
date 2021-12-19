@@ -47,13 +47,18 @@ Hystrix
 1.秒杀高并发等操作，严禁一窝蜂的过来拥挤，大家排队，一秒钟N个，有序进行
 
 Hystrix中需要进行高并发测试
+//cloud-hystrix8103
+//cloud-hystrix-dashboard9001
+
 
 SpringCloud Bus
 消息总线
 SpringCloud Bus动态刷新全局广播
 SpringCloud Bus动态刷新定点通知
 Bus中使用到了rabbitmq
-
+//cloud-config-center3344
+//cloud-config-center3355
+//cloud-config-center3366
 
 SpringCloud Config
 分布式配置中心
@@ -80,8 +85,50 @@ SpringCloud Gateway 使用的Webflux中的reactor-netty响应式编程组件，�
 Gateway工作流程
 核心逻辑为
 路由转发+执行过滤器链
-
+//cloud-gateway9100
 
 SpringCloud Stream
 消息驱动
+<<<<<<< HEAD
 >>>>>>> 419473eb813c3f0dd70c876295c0472547e5f998
+=======
+
+注意在stream中处于同一个group中的多个消费者是竞争关系，就能保证消息只被其中一个应用消费一次
+不同组是可以全面消费的（重复消费）
+同一组内会发生竞争关系，只有其中一个可以消费
+解决重复消费的方法是分组，分到同一组就不会重复消费
+//cloud-stream-rabbitmq-consumer8802
+//cloud-stream-rabbitmq-consumer8803
+//cloud-stream-rabbitmq-provider8801
+
+
+SpringCloud Sleuth 分布式请求链路跟踪
+
+
+
+
+SpringCloudAlibaba 重点
+
+Nacos
+支持ap和cp
+cloudAlibaba-order80
+cloudAlibaba-provider-payment9001
+cloudAlibaba-provider-payment9003
+
+查看nacos集群的启动
+ps -ef|grep nacos|grep -v grep|wc -l
+
+启动nginx
+./nginx -c /usr/local/nginx/conf/nginx.conf
+
+阿里云上启动nacos方式
+1.如果服务器多或配置够好可以配置多个
+2.如果服务器配置过低可以使用不同端口号进行调试
+  方法为进入nacos3333中 进入bin目录中 使用命令行为:./start.sh -p 端口号
+  目前为3333 4444 5555
+3.使用docker
+
+
+sentinel
+
+>>>>>>> eda5264d677af1f9c7e6e7a9b3777c1b77d7a48c

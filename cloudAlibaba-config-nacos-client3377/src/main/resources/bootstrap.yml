@@ -1,0 +1,43 @@
+server:
+  port: 3377
+#  servlet:
+#    context-path: provider-payment
+
+spring:
+  application:
+    name: nacos-config-client
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 8.142.46.67:8848
+        #namespace: 4ca6004f-88b2-4443-8672-fc342698b42f
+        #server-addr: localhost:8848
+      config:
+        server-addr: 8.142.46.67:8848
+        #server-addr: localhost:8848
+        file-extension: yaml  #指定yaml格式的配置
+        #nacos上的Data ID对应的是spring.application.name
+        group: DEV_GROUP
+        #namespace: f51f825b-4b22-4bf7-8bbf-9f2f53c476e3
+        namespace: 4ca6004f-88b2-4443-8672-fc342698b42f
+
+  servlet:
+    multipart.max-file-size: 500MB
+    multipart.max-request-size: 500MB
+
+#  redis:
+#    port: 6379
+#    host: localhost
+#    database: 0
+
+logging:
+  level:
+    root: info
+    com.hz.dao: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
