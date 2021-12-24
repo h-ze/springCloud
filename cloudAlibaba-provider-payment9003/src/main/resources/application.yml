@@ -13,7 +13,7 @@ spring:
       discovery:
         server-addr: 8.142.46.67:8848
         #server-addr: localhost:8848
-
+        namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:

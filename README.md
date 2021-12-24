@@ -134,6 +134,8 @@ https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6#%E
 seata
 分布式事务解决方案是业务层面的解决方案，只依赖于单台数据库的事务能力
 
+使用前需要开启本地的seata服务 云端的如果已经开启了不用管
+
 
 
 

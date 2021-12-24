@@ -81,10 +81,10 @@
             <version>${nepxion.version}</version>
         </dependency>
         <!-- spring boot admin-->
-        <dependency>
+        <!--<dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- oauth2 -->
         <dependency>
             <groupId>org.springframework.security</groupId>
