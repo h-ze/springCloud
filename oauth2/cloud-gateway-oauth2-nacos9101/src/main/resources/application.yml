@@ -1,3 +1,35 @@
+nacos:
+  # Nacos的地址
+  server-addr: @service.nacos.host@
+  server-port: @service.nacos.port@
+  name: @service.nacos.username@
+  password: @service.nacos.password@
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: @service.nacos.namespace@
+  # Nacos的配置分组
+  group: @service.group@
+  # Seata Server的配置
+  seata:
+    application: @service.seata.application@
+    tx-service-group: @service.seata.tx-service-group@
+
+mysql:
+  user: @service.mysql.user@
+  pwd: @service.mysql.password@
+
+rbt:
+  user: @service.rabbit.user@
+  psd: @service.rabbit.password@
+  port: @service.rabbit.port@
+  addr: @service.rabbit.address@
+
+rds:
+  port: @service.redis.port@
+  host: @service.redis.address@
+  password: @service.redis.password@
+  database: @service.redis.database@
+
 server:
   port: 9101
 
@@ -11,17 +43,18 @@ spring:
         jwt:
           jwk-set-uri: 'http://localhost:8888/rsa/publicKey' #配置RSA的公钥访问地址
   redis:
-    database: 0
-    port: 6379
-    host: 8.142.46.67
-    password: hz15858
+    database: ${rds.database}
+    port: ${rds.port}
+    host: ${rds.host}
+    password: ${rds.password}
 
   cloud:
     nacos:
       discovery:
         #server-addr: localhost:8848
-        server-addr: 8.142.46.67:8848
-        namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+        server-addr: ${nacos.server-addr}
+        namespace: ${nacos.namespace}
+        port: ${nacos.server-port}
     gateway:
       discovery: #配置网关发现机制
         locator: #配置处理机制
