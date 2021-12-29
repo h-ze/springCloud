@@ -52,9 +52,9 @@ spring:
     nacos:
       discovery:
         #server-addr: localhost:8848
-        server-addr: ${nacos.server-addr}
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
-        port: ${nacos.server-port}
+
     gateway:
       discovery: #配置网关发现机制
         locator: #配置处理机制

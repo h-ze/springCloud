@@ -42,10 +42,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        #server-addr: localhost:8848
-        server-addr: ${nacos.server-addr}
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
-        port: ${nacos.server-port}
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
   main:

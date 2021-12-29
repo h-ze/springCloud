@@ -13,7 +13,7 @@
 
     <dependencies>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
             <exclusions>
@@ -27,7 +27,7 @@
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
             <version>1.4.2</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

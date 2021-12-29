@@ -52,7 +52,7 @@
         <module>cloud-commons</module>
 
         <module>oauth2</module>
-
+        <module>support</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -399,7 +399,7 @@
             <id>dev</id>
             <properties>
                 <profile.active>dev</profile.active>
-                <service.nacos.host>8.142.46.67:8848</service.nacos.host>
+                <service.nacos.host>8.142.46.67</service.nacos.host>
                 <service.nacos.port>8848</service.nacos.port>
                 <service.nacos.username>nacos</service.nacos.username>
                 <service.nacos.password>nacos</service.nacos.password>
@@ -438,13 +438,15 @@
             <id>fat</id>
             <properties>
                 <profile.active>fat</profile.active>
-                <service.nacos.host>127.0.0.1</service.nacos.host>
+                <service.nacos.host>8.142.46.67</service.nacos.host>
                 <service.nacos.port>8848</service.nacos.port>
-                <service.nacos.username>fat</service.nacos.username>
-                <service.nacos.password>123456</service.nacos.password>
-                <service.nacos.namespace>77bf9103-a8b8-43fa-a65d-0c0f9b88ae49</service.nacos.namespace>
-                <service.group>MALL_GROUP</service.group>
-                <service.metadata.group>MALL_GROUP</service.metadata.group>
+                <service.nacos.username>nacos</service.nacos.username>
+                <service.nacos.password>nacos</service.nacos.password>
+                <service.nacos.namespace>b50dee18-942a-47fb-a13d-70c9b035b46a</service.nacos.namespace>
+                <service.seata.application>seata-server</service.seata.application>
+                <service.seata.tx-service-group>default_tx_group</service.seata.tx-service-group>
+                <service.group>SEATA_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
                 <service.metadata.env>dev</service.metadata.env>
                 <service.metadata.version>${project.version}</service.metadata.version>
                 <service.metadata.region>qa</service.metadata.region>
@@ -452,6 +454,19 @@
                 <service.log.root>/logs</service.log.root>
                 <service.admin.username>admin</service.admin.username>
                 <service.admin.password>admin</service.admin.password>
+
+                <service.mysql.user>root</service.mysql.user>
+                <service.mysql.password>hz15858</service.mysql.password>
+
+                <service.rabbit.user>hz</service.rabbit.user>
+                <service.rabbit.password>hz15858</service.rabbit.password>
+                <service.rabbit.port>5672</service.rabbit.port>
+                <service.rabbit.address>8.142.46.67</service.rabbit.address>
+
+                <service.redis.address>8.142.46.67</service.redis.address>
+                <service.redis.database>0</service.redis.database>
+                <service.redis.port>6379</service.redis.port>
+                <service.redis.password>hz15858</service.redis.password>
             </properties>
         </profile>
         <profile>

@@ -34,9 +34,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: ${nacos.server-addr}
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
-        port: ${nacos.server-port}
 
     stream:
       binders: # 在此处配置要绑定的rabbitmq的服务信息；

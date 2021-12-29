@@ -28,13 +28,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @SentinelResource(value = "testHotKey1",blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handler1",fallbackClass = Fallback.class,fallback ="fallback1" )
-    @GlobalTransactional(name = "create-order"/*, rollbackFor = Exception.class*/)
+    @GlobalTransactional(name = "create-order", rollbackFor = Exception.class)
     public String createOrder(Order order) {
         // 创建订单
         System.out.println("开始创建订单");
         orderDao.createOrder(order);
         System.out.println("结束创建订单");
-
+/*
         // 扣减商品库存
         System.out.println("开始扣减商品库存");
         String decrease = storageService.decrease(order.getProductId(), order.getCount());
@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
         //更新订单状态
         System.out.println("开始更新订单状态");
         orderDao.updateOrder(order.getId(),1);
-        System.out.println("结束更新订单状态");
+        System.out.println("结束更新订单状态");*/
 
         return "成功";
         //return new CommonResult(200,"成功");

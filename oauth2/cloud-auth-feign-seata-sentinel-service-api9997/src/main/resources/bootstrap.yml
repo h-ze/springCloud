@@ -39,9 +39,8 @@ spring:
     #        tx-service-group: fsp_tx_group
     nacos:
       discovery:
-        server-addr: ${nacos.server-addr}
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
-        port: ${nacos.server-port}
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:
@@ -70,28 +69,28 @@ mybatis :
   mapperLocations: classpath:/com/order/mapper/*.xml
   type-aliases-package: com.common.entity
 
-seata:
-  enabled: true
-  application-id: ${spring.application.name}
-  tx-service-group: ${nacos.seata.tx-service-group}
-  enable-auto-data-source-proxy: false
-  registry:
-    type: nacos
-    nacos:
-      application: ${nacos.seata.application}
-      server-addr: ${nacos.server-addr}
-      namespace: ${nacos.namespace}
-      group: ${nacos.group}
-      username: ${nacos.name}
-      password: ${nacos.password}
-  config:
-    type: nacos
-    nacos:
-      namespace: ${nacos.namespace}
-      username: ${nacos.name}
-      password: ${nacos.password}
-      server-addr: 8.142.46.67:8848
-      group: ${nacos.group}
+#seata:
+#  enabled: true
+#  application-id: ${spring.application.name}
+#  tx-service-group: ${nacos.seata.tx-service-group}
+#  enable-auto-data-source-proxy: false
+#  registry:
+#    type: nacos
+#    nacos:
+#      application: ${nacos.seata.application}
+#      server-addr: ${nacos.server-addr}
+#      namespace: ${nacos.namespace}
+#      group: ${nacos.group}
+#      username: ${nacos.name}
+#      password: ${nacos.password}
+#  config:
+#    type: nacos
+#    nacos:
+#      namespace: ${nacos.namespace}
+#      username: ${nacos.name}
+#      password: ${nacos.password}
+#      server-addr: 8.142.46.67:8848
+#      group: ${nacos.group}
 
 
 logging:

@@ -14,6 +14,9 @@ server:
 #  servlet:
 #    context-path: provider-payment
 
+#feign:
+#  sentinel: #开启sentinel熔断
+#    enabled: true
 spring:
   #profiles.active: "@profileActive@"
   application:

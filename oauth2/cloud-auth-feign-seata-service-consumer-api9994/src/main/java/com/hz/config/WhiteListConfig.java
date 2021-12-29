@@ -1,4 +1,4 @@
-package com.gateway.config;
+package com.hz.config;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * 网关白名单配置
- * Created by macro on 2020/6/17.
+ * 地址白名单
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Component
-@ConfigurationProperties(prefix="secure.ignore")
-public class IgnoreUrlsConfig {
+@ConfigurationProperties(prefix="white.address")
+public class WhiteListConfig {
+    //白名单地址,直接放行
     private List<String> urls;
 }
