@@ -1,17 +1,16 @@
 package com.order.service.impl;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.common.entity.CommonResult;
 import com.common.entity.Order;
-import com.order.config.CustomerBlockHandler;
+import com.order.handler.CustomerBlockHandler;
 import com.order.dao.OrderDao;
+import com.order.handler.Fallback;
 import com.order.service.AccountService;
 import com.order.service.OrderService;
 import com.order.service.StorageService;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.annotation.Resource;
 
@@ -28,8 +27,8 @@ public class OrderServiceImpl implements OrderService {
     private StorageService storageService;
 
     @Override
-    @SentinelResource(value = "testHotKey1",blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handler1",fallback ="fallbackMethod" )
-    @GlobalTransactional(name = "create-order", rollbackFor = Exception.class)
+    @SentinelResource(value = "testHotKey1",blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handler1",fallbackClass = Fallback.class,fallback ="fallback1" )
+    @GlobalTransactional(name = "create-order"/*, rollbackFor = Exception.class*/)
     public String createOrder(Order order) {
         // 创建订单
         System.out.println("开始创建订单");
@@ -57,9 +56,9 @@ public class OrderServiceImpl implements OrderService {
         //return new CommonResult(200,"成功");
     }
 
-    public String fallbackMethod(Order order){
+    /*public String fallbackMethod(Order order){
         return "fallbackMethod兜底异常";
-    }
+    }*/
 
     @Override
     public String testCreate(Order order) {
