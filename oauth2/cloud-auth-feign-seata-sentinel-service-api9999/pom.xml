@@ -20,7 +20,7 @@
         </dependency>
 
         <!-- springcloudAlibaba分布式事务解决-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
             <exclusions>
@@ -34,7 +34,7 @@
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>
             <version>1.4.2</version>
-        </dependency>
+        </dependency>-->
 
         <!-- springcloudAlibaba sentinel提供了流量控制、熔断降级、系统负载保护-->
         <dependency>

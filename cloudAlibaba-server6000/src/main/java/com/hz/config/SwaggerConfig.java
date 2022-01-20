@@ -50,6 +50,7 @@ public class SwaggerConfig {
                 .select()
                 // 包扫描范围（对指定的包下进行扫描，如果标注有相关swagger注解，则生成相应文档）
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                //.apis(RequestHandlerSelectors.basePackage("com.qdone.module.app"))
                 // 过滤掉哪些path不用生成swagger
                 .paths(PathSelectors.any())
                 .build()

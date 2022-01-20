@@ -2,6 +2,7 @@ package com.order.controller;
 
 import com.common.entity.Order;
 import com.order.service.OrderService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -10,6 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/order")
+@Slf4j
 public class OrderController {
     @Resource
     private OrderService orderService;
@@ -41,8 +43,8 @@ public class OrderController {
 
 
     @PostMapping("updateOrder")
-    public String updateOrder(){
-
+    public String updateOrder(@RequestParam("id") Long id){
+        log.info("id为: {}",id);
         String order1 = orderService.updateOrder(1L,0);
         return order1;
     }
