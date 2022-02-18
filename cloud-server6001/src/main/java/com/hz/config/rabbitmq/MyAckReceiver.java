@@ -3,6 +3,7 @@ package com.hz.config.rabbitmq;
 import com.common.entity.Email;
 import com.common.entity.MailConstants;
 import com.hz.service.EmailService;
+import com.hz.task.MailReceiver;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -22,6 +23,9 @@ public class MyAckReceiver implements ChannelAwareMessageListener {
     @Autowired
     private EmailService emailService;
 
+    @Autowired
+    private MailReceiver mailReceiver;
+
     @Override
     public void onMessage(Message message, Channel channel) throws Exception {
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
@@ -32,7 +36,7 @@ public class MyAckReceiver implements ChannelAwareMessageListener {
             String[] msgArray = msg.split("'");//可以点进Message里面看源码,单引号直接的数据就是我们的map消息数据
             log.info("msgArray:"+msgArray);
 
-
+            log.info("message:{}",message.getMessageProperties().getConsumerQueue());
 
             //Map<String, String> msgMap = mapStringToMap(msgArray[1].trim(),3);
             //String messageId=msgMap.get("messageId");
@@ -54,6 +58,8 @@ public class MyAckReceiver implements ChannelAwareMessageListener {
                 log.info("email为: {} ",email);
                 Integer emailId = email.getEmailId();
 
+                mailReceiver.sendEmail(email);
+
                 emailService.updateEmailStatus(email,1);
 
             }
@@ -62,6 +68,13 @@ public class MyAckReceiver implements ChannelAwareMessageListener {
                 System.out.println("消费的消息来自的队列名为："+message.getMessageProperties().getConsumerQueue());
                 //System.out.println("消息成功消费到  messageId:"+messageId+"  messageData:"+messageData+"  createTime:"+createTime);
                 System.out.println("执行fanout.A中的消息的业务处理流程......");
+
+            }
+
+            if ("test".equals(message.getMessageProperties().getConsumerQueue())){
+                System.out.println("消费的消息来自的队列名为："+message.getMessageProperties().getConsumerQueue());
+                //System.out.println("消息成功消费到  messageId:"+messageId+"  messageData:"+messageData+"  createTime:"+createTime);
+                System.out.println("执行test中的消息的业务处理流程......");
 
             }
 

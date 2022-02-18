@@ -28,6 +28,21 @@ server:
   port: 9998
 
 spring:
+  nacos-host: @service.nacos.host@
+  nacos-port: @service.nacos.port@
+  nacos-username: @service.nacos.username@
+  nacos-password: @service.nacos.password@
+  nacos-namespace: @service.nacos.namespace@
+  nacos-group: @service.group@
+  nacos-metadata-group: @service.metadata.group@
+  nacos-metadata-env: @service.metadata.env@
+  nacos-metadata-version: @service.metadata.version@
+  nacos-metadata-region: @service.metadata.region@
+  nacos-metadata-zone: @service.metadata.zone@
+  service-log-root: @service.log.root@
+  service-admin-username: @service.admin.username@
+  service-admin-password: @service.admin.password@
+
   profiles:
     active: @profile.active@
   application:
@@ -92,11 +107,15 @@ mybatis :
 #      server-addr: 8.142.46.67:8848
 #      group: ${nacos.group}
 
+#logging:
+#  config: classpath:log4j2-${spring.profiles.active}.yml
+#  file:
+#    name: ${spring.service-log-root}/${spring.application.name}-${spring.profiles.active}.log #springBootAdmin在线查看日志
 
-logging:
-  level:
-    root: info
-    com.hz.dao: debug
+#logging:
+#  level:
+#    root: info
+#    com.hz.dao: debug
 
 management:
   endpoints:

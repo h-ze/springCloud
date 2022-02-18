@@ -55,6 +55,9 @@ public class PaymentController {
 
     @GetMapping("/payment/nacos/{id}")
     public String paymentNacos(@PathVariable String id){
+        log.info("id:{}",id);
+        log.error("id:{}",id);
+        log.debug("id:{}",id);
         return "nacos registry ,serverport为: "+serverPort+"  id为: "+id;
     }
 

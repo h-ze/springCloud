@@ -13,6 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.authentication.DisabledException;
@@ -20,6 +22,7 @@ import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -43,8 +46,8 @@ public class UserService implements UserDetailsService {
     @Autowired
     private RedisTemplate<String,Object> redisTemplate;
 
-    /*@Autowired
-    private JdbcTemplate jdbcTemplate;*/
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     private List<UserDto> userList;
 
@@ -57,7 +60,7 @@ public class UserService implements UserDetailsService {
     public void refreshAllRoleUrls(){
 
         //本地未绑定数据库
-        String password = passwordEncoder.encode("123456");
+        /*String password = passwordEncoder.encode("123456");
         userList = new ArrayList<>();
         List<String> list = new ArrayList<>();
         list.add("/payment/**");
@@ -65,24 +68,28 @@ public class UserService implements UserDetailsService {
         list.add("/payment/getPaymentById/*");
         list.add("/order/createOrder/*");
         list.add("/order/**");
+        list.add("/customer/**");
         userList.add(new UserDto("1","macro", password,1, CollUtil.toList(new RoleDto(1L,"100000","macro",list))));
-        userList.add(new UserDto("2","andy", password,1,CollUtil.toList(new RoleDto(2L,"100000","andy",list))));
+        userList.add(new UserDto("2","andy", password,1,CollUtil.toList(new RoleDto(2L,"100000","andy",list))));*/
 
 
         //手动设置权限
-        List<RoleDto> roleDtos = new ArrayList<>();
+        /*List<RoleDto> roleDtos = new ArrayList<>();
         roleDtos.add(new RoleDto(1L,"100000","macro",list));
         roleDtos.add(new RoleDto(2L,"100000","andy",list));
-        redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleDtos, SerializerFeature.WriteMapNullValue));
+        redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleDtos, SerializerFeature.WriteMapNullValue));*/
 
         //绑定数据库相关
-        /*List<RoleDto> roleList= jdbcTemplate.query("select DISTINCT id,role_id code,name from role where status=1 and name like '%商城%'",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
+        List<RoleDto> roleList= jdbcTemplate.query("select DISTINCT id,role_id code,name from role where status=1 and name like '%商城%'",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
+        log.info("roleList:{}",roleList);
         if(CollectionUtils.isNotEmpty(roleList)){
             for (RoleDto role:roleList) {
-                role.setUrls(jdbcTemplate.queryForList("select distinct url from permission where status=1 and type=2 and permission_id in(select permission_id from role_permission where role_id in('"+role.getCode()+"'))",String.class));
+                List<String> strings = jdbcTemplate.queryForList("select distinct url from permission where status=1 and type=2 and permission_id in(select permission_id from role_permission where role_id in('" + role.getCode() + "'))", String.class);
+                log.info("role:{}",strings);
+                role.setUrls(strings);
             }
         }
-        redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleList, SerializerFeature.WriteMapNullValue));*/
+        redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleList, SerializerFeature.WriteMapNullValue));
     }
 
     /**
@@ -107,7 +114,7 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //绑定数据库相关
-        /*UserDto userDto = jdbcTemplate.queryForObject("select distinct  user_id 'userId',username,oauth_password 'password',status from user where status=1 and username='"+username+"'",new BeanPropertyRowMapper<UserDto>(UserDto.class));
+        UserDto userDto = jdbcTemplate.queryForObject("select distinct  user_id 'u serId',username,oauth_password 'password',status from user where status=1 and username='"+username+"'",new BeanPropertyRowMapper<UserDto>(UserDto.class));
         List<RoleDto> userRoles = jdbcTemplate.query("select distinct id,role_id code,name from role where status=1 and name like '%商城%'and role_id in(select ur.role_id from user_role ur,user u where  u.user_id=ur.user_id and u.status=1 and u.username='"+username+"')",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
         if (ObjectUtils.isEmpty(userDto)) {
             throw new UsernameNotFoundException(Constant.USERNAME_PASSWORD_ERROR);
@@ -117,6 +124,9 @@ public class UserService implements UserDetailsService {
                  role.setUrls(jdbcTemplate.queryForList("select distinct url from permission where status=1 and type=2 and permission_id in(select permission_id from role_permission where role_id in('"+role.getCode()+"'))",String.class));
             }
         }
+
+        //userDto.setPassword(new BCryptPasswordEncoder().encode(AESUtil.decrypt(userDto.getPassword(),null)));
+
         userDto.setPassword(passwordEncoder.encode(AESUtil.decrypt(userDto.getPassword(),null)));
         userDto.setRoles(userRoles);
         SecurityUser securityUser = new SecurityUser(userDto);
@@ -128,10 +138,10 @@ public class UserService implements UserDetailsService {
             throw new AccountExpiredException(Constant.ACCOUNT_EXPIRED);
         } else if (!securityUser.isCredentialsNonExpired()) {
             throw new CredentialsExpiredException(Constant.CREDENTIALS_EXPIRED);
-        }*/
+        }
 
         //未绑定数据库
-        List<UserDto> findUserList = userList.stream().filter(item -> item.getUsername().equals(username)).collect(Collectors.toList());
+        /*List<UserDto> findUserList = userList.stream().filter(item -> item.getUsername().equals(username)).collect(Collectors.toList());
         if (CollUtil.isEmpty(findUserList)) {
             throw new UsernameNotFoundException(Constant.USERNAME_PASSWORD_ERROR);
         }
@@ -144,7 +154,7 @@ public class UserService implements UserDetailsService {
             throw new AccountExpiredException(Constant.ACCOUNT_EXPIRED);
         } else if (!securityUser.isCredentialsNonExpired()) {
             throw new CredentialsExpiredException(Constant.CREDENTIALS_EXPIRED);
-        }
+        }*/
 
 
         return securityUser;

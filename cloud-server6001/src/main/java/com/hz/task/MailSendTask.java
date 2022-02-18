@@ -40,7 +40,7 @@ public class MailSendTask {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
-    @Scheduled(cron = "0/10 * * * * ?")
+    //@Scheduled(cron = "0/10 * * * * ?")
     public void mailResendTask() {
         SimpleDateFormat sd  = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         String date = sd.format(new Date());

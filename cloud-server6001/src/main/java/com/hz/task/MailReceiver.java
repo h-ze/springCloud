@@ -47,7 +47,7 @@ public class MailReceiver {
     @Autowired
     StringRedisTemplate redisTemplate;
 
-    @RabbitListener(queues = MailConstants.MAIL_QUEUE_NAME)
+    //@RabbitListener(queues = MailConstants.MAIL_QUEUE_NAME)
     public void handler(Message message, Channel channel) throws IOException, MessagingException {
         log.info("message: ={}",message);
         log.info("channel: ={}",channel);
@@ -70,12 +70,13 @@ public class MailReceiver {
             channel.basicAck(tag, false);//确认消息已消费
             return;
         }*/
-        //sendEmail(email);
+        sendEmail(email);
     }
 
-    private void sendEmail(Email email) throws MessagingException, UnsupportedEncodingException {
+    public void sendEmail(Email email) throws MessagingException, UnsupportedEncodingException {
+        log.info("发送邮件");
         //构造SMTP邮件服务器的基本环境
-        Properties properties = new Properties();
+       /* Properties properties = new Properties();
         properties.setProperty("mail.host", "smtp.qq.com");
         properties.setProperty("mail.transport.protocol", "smtp");
         properties.setProperty("mail.smtp.auth", "true");
@@ -96,9 +97,9 @@ public class MailReceiver {
         MimeMessage mimeMessage = saveMessage(session,"1102211390@qq.com","1554752374@qq.com",null,"邮件主题",email,fileList,picList);
         //发送邮件
         Transport transport = session.getTransport();
-        transport.connect("smtp.qq.com", "1102211390@qq.com", /*"iskpdrftnlgohbih",*/"kuwvhzyxkknujigi");
+        transport.connect("smtp.qq.com", "1102211390@qq.com", *//*"iskpdrftnlgohbih",*//*"kuwvhzyxkknujigi");
         transport.sendMessage(mimeMessage, mimeMessage.getAllRecipients());//发送邮件，第二个参数为收件人
-        transport.close();
+        transport.close();*/
     }
 
     /**

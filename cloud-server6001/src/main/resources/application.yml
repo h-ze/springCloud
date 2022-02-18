@@ -25,11 +25,12 @@ spring:
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:
-    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
-    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false
+    #driver-class-name: org.gjt.mm.mysql.Driver
     username: root
     password: hz15858
     type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
 
   servlet:
     multipart.max-file-size: 500MB
@@ -54,9 +55,23 @@ spring:
         stmp.socketFactory.class: javax.net.ssl.SSLSocketFactory
         debug: true
 
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    mode: HTML
+#    cache: false
+#    encoding: UTF-8
+#    #     新版本不支持content-type: text/html，故新写法
+#    servlet:
+#      content-type: text/html
+
 mybatis :
   mapper-locations: classpath:/com/hz/mapper/*.xml
   type-aliases-package: com.hz.demo.entity
+  #配置驼峰
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
 
 logging:
   level:
@@ -67,6 +82,12 @@ logging:
 
 
 
+# pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 eureka:
   client:

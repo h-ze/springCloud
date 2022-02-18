@@ -71,18 +71,18 @@ public class AuthController {
     public Result postAccessToken(Principal principal, @RequestParam Map<String, String> parameters) throws HttpRequestMethodNotSupportedException {
         //绑定数据库相关
         //每次登录重新刷新token，当客户资源发生修改时，客户需要重新登录刷新token
-        /*consumerTokenServices.revokeToken(tokenEndpoint.postAccessToken(principal, parameters).getBody().getValue());
-        return Result.success(tokenEndpoint.postAccessToken(principal, parameters).getBody());*/
+        consumerTokenServices.revokeToken(tokenEndpoint.postAccessToken(principal, parameters).getBody().getValue());
+        return Result.success(tokenEndpoint.postAccessToken(principal, parameters).getBody());
 
         //未绑定数据库
-        tokenStore.removeAccessToken(tokenEndpoint.postAccessToken(principal, parameters).getBody());
+        /*tokenStore.removeAccessToken(tokenEndpoint.postAccessToken(principal, parameters).getBody());
         OAuth2AccessToken oAuth2AccessToken = tokenEndpoint.postAccessToken(principal, parameters).getBody();
         Oauth2TokenDto oauth2TokenDto = Oauth2TokenDto.builder()
                 .token(oAuth2AccessToken.getValue())
                 .refreshToken(oAuth2AccessToken.getRefreshToken().getValue())
                 .expiresIn(oAuth2AccessToken.getExpiresIn())
                 .tokenHead("Bearer ").build();
-        return Result.success(oauth2TokenDto);
+        return Result.success(oauth2TokenDto);*/
     }
 
     /**
