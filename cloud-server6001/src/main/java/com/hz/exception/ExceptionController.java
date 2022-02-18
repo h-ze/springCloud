@@ -28,7 +28,7 @@ public class ExceptionController {
     @ExceptionHandler
     public JSONObject handleException(Exception e){
         JSONObject jsonObject = new JSONObject(true);
-        jsonObject.put("code","4000004");
+        jsonObject.put("code","500");
         jsonObject.put("msg","发生了未知的错误");
         jsonObject.put("message",e.getMessage());
         //e.printStackTrace();

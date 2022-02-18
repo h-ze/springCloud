@@ -56,7 +56,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
             }//token 错误
 
         } else {
-            logger.info("token为空");
+            logger.debug("token为空");
             responseError(response, "参数无效,请输入用户token");
             return false;
         }
@@ -150,7 +150,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
      * 将非法请求跳转到 /unauthorized/**
      */
     private void responseError(ServletResponse response, String message) {
-        logger.info("抛异常:"+message);
+        logger.debug("抛异常:"+message);
         //HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         //设置编码，否则中文字符在重定向时会变为空字符串
         //message = URLEncoder.encode(message, "UTF-8");

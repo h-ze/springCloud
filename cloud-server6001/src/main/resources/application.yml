@@ -58,12 +58,16 @@ mybatis :
   mapper-locations: classpath:/com/hz/mapper/*.xml
   type-aliases-package: com.hz.demo.entity
 
-logging:
-  level:
-    root: info
-    com.hz.dao: debug
+#logging:
+#  level:
+#    root: info
+#    com.hz.dao: debug
+#
+#    eureka.client.healthcheck.enabled: false
 
-    eureka.client.healthcheck.enabled: false
+
+#  file:
+#    name: E:\springboot.log
 
 
 
