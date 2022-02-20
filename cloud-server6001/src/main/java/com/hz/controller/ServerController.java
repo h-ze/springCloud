@@ -42,6 +42,6 @@ public class ServerController {
         logger.info(format.format(date));
         //rabbitTemplate.convertAndSend("test.exchange", "test","1", new CorrelationData(String.valueOf(1)));
 
-        return ResponseResult.successResult(0,format.format(date));
+        return ResponseResult.successResult(100000,format.format(date));
     }
 }

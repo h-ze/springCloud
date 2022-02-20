@@ -1,6 +1,6 @@
 package com.hz.controller;
 
-import com.hz.ints.AccessLimit;
+import com.hz.annotation.AccessLimit;
 import com.common.entity.ResponseResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

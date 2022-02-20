@@ -1,0 +1,534 @@
+[2022/02/19 19:31:46565][INFO][LOGSERVICE][日志系统][org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:55)]
+Starting ServerApplication on zdeMacBook-Pro with PID 18756 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+[2022/02/19 19:31:46581][INFO][LOGSERVICE][日志系统][org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:655)]
+The following profiles are active: @profileActive@
+[2022/02/19 19:31:46733][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+[2022/02/19 19:31:46734][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+[2022/02/19 19:31:46734][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2022/02/19 19:31:46735][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2022/02/19 19:31:48248][INFO][LOGSERVICE][日志系统][org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:249)]
+Multiple Spring Data modules found, entering strict repository configuration mode!
+[2022/02/19 19:31:48252][INFO][LOGSERVICE][日志系统][org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:127)]
+Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2022/02/19 19:31:48375][INFO][LOGSERVICE][日志系统][org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:187)]
+Finished Spring Data repository scanning in 109ms. Found 0 Redis repository interfaces.
+[2022/02/19 19:31:48671][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$a757ccae] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 19:31:48711][INFO][LOGSERVICE][日志系统][com.hz.config.shiro.ShiroConfig.getRealm(ShiroConfig.java:132)]
+getRealm
+[2022/02/19 19:31:48723][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 19:31:48726][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 19:31:48775][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 19:31:48776][INFO][LOGSERVICE][日志系统][com.hz.config.shiro.ShiroConfig.getShiroFilterFactoryBean(ShiroConfig.java:64)]
+==================
+[2022/02/19 19:31:48811][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 19:31:48847][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 19:31:49336][INFO][LOGSERVICE][日志系统][org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:92)]
+Tomcat initialized with port(s): 6001 (http)
+[2022/02/19 19:31:49350][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Initializing ProtocolHandler ["http-nio-6001"]
+[2022/02/19 19:31:49351][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Starting service [Tomcat]
+[2022/02/19 19:31:49352][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2022/02/19 19:31:49560][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[2022/02/19 19:31:49567][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Initializing Spring embedded WebApplicationContext
+[2022/02/19 19:31:49568][INFO][LOGSERVICE][日志系统][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:284)]
+Root WebApplicationContext: initialization completed in 2832 ms
+[2022/02/19 19:31:51452][INFO][LOGSERVICE][日志系统][org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58)]
+Exposing 2 endpoint(s) beneath base path '/actuator'
+[2022/02/19 19:31:51579][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69)]
+Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2022/02/19 19:31:51746][INFO][LOGSERVICE][日志系统][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:58)]
+LiveReload server is running on port 35729
+[2022/02/19 19:31:52346][INFO][LOGSERVICE][日志系统][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'taskScheduler'
+[2022/02/19 19:31:52622][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:147)]
+Context refreshed
+[2022/02/19 19:31:52636][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:150)]
+Found 1 custom documentation plugin(s)
+[2022/02/19 19:31:52694][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)]
+Scanning for api listing references
+[2022/02/19 19:31:52900][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)]
+Generating unique operation named: deleteUserUsingDELETE_1
+[2022/02/19 19:31:52954][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:524)]
+Attempting to connect to: [8.142.46.67:5672]
+[2022/02/19 19:31:53065][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:497)]
+Created new connection: rabbitConnectionFactory#a5f529c:0/SimpleConnection@3fd53f36 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51695]
+[2022/02/19 19:31:53398][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Starting ProtocolHandler ["http-nio-6001"]
+[2022/02/19 19:31:53421][INFO][LOGSERVICE][日志系统][org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:204)]
+Tomcat started on port(s): 6001 (http) with context path '/springboot'
+[2022/02/19 19:31:53423][INFO][LOGSERVICE][日志系统][org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:61)]
+Started ServerApplication in 7.316 seconds (JVM running for 8.34)
+[2022/02/19 19:31:53643][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022/02/19 19:31:53644][INFO][LOGSERVICE][日志系统][org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'dispatcherServlet'
+[2022/02/19 19:31:53657][INFO][LOGSERVICE][日志系统][org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 13 ms
+[2022/02/19 19:31:53716][INFO][LOGSERVICE][日志系统][com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:930)]
+{dataSource-1} inited
+[2022/02/19 19:31:54939][INFO][LOGSERVICE][日志系统][io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68)]
+Starting without optional epoll library
+[2022/02/19 19:31:54941][INFO][LOGSERVICE][日志系统][io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70)]
+Starting without optional kqueue library
+[2022/02/19 19:32:00005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:32:00
+[2022/02/19 19:32:00125][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:32:10002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:32:10
+[2022/02/19 19:32:10075][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:32:20004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:32:20
+[2022/02/19 19:32:20071][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:32:26091][INFO][LOGSERVICE][日志系统][com.hz.controller.TestController.test(TestController.java:27)]
+测试
+[2022/02/19 19:32:30004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:32:30
+[2022/02/19 19:32:30068][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:32:40004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:32:40
+[2022/02/19 19:32:40078][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:32:50005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:32:50
+[2022/02/19 19:32:50082][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:33:00001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:33:00
+[2022/02/19 19:33:00080][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:33:10006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:33:10
+[2022/02/19 19:33:10088][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:33:20001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:33:20
+[2022/02/19 19:33:20076][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:33:30005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:33:30
+[2022/02/19 19:33:30084][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:33:40005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:33:40
+[2022/02/19 19:33:40087][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:33:50005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:33:50
+[2022/02/19 19:33:50072][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:34:00006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:34:00
+[2022/02/19 19:34:00073][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:34:10006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:34:10
+[2022/02/19 19:34:10089][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:34:20005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:34:20
+[2022/02/19 19:34:20072][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:34:30005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:34:30
+[2022/02/19 19:34:30083][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:34:40003][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:34:40
+[2022/02/19 19:34:40113][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:34:50002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:34:50
+[2022/02/19 19:34:50090][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:35:00001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:35:00
+[2022/02/19 19:35:00067][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:35:10006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:35:10
+[2022/02/19 19:35:10084][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:35:20004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:35:20
+[2022/02/19 19:35:20089][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:35:30005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:35:30
+[2022/02/19 19:35:30080][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:35:40002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:35:40
+[2022/02/19 19:35:40073][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:35:50001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:35:50
+[2022/02/19 19:35:50073][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:36:00001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:36:00
+[2022/02/19 19:36:00072][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:36:10006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:36:10
+[2022/02/19 19:36:10076][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:36:20001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:36:20
+[2022/02/19 19:36:20067][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:36:30003][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:36:30
+[2022/02/19 19:36:30073][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:36:40006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:36:40
+[2022/02/19 19:36:40079][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:36:50003][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:36:50
+[2022/02/19 19:36:50072][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:37:00004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:37:00
+[2022/02/19 19:37:00077][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:37:10001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:37:10
+[2022/02/19 19:37:10063][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:37:20005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:37:20
+[2022/02/19 19:37:20085][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:37:29995][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:37:29
+[2022/02/19 19:37:30068][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:37:39995][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:37:39
+[2022/02/19 19:37:40066][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:39:37536][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:39:37
+[2022/02/19 19:39:37637][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:39:40004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:39:40
+[2022/02/19 19:39:40101][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:39:50002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:39:50
+[2022/02/19 19:39:50066][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:40:00017][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:40:00
+[2022/02/19 19:40:00888][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:44:52149][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:44:52
+[2022/02/19 19:44:54255][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:45:00007][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:45:00
+[2022/02/19 19:45:00093][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:45:10013][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:45:10
+[2022/02/19 19:45:10118][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:54:35666][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:54:35
+[2022/02/19 19:54:40022][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:54:41704][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.killOrRestart(SimpleMessageListenerContainer.java:1419)]
+Restarting Consumer@2f7693d4: tags=[[amq.ctag-Sa_S47g0FqI4moq_XzYYHg, amq.ctag-zwd0O10SW-sJDI9EEpXn-A]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,1), conn: Proxy@74fa2940 Shared Rabbit Connection: SimpleConnection@3fd53f36 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51695], acknowledgeMode=MANUAL local queue size=0
+[2022/02/19 19:54:41707][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:524)]
+Attempting to connect to: [8.142.46.67:5672]
+[2022/02/19 19:54:41987][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:497)]
+Created new connection: rabbitConnectionFactory#a5f529c:1/SimpleConnection@ed861a7 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51779]
+[2022/02/19 19:54:50014][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:54:50
+[2022/02/19 19:54:50088][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:55:00011][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:55:00
+[2022/02/19 19:55:00188][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 19:55:10013][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 19:55:10
+[2022/02/19 19:55:10091][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:00:01923][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:00:01
+[2022/02/19 20:00:03225][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:00:10009][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:00:10
+[2022/02/19 20:00:10081][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:00:20012][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:00:20
+[2022/02/19 20:00:20106][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:20:32601][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.killOrRestart(SimpleMessageListenerContainer.java:1419)]
+Restarting Consumer@2ed5e920: tags=[[amq.ctag-RpWxMQWqCSGelrbA65W2mA, amq.ctag-JbFylpkQrwAfM6n0wSCNmQ]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@74fa2940 Shared Rabbit Connection: SimpleConnection@ed861a7 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51779], acknowledgeMode=MANUAL local queue size=0
+[2022/02/19 20:20:32603][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:524)]
+Attempting to connect to: [8.142.46.67:5672]
+[2022/02/19 20:20:32680][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:497)]
+Created new connection: rabbitConnectionFactory#a5f529c:2/SimpleConnection@7f48cf05 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51811]
+[2022/02/19 20:20:33675][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:20:33
+[2022/02/19 20:20:35338][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:20:40004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:20:40
+[2022/02/19 20:20:40088][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:20:50006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:20:50
+[2022/02/19 20:20:50085][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:20:59994][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:20:59
+[2022/02/19 20:21:00068][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:21:09999][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:21:09
+[2022/02/19 20:21:10069][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:26:07575][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:26:07
+[2022/02/19 20:26:08889][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:26:10006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:26:10
+[2022/02/19 20:26:10080][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 20:26:20004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 20:26:20
+[2022/02/19 20:26:20098][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:12:15930][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:12:15
+[2022/02/19 21:12:17948][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.killOrRestart(SimpleMessageListenerContainer.java:1419)]
+Restarting Consumer@33f8ac8b: tags=[[amq.ctag-erktu3MoGh-6YbYAZLjaOg, amq.ctag-UrE_ewxV23DfUly3VBBTkw]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@74fa2940 Shared Rabbit Connection: SimpleConnection@7f48cf05 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51811], acknowledgeMode=MANUAL local queue size=0
+[2022/02/19 21:12:17949][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:524)]
+Attempting to connect to: [8.142.46.67:5672]
+[2022/02/19 21:12:18110][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:12:18112][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:497)]
+Created new connection: rabbitConnectionFactory#a5f529c:3/SimpleConnection@408140df [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51842]
+[2022/02/19 21:12:20002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:12:20
+[2022/02/19 21:12:20119][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:12:30006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:12:30
+[2022/02/19 21:12:30095][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:12:40005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:12:40
+[2022/02/19 21:12:40065][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:12:50025][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:12:50
+[2022/02/19 21:12:50149][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:13:00013][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:13:00
+[2022/02/19 21:13:00068][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:13:10009][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:13:10
+[2022/02/19 21:13:10091][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:13:20007][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:13:20
+[2022/02/19 21:13:20067][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:13:30007][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:13:30
+[2022/02/19 21:13:30069][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:13:40006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:13:40
+[2022/02/19 21:13:40092][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:13:43146][INFO][LOGSERVICE][日志系统][com.hz.controller.ServerController.getServerTime(ServerController.java:42)]
+2022-02-19 21:13:43
+[2022/02/19 21:13:50007][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:13:50
+[2022/02/19 21:13:50084][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:14:00006][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:14:00
+[2022/02/19 21:14:00068][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:14:10005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:14:10
+[2022/02/19 21:14:10068][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:14:20001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:14:20
+[2022/02/19 21:14:20069][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:14:30003][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:14:30
+[2022/02/19 21:14:30077][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:14:40001][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:14:40
+[2022/02/19 21:14:40069][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:14:42915][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown(SimpleMessageListenerContainer.java:640)]
+Waiting for workers to finish.
+[2022/02/19 21:14:43520][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown(SimpleMessageListenerContainer.java:643)]
+Successfully waited for workers to finish.
+[2022/02/19 21:14:43533][INFO][LOGSERVICE][日志系统][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'taskScheduler'
+[2022/02/19 21:14:43539][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.shutdown(AbstractMessageListenerContainer.java:1231)]
+Shutdown ignored - container is not active already
+[2022/02/19 21:14:43617][INFO][LOGSERVICE][日志系统][com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1825)]
+{dataSource-1} closed
+[2022/02/19 21:14:51054][INFO][LOGSERVICE][日志系统][org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:55)]
+Starting ServerApplication on zdeMacBook-Pro with PID 18916 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+[2022/02/19 21:14:51066][INFO][LOGSERVICE][日志系统][org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:655)]
+The following profiles are active: @profileActive@
+[2022/02/19 21:14:51138][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+[2022/02/19 21:14:51138][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+[2022/02/19 21:14:51139][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2022/02/19 21:14:51139][INFO][LOGSERVICE][日志系统][org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:225)]
+For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2022/02/19 21:14:52707][INFO][LOGSERVICE][日志系统][org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:249)]
+Multiple Spring Data modules found, entering strict repository configuration mode!
+[2022/02/19 21:14:52710][INFO][LOGSERVICE][日志系统][org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:127)]
+Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2022/02/19 21:14:52846][INFO][LOGSERVICE][日志系统][org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:187)]
+Finished Spring Data repository scanning in 122ms. Found 0 Redis repository interfaces.
+[2022/02/19 21:14:53145][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$f2e8e519] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 21:14:53195][INFO][LOGSERVICE][日志系统][com.hz.config.shiro.ShiroConfig.getRealm(ShiroConfig.java:132)]
+getRealm
+[2022/02/19 21:14:53210][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 21:14:53213][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 21:14:53279][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 21:14:53280][INFO][LOGSERVICE][日志系统][com.hz.config.shiro.ShiroConfig.getShiroFilterFactoryBean(ShiroConfig.java:64)]
+==================
+[2022/02/19 21:14:53326][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 21:14:53375][INFO][LOGSERVICE][日志系统][org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330)]
+Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2022/02/19 21:14:53877][INFO][LOGSERVICE][日志系统][org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:92)]
+Tomcat initialized with port(s): 6001 (http)
+[2022/02/19 21:14:53889][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Initializing ProtocolHandler ["http-nio-6001"]
+[2022/02/19 21:14:53890][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Starting service [Tomcat]
+[2022/02/19 21:14:53891][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2022/02/19 21:14:54094][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[2022/02/19 21:14:54101][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Initializing Spring embedded WebApplicationContext
+[2022/02/19 21:14:54102][INFO][LOGSERVICE][日志系统][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:284)]
+Root WebApplicationContext: initialization completed in 2962 ms
+[2022/02/19 21:14:56425][INFO][LOGSERVICE][日志系统][org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58)]
+Exposing 2 endpoint(s) beneath base path '/actuator'
+[2022/02/19 21:14:56569][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69)]
+Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2022/02/19 21:14:56745][INFO][LOGSERVICE][日志系统][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:58)]
+LiveReload server is running on port 35729
+[2022/02/19 21:14:57456][INFO][LOGSERVICE][日志系统][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171)]
+Initializing ExecutorService 'taskScheduler'
+[2022/02/19 21:14:57771][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:147)]
+Context refreshed
+[2022/02/19 21:14:57785][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:150)]
+Found 1 custom documentation plugin(s)
+[2022/02/19 21:14:57858][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41)]
+Scanning for api listing references
+[2022/02/19 21:14:58096][INFO][LOGSERVICE][日志系统][springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40)]
+Generating unique operation named: deleteUserUsingDELETE_1
+[2022/02/19 21:14:58154][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:524)]
+Attempting to connect to: [8.142.46.67:5672]
+[2022/02/19 21:14:58271][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:497)]
+Created new connection: rabbitConnectionFactory#690a8f9b:0/SimpleConnection@12452c4e [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51888]
+[2022/02/19 21:14:58623][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Starting ProtocolHandler ["http-nio-6001"]
+[2022/02/19 21:14:58648][INFO][LOGSERVICE][日志系统][org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:204)]
+Tomcat started on port(s): 6001 (http) with context path '/springboot'
+[2022/02/19 21:14:58651][INFO][LOGSERVICE][日志系统][org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:61)]
+Started ServerApplication in 8.046 seconds (JVM running for 9.231)
+[2022/02/19 21:14:58899][INFO][LOGSERVICE][日志系统][org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173)]
+Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2022/02/19 21:14:58900][INFO][LOGSERVICE][日志系统][org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525)]
+Initializing Servlet 'dispatcherServlet'
+[2022/02/19 21:14:58916][INFO][LOGSERVICE][日志系统][org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547)]
+Completed initialization in 16 ms
+[2022/02/19 21:14:58969][INFO][LOGSERVICE][日志系统][com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:930)]
+{dataSource-1} inited
+[2022/02/19 21:15:00002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:15:00
+[2022/02/19 21:15:00129][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:15:00368][INFO][LOGSERVICE][日志系统][io.lettuce.core.EpollProvider.<clinit>(EpollProvider.java:68)]
+Starting without optional epoll library
+[2022/02/19 21:15:00370][INFO][LOGSERVICE][日志系统][io.lettuce.core.KqueueProvider.<clinit>(KqueueProvider.java:70)]
+Starting without optional kqueue library
+[2022/02/19 21:15:10004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:15:10
+[2022/02/19 21:15:10073][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:15:20004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:15:20
+[2022/02/19 21:15:20071][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:15:30004][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:15:30
+[2022/02/19 21:15:30079][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:15:40002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:15:40
+[2022/02/19 21:15:40060][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:15:50002][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:15:50
+[2022/02/19 21:15:50080][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:16:00005][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:47)]
+定时器任务: 2022/02/19 21:16:00
+[2022/02/19 21:16:00076][INFO][LOGSERVICE][日志系统][com.hz.task.MailSendTask.mailResendTask(MailSendTask.java:63)]
+消息列表: []
+[2022/02/19 21:16:03996][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown(SimpleMessageListenerContainer.java:640)]
+Waiting for workers to finish.
+[2022/02/19 21:16:04803][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown(SimpleMessageListenerContainer.java:643)]
+Successfully waited for workers to finish.
+[2022/02/19 21:16:04813][INFO][LOGSERVICE][日志系统][org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.shutdown(ExecutorConfigurationSupport.java:208)]
+Shutting down ExecutorService 'taskScheduler'
+[2022/02/19 21:16:04821][INFO][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.shutdown(AbstractMessageListenerContainer.java:1231)]
+Shutdown ignored - container is not active already
+[2022/02/19 21:16:04882][INFO][LOGSERVICE][日志系统][com.alibaba.druid.pool.DruidDataSource.close(DruidDataSource.java:1825)]
+{dataSource-1} closed

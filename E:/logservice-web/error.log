@@ -1,0 +1,56 @@
+[2022/02/19 19:32:26090][ERROR][LOGSERVICE][日志系统][com.hz.controller.TestController.test(TestController.java:26)]
+测试
+[2022/02/19 19:54:41636][ERROR][LOGSERVICE][日志系统][com.rabbitmq.client.impl.ForgivingExceptionHandler.log(ForgivingExceptionHandler.java:119)]
+An unexpected connection driver error occured
+java.net.SocketException: Operation timed out (Read failed)
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:?]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:115) ~[?:?]
+	at java.net.SocketInputStream.read(SocketInputStream.java:168) ~[?:?]
+	at java.net.SocketInputStream.read(SocketInputStream.java:140) ~[?:?]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:252) ~[?:?]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:271) ~[?:?]
+	at java.io.DataInputStream.readUnsignedByte(DataInputStream.java:293) ~[?:?]
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91) ~[amqp-client-5.7.3.jar:5.7.3]
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:184) ~[amqp-client-5.7.3.jar:5.7.3]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:598) [amqp-client-5.7.3.jar:5.7.3]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2022/02/19 19:54:41642][ERROR][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.CachingConnectionFactory$DefaultChannelCloseLogger.log(CachingConnectionFactory.java:1567)]
+Channel shutdown: connection error
+[2022/02/19 19:54:41643][ERROR][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.CachingConnectionFactory$DefaultChannelCloseLogger.log(CachingConnectionFactory.java:1567)]
+Channel shutdown: connection error
+[2022/02/19 20:20:31705][ERROR][LOGSERVICE][日志系统][com.rabbitmq.client.impl.ForgivingExceptionHandler.log(ForgivingExceptionHandler.java:119)]
+An unexpected connection driver error occured
+java.net.SocketException: Operation timed out (Read failed)
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:?]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:115) ~[?:?]
+	at java.net.SocketInputStream.read(SocketInputStream.java:168) ~[?:?]
+	at java.net.SocketInputStream.read(SocketInputStream.java:140) ~[?:?]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:252) ~[?:?]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:271) ~[?:?]
+	at java.io.DataInputStream.readUnsignedByte(DataInputStream.java:293) ~[?:?]
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91) ~[amqp-client-5.7.3.jar:5.7.3]
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:184) ~[amqp-client-5.7.3.jar:5.7.3]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:598) [amqp-client-5.7.3.jar:5.7.3]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2022/02/19 20:20:31706][ERROR][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.CachingConnectionFactory$DefaultChannelCloseLogger.log(CachingConnectionFactory.java:1567)]
+Channel shutdown: connection error
+[2022/02/19 20:20:31707][ERROR][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.CachingConnectionFactory$DefaultChannelCloseLogger.log(CachingConnectionFactory.java:1567)]
+Channel shutdown: connection error
+[2022/02/19 21:12:17556][ERROR][LOGSERVICE][日志系统][com.rabbitmq.client.impl.ForgivingExceptionHandler.log(ForgivingExceptionHandler.java:119)]
+An unexpected connection driver error occured
+java.net.SocketException: Operation timed out (Read failed)
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:?]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:115) ~[?:?]
+	at java.net.SocketInputStream.read(SocketInputStream.java:168) ~[?:?]
+	at java.net.SocketInputStream.read(SocketInputStream.java:140) ~[?:?]
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:252) ~[?:?]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:271) ~[?:?]
+	at java.io.DataInputStream.readUnsignedByte(DataInputStream.java:293) ~[?:?]
+	at com.rabbitmq.client.impl.Frame.readFrom(Frame.java:91) ~[amqp-client-5.7.3.jar:5.7.3]
+	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:184) ~[amqp-client-5.7.3.jar:5.7.3]
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:598) [amqp-client-5.7.3.jar:5.7.3]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2022/02/19 21:12:17558][ERROR][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.CachingConnectionFactory$DefaultChannelCloseLogger.log(CachingConnectionFactory.java:1567)]
+Channel shutdown: connection error
+[2022/02/19 21:12:17560][ERROR][LOGSERVICE][日志系统][org.springframework.amqp.rabbit.connection.CachingConnectionFactory$DefaultChannelCloseLogger.log(CachingConnectionFactory.java:1567)]
+Channel shutdown: connection error

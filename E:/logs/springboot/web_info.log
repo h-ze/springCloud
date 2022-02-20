@@ -1,0 +1,236 @@
+2022-02-20 00:13:35.343 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:13:35
+2022-02-20 00:13:37.957 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 00:13:39.841 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:13:39
+2022-02-20 00:13:39.963 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 00:13:50.006 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:13:50
+2022-02-20 00:13:50.074 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 00:14:00.004 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:14:00
+2022-02-20 00:14:00.068 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 00:14:04.359 [simpleMessageListenerContainer-3] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@51d4695d: tags=[[amq.ctag-y95WQl1nlDyBMFfwTxZALg, amq.ctag-tTpOqZCro2l-hEIfy8uzKA]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@7bacf1e7 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52358], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 00:14:04.361 [simpleMessageListenerContainer-4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 00:14:04.558 [simpleMessageListenerContainer-4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:3/SimpleConnection@7f373dd6 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52392]
+2022-02-20 00:14:10.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:14:10
+2022-02-20 00:14:10.372 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 00:19:01.980 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:19:01
+2022-02-20 00:19:03.340 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 00:19:10.008 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:19:10
+2022-02-20 00:19:10.083 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 00:19:19.999 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 00:19:19
+2022-02-20 00:19:20.510 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:02:04.294 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:02:04
+2022-02-20 01:02:05.811 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:02:12.071 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:02:12
+2022-02-20 01:02:12.193 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:02:20.002 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:02:20
+2022-02-20 01:02:20.084 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:02:30.005 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:02:30
+2022-02-20 01:02:30.083 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:02:40.002 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:02:40
+2022-02-20 01:02:40.372 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:07:31.960 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:07:31
+2022-02-20 01:07:33.278 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:07:40.019 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:07:40
+2022-02-20 01:07:40.079 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:07:45.729 [simpleMessageListenerContainer-4] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@17dedf75: tags=[[amq.ctag-3EnElf98zdrEDjTbcET7IA, amq.ctag-3dyKi-tTJsItvqljEzttDg]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@7f373dd6 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52392], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 01:07:45.735 [simpleMessageListenerContainer-5] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 01:07:45.813 [simpleMessageListenerContainer-5] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:4/SimpleConnection@3d7a77d8 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52436]
+2022-02-20 01:07:50.022 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:07:50
+2022-02-20 01:07:50.647 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:21:06.617 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:21:06
+2022-02-20 01:21:08.472 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:21:10.005 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:21:10
+2022-02-20 01:21:10.077 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:21:20.003 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:21:20
+2022-02-20 01:21:20.079 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:21:30.010 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:21:30
+2022-02-20 01:21:30.082 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:21:40.020 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:21:40
+2022-02-20 01:21:40.103 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:26:31.973 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:26:31
+2022-02-20 01:26:33.302 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:26:40.011 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:26:40
+2022-02-20 01:26:40.072 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:26:50.008 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:26:50
+2022-02-20 01:26:50.522 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:26:52.676 [simpleMessageListenerContainer-5] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@31ff342f: tags=[[amq.ctag-NPMml1rOy4KVVh9DRtz-rQ, amq.ctag-724UsQ4Eyqg0WJpmideVcg]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@3d7a77d8 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52436], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 01:26:52.684 [simpleMessageListenerContainer-6] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 01:26:52.758 [simpleMessageListenerContainer-6] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:5/SimpleConnection@efe389c [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52468]
+2022-02-20 01:35:17.621 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:35:17
+2022-02-20 01:35:19.454 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:35:20.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:35:20
+2022-02-20 01:35:20.096 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:35:29.999 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:35:29
+2022-02-20 01:35:30.092 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:35:40.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:35:40
+2022-02-20 01:35:40.069 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:35:50.006 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:35:50
+2022-02-20 01:35:50.067 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:40:42.010 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:40:42
+2022-02-20 01:40:43.303 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:40:50.017 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:40:50
+2022-02-20 01:40:50.084 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:41:00.015 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:41:00
+2022-02-20 01:41:00.096 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:49:18.740 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:49:18
+2022-02-20 01:49:19.549 [simpleMessageListenerContainer-6] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@5b87545a: tags=[[amq.ctag-DEFOtqU2oR0X179lKUB5Gw, amq.ctag-7UHgNITKonKN1FMK8fsO8g]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@efe389c [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52468], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 01:49:19.559 [simpleMessageListenerContainer-7] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 01:49:20.130 [simpleMessageListenerContainer-7] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:6/SimpleConnection@4c7e3ac2 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52497]
+2022-02-20 01:49:21.103 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:49:29.991 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:49:29
+2022-02-20 01:49:30.070 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:49:39.994 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:49:39
+2022-02-20 01:49:40.068 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:49:50.008 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:49:50
+2022-02-20 01:49:50.080 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:54:14.814 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:54:14
+2022-02-20 01:54:16.899 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:54:20.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:54:20
+2022-02-20 01:54:20.421 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:54:30.003 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:54:30
+2022-02-20 01:54:30.073 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:54:40.002 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:54:40
+2022-02-20 01:54:40.070 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:54:50.002 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:54:50
+2022-02-20 01:54:50.058 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:54:57.024 [simpleMessageListenerContainer-7] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@1033b3a: tags=[[amq.ctag-E9GLB_hcYsj8jLXNv__KvA, amq.ctag-4oV5ee2ME2kEB0vkwPWh5w]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@4c7e3ac2 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52497], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 01:54:57.027 [simpleMessageListenerContainer-8] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 01:54:57.115 [simpleMessageListenerContainer-8] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:7/SimpleConnection@2ed4b570 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52537]
+2022-02-20 01:55:00.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:55:00
+2022-02-20 01:55:00.100 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:55:10.006 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:55:10
+2022-02-20 01:55:10.083 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 01:55:20.056 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 01:55:20
+2022-02-20 01:55:20.132 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:00:11.903 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:00:11
+2022-02-20 02:00:13.570 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:00:20.010 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:00:20
+2022-02-20 02:00:20.078 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:00:30.006 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:00:30
+2022-02-20 02:00:30.085 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:19:23.959 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:19:23
+2022-02-20 02:19:24.969 [simpleMessageListenerContainer-8] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@1119b40: tags=[[amq.ctag-uyVR5y6MyGmTdjmEAKZskg, amq.ctag-w-fUAMXC_--ctwe3vWk8sQ]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@2ed4b570 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52537], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 02:19:24.971 [simpleMessageListenerContainer-9] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 02:19:25.147 [simpleMessageListenerContainer-9] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:8/SimpleConnection@29d7cada [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52558]
+2022-02-20 02:19:26.621 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:19:29.947 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:19:29
+2022-02-20 02:19:30.347 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:19:40.000 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:19:40
+2022-02-20 02:19:40.077 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:19:50.000 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:19:50
+2022-02-20 02:19:50.058 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:20:00.006 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:20:00
+2022-02-20 02:20:00.065 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:24:52.842 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:24:52
+2022-02-20 02:24:54.138 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:25:00.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:25:00
+2022-02-20 02:25:00.077 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 02:25:10.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 02:25:10
+2022-02-20 02:25:10.306 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 04:25:16.712 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 04:25:16
+2022-02-20 04:25:16.194 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 04:25:18.290 [simpleMessageListenerContainer-9] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@643f768b: tags=[[amq.ctag-7e3PKMc7fLY0-_MiW164aQ, amq.ctag-QqvbBcVs1x1diKRZ2qRACw]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@29d7cada [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52558], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 04:25:18.292 [simpleMessageListenerContainer-10] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 04:25:18.361 [simpleMessageListenerContainer-10] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:9/SimpleConnection@4923fa2b [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52591]
+2022-02-20 04:25:20.002 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 04:25:20
+2022-02-20 04:25:20.070 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 07:20:10.784 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 07:20:10
+2022-02-20 07:20:11.674 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 07:20:19.663 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 07:20:19
+2022-02-20 07:32:56.590 [simpleMessageListenerContainer-10] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@4edebfd4: tags=[[amq.ctag-eVl6DXSiHz7KtBbRtDDTcw, amq.ctag-kiqz92OU4Ozwln4D1XnLpw]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@4923fa2b [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52591], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 07:32:56.612 [simpleMessageListenerContainer-11] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 07:32:56.697 [simpleMessageListenerContainer-11] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 07:33:01.875 [simpleMessageListenerContainer-11] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@6ff85480: tags=[[]], channel=null, acknowledgeMode=MANUAL local queue size=0
+2022-02-20 07:33:01.877 [simpleMessageListenerContainer-12] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 07:33:02.196 [simpleMessageListenerContainer-12] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:12/SimpleConnection@3c33f5cb [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52613]
+2022-02-20 09:33:09.940 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 09:33:09
+2022-02-20 09:33:10.034 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 09:33:20.009 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 09:33:20
+2022-02-20 09:33:20.088 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 09:33:30.005 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 09:33:30
+2022-02-20 09:33:30.071 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 11:33:38.476 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 11:33:38
+2022-02-20 11:33:39.892 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 11:33:40.010 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 11:33:40
+2022-02-20 11:33:40.078 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 13:33:49.959 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 13:33:49
+2022-02-20 13:33:51.425 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 13:33:53.041 [simpleMessageListenerContainer-12] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@ab69fcf: tags=[[amq.ctag-WHEd8OezP8uzIKHtpoZBBQ, amq.ctag-X5REJrax6DjZkIrKYEAXtA]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,1), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@3c33f5cb [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52613], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 13:33:53.054 [simpleMessageListenerContainer-13] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 13:33:53.129 [simpleMessageListenerContainer-13] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:13/SimpleConnection@4bbc0a66 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52648]
+2022-02-20 14:21:04.726 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 14:21:04
+2022-02-20 14:21:06.165 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 14:21:10.005 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 14:21:10
+2022-02-20 14:21:10.073 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:53:50.897 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:53:50
+2022-02-20 15:54:10.653 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:54:19.988 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:54:19
+2022-02-20 15:54:20.215 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:54:29.994 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:54:29
+2022-02-20 15:54:30.055 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:54:39.999 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:54:39
+2022-02-20 15:54:40.221 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:54:47.309 [simpleMessageListenerContainer-13] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Restarting Consumer@7d0efff0: tags=[[amq.ctag-5vBuH4zvhSccDDQOamCeaw, amq.ctag-PypjcvoQg7AibLtrjxLv8w]], channel=Cached Rabbit Channel: PublisherCallbackChannelImpl: AMQChannel(amqp://hz@8.142.46.67:5672/,2), conn: Proxy@1dfc14c5 Shared Rabbit Connection: SimpleConnection@4bbc0a66 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52648], acknowledgeMode=MANUAL local queue size=0
+2022-02-20 15:54:47.315 [simpleMessageListenerContainer-14] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 15:54:47.430 [simpleMessageListenerContainer-14] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4f1f6d6b:14/SimpleConnection@5208fc00 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52756]
+2022-02-20 15:54:49.998 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:54:49
+2022-02-20 15:54:50.071 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:55:00.002 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:55:00
+2022-02-20 15:55:00.128 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:55:10.004 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:55:10
+2022-02-20 15:55:10.069 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:55:20.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:55:20
+2022-02-20 15:55:20.263 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:55:30.003 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:55:30
+2022-02-20 15:55:30.072 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:55:40.000 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:55:40
+2022-02-20 15:55:40.135 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:55:50.003 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:55:50
+2022-02-20 15:55:50.096 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:56:00.001 [scheduling-1] INFO  com.hz.task.MailSendTask - 定时器任务: 2022/02/20 15:56:00
+2022-02-20 15:56:00.318 [scheduling-1] INFO  com.hz.task.MailSendTask - 消息列表: []
+2022-02-20 15:56:05.957 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-02-20 15:56:05.958 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-02-20 15:56:06.011 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-20 15:56:06.027 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Shutdown ignored - container is not active already
+2022-02-20 15:56:06.103 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-20 15:56:12.792 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 19450 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-20 15:56:12.794 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-20 15:56:12.845 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-20 15:56:12.845 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-20 15:56:12.845 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-20 15:56:12.845 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-20 15:56:14.756 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-20 15:56:14.760 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-20 15:56:14.944 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 160ms. Found 0 Redis repository interfaces.
+2022-02-20 15:56:15.322 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$2e1b97f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-20 15:56:15.371 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-20 15:56:15.383 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-20 15:56:15.387 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-20 15:56:15.466 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-20 15:56:15.467 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-20 15:56:15.508 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-20 15:56:15.554 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-20 15:56:16.094 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-20 15:56:16.306 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3460 ms
+2022-02-20 15:56:18.493 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-20 15:56:18.623 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-20 15:56:18.847 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-20 15:56:19.493 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-20 15:56:19.768 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-20 15:56:19.786 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-20 15:56:19.846 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-20 15:56:20.067 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-20 15:56:20.116 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-20 15:56:20.263 [restartedMain] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#a53605c:0/SimpleConnection@1df92d48 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 52858]
+2022-02-20 15:56:20.625 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-20 15:56:20.642 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 8.435 seconds (JVM running for 9.346)
+2022-02-20 15:56:20.889 [RMI TCP Connection(3)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-20 15:56:20.904 [RMI TCP Connection(3)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2022-02-20 15:56:20.978 [RMI TCP Connection(2)-192.168.31.54] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-20 15:56:22.502 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-20 15:56:22.504 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-20 16:47:31.474 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Waiting for workers to finish.
+2022-02-20 16:47:31.632 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2022-02-20 16:47:31.653 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-20 16:47:31.661 [SpringContextShutdownHook] INFO  o.s.a.r.listener.SimpleMessageListenerContainer - Shutdown ignored - container is not active already
+2022-02-20 16:47:31.725 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

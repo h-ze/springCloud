@@ -73,12 +73,16 @@ mybatis :
     default-fetch-size: 100
     default-statement-timeout: 30
 
-logging:
-  level:
-    root: info
-    com.hz.dao: debug
+#logging:
+#  level:
+#    root: info
+#    com.hz.dao: debug
+#
+#    eureka.client.healthcheck.enabled: false
 
-    eureka.client.healthcheck.enabled: false
+
+#  file:
+#    name: E:\springboot.log
 
 
 

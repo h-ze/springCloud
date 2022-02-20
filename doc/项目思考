@@ -1,0 +1,9 @@
+rest风格的api一般是使用oauth2协议或者是rest + jwt模式，我们这里使用的是后者。
+
+改造shiro加jwt的过程主要分为以下几步:
+    禁用shiro session
+    jwt生成token与校验token
+    自定义shiro token
+    自定义realm中授权和认证方法的改造
+    自定义filter中的isAccessAllowed和onAccessDenied方法的改造
+    配置类改造
