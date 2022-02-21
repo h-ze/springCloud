@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 public class ExceptionController {
 
 
-    @ExceptionHandler
+    //@ExceptionHandler
     public JSONObject handleException(Exception e){
         JSONObject jsonObject = new JSONObject(true);
         jsonObject.put("code","500");

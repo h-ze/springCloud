@@ -21,6 +21,7 @@
         <module>cloud-auth-feign-seata-sentinel-stream-service-api9996</module>
         <module>cloud-auth-feign-seata-sentinel-stream-service-api9995</module>
         <module>cloud-auth-feign-seata-service-consumer-api9994</module>
+        <module>cloud-auth-feign-seate-sentinel-stream-provider-api9991</module>
 
     </modules>
 

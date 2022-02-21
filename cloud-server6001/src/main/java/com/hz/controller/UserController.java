@@ -1,7 +1,8 @@
 package com.hz.controller;
 
 import com.common.entity.*;
-import com.hz.config.MqttPushClient;
+import com.google.common.base.Objects;
+import com.hz.service.UserInfoService;
 import com.hz.service.UserService;
 import com.hz.utils.HttpsUtils;
 import com.hz.utils.JWTUtil;
@@ -37,6 +38,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserInfoService userInfoService;
 
     @Autowired
     private JWTUtil jwtUtil;
@@ -87,6 +91,9 @@ public class UserController {
         return "index";
     }
 
+
+
+
     /**
      * 用户注册
      * @param username 用户名
@@ -132,6 +139,7 @@ public class UserController {
             UserRoles userRoles = new UserRoles();
             userRoles.setUserId(userId);
             userRoles.setRoleId(type);
+
             int i = userService.save(addUser,userRoles);
             if (i >0){
                 return new ConvertResult(100000,"注册成功","用户已注册成功,请前往当前注册邮箱地址点击激活用户");
@@ -157,7 +165,7 @@ public class UserController {
     })
     //@RequestPart
     @ResponseBody
-    public ConvertResult login(@RequestParam("username") String username , @RequestParam("password")String password){
+    public ResponseResult login(@RequestParam("username") String username , @RequestParam("password")String password){
         log.info(username);
         log.info(password);
         User user = userService.getUser(username);
@@ -173,12 +181,12 @@ public class UserController {
                     boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
                     log.info("结果:",setRedisExpire);
                 }
-                return new ConvertResult(0,"登录成功",token);
+                return ResponseResult.successResult(100000,token);
             }else {
-                return new ConvertResult(999999,"登录失败,密码错误,请重新输入","");
+                return ResponseResult.successResult(100001,"登录失败,密码错误,请重新输入");
             }
         }else {
-            return new ConvertResult(999999,"登录失败,用户不存在","");
+            return ResponseResult.successResult(100002,"登录失败,用户不存在");
         }
     }
 
@@ -189,7 +197,7 @@ public class UserController {
     @ApiOperation(value ="退出登录",notes="使token过期")
     @PutMapping("/logout")
     @ResponseBody
-    public ConvertResult logout() {
+    public ResponseResult logout() {
         Subject subject = SecurityUtils.getSubject();
         String subjectPrincipal = (String) subject.getPrincipal();
         log.info("退出登录前的token:"+subjectPrincipal);
@@ -200,10 +208,10 @@ public class UserController {
         //需要删除redis里的关于登录的key
 
         String kdTopic = "pos_message_all";
-        MqttPushClient.getInstance().publish(kdTopic, "稍微来点鸡血");
+        //MqttPushClient.getInstance().publish(kdTopic, "稍微来点鸡血");
         //return new ResponseEntity<>("OK", HttpStatus.OK);
 
-        return new ConvertResult(0,"退出登录","退出登录成功");
+        return ResponseResult.successResult(100000,"退出登录成功");
     }
 
     /**
@@ -217,13 +225,13 @@ public class UserController {
             @ApiImplicitParam(name = "password", value = "用户密码",required = true, paramType="form")
     })
     @ResponseBody
-    public ConvertResult deleteUser(String password){
+    public ResponseResult deleteUser(String password){
         String principal = (String) SecurityUtils.getSubject().getPrincipal();
         Claims claims = jwtUtil.parseJWT(principal);
         String userId = (String)claims.get("userId");
         User user = userService.getUserByUserId(userId);
         if (user==null){
-            return new ConvertResult(0,"删除失败","用户不存在");
+            return ResponseResult.successResult(100001,"删除失败,用户不存在");
         }
         String sha = SaltUtil.shiroSha(password ,user.getSalt());
         log.info(sha);
@@ -235,12 +243,12 @@ public class UserController {
                     boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
                     log.info("结果:",setRedisExpire);
                 }
-                return new ConvertResult(0,"注销成功,如需帐号请重新注册","");
+                return ResponseResult.successResult(100000,"注销成功,如需帐号请重新注册");
             }else {
-                return new ConvertResult(0,"注销失败,请稍后重试","");
+                return ResponseResult.successResult(100002,"注销失败,请稍后重试");
             }
         }else {
-            return new ConvertResult(999999,"注销失败,密码错误,请重新输入","");
+            return ResponseResult.successResult(100003,"注销失败,密码错误,请重新输入");
         }
     }
 
@@ -257,13 +265,13 @@ public class UserController {
             @ApiImplicitParam(name = "newPassword", dataType = "String",value = "新密码", paramType = "form",required = true)
     })
     @ResponseBody
-    public ConvertResult updateUserPassword(String password,String newPassword){
+    public ResponseResult updateUserPassword(String password,String newPassword){
         String principal = (String) SecurityUtils.getSubject().getPrincipal();
         Claims claims = jwtUtil.parseJWT(principal);
         String userId = (String)claims.get("userId");
         User user = userService.getUserByUserId(userId);
         if (user==null){
-            return new ConvertResult(0,"修改密码失败","用户不存在");
+            return ResponseResult.successResult(100003,"修改密码失败,用户不存在");
         }
         String sha = SaltUtil.shiroSha(password ,user.getSalt());
         log.info(sha);
@@ -276,12 +284,12 @@ public class UserController {
                 //将redis中的信息删除或设置一个密码被修改的标识
                 //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
                 //logger.info("结果:",setRedisExpire);
-                return new ConvertResult(0,"密码修改成功,请重新登录","");
+                return ResponseResult.successResult(100000,"密码修改成功,请重新登录");
             }else {
-                return new ConvertResult(0,"修改密码失败,请稍后重试","");
+                return ResponseResult.successResult(100001,"修改密码失败,请稍后重试");
             }
         }else {
-            return new ConvertResult(999999,"修改密码失败,请输入正确的密码","");
+            return ResponseResult.successResult(100002,"修改密码失败,请输入正确的密码");
         }
     }
 
@@ -298,16 +306,6 @@ public class UserController {
     }
 
     /**
-     * test
-     * @return ConvertResult对象
-     */
-    @GetMapping(value = "test")
-    @ResponseBody
-    public ConvertResult test(){
-        return new ConvertResult(0,"测试权限1","权限测试成功");
-    }
-
-    /**
      *  /unauthorized/{message
      * @param message 信息
      * @return ResultMap对象
@@ -321,20 +319,32 @@ public class UserController {
     //@RequestBody不能用@ApiImplicitParams注解,不会生效,应该使用 @ApiParam
     /**
      * 编辑用户个人信息
-     * @param userMessage 用户个人信息
+     * @param userInfo 用户个人信息
      * @return ConvertResult对象
      */
     @ApiOperation(value ="编辑用户个人信息",notes="用来编辑用户个人信息")
     @PostMapping("/edit")
     @ResponseBody
-    public ConvertResult updateUserMessage(@RequestBody() @ApiParam(name = "body",value = "用户个人信息",required = true) @Validated UserMessage userMessage){
+    public ResponseResult updateUserMessage(@RequestBody() @ApiParam(name = "body",value = "用户个人信息",required = true) @Validated UserInfo userInfo){
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        Claims claims = jwtUtil.parseJWT(principal);
+        String userId = (String)claims.get("userId");
 
-        log.info("用户信息: {}",userMessage);
+        userInfo.setUserId(userId);
+        log.info("用户信息: {}",userInfo);
+        int i = userInfoService.updateUserInfo(userInfo);
+        if (i>0){
+            return ResponseResult.successResult(100000,userInfo);
+
+        }else {
+            return ResponseResult.successResult(100001,userInfo);
+
+        }
         /*String fullName = userMessage.getFullName();
         if (fullName ==null){
             return new ConvertResult(999999,"参数错误","fullName不能为空");
         }*/
-        return new ConvertResult(0,"修改成功","用户已修改");
+        //return new ConvertResult(0,"修改成功","用户已修改");
     }
 
     /**
@@ -344,12 +354,15 @@ public class UserController {
     @ApiOperation(value ="获取用户个人信息",notes="用来获取用户个人信息")
     @GetMapping("/edit")
     @ResponseBody
-    public ResponseMessageWithoutException<User> getUserMessage(){
+    public ResponseResult getUserMessage(){
         String principal = (String) SecurityUtils.getSubject().getPrincipal();
         Claims claims = jwtUtil.parseJWT(principal);
         String userId = (String)claims.get("userId");
-        User user = userService.getUserByUserId(userId);
-        return new ResponseMessageWithoutException<>(0, "获取成功", user, "用户信息已获取");
+        //User user = userService.getUserByUserId(userId);
+        //String userId ="1125";
+
+        UserInfo userInfo = userInfoService.getUserInfo(userId);
+        return ResponseResult.successResult(100000,userInfo);
     }
 
     /**
@@ -375,36 +388,38 @@ public class UserController {
     @ApiOperation(value ="解绑qq或微信",notes="用户解绑第三方微信或qq快捷登录方式")
     @PutMapping(value = "/unbind",consumes = "application/x-www-form-urlencoded")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "type",value = "qq or wechat",paramType = "form",dataType = "string",allowableValues = "qq,wechat", required = true)
+            @ApiImplicitParam(name = "type",value = "qq or wechat",paramType = "query",dataType = "string",allowableValues = "qq,wechat", required = true)
     })
     @ResponseBody
-    public ConvertResult unbind(@RequestParam String type){
+    public ResponseResult unbind(@RequestParam String type){
         log.info("type:"+type);
-        return new ConvertResult(0,"解绑成功","用户已解绑");
+        boolean qq = Objects.equal(type, "qq");
+        if (qq){
+            log.info("解绑qq");
+        }else {
+            log.info("解绑wechat");
+        }
+        return ResponseResult.successResult(100000,"解绑成功,用户已解绑");
     }
 
     /**
      * 验证用户是否已注册
      * @param email 邮箱
-     * @param phone_number 手机号
      * @return ConvertResult对象
      */
     @ApiOperation(value ="验证用户是否已注册",notes="验证用户是否已注册")
     @GetMapping(value = "/exists"/*,consumes = "application/x-www-form-urlencoded"*/)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "email",value = "邮箱",paramType = "query",dataType = "String",required = true),
-            @ApiImplicitParam(name = "phone_number",value = "手机号",paramType = "query",dataType = "String",required = true)
+            //@ApiImplicitParam(name = "phone_number",value = "手机号",paramType = "query",dataType = "String",required = true)
     })
     @ResponseBody
-    public ResponseResult<String> exists(@RequestParam("email") String email,@RequestParam("phone_number") String phone_number){
+    public ResponseResult<String> exists(@RequestParam("email") String email/*,@RequestParam("phone_number") String phone_number*/){
         log.info("email:"+email);
-        log.info("phone_number:"+phone_number);
+        //log.info("phone_number:"+phone_number);
         User user = userService.getUser(email);
         log.info("用户为: {}"+user);
-        if (user ==null ){
-            return new ResponseResult(999999,"用户不存在","查询成功");
-        }
-        return new ResponseResult(100000,"用户存在","查询成功");
+        return ResponseResult.successResult(100000,user);
     }
 
 }

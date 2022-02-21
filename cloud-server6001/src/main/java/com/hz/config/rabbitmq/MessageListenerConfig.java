@@ -27,7 +27,7 @@ public class MessageListenerConfig {
         //设置一个队列
         //container.setQueueNames("TestDirectQueue");
         //如果同时设置多个如下： 前提是队列都是必须已经创建存在的
-          container.setQueueNames(MailConstants.MAIL_QUEUE_NAME,"test");
+        container.setQueueNames(MailConstants.MAIL_QUEUE_NAME,"test");
 
 
         //另一种设置队列的方法,如果使用这种情况,那么要设置多个,就使用addQueues

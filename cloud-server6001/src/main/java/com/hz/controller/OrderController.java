@@ -27,12 +27,17 @@ public class OrderController {
     @GetMapping("getOrder")
     @RequiresRoles(value = {"admin","user"}) //用来判断角色 同时具有admin user
     @RequiresPermissions("user:update:01") //用来判断权限字符串
-    public void getOrder(){
+    @ApiOperation(value = "获取订单",notes = "获取订单信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id",value = "订单id",paramType = "query",dataType = "String",required = true)
+    })
+    public ResponseResult getOrder(@RequestParam("id")String id){
         Subject subject = SecurityUtils.getSubject();
-        subject.hasRole("admin");
+        boolean admin = subject.hasRole("admin");
+        return ResponseResult.successResult(100000,admin);
     }
 
-    @GetMapping("/c/get/{id}")
+    @GetMapping("/get/{id}")
     @ApiOperation(value = "获取订单信息",notes = "获取订单信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id",value = "订单id",paramType = "path",dataType = "String",required = true)

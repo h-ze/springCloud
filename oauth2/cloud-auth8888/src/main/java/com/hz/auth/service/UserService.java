@@ -22,6 +22,7 @@ import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
@@ -123,6 +124,9 @@ public class UserService implements UserDetailsService {
                  role.setUrls(jdbcTemplate.queryForList("select distinct url from permission where status=1 and type=2 and permission_id in(select permission_id from role_permission where role_id in('"+role.getCode()+"'))",String.class));
             }
         }
+
+        //userDto.setPassword(new BCryptPasswordEncoder().encode(AESUtil.decrypt(userDto.getPassword(),null)));
+
         userDto.setPassword(passwordEncoder.encode(AESUtil.decrypt(userDto.getPassword(),null)));
         userDto.setRoles(userRoles);
         SecurityUser securityUser = new SecurityUser(userDto);

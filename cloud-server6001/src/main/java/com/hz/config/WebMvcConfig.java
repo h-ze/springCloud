@@ -86,7 +86,7 @@ class JsonHtmlXssDeserializer extends JsonDeserializer<String> {
     public String deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
         String value = jsonParser.getValueAsString();
         if (value != null) {
-            return StringEscapeUtils.escapeHtml4(value.toString());
+            return StringEscapeUtils.escapeHtml4(value);
         }
         return value;
     }

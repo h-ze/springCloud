@@ -16,7 +16,7 @@ public class TestController {
     @ApiOperation("测试")
     //@RequiresPermissions("upms:log:read")
     @GetMapping("test")
-    public String test(
+    public ResponseResult test(
             @RequestParam(required = false, defaultValue = "0", value = "offset") int offset,
             @RequestParam(required = false, defaultValue = "10", value = "limit") int limit,
             @RequestParam(required = false, defaultValue = "", value = "search") String search,
@@ -25,6 +25,6 @@ public class TestController {
             logger.debug("测试");
             logger.error("测试");
             logger.info("测试");
-            return "success";
+            return ResponseResult.successResult(100000,"测试成功");
     }
 }

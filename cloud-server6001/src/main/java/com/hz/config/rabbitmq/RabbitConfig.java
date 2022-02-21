@@ -83,14 +83,6 @@ public class RabbitConfig {
         return new Queue(MailConstants.MAIL_QUEUE_NAME, true);
     }
 
-    // 配置一个测试工作模型队列 无实际意义
-    @Bean
-    Queue testQueue() {
-        // 支持持久化
-        return new Queue("test", true);
-
-    }
-
     @Bean
     DirectExchange mailExchange() {
         return new DirectExchange(MailConstants.MAIL_EXCHANGE_NAME, true, false);
@@ -100,6 +92,24 @@ public class RabbitConfig {
     @Bean
     Binding mailBinding() {
         return BindingBuilder.bind(mailQueue()).to(mailExchange()).with(MailConstants.MAIL_QUEUE_NAME);
+    }
+
+    // 配置一个测试工作模型队列 无实际意义
+    @Bean
+    Queue testQueue() {
+        // 支持持久化
+        return new Queue("test", true);
+
+    }
+
+    @Bean
+    DirectExchange testExchange(){
+        return new DirectExchange("test.exchange",true,false);
+    }
+
+    @Bean
+    Binding testBinding() {
+        return BindingBuilder.bind(testQueue()).to(testExchange()).with("test");
     }
 
     @Bean

@@ -1,6 +1,8 @@
 package com.common.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -11,10 +13,13 @@ public class User implements Serializable{
     private Integer id;
     private String name;
     private Integer age;
+
+    @JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
     private Date bir;
     private String password;
     private String salt;
     private String userId;
+    private String status;
 
 
     private List<Role> roles;
@@ -94,6 +99,14 @@ public class User implements Serializable{
         this.userId = userId;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -104,6 +117,7 @@ public class User implements Serializable{
                 ", password='" + password + '\'' +
                 ", salt='" + salt + '\'' +
                 ", userId='" + userId + '\'' +
+                ", status='" + status + '\'' +
                 ", roles=" + roles +
                 '}';
     }

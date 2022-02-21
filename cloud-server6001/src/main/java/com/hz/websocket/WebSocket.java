@@ -12,7 +12,6 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
 
@@ -22,9 +21,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @Component
 @ServerEndpoint(value = "/websocket/{name}")
-public class WebSocketController {
+public class WebSocket {
 
-    private static final Logger logger = LoggerFactory.getLogger(WebSocketController.class);
+    private static final Logger logger = LoggerFactory.getLogger(WebSocket.class);
 
     /**
      *  与某个客户端的连接对话，需要通过它来给客户端发送消息
@@ -39,7 +38,7 @@ public class WebSocketController {
     /**
      *  用于存所有的连接服务的客户端，这个对象存储是安全的
      */
-    private static ConcurrentHashMap<String, WebSocketController> webSocketSet = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, WebSocket> webSocketSet = new ConcurrentHashMap<>();
 
 
     @OnOpen

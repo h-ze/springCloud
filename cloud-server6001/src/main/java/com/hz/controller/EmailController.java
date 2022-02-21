@@ -3,6 +3,8 @@ package com.hz.controller;
 import com.hz.service.EmailService;
 import com.common.entity.Email;
 import com.common.entity.ResponseResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,12 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("email")
+@Api(tags = "邮件接口")
+
 public class EmailController {
 
     @Autowired
     EmailService emailService;
 
     @PostMapping
+    @ApiOperation(value ="获取文档列表",notes="获取文档列表")
+
     public ResponseResult<String> resendEmail(String email){
         Email emailById = emailService.getEmail(email);
         int i;

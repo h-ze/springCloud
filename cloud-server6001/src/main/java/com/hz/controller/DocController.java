@@ -1,14 +1,26 @@
 package com.hz.controller;
 
 
-import com.common.entity.ConvertResult;
+import com.common.entity.Document;
+import com.common.entity.PageRequest;
+import com.common.entity.PageResult;
 import com.common.entity.ResponseResult;
+import com.hz.service.DocService;
+import com.hz.utils.JWTUtil;
+import io.jsonwebtoken.Claims;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.List;
 
 @RestController
 @Api(tags = "文件列表接口")
@@ -16,7 +28,36 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class DocController {
 
-    //private static final Logger logger = LoggerFactory.getLogger(DocController.class);
+    private static final Logger logger = LoggerFactory.getLogger(DocController.class);
+
+    @Autowired
+    private DocService docService;
+
+    @Autowired
+    private JWTUtil jwtUtil;
+
+    @ApiOperation(value = "更新文档信息",notes = "更新文档信息")
+    @PutMapping("/updateDocument")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "docId",value = "文档id",paramType = "query",dataType = "String",required = true),
+            @ApiImplicitParam(name = "encryptConfig",value = "加密策略",paramType = "query",dataType = "String"),
+            @ApiImplicitParam(name = "docName",value = "文档名称",paramType = "query",dataType = "String")
+    })
+    public ResponseResult updateDocument(@RequestParam("docId") String docId,
+                                         @RequestParam("encryptConfig")String encryptConfig,
+                                         @RequestParam("docName")String docName){
+        Document docServiceDocument = docService.getDocument(docId);
+        docServiceDocument.setEncryptConfig(encryptConfig);
+        docServiceDocument.setDocName(docName);
+
+        int i = docService.updateDocument(docServiceDocument);
+        if (i>0){
+            return ResponseResult.successResult(100000,docServiceDocument);
+
+        }else {
+            return ResponseResult.errorResult(999999,"更新失败");
+        }
+    }
 
     /**
      * 获取文档列表
@@ -28,9 +69,27 @@ public class DocController {
             @ApiImplicitParam(name = "page",value = "页数",paramType = "query",dataType = "Integer",required = true),
             @ApiImplicitParam(name = "per_page",value = "每页数量",paramType = "query",dataType = "Integer",required = true)
     })
-    public ConvertResult getDocList(@RequestParam("per_page")Integer per_page,
-                                    @RequestParam("log_type")Integer log_type){
-        return new ConvertResult(100000,"获取文档列表","获取文档列表成功");
+    public ResponseResult getDocList(@RequestParam("per_page")Integer per_page,
+                                     @RequestParam("page")Integer page){
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        Claims claims = jwtUtil.parseJWT(principal);
+        String userId = (String)claims.get("userId");
+        PageRequest pageRequest = new PageRequest();
+        pageRequest.setPageNum(page);
+        pageRequest.setPageSize(per_page);
+
+        PageResult docsPage = docService.getDocsPage(pageRequest,userId);
+        return ResponseResult.successResult(100000,docsPage);
+    }
+
+    @GetMapping("/getDocumentById")
+    @ApiOperation(value = "获取文档信息",notes = "获取文档信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "docId",value = "文档id",paramType = "query",dataType = "String",required = true)
+    })
+    public ResponseResult getDocumentById(@RequestParam("docId")String docId){
+        Document document = docService.getDocument(docId);
+        return ResponseResult.successResult(100000,document);
     }
 
     @ApiOperation(value = "删除文档信息",notes = "删除文档信息")
@@ -38,8 +97,41 @@ public class DocController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "docId",value = "文档id",paramType = "path",dataType = "String",required = true)
     })
-    public ResponseResult<String> deleteDocuments(@PathVariable("docId") String docId){
-        return new ResponseResult<>(100000, "删除文档信息成功", "删除文档信息成功");
+    public ResponseResult deleteDocuments(@PathVariable("docId") String docId){
+
+        int i = docService.deleteDocument(docId);
+        if (i>0){
+            return ResponseResult.successResult(100000,"删除文档成功");
+        }
+        return ResponseResult.errorResult(999999,"删除文档失败");
+    }
+
+    @ApiOperation(value = "新增文档信息",notes = "新增文档信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "docName",value = "文档名",paramType = "query",dataType = "String",required = false),
+            @ApiImplicitParam(name = "encryptConfig",value = "加密策略",paramType = "query",dataType ="String",required = false) ,
+            @ApiImplicitParam(name = "docId",value = "文档id",paramType = "query",dataType = "String",required = true)
+    })
+    @PostMapping("/addDocument")
+    public ResponseResult addDocument(@RequestParam("docName") String docName,
+                                      @RequestParam("encryptConfig") String encryptConfig,
+                                      @RequestParam("docId") String docId){
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        Claims claims = jwtUtil.parseJWT(principal);
+        String userId = (String)claims.get("userId");
+        Document document = new Document();
+        document.setUserId(userId);
+        document.setCAppId("111010");
+        document.setCmisId("213213");
+        document.setCreateDate(new Date());
+        document.setDocName(docName);
+        document.setEncryptConfig(encryptConfig);
+        document.setDocId(docId);
+        int create = docService.createDocument(document);
+        if (create>0){
+            return ResponseResult.successResult(100000,document);
+        }
+        return ResponseResult.errorResult(999999,new Document());
     }
 
 }

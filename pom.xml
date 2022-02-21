@@ -53,7 +53,6 @@
 
         <module>oauth2</module>
         <module>support</module>
-        <module>datasource</module>
     </modules>
 
     <!--统一管理jar包版本-->

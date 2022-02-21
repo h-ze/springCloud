@@ -19,6 +19,7 @@ nginx +网关 +微服务
 
 zuul1 是阻塞框架
 gateway是异步非阻塞
+
 Spring WebFlux是spring5.0之后引入的新的响应式框架，区别于springmvc，它不需要依赖于servlet api，是完全的异步非阻塞的，并且是基于Reactor来实现响应式流规范
 
 
@@ -129,7 +130,6 @@ git官方地址:
 https://github.com/alibaba/Sentinel/wiki/%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6#%E5%9F%BA%E4%BA%8E%E8%B0%83%E7%94%A8%E5%85%B3%E7%B3%BB%E7%9A%84%E9%99%90%E6%B5%81
 
 需要了解：如何将sentinel导入到nacos
-
 
 seata
 分布式事务解决方案是业务层面的解决方案，只依赖于单台数据库的事务能力

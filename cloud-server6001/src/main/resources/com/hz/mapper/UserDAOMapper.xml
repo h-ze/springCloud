@@ -12,7 +12,7 @@
     </resultMap>-->
 
     <insert id="save" parameterType="com.common.entity.User">
-        INSERT INTO user VALUES (#{id},#{name},#{age},#{bir},#{password},#{salt},#{userId})
+        INSERT INTO user VALUES (#{id},#{name},#{age},#{bir},#{password},#{salt},#{userId},#{status})
     </insert>
 
     <insert id="addUserRoles" parameterType="com.common.entity.UserRoles">
@@ -24,7 +24,11 @@
     </select>
 
     <select id="getUser" parameterType="com.common.entity.User" resultType="com.common.entity.User">
-        SELECT id,name,age,bir,password,salt,userId FROM user WHERE name = #{username}
+        SELECT id,name,age,bir,userId FROM user WHERE
+        <if test="email != '' and email!= null">
+            name = #{email}
+        </if>
+
     </select>
 
     <select id="getUserById" parameterType="String" resultType="com.common.entity.User">

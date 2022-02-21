@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api(tags = "测试防刷注解接口")
+//@Api(tags = "测试防刷注解接口")
 @RequestMapping("Fangshua")
 public class FangshuaController {
 
-    @ApiOperation(value ="防刷测试",notes="测试防刷")
+    //@ApiOperation(value ="防刷测试",notes="测试防刷")
     @AccessLimit(seconds = 5, maxCount = 5, needLogin = true)
     @GetMapping("/fangshua")
     public ResponseResult<String> fangshua() {
@@ -21,7 +21,7 @@ public class FangshuaController {
     }
 
 
-    @ApiOperation(value ="不防刷",notes="测试不防刷")
+    //@ApiOperation(value ="不防刷",notes="测试不防刷")
     @AccessLimit(seconds = 5, maxCount = 5, needLogin = false)
     @GetMapping("/dontfangshua")
     public ResponseResult<String> dontfangshua() {

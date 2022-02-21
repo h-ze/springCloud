@@ -1,5 +1,6 @@
 package com.hz.service.impl;
 
+import com.common.entity.MailConstants;
 import com.hz.dao.EmailDao;
 import com.hz.dao.UserDAO;
 import com.hz.service.UserService;
@@ -7,6 +8,8 @@ import com.common.entity.Email;
 import com.common.entity.User;
 import com.common.entity.UserRoles;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +28,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private EmailDao emailDao;
 
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
     @Override
     public int save(User user, UserRoles userRoles) {
         //user.setId(UUID.randomUUID().toString().replace("-",""));
@@ -37,6 +43,10 @@ public class UserServiceImpl implements UserService {
             email.setEmail(user.getName());
             email.setStatus(2);
             int i = emailDao.addEmailMessage(email);
+
+            rabbitTemplate.convertAndSend(MailConstants.MAIL_EXCHANGE_NAME, MailConstants.MAIL_QUEUE_NAME,email, new CorrelationData(String.valueOf(email.getEmailId())));
+
+
             log.info("i: {}",i);
         }
 
