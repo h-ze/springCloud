@@ -1,13 +1,11 @@
 package com.hz.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.common.entity.*;
 import com.google.common.base.Objects;
 import com.hz.service.UserInfoService;
 import com.hz.service.UserService;
-import com.hz.utils.HttpsUtils;
-import com.hz.utils.JWTUtil;
-import com.hz.utils.RedisUtil;
-import com.hz.utils.SaltUtil;
+import com.hz.utils.*;
 import io.jsonwebtoken.Claims;
 import io.swagger.annotations.*;
 import org.apache.shiro.SecurityUtils;
@@ -27,6 +25,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import static com.common.constant.Constant.TOKEN;
+import static com.common.constant.Constant.USERROLES;
 import static com.hz.config.BeanConfig.isOpenRedis;
 
 @Controller
@@ -45,9 +45,11 @@ public class UserController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    @Autowired
-    private RedisUtil redisUtil;
+    //@Autowired
+    //private RedisUtil redisUtil;
 
+    @Autowired
+    private RedisUtils redisUtils;
 
 
     @Autowired
@@ -123,7 +125,7 @@ public class UserController {
         log.info(password);
         User user = userService.getUser(username);
         if (user!=null){
-            return new ConvertResult(0,"添加失败","用户已存在");
+            return new ConvertResult(100002,"添加失败","用户已存在");
         }else {
             User addUser = new User();
             addUser.setName(username);
@@ -132,6 +134,7 @@ public class UserController {
             addUser.setPassword(result.get("password"));
             addUser.setBir(new Date());
             addUser.setAge(25);
+            addUser.setStatus("2");
             long l = System.currentTimeMillis();
             String userId = String.valueOf(l);
             addUser.setUserId(userId);
@@ -144,7 +147,7 @@ public class UserController {
             if (i >0){
                 return new ConvertResult(100000,"注册成功","用户已注册成功,请前往当前注册邮箱地址点击激活用户");
             }else {
-                return new ConvertResult(999999,"注册失败","用户注册失败");
+                return new ConvertResult(100001,"注册失败","用户注册失败");
             }
         }
     }
@@ -168,7 +171,7 @@ public class UserController {
     public ResponseResult login(@RequestParam("username") String username , @RequestParam("password")String password){
         log.info(username);
         log.info(password);
-        User user = userService.getUser(username);
+        User user = userService.getUserWithRoles(username);
         if (user!=null){
             String sha = SaltUtil.shiroSha(password ,user.getSalt());
             log.info(sha);
@@ -177,9 +180,14 @@ public class UserController {
                         user.getName(),user.getUserId(), user.getSalt());
                 log.info(token);
                 if (isOpenRedis()){
+
                     //将登录的token存储到redis中
-                    boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
-                    log.info("结果:",setRedisExpire);
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put(TOKEN,token);
+                    jsonObject.put(USERROLES,user.getRoles());
+                    boolean set = redisUtils.set(user.getUserId(), jsonObject, 600);
+                    //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
+                    log.info("结果: {}",set);
                 }
                 return ResponseResult.successResult(100000,token);
             }else {
@@ -202,14 +210,12 @@ public class UserController {
         String subjectPrincipal = (String) subject.getPrincipal();
         log.info("退出登录前的token:"+subjectPrincipal);
         subject.logout();
-        String principal = (String)subject.getPrincipal();
-        log.info("退出登录的token:"+principal);
-
-        //需要删除redis里的关于登录的key
 
         String kdTopic = "pos_message_all";
         //MqttPushClient.getInstance().publish(kdTopic, "稍微来点鸡血");
         //return new ResponseEntity<>("OK", HttpStatus.OK);
+        String principal = (String)subject.getPrincipal();
+        log.info("退出登录的token:"+principal);
 
         return ResponseResult.successResult(100000,"退出登录成功");
     }
@@ -238,11 +244,7 @@ public class UserController {
         if (sha.equals(user.getPassword())){
             int i = userService.deleteUser(user.getUserId(), sha);
             if (i >0){
-                if (isOpenRedis()){
-                    //将redis中的信息删除
-                    boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
-                    log.info("结果:",setRedisExpire);
-                }
+
                 return ResponseResult.successResult(100000,"注销成功,如需帐号请重新注册");
             }else {
                 return ResponseResult.successResult(100002,"注销失败,请稍后重试");

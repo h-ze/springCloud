@@ -1,6 +1,6 @@
 package com.hz.redis;
 
-import com.hz.utils.ApplicationContextUtils;
+import com.common.utils.SpringContextUtils;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 import org.slf4j.Logger;
@@ -83,7 +83,7 @@ public class RedisCache<K,V> implements Cache<K,V> {
     }
 
     private RedisTemplate getRedisTemplate(){
-        RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextUtils.getBean("redisTemplate");
+        RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
         return redisTemplate;

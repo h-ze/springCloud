@@ -3,8 +3,8 @@ package com.hz.interceptors;
 import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.exceptions.AlgorithmMismatchException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
+import com.common.utils.SpringContextUtils;
 import com.hz.config.shiro.ShiroCustomerRealm;
-import com.hz.utils.ApplicationContextUtils;
 import com.hz.utils.JWTUtil;
 import io.jsonwebtoken.Claims;
 import org.apache.shiro.SecurityUtils;
@@ -46,7 +46,7 @@ public class ShiroInterceptorConfig implements HandlerInterceptor {
             try {
                 //JWTUtils.verify(token);
 
-                RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextUtils.getBean("redisTemplate");
+                RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
                 redisTemplate.setKeySerializer(new StringRedisSerializer());
                 redisTemplate.setHashKeySerializer(new StringRedisSerializer());
                 Object o = redisTemplate.opsForValue().get(token);

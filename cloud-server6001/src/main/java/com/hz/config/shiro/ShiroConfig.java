@@ -30,7 +30,6 @@ import static com.hz.config.BeanConfig.isOpenRedis;
 @Configuration
 public class ShiroConfig {
 
-
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
     /**
@@ -103,7 +102,7 @@ public class ShiroConfig {
 
         //拦截器需要放在最后 否则以上的放行可能会不生效
 
-        //filterChainDefinitionMap.put("/**","jwt");
+        filterChainDefinitionMap.put("/**","jwt");
 
 
         //默认认证界面路径

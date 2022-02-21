@@ -3,7 +3,7 @@ package com.hz.interceptors;
 import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.exceptions.AlgorithmMismatchException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import com.hz.utils.ApplicationContextUtils;
+import com.common.utils.SpringContextUtils;
 import com.hz.utils.JWTUtil;
 import io.jsonwebtoken.Claims;
 import org.slf4j.Logger;
@@ -38,7 +38,7 @@ public class JWTInterceptor  implements HandlerInterceptor {
             try {
                 //JWTUtils.verify(token);
 
-                RedisTemplate redisTemplate = (RedisTemplate) ApplicationContextUtils.getBean("redisTemplate");
+                RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
                 Object o = redisTemplate.opsForHash().get(token, "");
                 if (o==null){
                     jsonObject.put("token","无效参数");

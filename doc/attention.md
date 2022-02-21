@@ -1,13 +1,13 @@
 Service层处理逻辑
   主要业务放在service中，因为service中有事务处理
   
-rabbitmq 处理 基本完成
+1.rabbitmq 处理 基本完成 还需再多测试
 
-redis
+2.redis
 
-mongodb处理
+3.mongodb处理
 
-单元测试
+4.单元测试 处理完成
 Service层进行单元测试
 Spring Boot中单元测试类写在在src/test/java目录下，
 你可以手动创建具体测试类，如果是IDEA，则可以通过IDEA自动创建测试类，
@@ -38,16 +38,17 @@ MockMvc实现了对Http请求的模拟，能够直接使用网络的形式，转
 注册自定义扩展	                    NA	            @ExtendWit
 
 
-日志集成
-ok
+5.日志集成 处理完成 还需研究打印内容
+分别使用logback和log4j2两种方式 需要放开不同的依赖
+不使用log4j日志方式
 
-自动化部署 jenkins
+6.jenkins自动化部署 
 
-so文件位置
+7.so文件位置
 
-mybatis配置文件
+8.mybatis配置文件
 
-mysql (处理完成)
+9.mysql (处理完成)
 sql编写 (sql语句基本完成)
 select * from t_user where userid=#{userId}
 update t_user set username =#{username} where userid=#{userId}
@@ -55,8 +56,12 @@ delete from t_user where userid=#{userId}
 insert into t_user values(#{userId},#{username},#{age})
 查询语句参考 : https://zhuanlan.zhihu.com/p/153271429 
 
-连接超时 自动断开连接等问题
+-----连接超时 自动断开连接等问题
 
-mysql索引
+-----mysql索引
 
-gRpc
+10.gRpc
+
+11 oss阿里云
+
+12 null判断该如何处理

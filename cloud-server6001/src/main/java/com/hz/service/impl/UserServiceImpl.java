@@ -1,12 +1,14 @@
 package com.hz.service.impl;
 
 import com.common.entity.MailConstants;
+import com.hz.annotation.BaseService;
 import com.hz.dao.EmailDao;
 import com.hz.dao.UserDAO;
 import com.hz.service.UserService;
 import com.common.entity.Email;
 import com.common.entity.User;
 import com.common.entity.UserRoles;
+import com.hz.utils.RedisUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -17,9 +19,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.UUID;
 
+import static com.hz.config.BeanConfig.isOpenRedis;
+
 @Service("userService")
 @Transactional
 @Slf4j
+@BaseService
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -30,6 +35,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     @Override
     public int save(User user, UserRoles userRoles) {
@@ -73,6 +81,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserWithRoles(String username) {
+        User user = userDAO.getUser(username);
+        User rolesByUsername = userDAO.findRolesByUsername(username);
+        user.setRoles(rolesByUsername.getRoles());
+        return user;
+    }
+
+    @Override
     public User getUserByUserId(String userId) {
         return userDAO.getUserById(userId);
     }
@@ -84,16 +100,38 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int deleteUser(String userId, String password) {
+        if (isOpenRedis()){
+            //将redis中的信息删除
+            //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
+            redisUtils.del(userId);
+            boolean deleteKey = redisUtils.hasKey(userId);
+            log.info("结果:",deleteKey);
+        }
         return userDAO.deleteUserByOwner(userId, password);
     }
 
     @Override
     public int deleteUser(String userId) {
+        if (isOpenRedis()){
+            //将redis中的信息删除
+            //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
+            redisUtils.del(userId);
+            boolean deleteKey = redisUtils.hasKey(userId);
+            log.info("结果:",deleteKey);
+        }
         return userDAO.deleteUser(userId);
     }
 
     @Override
     public int updateUserPassword(User user) {
+        if (isOpenRedis()){
+            String userId = user.getUserId();
+            //将redis中的信息删除
+            //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
+            redisUtils.del(userId);
+            boolean deleteKey = redisUtils.hasKey(userId);
+            log.info("结果:",deleteKey);
+        }
         return userDAO.updateUser(user);
     }
 

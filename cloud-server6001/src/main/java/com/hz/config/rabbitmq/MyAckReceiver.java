@@ -16,7 +16,7 @@ import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+//@Component
 @Slf4j
 public class MyAckReceiver implements ChannelAwareMessageListener {
 
@@ -55,6 +55,7 @@ public class MyAckReceiver implements ChannelAwareMessageListener {
                 ObjectInputStream oInputStream=new ObjectInputStream(inputStream);
                 Object obj=oInputStream.readObject();
                 Email email = (Email) obj;
+                log.info("obj为: {}",obj);
                 log.info("email为: {} ",email);
                 Integer emailId = email.getEmailId();
 

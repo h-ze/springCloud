@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 //rabbitmq消费者回调 判断是否消费成功
-@Configuration
+//@Configuration
 public class MessageListenerConfig {
 
     @Autowired

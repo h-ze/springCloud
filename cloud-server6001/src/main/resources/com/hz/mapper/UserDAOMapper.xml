@@ -24,7 +24,7 @@
     </select>
 
     <select id="getUser" parameterType="com.common.entity.User" resultType="com.common.entity.User">
-        SELECT id,name,age,bir,userId FROM user WHERE
+        SELECT id,name,age,bir,userId,password,salt FROM user WHERE
         <if test="email != '' and email!= null">
             name = #{email}
         </if>

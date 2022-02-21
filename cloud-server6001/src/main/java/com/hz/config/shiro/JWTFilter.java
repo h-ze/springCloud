@@ -2,7 +2,9 @@ package com.hz.config.shiro;
 
 import com.alibaba.fastjson.JSONObject;
 import com.hz.utils.JWTUtil;
+import com.hz.utils.RedisUtils;
 import io.jsonwebtoken.*;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
@@ -26,11 +28,12 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JWTFilter.class);
 
-    @Autowired
-    private JWTUtil jwtUtil;
+    //@Autowired
+    //private JWTUtil jwtUtil;
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisUtils redisUtils;
+
 
     /**
      * 如果带有 token，则对 token 进行检查，否则直接通过
@@ -95,10 +98,19 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
             token = httpServletRequest.getParameter("token");
         }
 
+
+
+
+        Claims claims = JWTUtil.parseJWT(token);
+
         //在此处进行redis的验证
         logger.info("redis中进行token验证");
 
-        Claims claims = JWTUtil.parseJWT(token);
+        String userId = (String)claims.get("userId");
+        boolean hasKey = redisUtils.hasKey(userId);
+        if (!hasKey){
+            responseError(response, "token已过期,请重新登录");
+        }
 
         Date expiration = claims.getExpiration();
         logger.info(expiration.toString());

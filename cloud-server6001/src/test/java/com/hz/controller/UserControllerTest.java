@@ -1,6 +1,7 @@
 package com.hz.controller;
 
 import com.common.entity.ResponseResult;
+import com.hz.ServerApplication;
 import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -24,7 +26,7 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 class UserControllerTest {
 
@@ -32,7 +34,7 @@ class UserControllerTest {
 
     private static final Logger logger = org.slf4j.LoggerFactory.getLogger(UserControllerTest.class);
 
-    //@Autowired
+    @Autowired
     private UserController userController;
 
     @Autowired
@@ -81,7 +83,7 @@ class UserControllerTest {
     @Test
     void login() {
         System.out.println("登录");
-        ResponseResult test = userController.login("test", "123456");
+        ResponseResult test = userController.login("hz", "123456");
         logger.info("结果: {}",test);
 
 /*
