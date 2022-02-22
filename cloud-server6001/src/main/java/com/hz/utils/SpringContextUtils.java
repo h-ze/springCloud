@@ -1,4 +1,4 @@
-package com.common.utils;
+package com.hz.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 
 /**
  * @author 傅为地
@@ -15,6 +16,7 @@ import org.springframework.core.annotation.Order;
  */
 @Slf4j
 @Order(Ordered.HIGHEST_PRECEDENCE)
+@Component
 public class SpringContextUtils implements ApplicationContextAware {
     /**
      *Spring应用上下文环境

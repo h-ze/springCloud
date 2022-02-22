@@ -13,11 +13,18 @@
         <commons.lang.version>2.6</commons.lang.version>
         <jedis.version>2.9.0</jedis.version>
         <commons.io.version>2.5</commons.io.version>
+        <joda.time.version>2.9.9</joda.time.version>
     </properties>
 
     <artifactId>cloud-common</artifactId>
     <packaging>jar</packaging>
     <dependencies>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda.time.version}</version>
+        </dependency>
 
         <!-- 引入swagger -->
         <dependency>

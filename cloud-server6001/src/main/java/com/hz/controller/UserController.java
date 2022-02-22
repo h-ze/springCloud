@@ -45,8 +45,8 @@ public class UserController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    //@Autowired
-    //private RedisUtil redisUtil;
+    @Autowired
+    private RedisUtil redisUtil;
 
     @Autowired
     private RedisUtils redisUtils;
@@ -171,7 +171,7 @@ public class UserController {
     public ResponseResult login(@RequestParam("username") String username , @RequestParam("password")String password){
         log.info(username);
         log.info(password);
-        User user = userService.getUserWithRoles(username);
+        User user = userService.getUser(username);
         if (user!=null){
             String sha = SaltUtil.shiroSha(password ,user.getSalt());
             log.info(sha);
@@ -185,9 +185,9 @@ public class UserController {
                     JSONObject jsonObject = new JSONObject();
                     jsonObject.put(TOKEN,token);
                     jsonObject.put(USERROLES,user.getRoles());
-                    boolean set = redisUtils.set(user.getUserId(), jsonObject, 600);
-                    //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
-                    log.info("结果: {}",set);
+                    //boolean set = redisUtils.set(user.getUserId(), jsonObject, 600);
+                    boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
+                    //log.info("结果: {}",set);
                 }
                 return ResponseResult.successResult(100000,token);
             }else {

@@ -3,9 +3,9 @@ Service层处理逻辑
   
 1.rabbitmq 处理 基本完成 还需再多测试
 
-2.redis
+2.redis 已使用部分内容 shiro中的缓存使用的是redis
 
-3.mongodb处理
+3.mongodb处理 未安装mongodb
 
 4.单元测试 处理完成
 Service层进行单元测试
@@ -26,16 +26,16 @@ MockMvc实现了对Http请求的模拟，能够直接使用网络的形式，转
 
 两个版本中的大多数注释都是相同的，但很少有区别。这是一个快速比较。
 特征	                                JUNIT 4	        JUNIT 5
-声明一种测试方法	                    @Test	        @Test
+声明一种测试方法	                        @Test	        @Test
 在当前类中的所有测试方法之前执行	        @BeforeClass	@BeforeAll
 在当前类中的所有测试方法之后执行	        @AfterClass	    @AfterAll
 在每个测试方法之前执行	                @Before	        @BeforeEach
 每种测试方法后执行                   	@After	        @AfterEach
-禁用测试方法/类	                    @Ignore	        @Disabled
-测试工厂进行动态测试	                NA	            @TestFactory
-嵌套测试	                            NA	            @Nested
-标记和过滤	                        @Category	    @Tag
-注册自定义扩展	                    NA	            @ExtendWit
+禁用测试方法/类	                        @Ignore	        @Disabled
+测试工厂进行动态测试	                    NA	            @TestFactory
+嵌套测试	                                NA	            @Nested
+标记和过滤	                            @Category	    @Tag
+注册自定义扩展	                        NA	            @ExtendWit
 
 
 5.日志集成 处理完成 还需研究打印内容
@@ -60,8 +60,8 @@ insert into t_user values(#{userId},#{username},#{age})
 
 -----mysql索引
 
-10.gRpc
+10.gRpc 尝试过
 
-11 oss阿里云
+11 oss阿里云 已购买 已经实现上传文件 接下来需要整合springboot
 
 12 null判断该如何处理

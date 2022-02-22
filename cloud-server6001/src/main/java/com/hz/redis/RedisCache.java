@@ -1,6 +1,6 @@
 package com.hz.redis;
 
-import com.common.utils.SpringContextUtils;
+import com.hz.utils.SpringContextUtils;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheException;
 import org.slf4j.Logger;

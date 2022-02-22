@@ -16,6 +16,10 @@
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>-->
         <java.version>1.8</java.version>
         <shiro.version>1.3.1</shiro.version>
+        <qiniu.version>7.2.23</qiniu.version>
+        <aliyun.oss.version>2.5.0</aliyun.oss.version>
+        <qcloud.cos.version>4.4</qcloud.cos.version>
+        <joda.time.version>2.9.9</joda.time.version>
     </properties>
 
     <dependencies>
@@ -302,6 +306,12 @@
             <artifactId>logback-core</artifactId>
         </dependency>
 
+        <!-- 整合shiro-redis -->
+        <dependency>
+            <groupId>org.crazycake</groupId>
+            <artifactId>shiro-redis</artifactId>
+            <version>3.2.3</version>
+        </dependency>
 
         <!-- JUnit5单元测试框架 -->
         <!--<dependency>
@@ -323,7 +333,27 @@
             <scope>test</scope>
         </dependency>-->
 
-
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>${qiniu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>${aliyun.oss.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qcloud</groupId>
+            <artifactId>cos_api</artifactId>
+            <version>${qcloud.cos.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
     </dependencies>
 

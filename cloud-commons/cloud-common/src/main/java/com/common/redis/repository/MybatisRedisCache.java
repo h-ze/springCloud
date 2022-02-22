@@ -1,6 +1,6 @@
 package com.common.redis.repository;
 
-import com.common.utils.SpringContextUtils;
+import com.common.redis.autoconfig.SpringContextHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.cache.Cache;
 import org.springframework.dao.DataAccessException;
@@ -124,6 +124,6 @@ public class MybatisRedisCache implements Cache {
      * @return redisTemplate
      */
     public  RedisTemplate<String, Object> getRedisTemplate(){
-        return (RedisTemplate<String, Object>) SpringContextUtils.getBean("mybatisCache");
+        return (RedisTemplate<String, Object>) SpringContextHolder.getBean("mybatisCache");
     }
 }

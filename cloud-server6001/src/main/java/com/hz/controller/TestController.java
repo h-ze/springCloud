@@ -2,7 +2,11 @@ package com.hz.controller;
 
 import com.common.entity.ResponseResult;
 import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
+import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +19,7 @@ public class TestController {
 
     @ApiOperation("测试")
     //@RequiresPermissions("upms:log:read")
+    @RequiresRoles("admin")
     @GetMapping("test")
     public ResponseResult test(
             @RequestParam(required = false, defaultValue = "0", value = "offset") int offset,
@@ -25,6 +30,9 @@ public class TestController {
             logger.debug("测试");
             logger.error("测试");
             logger.info("测试");
-            return ResponseResult.successResult(100000,"测试成功");
+        SecurityManager securityManager = SecurityUtils.getSecurityManager();
+        Session session = SecurityUtils.getSubject().getSession();
+        logger.info("session: {}", session.getId());
+        return ResponseResult.successResult(100000,"测试成功");
     }
 }

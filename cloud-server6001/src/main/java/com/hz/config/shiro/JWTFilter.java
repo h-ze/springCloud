@@ -2,9 +2,7 @@ package com.hz.config.shiro;
 
 import com.alibaba.fastjson.JSONObject;
 import com.hz.utils.JWTUtil;
-import com.hz.utils.RedisUtils;
 import io.jsonwebtoken.*;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
@@ -28,12 +26,11 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JWTFilter.class);
 
-    //@Autowired
-    //private JWTUtil jwtUtil;
+    @Autowired
+    private JWTUtil jwtUtil;
 
     @Autowired
-    private RedisUtils redisUtils;
-
+    private RedisTemplate redisTemplate;
 
     /**
      * 如果带有 token，则对 token 进行检查，否则直接通过
@@ -59,7 +56,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
             }//token 错误
 
         } else {
-            logger.debug("token为空");
+            logger.info("token为空");
             responseError(response, "参数无效,请输入用户token");
             return false;
         }
@@ -98,19 +95,10 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
             token = httpServletRequest.getParameter("token");
         }
 
-
-
-
-        Claims claims = JWTUtil.parseJWT(token);
-
         //在此处进行redis的验证
         logger.info("redis中进行token验证");
 
-        String userId = (String)claims.get("userId");
-        boolean hasKey = redisUtils.hasKey(userId);
-        if (!hasKey){
-            responseError(response, "token已过期,请重新登录");
-        }
+        Claims claims = JWTUtil.parseJWT(token);
 
         Date expiration = claims.getExpiration();
         logger.info(expiration.toString());
@@ -162,7 +150,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
      * 将非法请求跳转到 /unauthorized/**
      */
     private void responseError(ServletResponse response, String message) {
-        logger.debug("抛异常:"+message);
+        logger.info("抛异常:"+message);
         //HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         //设置编码，否则中文字符在重定向时会变为空字符串
         //message = URLEncoder.encode(message, "UTF-8");

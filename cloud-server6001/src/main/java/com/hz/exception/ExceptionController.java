@@ -4,6 +4,7 @@ package com.hz.exception;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
+import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.ObjectError;
@@ -35,8 +36,17 @@ public class ExceptionController {
         return jsonObject;
     }
 
+    @ExceptionHandler(AuthenticationException.class)
+    public JSONObject authenticationExceptionException(AuthenticationException e){
+        JSONObject jsonObject = new JSONObject(true);
+        jsonObject.put("code","999999");
+        jsonObject.put("msg","参数缺失,类型错误");
+        jsonObject.put("data",e.getMessage());
+        return jsonObject;
+    }
+
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
-    public JSONObject HttpMediaTypeNotSupportedException(Exception e){
+    public JSONObject httpMediaTypeNotSupportedException(Exception e){
         JSONObject jsonObject = new JSONObject(true);
         jsonObject.put("code","999999");
         jsonObject.put("msg","参数缺失,类型错误");

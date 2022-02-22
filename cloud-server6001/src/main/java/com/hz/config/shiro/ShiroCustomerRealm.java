@@ -1,12 +1,9 @@
 package com.hz.config.shiro;
 
-import com.alibaba.fastjson.JSONObject;
-import com.common.entity.Role;
-import com.common.utils.SpringContextUtils;
+import com.common.entity.User;
 import com.hz.service.UserService;
 import com.hz.utils.JWTUtil;
-import com.common.entity.User;
-import com.hz.utils.RedisUtils;
+import com.hz.utils.SpringContextUtils;
 import io.jsonwebtoken.Claims;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -18,15 +15,8 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.thymeleaf.util.ListUtils;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.common.constant.Constant.TOKEN;
-import static com.common.constant.Constant.USERROLES;
 
 /**
  * 自定义shiro的认证授权
@@ -34,9 +24,6 @@ import static com.common.constant.Constant.USERROLES;
 public class ShiroCustomerRealm extends AuthorizingRealm {
 
     private static final Logger log = LoggerFactory.getLogger(ShiroCustomerRealm.class);
-
-    @Autowired
-    private RedisUtils redisUtils;
 
     /**
      * 必须重写此方法，不然会报错
@@ -68,30 +55,18 @@ public class ShiroCustomerRealm extends AuthorizingRealm {
         /*SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.addRole("admin");
         return simpleAuthorizationInfo;*/
+
+        //根据数据库中的用户权限进行添加
+        UserService userService = (UserService) SpringContextUtils.getBean("userService");
         Claims claims = JWTUtil.parseJWT(primaryPrincipal);
         String subject = claims.getSubject();
-        String userId = (String) claims.get("userId");
-        boolean b = redisUtils.hasKey(userId);
-        List<Role> roles = new ArrayList<>();
-        if (b){
-            JSONObject jsonObject = (JSONObject) redisUtils.get(userId);
-            roles = (List<Role>) jsonObject.get(USERROLES);
-        }else {
-            //根据数据库中的用户权限进行添加
-            UserService userService = (UserService) SpringContextUtils.getBean("userService");
-            User rolesByUsername = userService.findRolesByUsername(subject);
-            roles = rolesByUsername.getRoles();
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put(TOKEN,primaryPrincipal);
-            jsonObject.put(USERROLES,roles);
-            redisUtils.set(userId, jsonObject, 600);
-        }
-
-
+        User rolesByUsername = userService.findRolesByUsername(subject);
+        log.info("用户:"+rolesByUsername);
         //如果添加缓存之后在该方法下再次请求数据库将不会再向数据库发起请求
-        if (!ListUtils.isEmpty(roles)) {
+        if (!ListUtils.isEmpty(rolesByUsername.getRoles())) {
             SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
-            roles.forEach(role-> simpleAuthorizationInfo.addRole(role.getName()));
+            log.info("权限",rolesByUsername.getRoles());
+            rolesByUsername.getRoles().forEach(role-> simpleAuthorizationInfo.addRole(role.getName()));
             //simpleAuthorizationInfo.addRole("admin");
             return simpleAuthorizationInfo;
         }
@@ -113,7 +88,7 @@ public class ShiroCustomerRealm extends AuthorizingRealm {
         String username = claims.getSubject();
         log.info("username:"+username);
         if (username == null) {
-            throw new AuthenticationException("token认证失败");
+            throw new AuthenticationException("token认证失败！");
         }
         /*String password = userMapper.getPassword(username);
         if (password == null) {
@@ -124,22 +99,15 @@ public class ShiroCustomerRealm extends AuthorizingRealm {
             throw new AuthenticationException("该用户已被封号！");
         }*/
 
-        String userId = (String) claims.get("userId");
-        boolean b = redisUtils.hasKey(userId);
-        long expire = redisUtils.getExpire(userId);
-        if (expire <0 || !b){
-            throw new AuthenticationException("token已过期,请重新登录");
-        }
-
         //这里应该做缓存处理
-        /*UserService userService = (UserService) SpringContextUtils.getBean("userService");
+        UserService userService = (UserService) SpringContextUtils.getBean("userService");
         log.info("userService:"+userService);
         User user = userService.getUser(username);
         if (user ==null){
             throw new AuthenticationException("该用户不存在！");
-        }*/
+        }
 
-        //RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
+        RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
         //String password = user.getPassword();
         //logger.info("密码:"+password);
 

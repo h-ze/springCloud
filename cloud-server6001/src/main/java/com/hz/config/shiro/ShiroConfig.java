@@ -1,15 +1,20 @@
 package com.hz.config.shiro;
 
-import com.hz.redis.RedisCacheManager;
+
+
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.mgt.SessionStorageEvaluator;
 import org.apache.shiro.realm.Realm;
+import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator;
+import org.crazycake.shiro.RedisCacheManager;
+import org.crazycake.shiro.RedisManager;
+import org.crazycake.shiro.RedisSessionDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
@@ -29,6 +34,7 @@ import static com.hz.config.BeanConfig.isOpenRedis;
  */
 @Configuration
 public class ShiroConfig {
+
 
     private static final Logger logger = LoggerFactory.getLogger(ShiroConfig.class);
 
@@ -116,8 +122,13 @@ public class ShiroConfig {
     }
     //2.创建安全管理器
     @Bean
-    public SecurityManager getSecurityManager(Realm realm,SessionStorageEvaluator sessionStorageEvaluator){
+    public SecurityManager getSecurityManager(Realm realm, SessionStorageEvaluator sessionStorageEvaluator){
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+
+        securityManager.setSessionManager(sessionManager());
+
+        securityManager.setCacheManager(cacheManager());
+
         securityManager.setRealm(realm);
         DefaultSubjectDAO subjectDAO = new DefaultSubjectDAO();
         subjectDAO.setSessionStorageEvaluator(sessionStorageEvaluator);
@@ -143,10 +154,13 @@ public class ShiroConfig {
         //开启缓存管理
         //shiroCustomerRealm.setCacheManager(new EhCacheManager());
 
-        if (isOpenRedis()){
+        /*if (isOpenRedis()){
             shiroCustomerRealm.setCacheManager(new RedisCacheManager());
-            shiroCustomerRealm.setCachingEnabled(true);//开启全局缓存
-        }
+            shiroCustomerRealm.setCachingEnabled(false);//开启全局缓存
+        }*/
+        //shiroCustomerRealm.setCacheManager(cacheManager());
+        //shiroCustomerRealm.setCachingEnabled(true);
+
         shiroCustomerRealm.setAuthenticationCachingEnabled(true); //开启认证缓存
         shiroCustomerRealm.setAuthenticationCacheName("authenticationCache");
         shiroCustomerRealm.setAuthorizationCachingEnabled(true); //开启授权缓存
@@ -154,6 +168,81 @@ public class ShiroConfig {
 
         return shiroCustomerRealm;
     }
+
+
+    /**
+     * 配置redisManager
+     */
+    public RedisManager getRedisManager(){
+        RedisManager redisManager = new RedisManager();
+        redisManager.setHost("8.142.46.67:6379");
+        redisManager.setPassword("hz15858");
+        redisManager.setDatabase(0);
+        redisManager.setTimeout(1600);
+        //redisManager.setPort(6379);
+        return redisManager;
+    }
+
+
+    /**
+     * 配置具体cache实现类
+     * @return
+     */
+    public RedisCacheManager cacheManager(){
+        RedisCacheManager redisCacheManager = new RedisCacheManager();
+        redisCacheManager.setRedisManager(getRedisManager());
+
+        //设置过期时间，单位是秒，20s
+        redisCacheManager.setExpire(20);
+
+        //此处测试
+        redisCacheManager.setPrincipalIdFieldName("userId");
+
+        return redisCacheManager;
+    }
+
+    //自定义sessionManager
+    //@Bean
+    public SessionManager sessionManager(){
+
+        CustomSessionManager customSessionManager = new CustomSessionManager();
+
+        //超时时间，默认 30分钟，会话超时；方法里面的单位是毫秒
+        //customSessionManager.setGlobalSessionTimeout(20000);
+
+        //配置session持久化
+        customSessionManager.setSessionDAO(redisSessionDAO());
+
+        return customSessionManager;
+    }
+
+
+    /**
+     * 自定义session持久化
+     * @return
+     */
+    public RedisSessionDAO redisSessionDAO(){
+        RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
+        redisSessionDAO.setRedisManager(getRedisManager());
+
+        //设置sessionid生成器
+        redisSessionDAO.setSessionIdGenerator(new CustomSessionIdGenerator());
+
+        return redisSessionDAO;
+    }
+
+    /**
+     *  api controller 层面
+     *  加入注解的使用，不加入这个AOP注解不生效(shiro的注解 例如 @RequiresGuest)
+     *
+     * @return
+     */
+   /* @Bean
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor() {
+        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
+        authorizationAttributeSourceAdvisor.setSecurityManager(getSecurityManager());
+        return authorizationAttributeSourceAdvisor;
+    }*/
 
     /**
      * 禁用session, 不保存用户登录状态。保证每次请求都重新认证。

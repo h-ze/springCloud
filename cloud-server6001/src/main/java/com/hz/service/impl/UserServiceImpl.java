@@ -36,8 +36,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Autowired
-    private RedisUtils redisUtils;
+    //@Autowired
+    //private RedisUtils redisUtils;
 
     @Override
     public int save(User user, UserRoles userRoles) {
@@ -83,8 +83,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserWithRoles(String username) {
         User user = userDAO.getUser(username);
-        User rolesByUsername = userDAO.findRolesByUsername(username);
-        user.setRoles(rolesByUsername.getRoles());
+        if (user !=null){
+            User rolesByUsername = userDAO.findRolesByUsername(username);
+            user.setRoles(rolesByUsername.getRoles());
+        }
         return user;
     }
 
@@ -103,9 +105,9 @@ public class UserServiceImpl implements UserService {
         if (isOpenRedis()){
             //将redis中的信息删除
             //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
-            redisUtils.del(userId);
+            /*redisUtils.del(userId);
             boolean deleteKey = redisUtils.hasKey(userId);
-            log.info("结果:",deleteKey);
+            log.info("结果:",deleteKey);*/
         }
         return userDAO.deleteUserByOwner(userId, password);
     }
@@ -115,9 +117,9 @@ public class UserServiceImpl implements UserService {
         if (isOpenRedis()){
             //将redis中的信息删除
             //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
-            redisUtils.del(userId);
+            /*redisUtils.del(userId);
             boolean deleteKey = redisUtils.hasKey(userId);
-            log.info("结果:",deleteKey);
+            log.info("结果:",deleteKey);*/
         }
         return userDAO.deleteUser(userId);
     }
@@ -128,9 +130,9 @@ public class UserServiceImpl implements UserService {
             String userId = user.getUserId();
             //将redis中的信息删除
             //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
-            redisUtils.del(userId);
+            /*redisUtils.del(userId);
             boolean deleteKey = redisUtils.hasKey(userId);
-            log.info("结果:",deleteKey);
+            log.info("结果:",deleteKey);*/
         }
         return userDAO.updateUser(user);
     }
