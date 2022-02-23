@@ -6,10 +6,13 @@
  * 版权所有，侵权必究！
  */
 
-package com.hz.oss.service;
+package com.hz.service;
 
 
-import java.util.Map;
+import com.hz.entity.SysOss;
+import com.hz.oss.cloud.CloudStorageConfig;
+
+import java.util.List;
 
 /**
  * 系统配置信息
@@ -17,41 +20,42 @@ import java.util.Map;
  * @author Mark sunlightcs@gmail.com
  */
 public interface SysConfigService /*extends IService<SysConfigEntity>*/ {
-
-	/*PageUtils queryPage(Map<String, Object> params);
-	
-	*//**
+	/**
 	 * 保存配置信息
-	 *//*
-	void saveConfig(SysConfigEntity config);
-	
-	*//**
+	 */
+	void saveConfig(SysOss sysOss);
+
+	/**
 	 * 更新配置信息
-	 *//*
-	void update(SysConfigEntity config);
-	
-	*//**
+	 */
+	void update(SysOss sysOss);
+
+	/**
 	 * 根据key，更新value
-	 *//*
+	 */
 	void updateValueByKey(String key, String value);
-	
-	*//**
+
+	/**
 	 * 删除配置信息
-	 *//*
-	void deleteBatch(Long[] ids);
-	
-	*//**
+	 */
+	void deleteBatch(String sysName);
+
+	SysOss getSysOss(String sysName);
+
+	List<SysOss> getSysOssList();
+
+	/**
 	 * 根据key，获取配置的value值
-	 * 
+	 *
 	 * @param key           key
-	 *//*
+	 */
 	String getValue(String key);
-	
-	*//**
+
+	/**
 	 * 根据key，获取value的Object对象
 	 * @param key    key
-	 * @param clazz  Object对象
-	 *//*
-	<T> T getConfigObject(String key, Class<T> clazz);*/
-	<T> T getConfigObject(String key, Class<T> clazz);
+
+	 */
+	CloudStorageConfig/*<T> T*/ getConfigObject(String key/*, Class<T> clazz*/);
+
 }

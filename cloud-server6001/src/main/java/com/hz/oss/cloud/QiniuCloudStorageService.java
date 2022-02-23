@@ -8,6 +8,7 @@
 
 package com.hz.oss.cloud;
 
+import com.aliyun.oss.OSSClient;
 import com.common.exception.RRException;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
@@ -16,6 +17,7 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import org.apache.commons.io.IOUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -73,5 +75,35 @@ public class QiniuCloudStorageService extends CloudStorageService {
     @Override
     public String uploadSuffix(InputStream inputStream, String suffix) {
         return upload(inputStream, getPath(config.getQiniuPrefix(), suffix));
+    }
+
+    @Override
+    public String createBucketName(OSSClient ossClient, String bucketName) {
+        return null;
+    }
+
+    @Override
+    public void deleteBucket(OSSClient ossClient, String bucketName) {
+
+    }
+
+    @Override
+    public String createFolder(OSSClient ossClient, String bucketName, String folder) {
+        return null;
+    }
+
+    @Override
+    public void deleteFile(OSSClient ossClient, String bucketName, String folder, String key) {
+
+    }
+
+    @Override
+    public String uploadObject2OSS( File file, String bucketName, String folder) {
+        return null;
+    }
+
+    @Override
+    public String getContentType(String fileName) {
+        return null;
     }
 }

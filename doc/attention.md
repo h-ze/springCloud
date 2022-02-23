@@ -63,5 +63,6 @@ insert into t_user values(#{userId},#{username},#{age})
 10.gRpc 尝试过
 
 11 oss阿里云 已购买 已经实现上传文件 接下来需要整合springboot
+oss的密码等内容需要入库处理
 
 12 null判断该如何处理

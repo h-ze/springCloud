@@ -105,3 +105,11 @@ eureka:
     lease-expiration-duration-in-seconds: 2
     hostname: ${spring.application.name}
 
+
+aliyun:
+  endpoint: oss-cn-beijing.aliyuncs.com
+  accessKeyId: LTAI5tDfnTsZCoBdpwHB1b2o
+  accessKeySecret: 6S96XJelwRUhDnQhoMmVDFFLZLYrmq
+  bucketName: oss-heze
+  urlPrefix: test
+

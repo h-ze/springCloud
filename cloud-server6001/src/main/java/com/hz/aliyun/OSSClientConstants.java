@@ -12,9 +12,9 @@ public class OSSClientConstants {
     public static final String ENDPOINT = "oss-cn-beijing.aliyuncs.com";
     //阿里云API的密钥Access Key ID
 
-    public static final String ACCESS_KEY_ID = "";
+    public static final String ACCESS_KEY_ID = "LTAI5tDfnTsZCoBdpwHB1b2o";
     //阿里云API的密钥Access Key Secret
-    public static final String ACCESS_KEY_SECRET = "git ";
+    public static final String ACCESS_KEY_SECRET = "6S96XJelwRUhDnQhoMmVDFFLZLYrmq";
     //阿里云API的bucket名称
     public static final String BACKET_NAME = "oss-heze";
     //阿里云API的文件夹名称

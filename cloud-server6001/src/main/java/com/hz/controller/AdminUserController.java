@@ -48,9 +48,10 @@ public class AdminUserController {
      * @param username 添加的用户
      * @return ConvertResult对象
      */
-    @ApiOperation(value ="添加用户",notes="管理员添加用户",response = ResponseResult.class)
+
     @PostMapping(value = "/addUser")
     //@RequiresRoles("admin")
+    @ApiOperation(value ="添加用户",notes="管理员添加用户",response = ResponseResult.class)
     @ApiImplicitParam(name = "username",value = "用户名",dataType = "String",paramType = "query")
     public ResponseResult addUser(@RequestParam("username") String username){
         logger.info(username);

@@ -64,7 +64,9 @@ public class AliyunOSSClientUtil {
     public  static String createBucketName(OSSClient ossClient,String bucketName){
         //存储空间
         final String bucketNames=bucketName;
-        if(!ossClient.doesBucketExist(bucketName)){
+        boolean doesBucketExist = ossClient.doesBucketExist(bucketName);
+        logger.info("创建存储空间: {}",doesBucketExist);
+        if(!doesBucketExist){
             //创建存储空间
             Bucket bucket=ossClient.createBucket(bucketName);
             logger.info("创建存储空间成功");
@@ -204,10 +206,15 @@ public class AliyunOSSClientUtil {
     public static void main(String[] args) {
         //初始化OSSClient
         OSSClient ossClient=AliyunOSSClientUtil.getOSSClient();
+
+        //createBucketName(ossClient,"test-heze");
+
+        //deleteBucket(ossClient,"test-heze");
+
         //上传文件
         String files ="C:\\Users\\Admin\\Desktop\\20190417115715827.gif";
-        /*String files="D:\\image\\1010.jpg,D:\\image\\1111.jpg,D:\\image\\1212.jpg,D:\\image\\1313.jpg,D:\\image\\2222.jpg,D:\\image\\3333.jpg,"
-                + "D:\\image\\4444.jpg,D:\\image\\5555.jpg,D:\\image\\6666.jpg,D:\\image\\7777.jpg,D:\\image\\8888.jpg";*/
+        //String files="D:\\image\\1010.jpg,D:\\image\\1111.jpg,D:\\image\\1212.jpg,D:\\image\\1313.jpg,D:\\image\\2222.jpg,D:\\image\\3333.jpg,"
+        //        + "D:\\image\\4444.jpg,D:\\image\\5555.jpg,D:\\image\\6666.jpg,D:\\image\\7777.jpg,D:\\image\\8888.jpg";
         String[] file=files.split(",");
         for(String filename:file){
             //System.out.println("filename:"+filename);

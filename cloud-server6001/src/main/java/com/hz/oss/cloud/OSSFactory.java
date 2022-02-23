@@ -11,7 +11,7 @@ package com.hz.oss.cloud;
 
 import com.common.ConfigConstant;
 import com.common.Constant;
-import com.hz.oss.service.SysConfigService;
+import com.hz.service.SysConfigService;
 import com.hz.utils.SpringContextUtils;
 
 /**
@@ -27,8 +27,7 @@ public final class OSSFactory {
     }
 
     public static CloudStorageService build(){
-        //获取云存储配置信息
-        CloudStorageConfig config = sysConfigService.getConfigObject(ConfigConstant.CLOUD_STORAGE_CONFIG_KEY, CloudStorageConfig.class);
+        CloudStorageConfig config = sysConfigService.getConfigObject(ConfigConstant.CLOUD_STORAGE_CONFIG_KEY/*, CloudStorageConfig.class*/);
 
         if(config.getType() == Constant.CloudService.QINIU.getValue()){
             return new QiniuCloudStorageService(config);
@@ -37,6 +36,17 @@ public final class OSSFactory {
         }else if(config.getType() == Constant.CloudService.QCLOUD.getValue()){
             return new QcloudCloudStorageService(config);
         }
+
+        //获取云存储配置信息
+        /*CloudStorageConfig config = sysConfigService.getConfigObject(ConfigConstant.CLOUD_STORAGE_CONFIG_KEY, CloudStorageConfig.class);
+
+        if(config.getType() == Constant.CloudService.QINIU.getValue()){
+            return new QiniuCloudStorageService(config);
+        }else if(config.getType() == Constant.CloudService.ALIYUN.getValue()){
+            return new AliyunCloudStorageService(config);
+        }else if(config.getType() == Constant.CloudService.QCLOUD.getValue()){
+            return new QcloudCloudStorageService(config);
+        }*/
 
         return null;
     }
