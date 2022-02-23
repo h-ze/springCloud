@@ -53,12 +53,15 @@ public class OssController {
     }
 
 
+    @ApiOperation(value = "删除文件",notes = "删除文件")
     @DeleteMapping("deleteFile")
     public ResponseResult deleteFile(@RequestParam("fileName")String fileName) throws Exception {
         //存储的信息需要入库
         return ResponseResult.successResult(100000,"删除成功");
     }
 
+    @ApiOperation(value = "查询文件",notes = "查询文件")
+    @GetMapping("fileList")
     public ResponseResult selectFile(){
         return ResponseResult.successResult(100000,"查询成功");
     }
