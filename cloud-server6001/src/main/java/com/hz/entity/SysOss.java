@@ -15,11 +15,6 @@ import java.util.Date;
 @AllArgsConstructor                //有参构造
 @Configuration
 public class SysOss implements Serializable {
-    /*endpoint: oss-cn-beijing.aliyuncs.com
-    accessKeyId: LTAI5tDfnTsZCoBdpwHB1b2o
-    accessKeySecret: 6S96XJelwRUhDnQhoMmVDFFLZLYrmq
-    bucketName: oss-heze
-    urlPrefix: test*/
     private static final long serialVersionUID = -5539252535252251774L;
 
     private String endpoint;
