@@ -65,7 +65,7 @@ public class SysOssController {
 	//@RequiresPermissions("sys:oss:all")
 	@RequiresRoles("superAdmin")
 	@ApiOperation(value ="获取配置",notes="超级管理员获取配置",response = ResponseResult.class)
-	@ApiImplicitParam(name = "sysName",value = "服务名称",dataType = "String",paramType = "query")
+	@ApiImplicitParam(name = "sysName",value = "服务名称",dataType = "String",paramType = "query",required = true)
 	public ResponseResult config(@RequestParam("sysName") String sysName){
 		CloudStorageConfig config = sysConfigService.getConfigObject(sysName/*, CloudStorageConfig.class*/);
 

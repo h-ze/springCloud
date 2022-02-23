@@ -1,10 +1,3 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
 
 package com.hz.oss.cloud;
 
@@ -73,32 +66,37 @@ public class QiniuCloudStorageService extends CloudStorageService {
     }
 
     @Override
+    public String uploadSuffix(byte[] data, long size, String suffix) {
+        return null;
+    }
+
+    @Override
     public String uploadSuffix(InputStream inputStream, String suffix) {
         return upload(inputStream, getPath(config.getQiniuPrefix(), suffix));
     }
 
     @Override
-    public String createBucketName(OSSClient ossClient, String bucketName) {
+    public String createBucketName(String bucketName) {
         return null;
     }
 
     @Override
-    public void deleteBucket(OSSClient ossClient, String bucketName) {
+    public void deleteBucket() {
 
     }
 
     @Override
-    public String createFolder(OSSClient ossClient, String bucketName, String folder) {
+    public String createFolder(String folder) {
         return null;
     }
 
     @Override
-    public void deleteFile(OSSClient ossClient, String bucketName, String folder, String key) {
+    public void deleteFile(String folder, String key) {
 
     }
 
     @Override
-    public String uploadObject2OSS( File file, String bucketName, String folder) {
+    public String uploadObject2OSS(File file, String folder) {
         return null;
     }
 

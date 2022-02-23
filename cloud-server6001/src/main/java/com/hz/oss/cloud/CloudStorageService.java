@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
-
 package com.hz.oss.cloud;
 
 import com.aliyun.oss.OSSClient;
@@ -29,6 +21,7 @@ import java.util.UUID;
  * @author Mark sunlightcs@gmail.com
  */
 public abstract class CloudStorageService {
+
     /** 云存储配置信息 */
     CloudStorageConfig config;
 
@@ -67,6 +60,8 @@ public abstract class CloudStorageService {
      */
     public abstract String uploadSuffix(byte[] data, String suffix);
 
+    public abstract String uploadSuffix(byte[] data,long size, String suffix);
+
     /**
      * 文件上传
      * @param inputStream   字节流
@@ -86,45 +81,36 @@ public abstract class CloudStorageService {
 
     /**
      * 创建存储空间
-     * @param ossClient      OSS连接
      * @param bucketName 存储空间
      * @return
      */
-    public abstract String createBucketName(OSSClient ossClient, String bucketName);
+    public abstract String createBucketName(String bucketName);
 
     /**
      * 删除存储空间buckName
-     * @param ossClient  oss对象
-     * @param bucketName  存储空间
      */
-    public abstract void deleteBucket(OSSClient ossClient, String bucketName);
+    public abstract void deleteBucket();
 
     /**
      * 创建模拟文件夹
-     * @param ossClient oss连接
-     * @param bucketName 存储空间
      * @param folder   模拟文件夹名如"qj_nanjing/"
      * @return  文件夹名
      */
-    public abstract String createFolder(OSSClient ossClient,String bucketName,String folder);
+    public abstract String createFolder(String folder);
 
     /**
      * 根据key删除OSS服务器上的文件
-     * @param ossClient  oss连接
-     * @param bucketName  存储空间
      * @param folder  模拟文件夹名 如"qj_nanjing/"
      * @param key Bucket下的文件的路径名+文件名 如："upload/cake.jpg"
      */
-    public abstract void deleteFile(OSSClient ossClient, String bucketName, String folder, String key);
+    public abstract void deleteFile(String folder, String key);
 
     /**
      * 上传图片至OSS
-     * @param file 上传文件（文件全路径如：D:\\image\\cake.jpg）
-     * @param bucketName  存储空间
      * @param folder 模拟文件夹名 如"qj_nanjing/"
      * @return String 返回的唯一MD5数字签名
      * */
-    public abstract String uploadObject2OSS(File file, String bucketName, String folder);
+    public abstract String uploadObject2OSS(File file,String folder);
 
     /**
      * 通过文件名判断并获取OSS服务文件上传时文件的contentType

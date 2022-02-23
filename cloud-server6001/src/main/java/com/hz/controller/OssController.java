@@ -30,11 +30,10 @@ public class OssController {
     @PostMapping("uploadFile")
     public ResponseResult upload(@RequestParam("file") MultipartFile file) throws Exception {
 
-
-
 		if (file.isEmpty()) {
 			throw new RRException("上传文件不能为空");
 		}
+
 
 		//上传文件
 		String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
