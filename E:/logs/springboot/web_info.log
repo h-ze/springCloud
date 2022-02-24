@@ -1,0 +1,1229 @@
+2022-02-24 09:20:04.266 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 09:20:04.305 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 09:20:04.486 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 09:21:38.218 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 25226 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 09:21:38.224 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 09:21:38.291 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 09:21:38.292 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 09:21:38.293 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 09:21:38.293 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 09:21:39.792 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 09:21:39.794 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 09:21:39.841 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31ms. Found 0 Redis repository interfaces.
+2022-02-24 09:21:40.306 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 09:21:40.307 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 09:21:40.384 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77ms. Found 0 Redis repository interfaces.
+2022-02-24 09:21:40.678 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$44363108] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:21:40.722 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 09:21:40.731 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:21:40.734 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:21:40.792 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:21:40.792 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 09:21:40.827 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:21:40.866 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:21:41.382 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 09:21:41.616 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3323 ms
+2022-02-24 09:21:43.740 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 09:21:43.955 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 09:21:44.134 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 09:21:44.710 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 09:21:44.977 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 09:21:44.989 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 09:21:45.062 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 09:21:45.336 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 09:21:45.451 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 09:21:45.456 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 7.851 seconds (JVM running for 8.778)
+2022-02-24 09:21:45.717 [RMI TCP Connection(4)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 09:21:45.722 [RMI TCP Connection(5)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 09:21:45.740 [RMI TCP Connection(5)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 18 ms
+2022-02-24 09:21:45.814 [RMI TCP Connection(4)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#52743318:0/SimpleConnection@5d0305d1 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 62512]
+2022-02-24 09:21:46.030 [RMI TCP Connection(4)-192.168.31.54] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 09:21:47.327 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 09:21:47.329 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 09:21:51.803 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 09:21:51.804 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.866 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.866 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.867 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.867 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.868 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.868 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.876 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.876 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.876 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.877 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.876 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.883 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.883 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.883 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.883 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.892 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.962 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.973 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.983 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:51.999 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:52.010 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:21:52.459 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:22:21.580 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:22:21.590 [http-nio-6001-exec-5] INFO  com.hz.controller.UserController - hz
+2022-02-24 09:22:21.590 [http-nio-6001-exec-5] INFO  com.hz.controller.UserController - 123456
+2022-02-24 09:22:21.724 [http-nio-6001-exec-5] INFO  com.hz.controller.UserController - b2793335f43645fd8e00c7d18e14e05f
+2022-02-24 09:22:21.747 [http-nio-6001-exec-5] INFO  com.hz.controller.UserController - eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2NjU3NDEsImV4cCI6MTY0NTc1MjE0MSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.oJdi16OuKMPvNd0pdPor5zlIB6P5Q2Kp6OWCsgNAf-Q
+2022-02-24 09:22:36.998 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2NjU3NDEsImV4cCI6MTY0NTc1MjE0MSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.oJdi16OuKMPvNd0pdPor5zlIB6P5Q2Kp6OWCsgNAf-Q
+2022-02-24 09:22:37.321 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 09:23:04.147 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2NjU3NDEsImV4cCI6MTY0NTc1MjE0MSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.oJdi16OuKMPvNd0pdPor5zlIB6P5Q2Kp6OWCsgNAf-Q
+2022-02-24 09:23:04.171 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 09:23:04.172 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 09:23:04.172 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 09:23:04.184 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 09:22:21 CST 2022
+2022-02-24 09:23:04.184 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 09:23:04.184 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86356816
+2022-02-24 09:23:04.224 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2NjU3NDEsImV4cCI6MTY0NTc1MjE0MSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.oJdi16OuKMPvNd0pdPor5zlIB6P5Q2Kp6OWCsgNAf-Q
+2022-02-24 09:23:04.225 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 09:23:04.226 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@3f2f1b65
+2022-02-24 09:23:04.327 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 09:23:04.327 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 8f62889fca3b40e98e27260349a78871
+2022-02-24 09:31:52.182 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 09:31:52.249 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 09:31:52.368 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 09:32:00.833 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 25270 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 09:32:00.836 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 09:32:00.889 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 09:32:00.889 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 09:32:00.889 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 09:32:00.890 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 09:32:02.178 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 09:32:02.179 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 09:32:02.213 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2022-02-24 09:32:02.600 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 09:32:02.600 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 09:32:02.676 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75ms. Found 0 Redis repository interfaces.
+2022-02-24 09:32:02.956 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$5bcb67ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:32:03.014 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 09:32:03.026 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:32:03.030 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:32:03.097 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:32:03.098 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 09:32:03.131 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:32:03.167 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 09:32:03.636 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 09:32:03.842 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2952 ms
+2022-02-24 09:32:06.006 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 09:32:06.235 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 09:32:06.434 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 09:32:07.019 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 09:32:07.277 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 09:32:07.287 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 09:32:07.359 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 09:32:07.602 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 09:32:07.699 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 09:32:07.703 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 7.402 seconds (JVM running for 8.327)
+2022-02-24 09:32:07.800 [RMI TCP Connection(2)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 09:32:07.804 [RMI TCP Connection(1)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 09:32:07.818 [RMI TCP Connection(1)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2022-02-24 09:32:07.913 [RMI TCP Connection(2)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#ae9b96b:0/SimpleConnection@6d6034e6 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 62619]
+2022-02-24 09:32:08.151 [RMI TCP Connection(2)-192.168.31.54] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 09:32:09.415 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 09:32:09.416 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 09:32:23.871 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 09:32:23.873 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2NjU3NDEsImV4cCI6MTY0NTc1MjE0MSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.oJdi16OuKMPvNd0pdPor5zlIB6P5Q2Kp6OWCsgNAf-Q
+2022-02-24 09:32:23.954 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 09:32:23.955 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 09:32:23.955 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 09:32:23.986 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 09:22:21 CST 2022
+2022-02-24 09:32:23.986 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 09:32:23.987 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:85797013
+2022-02-24 09:32:24.043 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2NjU3NDEsImV4cCI6MTY0NTc1MjE0MSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.oJdi16OuKMPvNd0pdPor5zlIB6P5Q2Kp6OWCsgNAf-Q
+2022-02-24 09:32:24.044 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 09:32:24.051 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@43e2fa3d
+2022-02-24 09:32:24.216 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 09:32:24.217 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 2ab83af4f54a46fb95d72f39816d5fcb
+2022-02-24 09:32:24.543 [http-nio-6001-exec-1] INFO  com.hz.oss.cloud.AliyunCloudStorageService - suffix长度为: .html
+2022-02-24 10:32:23.865 [SessionValidationThread-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Validating all active sessions...
+2022-02-24 15:55:00.749 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 15:55:00.807 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 15:55:00.974 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 15:55:41.158 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 26220 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 15:55:41.162 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 15:55:41.247 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 15:55:41.248 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 15:55:41.249 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 15:55:41.249 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 15:55:42.759 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 15:55:42.760 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 15:55:42.824 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37ms. Found 0 Redis repository interfaces.
+2022-02-24 15:55:43.346 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 15:55:43.346 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 15:55:43.453 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106ms. Found 0 Redis repository interfaces.
+2022-02-24 15:55:43.843 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$7fe99db6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 15:55:43.896 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 15:55:43.912 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 15:55:43.916 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 15:55:44.003 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 15:55:44.003 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 15:55:44.056 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 15:55:44.101 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 15:55:44.756 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 15:55:45.053 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3803 ms
+2022-02-24 15:55:47.644 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 15:55:47.860 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 15:55:48.092 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 15:55:48.744 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 15:55:49.075 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 15:55:49.096 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 15:55:49.185 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 15:55:49.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 15:55:49.573 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 15:55:49.578 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 9.399 seconds (JVM running for 10.608)
+2022-02-24 15:55:50.158 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 15:55:50.164 [RMI TCP Connection(5)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 15:55:50.181 [RMI TCP Connection(5)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2022-02-24 15:55:50.246 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#3ba420c8:0/SimpleConnection@10494364 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 64290]
+2022-02-24 15:55:50.501 [RMI TCP Connection(4)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 15:55:51.897 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 15:55:51.901 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 15:57:22.462 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 15:57:22.464 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.620 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.621 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.622 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.622 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.622 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.623 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.666 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.669 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.670 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.673 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.679 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.686 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.690 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.692 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.693 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.703 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.796 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.818 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.848 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:22.871 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:23.394 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:43.964 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:57:43.985 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - hz
+2022-02-24 15:57:43.986 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - 123456
+2022-02-24 15:57:44.150 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - b2793335f43645fd8e00c7d18e14e05f
+2022-02-24 15:57:44.209 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:58:08.480 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:58:08.776 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 15:58:18.061 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:58:18.074 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 15:58:18.075 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 15:58:18.075 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 15:58:18.086 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 15:58:18.087 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 15:58:18.087 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86365913
+2022-02-24 15:58:18.131 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:58:18.132 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 15:58:18.133 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@12b198b5
+2022-02-24 15:58:18.228 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 15:58:18.228 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: b5d1eab9efe643f2998cc761ad88c7a0
+2022-02-24 15:58:18.352 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 身份信息：eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:58:18.433 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 用户:User{id=1183, name='hz', age=null, bir=null, password='null', salt='null', userId='null', status='null', roles=[com.common.entity.Role@55843a17, com.common.entity.Role@23ffa9e7]}
+2022-02-24 15:58:18.436 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 权限
+2022-02-24 15:58:41.519 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:58:41.533 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 15:58:41.533 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 15:58:41.533 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 15:58:41.534 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 15:58:41.534 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 15:58:41.534 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86342466
+2022-02-24 15:58:41.548 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:58:41.549 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 15:58:41.549 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@12b198b5
+2022-02-24 15:58:41.635 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 15:58:41.635 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 5e54dd4a45a341c9baef7191c1ed31c1
+2022-02-24 15:59:23.885 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:59:23.899 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 15:59:23.899 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 15:59:23.899 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 15:59:23.899 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 15:59:23.900 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 15:59:23.900 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86300100
+2022-02-24 15:59:23.913 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 15:59:23.914 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 15:59:23.914 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@12b198b5
+2022-02-24 15:59:23.997 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 15:59:23.997 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: c41ba5f3a5dd499b83e9b17ed9eea0f0
+2022-02-24 16:02:17.066 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:02:17.107 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:02:17.108 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:02:17.108 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:02:17.109 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 16:02:17.109 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:02:17.109 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86126891
+2022-02-24 16:02:17.150 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:02:17.151 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 16:02:17.151 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@12b198b5
+2022-02-24 16:02:17.250 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:02:17.250 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 2f4e7951a972442daf9ad02c49f61479
+2022-02-24 16:02:17.519 [http-nio-6001-exec-2] INFO  com.hz.oss.cloud.AliyunCloudStorageService - 删除oss-heze下的文件.html成功
+2022-02-24 16:10:04.887 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.013 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.014 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.015 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.016 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.016 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.016 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.286 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.331 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.331 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.342 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.342 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.345 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.361 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.374 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.374 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.374 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.421 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.435 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.470 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.509 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:05.979 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:15.381 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 16:10:15.462 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 16:10:15.579 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 16:10:22.257 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 26258 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 16:10:22.261 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 16:10:22.314 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 16:10:22.315 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 16:10:22.315 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 16:10:22.315 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 16:10:23.764 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 16:10:23.765 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 16:10:23.803 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2022-02-24 16:10:24.221 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 16:10:24.221 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 16:10:24.305 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83ms. Found 0 Redis repository interfaces.
+2022-02-24 16:10:24.597 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$68d97e6e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:10:24.641 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 16:10:24.650 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:10:24.653 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:10:24.718 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:10:24.719 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 16:10:24.752 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:10:24.790 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:10:25.305 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 16:10:25.581 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3266 ms
+2022-02-24 16:10:27.972 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 16:10:28.194 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 16:10:28.425 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 16:10:29.184 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 16:10:29.453 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 16:10:29.468 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 16:10:29.558 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 16:10:29.872 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 16:10:29.988 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 16:10:29.992 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 8.291 seconds (JVM running for 9.256)
+2022-02-24 16:10:30.324 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 16:10:30.329 [RMI TCP Connection(3)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 16:10:30.343 [RMI TCP Connection(3)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2022-02-24 16:10:30.514 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#260800a6:0/SimpleConnection@dec113a [delegate=amqp://hz@8.142.46.67:5672/, localPort= 64499]
+2022-02-24 16:10:30.784 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 16:10:30.786 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:30.901 [RMI TCP Connection(4)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 16:10:31.013 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.017 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.019 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.020 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.020 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.020 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.091 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.098 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.099 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.102 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.105 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.121 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.126 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.132 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.132 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.139 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.196 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.208 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.468 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:31.516 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:32.009 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:32.674 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 16:10:32.675 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 16:10:41.223 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:41.322 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:10:41.322 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - token为空
+2022-02-24 16:10:41.323 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 抛异常:参数无效,请输入用户token
+2022-02-24 16:10:50.910 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:10:51.233 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:10:59.439 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:10:59.465 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:10:59.465 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:10:59.466 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:10:59.493 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 16:10:59.493 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:10:59.493 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:85604507
+2022-02-24 16:10:59.541 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:10:59.542 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 16:10:59.546 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@af3b14f
+2022-02-24 16:10:59.929 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:10:59.930 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: ffbfd0ffe2804d75b6161ea5e09eb206
+2022-02-24 16:11:18.973 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:11:19.043 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:11:19.043 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:11:19.043 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:11:19.044 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 16:11:19.044 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:11:19.044 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:85584956
+2022-02-24 16:11:19.059 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:11:19.060 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 7885631c705d48de9bc79e6a5670642a
+2022-02-24 16:17:56.754 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 16:17:56.835 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 16:17:56.956 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 16:18:04.785 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 26282 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 16:18:04.788 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 16:18:04.846 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 16:18:04.847 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 16:18:04.847 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 16:18:04.848 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 16:18:06.389 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 16:18:06.389 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 16:18:06.436 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32ms. Found 0 Redis repository interfaces.
+2022-02-24 16:18:06.881 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 16:18:06.881 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 16:18:06.980 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98ms. Found 0 Redis repository interfaces.
+2022-02-24 16:18:07.351 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$8c9564fa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:18:07.406 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 16:18:07.417 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:18:07.420 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:18:07.478 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:18:07.479 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 16:18:07.522 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:18:07.570 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:18:08.188 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 16:18:08.424 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3575 ms
+2022-02-24 16:18:11.036 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 16:18:11.297 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 16:18:11.514 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 16:18:12.333 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 16:18:12.610 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 16:18:12.627 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 16:18:12.712 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 16:18:13.153 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 16:18:13.335 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 16:18:13.342 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 9.147 seconds (JVM running for 10.105)
+2022-02-24 16:18:13.851 [RMI TCP Connection(5)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 16:18:13.857 [RMI TCP Connection(4)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 16:18:13.876 [RMI TCP Connection(4)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 19 ms
+2022-02-24 16:18:13.996 [RMI TCP Connection(5)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#77f50dca:0/SimpleConnection@795c0ad8 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 64693]
+2022-02-24 16:18:14.382 [RMI TCP Connection(5)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 16:18:16.573 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 16:18:16.575 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 16:18:30.575 [http-nio-6001-exec-2] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 16:18:30.576 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.843 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.844 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.845 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.846 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.846 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.846 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.891 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.918 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.923 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.923 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.923 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.926 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.936 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.955 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.955 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:30.955 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:31.292 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:31.302 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:31.341 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:31.377 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:31.869 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:41.851 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:18:42.164 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:18:58.036 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:18:58.050 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:18:58.050 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:18:58.050 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:18:58.081 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 16:18:58.081 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:18:58.082 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:85125918
+2022-02-24 16:18:58.140 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:18:58.141 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 16:18:58.146 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@7c1701d4
+2022-02-24 16:18:58.380 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:18:58.381 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: ee46492725c747829976517112300fe4
+2022-02-24 16:18:58.698 [http-nio-6001-exec-5] INFO  com.hz.oss.cloud.AliyunCloudStorageService - suffix长度为: .html
+2022-02-24 16:43:29.085 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 16:43:29.170 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 16:43:29.289 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 16:44:22.827 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 26378 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 16:44:22.833 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 16:44:23.019 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 16:44:23.020 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 16:44:23.021 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 16:44:23.021 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 16:44:24.563 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 16:44:24.564 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 16:44:24.600 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2022-02-24 16:44:25.088 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 16:44:25.088 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 16:44:25.169 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80ms. Found 0 Redis repository interfaces.
+2022-02-24 16:44:25.482 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$70fbb359] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:44:25.524 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 16:44:25.532 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:44:25.534 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:44:25.586 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:44:25.587 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 16:44:25.619 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:44:25.658 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 16:44:26.169 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 16:44:26.450 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3428 ms
+2022-02-24 16:44:28.612 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 16:44:28.797 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 16:44:28.983 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 16:44:29.589 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 16:44:29.848 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 16:44:29.864 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 16:44:29.958 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 16:44:30.280 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 16:44:30.387 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 16:44:30.394 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 8.516 seconds (JVM running for 9.547)
+2022-02-24 16:44:30.823 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 16:44:30.827 [RMI TCP Connection(5)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 16:44:30.840 [RMI TCP Connection(5)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2022-02-24 16:44:30.958 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#40e81df2:0/SimpleConnection@52b619ba [delegate=amqp://hz@8.142.46.67:5672/, localPort= 64888]
+2022-02-24 16:44:31.205 [RMI TCP Connection(4)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 16:44:33.093 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 16:44:33.095 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 16:44:41.200 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 16:44:41.201 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.687 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.688 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.689 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.690 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.691 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.692 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.916 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.971 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.986 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.986 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.986 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.986 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:41.997 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.016 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.019 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.020 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.124 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.137 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.184 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.434 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:42.876 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:44:52.190 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:44:52.540 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:45:05.644 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:45:05.659 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:45:05.659 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:45:05.660 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:45:05.688 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 15:57:44 CST 2022
+2022-02-24 16:45:05.688 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:45:05.688 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:83558312
+2022-02-24 16:45:05.731 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2ODk0NjQsImV4cCI6MTY0NTc3NTg2NCwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FRUzhEfkE94yh0cCryUj3mhuNepirNs9d54pELL_3Q8
+2022-02-24 16:45:05.732 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 16:45:05.737 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@4d73dd0f
+2022-02-24 16:45:05.984 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:45:05.984 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: a9525ef023794fc89d5d35b14a2209a2
+2022-02-24 16:53:15.580 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.725 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.726 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.727 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.727 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.728 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.729 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.785 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.811 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.815 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.819 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.822 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.822 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.822 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.850 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.852 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.853 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.897 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.907 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:15.945 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:16.203 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:16.559 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.047 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.199 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.200 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.203 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.205 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.205 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.206 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.241 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.241 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.244 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.248 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.248 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.248 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.277 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.278 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.280 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.281 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.327 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.335 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.373 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.424 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:36.908 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:51.205 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:53:51.273 [http-nio-6001-exec-1] INFO  com.hz.controller.UserController - hz
+2022-02-24 16:53:51.273 [http-nio-6001-exec-1] INFO  com.hz.controller.UserController - 123456
+2022-02-24 16:53:52.548 [http-nio-6001-exec-1] INFO  com.hz.controller.UserController - b2793335f43645fd8e00c7d18e14e05f
+2022-02-24 16:53:52.557 [http-nio-6001-exec-1] INFO  com.hz.controller.UserController - eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:54:07.538 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:54:07.892 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 16:54:30.007 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:54:30.022 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:54:30.023 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:54:30.023 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:54:30.024 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 16:53:52 CST 2022
+2022-02-24 16:54:30.024 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:54:30.024 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86361976
+2022-02-24 16:54:30.084 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:54:30.085 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 16:54:30.085 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@4d73dd0f
+2022-02-24 16:54:30.167 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:54:30.167 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: feceb900163840d1ba99bcac00df84f5
+2022-02-24 16:54:38.968 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:54:39.044 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:54:39.044 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:54:39.044 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:54:39.045 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 16:53:52 CST 2022
+2022-02-24 16:54:39.045 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:54:39.045 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86352955
+2022-02-24 16:54:39.059 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:54:39.059 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 8fa2fc96c8cf463682f1063c9605f4b4
+2022-02-24 16:55:01.357 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:55:01.454 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:55:01.454 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:55:01.454 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:55:01.455 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 16:53:52 CST 2022
+2022-02-24 16:55:01.455 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:55:01.455 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86330545
+2022-02-24 16:55:01.468 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:55:01.469 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 16:55:01.469 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@4d73dd0f
+2022-02-24 16:55:01.567 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:55:01.568 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 96b130a009264cb8936af117abce0f35
+2022-02-24 16:55:58.637 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:55:58.732 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 16:55:58.732 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 16:55:58.732 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 16:55:58.733 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 16:53:52 CST 2022
+2022-02-24 16:55:58.733 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 16:55:58.734 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86273266
+2022-02-24 16:55:58.747 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:55:58.748 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 16:55:58.748 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@4d73dd0f
+2022-02-24 16:55:58.832 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 16:55:58.832 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: b674799a374e46d69b0f159d91dc9248
+2022-02-24 16:55:58.973 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - 身份信息：eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU2OTI4MzIsImV4cCI6MTY0NTc3OTIzMiwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.hGbs_185DZghL7E9n8jKUrptl5ZA5mM_KV4Lu6s4EEE
+2022-02-24 16:55:59.112 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - 用户:User{id=1183, name='hz', age=null, bir=null, password='null', salt='null', userId='null', status='null', roles=[com.common.entity.Role@6a7cbfef, com.common.entity.Role@49be5209]}
+2022-02-24 16:55:59.115 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.ShiroCustomerRealm - 权限
+2022-02-24 18:49:56.657 [SessionValidationThread-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Validating all active sessions...
+2022-02-24 20:32:00.787 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:00.842 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:00.842 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:00.845 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:00.895 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:00.965 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:00.967 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:00.997 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:01.022 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:01.374 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:10.119 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:10.121 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:32:10.135 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 20:32:10.136 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - token为空
+2022-02-24 20:32:10.136 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.JWTFilter - 抛异常:参数无效,请输入用户token
+2022-02-24 20:34:23.310 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 20:34:23.354 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 20:34:23.535 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 20:34:33.136 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 27336 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 20:34:33.140 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 20:34:33.237 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 20:34:33.238 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 20:34:33.239 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 20:34:33.239 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 20:34:34.468 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:34:34.469 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:34:34.533 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35ms. Found 0 Redis repository interfaces.
+2022-02-24 20:34:35.034 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:34:35.035 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:34:35.133 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98ms. Found 0 Redis repository interfaces.
+2022-02-24 20:34:35.496 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$ae1d7cc9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:34:35.544 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 20:34:35.554 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:34:35.558 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:34:35.635 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:34:35.635 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 20:34:35.676 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:34:35.717 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:34:36.266 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 20:34:36.552 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3312 ms
+2022-02-24 20:34:38.825 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 20:34:39.011 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 20:34:39.187 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 20:34:39.753 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 20:34:40.037 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 20:34:40.055 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 20:34:40.124 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 20:34:40.378 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 20:34:40.477 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 20:34:40.482 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 8.158 seconds (JVM running for 9.193)
+2022-02-24 20:34:40.841 [RMI TCP Connection(2)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 20:34:40.846 [RMI TCP Connection(3)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 20:34:40.860 [RMI TCP Connection(3)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2022-02-24 20:34:40.936 [RMI TCP Connection(2)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#261ddb8b:0/SimpleConnection@5a7a955c [delegate=amqp://hz@8.142.46.67:5672/, localPort= 50446]
+2022-02-24 20:34:41.191 [RMI TCP Connection(2)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 20:34:42.543 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 20:34:42.545 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 20:35:04.121 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 20:35:04.122 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.277 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.278 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.279 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.281 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.282 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.282 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.323 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.327 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.327 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.327 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.335 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.339 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.346 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.346 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.347 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.352 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.398 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.404 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.430 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.453 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:04.893 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:14.498 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 20:35:14.588 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 20:35:14.718 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 20:35:20.353 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 27344 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 20:35:20.374 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 20:35:20.449 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 20:35:20.449 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 20:35:20.449 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 20:35:20.450 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 20:35:21.487 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:35:21.488 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:35:21.522 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2022-02-24 20:35:21.896 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:35:21.897 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:35:21.975 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77ms. Found 0 Redis repository interfaces.
+2022-02-24 20:35:22.257 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$a763eb24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:35:22.306 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 20:35:22.317 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:35:22.320 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:35:22.376 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:35:22.377 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 20:35:22.409 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:35:22.439 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:35:22.890 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 20:35:23.082 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2632 ms
+2022-02-24 20:35:24.984 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 20:35:25.150 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 20:35:25.310 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 20:35:25.803 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 20:35:26.071 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 20:35:26.082 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 20:35:26.152 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 20:35:26.402 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 20:35:26.489 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 20:35:26.493 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 6.787 seconds (JVM running for 7.593)
+2022-02-24 20:35:26.795 [RMI TCP Connection(3)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 20:35:26.800 [RMI TCP Connection(2)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 20:35:26.818 [RMI TCP Connection(2)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2022-02-24 20:35:26.879 [RMI TCP Connection(3)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#42fc727d:0/SimpleConnection@216fcaef [delegate=amqp://hz@8.142.46.67:5672/, localPort= 50477]
+2022-02-24 20:35:27.110 [RMI TCP Connection(3)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 20:35:28.272 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 20:35:28.273 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 20:35:30.591 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 20:35:30.592 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.713 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.714 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.715 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.716 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.719 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.720 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.757 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.760 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.761 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.767 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.770 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.770 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.773 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.777 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.777 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.785 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.816 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.824 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.852 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:30.873 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:31.294 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:38.032 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:35:38.051 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 20:35:38.052 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - token为空
+2022-02-24 20:35:38.052 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 抛异常:参数无效,请输入用户token
+2022-02-24 20:36:18.729 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:18.748 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 20:36:18.748 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.JWTFilter - token为空
+2022-02-24 20:36:18.748 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.JWTFilter - 抛异常:参数无效,请输入用户token
+2022-02-24 20:36:28.748 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 20:36:28.827 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 20:36:28.960 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 20:36:34.413 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 27354 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 20:36:34.417 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 20:36:34.492 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 20:36:34.492 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 20:36:34.493 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 20:36:34.493 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 20:36:35.717 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:36:35.718 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:36:35.745 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17ms. Found 0 Redis repository interfaces.
+2022-02-24 20:36:36.122 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:36:36.122 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:36:36.213 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90ms. Found 0 Redis repository interfaces.
+2022-02-24 20:36:36.490 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$5c76d85d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:36:36.544 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 20:36:36.554 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:36:36.558 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:36:36.619 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:36:36.620 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 20:36:36.653 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:36:36.685 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:36:37.133 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 20:36:37.348 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2855 ms
+2022-02-24 20:36:39.399 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 20:36:39.614 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 20:36:39.793 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 20:36:40.362 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 20:36:40.589 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 20:36:40.600 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 20:36:40.676 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 20:36:40.948 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 20:36:41.053 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 20:36:41.057 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 7.392 seconds (JVM running for 8.236)
+2022-02-24 20:36:41.120 [http-nio-6001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 20:36:41.135 [http-nio-6001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2022-02-24 20:36:41.150 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 20:36:41.151 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.214 [RMI TCP Connection(6)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 20:36:41.284 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.290 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.291 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.292 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.292 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.293 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.311 [RMI TCP Connection(6)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#218eb219:0/SimpleConnection@371ea9e9 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 50572]
+2022-02-24 20:36:41.522 [RMI TCP Connection(6)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 20:36:41.532 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.577 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.578 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.580 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.580 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.581 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.580 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.599 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.600 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.601 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.603 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.604 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.620 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.621 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.622 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.623 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.626 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.679 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.688 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.719 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:41.742 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:42.182 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:42.745 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 20:36:42.746 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 20:36:43.789 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:36:43.803 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 20:36:43.803 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - token为空
+2022-02-24 20:36:43.804 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.JWTFilter - 抛异常:参数无效,请输入用户token
+2022-02-24 20:37:07.821 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 20:37:07.905 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 20:37:08.036 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 20:37:13.247 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 27361 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 20:37:13.250 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 20:37:13.331 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 20:37:13.331 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 20:37:13.332 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 20:37:13.332 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 20:37:14.585 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:37:14.586 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:37:14.618 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2022-02-24 20:37:15.036 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 20:37:15.037 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 20:37:15.124 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87ms. Found 0 Redis repository interfaces.
+2022-02-24 20:37:15.455 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$62dda362] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:37:15.498 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 20:37:15.507 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:37:15.510 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:37:15.562 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:37:15.563 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 20:37:15.601 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:37:15.652 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 20:37:16.104 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 20:37:16.333 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3000 ms
+2022-02-24 20:37:18.281 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 20:37:18.502 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 20:37:18.650 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 20:37:19.221 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 20:37:19.511 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 20:37:19.523 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 20:37:19.594 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 20:37:19.920 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 20:37:20.042 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 20:37:20.046 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 7.405 seconds (JVM running for 8.157)
+2022-02-24 20:37:20.257 [http-nio-6001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 20:37:20.273 [http-nio-6001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2022-02-24 20:37:20.290 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 20:37:20.292 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.341 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 20:37:20.423 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#169ec57c:0/SimpleConnection@69406094 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 50647]
+2022-02-24 20:37:20.535 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.587 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.588 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.589 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.589 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.589 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.590 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.606 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.616 [RMI TCP Connection(4)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 20:37:20.634 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.657 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.659 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.669 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.669 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.670 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.674 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.676 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.679 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.767 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.775 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.803 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:20.828 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:21.271 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:21.901 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 20:37:21.902 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 20:37:22.447 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 20:37:22.468 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 20:37:22.469 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - token为空
+2022-02-24 20:37:22.469 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.JWTFilter - 抛异常:参数无效,请输入用户token
+2022-02-24 21:38:45.078 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 21:38:45.096 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 21:38:45.230 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 21:38:50.818 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 27476 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 21:38:50.820 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 21:38:50.885 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 21:38:50.885 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 21:38:50.886 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 21:38:50.886 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 21:38:52.228 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 21:38:52.229 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 21:38:52.276 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32ms. Found 0 Redis repository interfaces.
+2022-02-24 21:38:52.692 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 21:38:52.692 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 21:38:52.784 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91ms. Found 0 Redis repository interfaces.
+2022-02-24 21:38:53.099 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$8ea1b787] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:38:53.142 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 21:38:53.151 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:38:53.154 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:38:53.207 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:38:53.207 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 21:38:53.244 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:38:53.280 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:38:53.754 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 21:38:54.005 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3119 ms
+2022-02-24 21:38:56.165 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 21:38:56.364 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 21:38:56.543 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 21:38:57.086 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 21:38:57.325 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 21:38:57.340 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 21:38:57.404 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 21:38:57.653 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 21:38:57.749 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 21:38:57.755 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 7.47 seconds (JVM running for 8.255)
+2022-02-24 21:38:58.322 [RMI TCP Connection(2)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 21:38:58.327 [RMI TCP Connection(3)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 21:38:58.339 [RMI TCP Connection(3)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2022-02-24 21:38:58.410 [RMI TCP Connection(2)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#74e8d0b3:0/SimpleConnection@120953f5 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 50839]
+2022-02-24 21:38:58.629 [RMI TCP Connection(2)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 21:38:59.712 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 21:38:59.714 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 21:39:13.699 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 21:39:13.701 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.871 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.873 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.873 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.873 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.873 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.873 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.919 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.922 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.927 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.927 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.927 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.932 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.937 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.942 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.945 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.949 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.985 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:13.998 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:14.024 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:14.054 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:39:14.496 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:40:42.528 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:40:42.545 [http-nio-6001-exec-9] INFO  com.hz.controller.ServerController - 2022-02-24 21:40:42
+2022-02-24 21:43:50.532 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:43:50.595 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - hz
+2022-02-24 21:43:50.595 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - 123456
+2022-02-24 21:43:51.970 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - b2793335f43645fd8e00c7d18e14e05f
+2022-02-24 21:43:52.013 [http-nio-6001-exec-10] INFO  com.hz.controller.UserController - eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:44:21.886 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:44:22.162 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-24 21:44:30.182 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:44:30.203 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 21:44:30.204 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 21:44:30.204 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 21:44:30.224 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 21:43:51 CST 2022
+2022-02-24 21:44:30.224 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 21:44:30.225 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86360775
+2022-02-24 21:44:30.266 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:44:30.269 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 21:44:30.271 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@7741103b
+2022-02-24 21:44:30.377 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 21:44:30.377 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: 2ef6009710524ca0947f79a88346c273
+2022-02-24 21:45:14.502 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:45:14.521 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 21:45:14.522 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 21:45:14.523 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 21:45:14.525 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 21:43:51 CST 2022
+2022-02-24 21:45:14.525 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 21:45:14.526 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86316475
+2022-02-24 21:45:14.539 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:45:14.542 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 21:45:14.543 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@7741103b
+2022-02-24 21:45:14.630 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 21:45:14.631 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: c8cc4069231b4b57a97192cfab21039e
+2022-02-24 21:45:23.415 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:45:23.434 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 21:45:23.434 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 21:45:23.434 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 21:45:23.435 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 21:43:51 CST 2022
+2022-02-24 21:45:23.435 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 21:45:23.435 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86307565
+2022-02-24 21:45:23.450 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 21:45:23.450 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: bfff71b113f948f2b5c9486056c63940
+2022-02-24 21:46:41.408 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:46:41.422 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 21:46:41.422 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 21:46:41.422 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 21:46:41.423 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 21:43:51 CST 2022
+2022-02-24 21:46:41.423 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 21:46:41.424 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86229576
+2022-02-24 21:46:41.468 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:46:41.470 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 21:46:41.470 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@7741103b
+2022-02-24 21:46:41.581 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 21:46:41.581 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: e611ae55d7ad4168b9ca49f3c4b5887e
+2022-02-24 21:49:14.776 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 21:49:14.844 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 21:49:14.984 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 21:49:21.074 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 27539 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 21:49:21.078 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 21:49:21.140 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 21:49:21.140 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 21:49:21.141 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 21:49:21.141 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 21:49:22.297 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 21:49:22.298 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 21:49:22.355 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37ms. Found 0 Redis repository interfaces.
+2022-02-24 21:49:22.713 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 21:49:22.713 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 21:49:22.815 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101ms. Found 0 Redis repository interfaces.
+2022-02-24 21:49:23.093 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$e6d23496] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:49:23.137 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 21:49:23.147 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:49:23.150 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:49:23.202 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:49:23.202 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 21:49:23.240 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:49:23.280 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:49:23.729 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 21:49:23.938 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2796 ms
+2022-02-24 21:49:25.930 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 21:49:26.093 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 21:49:26.262 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 21:49:26.773 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 21:49:27.020 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 21:49:27.034 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 21:49:27.101 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 21:49:27.352 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 21:49:27.443 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 21:49:27.447 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 6.911 seconds (JVM running for 7.724)
+2022-02-24 21:49:27.738 [RMI TCP Connection(1)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 21:49:27.742 [RMI TCP Connection(2)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 21:49:27.755 [RMI TCP Connection(2)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2022-02-24 21:49:27.829 [RMI TCP Connection(1)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7fd29d86:0/SimpleConnection@12006749 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 50991]
+2022-02-24 21:49:28.101 [RMI TCP Connection(1)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 21:49:29.231 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 21:49:29.234 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 21:50:02.206 [http-nio-6001-exec-2] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 21:50:02.208 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:50:02.303 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 21:50:02.303 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 21:50:02.304 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 21:50:02.354 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 21:43:51 CST 2022
+2022-02-24 21:50:02.355 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 21:50:02.355 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:86028645
+2022-02-24 21:50:02.403 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:50:02.406 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 21:50:02.419 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@3bcd1c2a
+2022-02-24 21:50:02.615 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 21:50:02.615 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: f791f6b8bf4f4db0b27cb3973be38b9e
+2022-02-24 21:59:06.214 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-24 21:59:06.303 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-24 21:59:06.482 [SpringContextShutdownHook] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Disabled session validation scheduler.
+2022-02-24 21:59:12.837 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 27599 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-24 21:59:12.841 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-24 21:59:12.899 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-24 21:59:12.899 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-24 21:59:12.899 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-24 21:59:12.900 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-24 21:59:14.099 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 21:59:14.099 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 21:59:14.139 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2022-02-24 21:59:14.497 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-24 21:59:14.497 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-24 21:59:14.574 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76ms. Found 0 Redis repository interfaces.
+2022-02-24 21:59:14.884 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$6ecab2d6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:59:14.932 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-24 21:59:14.942 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:59:14.945 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:59:15.003 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:59:15.004 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-24 21:59:15.043 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:59:15.083 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-24 21:59:15.624 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-24 21:59:15.850 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2950 ms
+2022-02-24 21:59:17.896 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-24 21:59:18.074 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-24 21:59:18.254 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-24 21:59:18.769 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-24 21:59:19.051 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-24 21:59:19.066 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-24 21:59:19.157 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-24 21:59:19.522 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-24 21:59:19.620 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-24 21:59:19.624 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 7.327 seconds (JVM running for 8.199)
+2022-02-24 21:59:19.843 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-24 21:59:19.847 [RMI TCP Connection(5)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-24 21:59:19.863 [RMI TCP Connection(5)-192.168.1.4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2022-02-24 21:59:19.933 [RMI TCP Connection(4)-192.168.1.4] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#6c54c39:0/SimpleConnection@bcf2d34 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 51282]
+2022-02-24 21:59:20.129 [RMI TCP Connection(4)-192.168.1.4] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-24 21:59:21.278 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-24 21:59:21.280 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-24 21:59:26.847 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-24 21:59:26.848 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:59:26.931 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-24 21:59:26.931 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 登录
+2022-02-24 21:59:26.931 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - redis中进行token验证
+2022-02-24 21:59:26.968 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - Fri Feb 25 21:43:51 CST 2022
+2022-02-24 21:59:26.969 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 执行登录任务
+2022-02-24 21:59:26.969 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.JWTFilter - 距离过期时间:85464031
+2022-02-24 21:59:27.017 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - 结果:eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTgzIiwic3ViIjoiaHoiLCJpYXQiOjE2NDU3MTAyMzEsImV4cCI6MTY0NTc5NjYzMSwidXNlcklkIjoiMTY0NTQwODkwNDQwMCIsInJvbGVzIjoiMTIzIn0.FrhpTXpzid5W2LpbM53u5RqBEBMFpzPVrRiECEMH2SM
+2022-02-24 21:59:27.020 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - username:hz
+2022-02-24 21:59:27.033 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.ShiroCustomerRealm - userService:com.hz.service.impl.UserServiceImpl@48de5414
+2022-02-24 21:59:27.224 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - session:null
+2022-02-24 21:59:27.224 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionIdGenerator - token: f17c8ad4892046dfa3caf7f2276b13dd
+2022-02-24 21:59:27.509 [http-nio-6001-exec-1] INFO  com.hz.exception.ExceptionController - 异常: {}
+org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.common.entity.ResponseResult com.hz.controller.UserController.updateUserMessage(com.common.entity.UserInfo): [Field error in object 'userInfo' on field 'userId': rejected value []; codes [NotBlank.userInfo.userId,NotBlank.userId,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userInfo.userId,userId]; arguments []; default message [userId]]; default message [userId不能为空字符]] 
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-02-24 21:59:27.510 [http-nio-6001-exec-1] INFO  com.hz.exception.ExceptionController - 异常详情: userId不能为空字符
+2022-02-24 21:59:27.512 [http-nio-6001-exec-1] INFO  com.hz.exception.ExceptionController - 异常集合: [userId不能为空字符]

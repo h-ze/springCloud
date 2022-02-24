@@ -25,7 +25,7 @@ spring:
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:
-    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false&useSSL=false
     #driver-class-name: org.gjt.mm.mysql.Driver
     username: root
     password: hz15858

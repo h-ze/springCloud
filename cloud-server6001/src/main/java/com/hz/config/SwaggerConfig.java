@@ -27,8 +27,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("SWAGGER-API").description("SWAGGER API提供一系列关于该项目解决方法，您可以在下面的参考资料和操作部分中浏览受支持的操作，这些操作按其应用的资源进行分类，支持“Try it out!”功能直接从Swagger页面调用操作！")
                 // .termsOfServiceUrl("")
-                .contact(new Contact("heze", "https://www.baidu.com", "hz15858@163.com")).license("GitHub address")
-                .licenseUrl("https://github.com/h-ze/springTest.git").version("1.0").build();
+                .contact(new Contact("heze", "https//www.javahz.xyz", "hz15858@163.com")).license("GitHub address")
+                .licenseUrl("https://github.com/h-ze/springCloud").version("1.0").build();
     }
 
     //配置content type

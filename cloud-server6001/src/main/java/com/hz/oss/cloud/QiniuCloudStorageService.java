@@ -2,6 +2,8 @@
 package com.hz.oss.cloud;
 
 import com.aliyun.oss.OSSClient;
+import com.aliyun.oss.model.Bucket;
+import com.aliyun.oss.model.BucketInfo;
 import com.common.exception.RRException;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
@@ -13,6 +15,9 @@ import org.apache.commons.io.IOUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.util.List;
 
 /**
  * 七牛云存储
@@ -91,8 +96,8 @@ public class QiniuCloudStorageService extends CloudStorageService {
     }
 
     @Override
-    public void deleteFile(String folder, String key) {
-
+    public String deleteFile(String bucketName,String folder, String key) {
+        return null;
     }
 
     @Override
@@ -103,5 +108,95 @@ public class QiniuCloudStorageService extends CloudStorageService {
     @Override
     public String getContentType(String fileName) {
         return null;
+    }
+
+    @Override
+    public String setBucketAcl(String bucketName) {
+        return null;
+    }
+
+    @Override
+    public String setFileAcl(String bucketName, String objectName) {
+        return null;
+    }
+
+    @Override
+    public String setClientConfiguration() {
+        return null;
+    }
+
+    @Override
+    public String downloadFile(String objectName) {
+        return null;
+    }
+
+    @Override
+    public URL getDownloadPath(String bucketName, String key) {
+        return null;
+    }
+
+    @Override
+    public List<Bucket> getAllBucketList() {
+        return null;
+    }
+
+    @Override
+    public List<Bucket> getBucketListByPrefix(String prefix) {
+        return null;
+    }
+
+    @Override
+    public List<Bucket> getBucketListByMarker(String marker) {
+        return null;
+    }
+
+    @Override
+    public List<Bucket> getBucketListMax(Integer number) {
+        return null;
+    }
+
+    @Override
+    public BucketInfo getBucketInfo(String bucketName) {
+        return null;
+    }
+
+    @Override
+    public List getFileList(String bucketName) {
+        return null;
+    }
+
+    @Override
+    public String getLocation(String bucketName) {
+        return null;
+    }
+
+    @Override
+    public void setBucketTag(String bucketName) {
+
+    }
+
+    @Override
+    public List getListFile(String bucketName, String keyPrefix) throws UnsupportedEncodingException {
+        return null;
+    }
+
+    @Override
+    public void deleteFileList(String bucketName) {
+
+    }
+
+    @Override
+    public void copyFile(String sourceBucketName, String sourceKey, String destinationBucketName, String destinationKey) {
+
+    }
+
+    @Override
+    public void splitCopyFile(String sourceBucketName, String sourceKey, String destinationBucketName, String destinationKey) {
+
+    }
+
+    @Override
+    public void splitUpload(String bucketName, String objectName) {
+
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.multipart.MultipartException;
@@ -32,6 +33,16 @@ public class ExceptionController {
         jsonObject.put("code","500");
         jsonObject.put("msg","发生了未知的错误");
         jsonObject.put("message",e.getMessage());
+        //e.printStackTrace();
+        return jsonObject;
+    }
+
+    @ExceptionHandler
+    public JSONObject MissingServletRequestParameterException(MissingServletRequestParameterException e){
+        JSONObject jsonObject = new JSONObject(true);
+        jsonObject.put("code","999998");
+        jsonObject.put("msg","miss parameter");
+        jsonObject.put("message","参数缺失");
         //e.printStackTrace();
         return jsonObject;
     }

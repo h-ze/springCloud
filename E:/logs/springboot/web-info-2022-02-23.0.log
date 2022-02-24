@@ -1,0 +1,166 @@
+2022-02-23 21:17:19.574 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 24013 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-23 21:17:19.585 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-23 21:17:19.716 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-23 21:17:19.716 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-23 21:17:19.718 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-23 21:17:19.718 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-23 21:25:27.362 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 24086 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-23 21:25:27.364 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-23 21:25:27.428 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-23 21:25:27.429 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-23 21:25:27.429 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-23 21:25:27.430 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-23 21:26:09.969 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 24097 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-23 21:26:09.973 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-23 21:26:10.054 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-23 21:26:10.055 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-23 21:26:10.055 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-23 21:26:10.056 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-23 21:26:57.439 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 24104 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-23 21:26:57.442 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-23 21:26:57.511 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-23 21:26:57.511 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-23 21:26:57.512 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-23 21:26:57.512 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-23 21:27:58.867 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 24130 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-23 21:27:58.871 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-23 21:27:58.958 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-23 21:27:58.959 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-23 21:27:58.961 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-23 21:27:58.962 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-23 21:28:00.396 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-23 21:28:00.397 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-23 21:28:00.434 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2022-02-23 21:28:00.950 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-23 21:28:00.950 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-23 21:28:01.058 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 108ms. Found 0 Redis repository interfaces.
+2022-02-23 21:28:01.400 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$9009cac7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:28:01.446 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-23 21:28:01.456 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:28:01.459 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:28:01.520 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:28:01.521 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-23 21:28:01.559 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:28:01.614 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:28:02.159 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-23 21:28:02.455 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3493 ms
+2022-02-23 21:28:04.496 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-23 21:28:04.682 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-23 21:28:04.853 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-23 21:28:04.986 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-02-23 21:29:18.166 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 24159 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-23 21:29:18.170 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-23 21:29:18.226 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-23 21:29:18.226 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-23 21:29:18.226 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-23 21:29:18.227 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-23 21:29:19.415 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-23 21:29:19.416 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-23 21:29:19.462 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2022-02-23 21:29:19.885 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-23 21:29:19.885 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-23 21:29:19.967 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 81ms. Found 0 Redis repository interfaces.
+2022-02-23 21:29:20.265 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$d6b750e8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:29:20.315 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-23 21:29:20.327 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:29:20.330 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:29:20.396 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:29:20.396 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-23 21:29:20.434 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:29:20.474 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:29:20.954 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-23 21:29:21.164 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2937 ms
+2022-02-23 21:29:23.159 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-23 21:29:23.331 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-23 21:29:23.495 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-23 21:29:24.035 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-23 21:29:24.301 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-23 21:29:24.312 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-23 21:29:24.378 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-23 21:29:24.634 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-23 21:29:24.732 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-23 21:29:24.739 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 7.073 seconds (JVM running for 7.914)
+2022-02-23 21:29:25.180 [RMI TCP Connection(5)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-23 21:29:25.184 [RMI TCP Connection(4)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-23 21:29:25.196 [RMI TCP Connection(4)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+2022-02-23 21:29:25.272 [RMI TCP Connection(5)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7c35628a:0/SimpleConnection@6fdcd698 [delegate=amqp://hz@8.142.46.67:5672/, localPort= 60679]
+2022-02-23 21:29:25.475 [RMI TCP Connection(5)-192.168.31.54] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-23 21:29:26.726 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-23 21:29:26.727 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-23 21:30:51.020 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2022-02-23 21:30:51.094 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2022-02-23 21:30:56.492 [restartedMain] INFO  com.hz.ServerApplication - Starting ServerApplication on zdeMacBook-Pro with PID 24167 (/Users/zh/Desktop/springcloud/cloud-server6001/target/classes started by zh in /Users/zh/Desktop/springcloud)
+2022-02-23 21:30:56.494 [restartedMain] INFO  com.hz.ServerApplication - The following profiles are active: @profileActive@
+2022-02-23 21:30:56.554 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-impl-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0/jaxb-core.jar
+2022-02-23 21:30:56.555 [restartedMain] INFO  o.s.boot.devtools.restart.ChangeableUrls - The Class-Path manifest attribute in /Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-core-2.3.0.jar referenced one or more files that do not exist: file:/Users/zh/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0/jaxb-api.jar
+2022-02-23 21:30:56.555 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-23 21:30:56.556 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-23 21:30:57.661 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-23 21:30:57.661 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-23 21:30:57.700 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2022-02-23 21:30:58.112 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-02-23 21:30:58.113 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-02-23 21:30:58.189 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76ms. Found 0 Redis repository interfaces.
+2022-02-23 21:30:58.468 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.hz.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$aad21beb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:30:58.511 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - getRealm
+2022-02-23 21:30:58.519 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getRealm' of type [com.hz.config.shiro.ShiroCustomerRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:30:58.522 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sessionStorageEvaluator' of type [org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:30:58.576 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getSecurityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:30:58.577 [restartedMain] INFO  com.hz.config.shiro.ShiroConfig - ==================
+2022-02-23 21:30:58.613 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:30:58.648 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-23 21:30:59.095 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 6001 (http)
+2022-02-23 21:30:59.305 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2749 ms
+2022-02-23 21:31:01.218 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-02-23 21:31:01.389 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-23 21:31:01.551 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-02-23 21:31:02.122 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2022-02-23 21:31:02.358 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2022-02-23 21:31:02.369 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2022-02-23 21:31:02.434 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2022-02-23 21:31:02.678 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUserUsingDELETE_1
+2022-02-23 21:31:02.786 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 6001 (http) with context path '/springboot'
+2022-02-23 21:31:02.791 [restartedMain] INFO  com.hz.ServerApplication - Started ServerApplication in 6.786 seconds (JVM running for 7.583)
+2022-02-23 21:31:03.031 [RMI TCP Connection(5)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [8.142.46.67:5672]
+2022-02-23 21:31:03.035 [RMI TCP Connection(4)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-02-23 21:31:03.049 [RMI TCP Connection(4)-192.168.31.54] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2022-02-23 21:31:03.135 [RMI TCP Connection(5)-192.168.31.54] INFO  o.s.a.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#78b14b65:0/SimpleConnection@4665ef7c [delegate=amqp://hz@8.142.46.67:5672/, localPort= 60722]
+2022-02-23 21:31:03.368 [RMI TCP Connection(5)-192.168.31.54] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2022-02-23 21:31:04.757 [boundedElastic-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2022-02-23 21:31:04.759 [boundedElastic-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2022-02-23 21:31:15.450 [http-nio-6001-exec-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Enabling session validation scheduler...
+2022-02-23 21:31:15.452 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.529 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.530 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.530 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.531 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.532 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.532 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.538 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.538 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.538 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.540 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.542 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.546 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.546 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.547 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.547 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.549 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.554 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.555 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.585 [http-nio-6001-exec-2] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.588 [http-nio-6001-exec-1] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.627 [http-nio-6001-exec-8] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.636 [http-nio-6001-exec-9] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.650 [http-nio-6001-exec-3] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:15.663 [http-nio-6001-exec-4] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:16.144 [http-nio-6001-exec-5] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:32.525 [http-nio-6001-exec-7] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:42.784 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 21:31:42.785 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 进入jwtFilter
+2022-02-23 21:31:42.785 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - token为空
+2022-02-23 21:31:42.785 [http-nio-6001-exec-6] INFO  com.hz.config.shiro.JWTFilter - 抛异常:参数无效,请输入用户token
+2022-02-23 21:31:42.785 [http-nio-6001-exec-10] INFO  com.hz.config.shiro.CustomSessionManager - sessionId:null
+2022-02-23 22:37:44.813 [SessionValidationThread-1] INFO  o.a.s.session.mgt.AbstractValidatingSessionManager - Validating all active sessions...
