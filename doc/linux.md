@@ -19,5 +19,9 @@ echo ￥JAVA_HOME 显示当前jdk安装路径，前提已经配置
 创建文件夹 mkdir
 创建文件 touch
 
+ ./nginx -s stop nginx停止运行
+ ./nginx 运行nginx
+ 
+
 wget 下载功能
 还有yum

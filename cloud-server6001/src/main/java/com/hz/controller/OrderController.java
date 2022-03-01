@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/order")
-@Api(tags = "订单管理接口")
+//@Api(tags = "订单管理接口")
 public class OrderController {
     private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
 
@@ -27,10 +27,10 @@ public class OrderController {
     @GetMapping("getOrder")
     @RequiresRoles(value = {"admin","user"}) //用来判断角色 同时具有admin user
     @RequiresPermissions("user:update:01") //用来判断权限字符串
-    @ApiOperation(value = "获取订单",notes = "获取订单信息")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "id",value = "订单id",paramType = "query",dataType = "String",required = true)
-    })
+//    @ApiOperation(value = "获取订单",notes = "获取订单信息")
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "id",value = "订单id",paramType = "query",dataType = "String",required = true)
+//    })
     public ResponseResult getOrder(@RequestParam("id")String id){
         Subject subject = SecurityUtils.getSubject();
         boolean admin = subject.hasRole("admin");
@@ -38,10 +38,10 @@ public class OrderController {
     }
 
     @GetMapping("/get/{id}")
-    @ApiOperation(value = "获取订单信息",notes = "获取订单信息")
+    /*@ApiOperation(value = "获取订单信息",notes = "获取订单信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id",value = "订单id",paramType = "path",dataType = "String",required = true)
-    })
+    })*/
     public ResponseResult get(@PathVariable String id) {
         String forObject = restTemplate.getForObject("http://customer:8762/get/" + id, String.class);
         return new ResponseResult<>(100000, "查找订单信息成功", forObject);

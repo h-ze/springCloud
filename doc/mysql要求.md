@@ -76,3 +76,14 @@ CASE WHEN SCORE = 'A' THEN '优'
 ## 结论
 
 不是每一个SQL语句都要用到所有的句法，但灵活运用以上的句法组合和深刻理解SQL执行原理将能在SQL层面更好的解决数据问题，而不用把问题        都抛给程序逻辑.
+
+测试sql：
+SELECT Director,sum(Domestic_sales+International_sales) AS sum_sales,
+COUNT(title),sum(Domestic_sales+International_sales)/COUNT(title) AS average
+FROM movies 
+LEFT JOIN Boxoffice
+ON Movies.id=Boxoffice.Movie_id
+GROUP BY Director
+HAVING COUNT(Title) > 1
+ORDER BY Average DESC
+LIMIT 1;
