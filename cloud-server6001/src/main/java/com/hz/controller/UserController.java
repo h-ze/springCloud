@@ -173,25 +173,54 @@ public class UserController {
         log.info(password);
         User user = userService.getUser(username);
         if (user!=null){
+            if (redisUtils.hasKey(user.getUserId())){
+                String s = (String) redisUtils.get(user.getUserId());
+                JSONObject object = JSONObject.parseObject(s);
+                log.info("redis:{}",object);
+                boolean forbid = object.containsKey("forbid");
+                if (forbid && Objects.equal(object.getString("forbid"),"yes")){
+                    long expire = redisUtils.getExpire(user.getUserId());
+                    return ResponseResult.successResult(100001,"登录失败,密码错误次数过多,请"+expire+"秒后再试");
+                }
+            }
             String sha = SaltUtil.shiroSha(password ,user.getSalt());
-            log.info(sha);
             if (sha.equals(user.getPassword())){
                 String token = jwtUtil.createJWT(user.getId().toString(),
                         user.getName(),user.getUserId(), user.getSalt());
                 log.info(token);
                 if (isOpenRedis()){
-
                     //将登录的token存储到redis中
                     JSONObject jsonObject = new JSONObject();
                     jsonObject.put(TOKEN,token);
                     jsonObject.put(USERROLES,user.getRoles());
-                    //boolean set = redisUtils.set(user.getUserId(), jsonObject, 600);
-                    boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
+                    boolean set = redisUtils.set(user.getUserId(), jsonObject.toString(), 600);
+                    //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
                     //log.info("结果: {}",set);
                 }
                 return ResponseResult.successResult(100000,token);
             }else {
-                return ResponseResult.successResult(100001,"登录失败,密码错误,请重新输入");
+                Integer errorNum=1;
+                if (redisUtils.hasKey(user.getUserId())) {
+                    String s = (String) redisUtils.get(user.getUserId());
+                    JSONObject jsonObject = JSONObject.parseObject(s);
+                    log.info("errorNum:{}",errorNum);
+                    if (jsonObject.containsKey("errorNum")){
+                        errorNum = jsonObject.getInteger("errorNum")+1;
+                    }
+                }
+                JSONObject jsonObject = new JSONObject();
+                if (errorNum ==5){
+                    jsonObject.put("forbid","yes");
+                    redisUtils.set(user.getUserId(),jsonObject.toString(),30);
+                    return ResponseResult.successResult(100001,"登录失败,密码错误次数过多,请"+30+"秒后再试");
+                }
+                jsonObject.put("errorNum",errorNum);
+                if (errorNum==0){
+                    redisUtils.set(user.getUserId(),jsonObject.toString(),20);
+                }else {
+                    redisUtils.set(user.getUserId(),jsonObject.toString(),redisUtils.getExpire(user.getUserId()));
+                }
+                return ResponseResult.successResult(100001,"登录失败,密码错误,请重新输入,错误次数:"+errorNum);
             }
         }else {
             return ResponseResult.successResult(100002,"登录失败,用户不存在");
