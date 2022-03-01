@@ -93,7 +93,7 @@ public class ExceptionController {
         return jsonObject;
     }
 
-    @ExceptionHandler(HttpMessageNotReadableException.class)
+    //@ExceptionHandler(HttpMessageNotReadableException.class)
     public JSONObject handleException(HttpMessageNotReadableException e){
         JSONObject jsonObject = new JSONObject(true);
         jsonObject.put("code","999999");

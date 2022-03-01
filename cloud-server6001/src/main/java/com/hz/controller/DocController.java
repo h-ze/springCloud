@@ -5,6 +5,9 @@ import com.common.entity.Document;
 import com.common.entity.PageRequest;
 import com.common.entity.PageResult;
 import com.common.entity.ResponseResult;
+import com.common.exception.RRException;
+import com.hz.entity.DocumentMongo;
+import com.hz.oss.cloud.OSSFactory;
 import com.hz.service.DocService;
 import com.hz.utils.JWTUtil;
 import io.jsonwebtoken.Claims;
@@ -18,9 +21,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Api(tags = "文件列表接口")
@@ -132,6 +137,71 @@ public class DocController {
             return ResponseResult.successResult(100000,document);
         }
         return ResponseResult.errorResult(999999,new Document());
+    }
+
+    /**
+     * 上传文件
+     */
+    //@RequiresPermissions("sys:oss:all")
+    @ApiOperation(value = "上传文件",notes = "上传文件")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "docName",value = "文档名",paramType = "query",dataType = "String",required = false),
+            //@ApiImplicitParam(name = "encryptConfig",value = "加密策略",paramType = "query",dataType ="String",required = false) ,
+            //@ApiImplicitParam(name = "docId",value = "文档id",paramType = "query",dataType = "String",required = true),
+            @ApiImplicitParam(name ="file",value = "文件",paramType = "form",dataType = "__file",required = true)
+    })
+    @PostMapping("uploadFile")
+    public ResponseResult upload(@RequestParam("file") MultipartFile file) throws Exception {
+        if (file.isEmpty()) {
+            throw new RRException("上传文件不能为空");
+        }
+        //上传文件
+        //String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        Claims claims = jwtUtil.parseJWT(principal);
+        String userId = (String)claims.get("userId");
+        String suffix =userId+"/"+file.getOriginalFilename();
+
+        String docId = UUID.randomUUID().toString().replace("-", "");
+
+        DocumentMongo documentMongo = new DocumentMongo();
+
+        documentMongo.setDocName(file.getOriginalFilename());
+        documentMongo.setClickNumber(0L);
+        documentMongo.setCreateDate(new Date());
+        documentMongo.setUpdateDate(new Date());
+        documentMongo.setDocId(docId);
+        documentMongo.setDocOwner(claims.getSubject());
+        documentMongo.setId(System.currentTimeMillis());
+
+        Document document = new Document();
+        document.setUserId(userId);
+        document.setCAppId("111010");
+        document.setCmisId("213213");
+        document.setCreateDate(new Date());
+        document.setDocName(file.getOriginalFilename());
+        document.setEncryptConfig("1");
+        document.setDocId(docId);
+
+        String uploadDoc = docService.uploadDoc(document,documentMongo, file.getBytes(), file.getSize(), suffix);
+
+
+        //String url = OSSFactory.build().uploadSuffix(file.getBytes(),file.getSize(), suffix);
+        //OSSFactory.build().uploadObject2OSS(file,"","test/");
+
+        //保存文件信息
+		/*SysOssEntity ossEntity = new SysOssEntity();
+		ossEntity.setUrl(url);
+		ossEntity.setCreateDate(new Date());
+		sysOssService.save(ossEntity);*/
+
+        //存储的信息需要入库
+        //if (i>0){
+            return ResponseResult.successResult(100000,uploadDoc);
+        //}
+        //return ResponseResult.errorResult(999999,new Document());
+        //return ResponseResult.successResult(100000,url);
+
     }
 
 }

@@ -5,6 +5,7 @@ import com.aliyun.oss.model.Bucket;
 import com.aliyun.oss.model.BucketInfo;
 import com.common.entity.ResponseResult;
 import com.common.exception.RRException;
+import com.google.zxing.aztec.encoder.Encoder;
 import com.hz.oss.cloud.OSSFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -13,7 +14,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.List;
 
 import static com.hz.oss.cloud.OSSFactory.build;
@@ -102,6 +105,7 @@ public class OssController {
     })
     public ResponseResult getFileURL(@RequestParam("bucketName")String bucketName,@RequestParam("key")String key){
         URL downloadPath = build().getDownloadPath(bucketName, key);
+
         return ResponseResult.successResult(100000,downloadPath);
     }
 

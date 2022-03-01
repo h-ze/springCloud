@@ -15,3 +15,9 @@ etc文件系统存放的是各种系统配置文件
 
 echo $PATH 显示当前PATH环境变量
 echo ￥JAVA_HOME 显示当前jdk安装路径，前提已经配置
+
+创建文件夹 mkdir
+创建文件 touch
+
+wget 下载功能
+还有yum

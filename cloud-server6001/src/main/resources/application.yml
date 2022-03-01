@@ -3,6 +3,23 @@ server :
   servlet.context-path : /springboot
 
 spring:
+
+#  data:
+#    mongodb:
+#      # 登录用户所在的数据库
+#      authentication-database: admin
+#      # 数据库的ip地址
+#      host: 8.142.46.67
+#      # MongoDB端口号
+#      port: 27017
+#      # 用户账号
+#      username: root
+#      # 用户密码
+#      password: hz15858
+#      # 指定使用的数据库
+#      # 不必预先创建，不存在该数据库会自动创建
+#      database: hz
+
   profiles.active: "@profileActive@"
   application:
     name: server
@@ -112,4 +129,48 @@ aliyun:
   accessKeySecret:
   bucketName:
   urlPrefix:
+
+
+
+  #基础连接参数
+  #要连接的数据库
+mongodb:
+  database: hz
+  #用户名
+  username: root
+  #密码
+  password: hz15858
+  #IP和端口（host:port），例如127.0.0.1:27017。集群模式用,分隔开，例如host1:port1,host2:port2
+  address: 8.142.46.67:27017
+  #设置认证数据库，如果有的话
+  authenticationDatabase: admin
+
+  # 客户端连接池参数
+  #客户端的标识，用于定位请求来源等，一般用程序名
+  clientName: ${spring.application.name}
+  #TCP（socket）连接超时时间，毫秒
+  connectionTimeoutMs: 5000
+  #TCP（socket）连接闲置时间，毫秒
+  maxConnectionIdleTimeMs: 60000
+  #TCP（socket）连接最多可以使用多久，毫秒
+  maxConnectionLifeTimeMs: 300000
+  #TCP（socket）读取超时时间，毫秒
+  readTimeoutMs: 15000
+  #当连接池无可用连接时客户端阻塞等待的最大时长，毫秒
+  maxWaitTimeMs: 5000
+  #心跳检测发送频率，毫秒
+  heartbeatFrequencyMs: 20000
+  #最小的心跳检测发送频率，毫秒
+  minHeartbeatFrequencyMs: 8000
+  #心跳检测连接超时时间，毫秒
+  heartbeatConnectionTimeoutMs: 10000
+  #心跳检测读取超时时间，毫秒
+  heartbeatReadTimeoutMs: 15000
+  #线程池允许的最大连接数
+  connectionsPerHost: 100
+  #线程池空闲时保持的最小连接数
+  minConnectionsPerHost: 20
+  #计算允许多少个线程阻塞等待时的乘数，算法：threadsAllowedToBlockForConnectionMultiplier*maxConnectionsPerHost
+  threadsAllowedToBlockForConnectionMultiplier: 10
+
 

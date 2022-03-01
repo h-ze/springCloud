@@ -1,0 +1,557 @@
+2022-02-27 04:15:53.212 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 13 common frames omitted
+2022-02-27 13:03:10.335 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted
+2022-02-27 16:59:55.813 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted
+2022-02-27 17:21:55.525 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted
+2022-02-27 17:32:55.675 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted
+2022-02-27 18:55:19.024 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:00:51.690 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:01:51.171 [http-nio-6001-exec-1] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5A1F9849B4333994F29B
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5A1F9849B4333994F29B</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:08:05.363 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:10:23.255 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:10:34.930 [http-nio-6001-exec-1] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5C2BA645AE34300B7DA1
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5C2BA645AE34300B7DA1</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:12:03.938 [http-nio-6001-exec-4] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5C84E80D013333298E47
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5C84E80D013333298E47</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:14:23.795 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:14:38.862 [http-nio-6001-exec-1] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5D1E5C8CDB3839E5261B
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5D1E5C8CDB3839E5261B</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:15:12.686 [http-nio-6001-exec-2] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5D405B40CC3833AEE7FF
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5D405B40CC3833AEE7FF</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:19:04.295 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:19:34.252 [http-nio-6001-exec-1] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5E463218A13331A40772
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5E463218A13331A40772</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:20:16.626 [http-nio-6001-exec-2] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5E70E80D013332DC524D
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5E70E80D013332DC524D</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:20:56.586 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:21:12.087 [http-nio-6001-exec-1] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5EA85C8CDB3932A7DE1F
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5EA85C8CDB3932A7DE1F</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:23:54.661 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:24:06.999 [http-nio-6001-exec-1] WARN  com.aliyun.oss - [Server]Unable to execute HTTP request: The object you specified already exists and can not be overwritten.
+[ErrorCode]: FileAlreadyExists
+[RequestId]: 621B5F573218A134387D3B75
+[HostId]: oss-heze.oss-cn-beijing.aliyuncs.com
+[ResponseError]:
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>FileAlreadyExists</Code>
+  <Message>The object you specified already exists and can not be overwritten.</Message>
+  <RequestId>621B5F573218A134387D3B75</RequestId>
+  <HostId>oss-heze.oss-cn-beijing.aliyuncs.com</HostId>
+</Error>
+
+2022-02-27 19:26:55.055 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:29:39.024 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:29:43.210 [boundedElastic-1] WARN  o.s.b.actuate.redis.RedisReactiveHealthIndicator - Redis health check failed
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 8.142.46.67:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1199)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1178)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedReactiveConnection(LettuceConnectionFactory.java:952)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:429)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getReactiveConnection(LettuceConnectionFactory.java:94)
+	at reactor.core.publisher.MonoSupplier.call(MonoSupplier.java:85)
+	at reactor.core.publisher.FluxSubscribeOnCallable$CallableSubscribeOnSubscription.run(FluxSubscribeOnCallable.java:225)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 8.142.46.67:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:234)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:207)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1197)
+	... 13 common frames omitted
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.base/java.lang.ApplicationShutdownHooks.add(ApplicationShutdownHooks.java:66)
+	at java.base/java.lang.Runtime.addShutdownHook(Runtime.java:215)
+	at io.lettuce.core.metrics.DefaultCommandLatencyCollector$DefaultPauseDetectorWrapper.retain(DefaultCommandLatencyCollector.java:381)
+	at io.lettuce.core.metrics.DefaultCommandLatencyCollector.lambda$new$0(DefaultCommandLatencyCollector.java:79)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
+	at io.lettuce.core.metrics.DefaultCommandLatencyCollector.recordCommandLatency(DefaultCommandLatencyCollector.java:108)
+	at io.lettuce.core.protocol.CommandHandler.recordLatency(CommandHandler.java:787)
+	at io.lettuce.core.protocol.CommandHandler.decode(CommandHandler.java:670)
+	at io.lettuce.core.protocol.CommandHandler.decode(CommandHandler.java:596)
+	at io.lettuce.core.protocol.CommandHandler.channelRead(CommandHandler.java:565)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1422)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:374)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:360)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:931)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:700)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:635)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:514)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$6.run(SingleThreadEventExecutor.java:1050)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 common frames omitted
+2022-02-27 19:29:55.966 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:31:06.513 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:33:23.020 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 19:39:25.130 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 21:09:45.050 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted
+2022-02-27 21:28:44.105 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted
+2022-02-27 22:02:19.908 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 22:02:34.007 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted
+2022-02-27 22:03:32.595 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-02-27 22:19:46.638 [MaintenanceTimer-1-thread-1] WARN  org.mongodb.driver.connection - Exception thrown during connection pool background maintenance task
+com.mongodb.MongoSecurityException: Exception authenticating MongoCredential{mechanism=SCRAM-SHA-1, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}
+	at com.mongodb.internal.connection.SaslAuthenticator.wrapException(SaslAuthenticator.java:173)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$300(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:70)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.SaslAuthenticator.doAsSubject(SaslAuthenticator.java:179)
+	at com.mongodb.internal.connection.SaslAuthenticator.authenticate(SaslAuthenticator.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.authenticateAll(InternalStreamConnectionInitializer.java:156)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:129)
+	at com.mongodb.internal.connection.UsageTrackingInternalConnection.open(UsageTrackingInternalConnection.java:50)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:530)
+	at com.mongodb.internal.connection.DefaultConnectionPool$UsageTrackingInternalConnectionItemFactory.create(DefaultConnectionPool.java:518)
+	at com.mongodb.internal.connection.ConcurrentPool.createNewAndReleasePermitIfFailure(ConcurrentPool.java:181)
+	at com.mongodb.internal.connection.ConcurrentPool.ensureMinSize(ConcurrentPool.java:175)
+	at com.mongodb.internal.connection.DefaultConnectionPool$3.run(DefaultConnectionPool.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:563)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:448)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:299)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:259)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.SaslAuthenticator.sendSaslStart(SaslAuthenticator.java:130)
+	at com.mongodb.internal.connection.SaslAuthenticator.access$100(SaslAuthenticator.java:40)
+	at com.mongodb.internal.connection.SaslAuthenticator$1.run(SaslAuthenticator.java:54)
+	... 18 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:580)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:445)
+	... 25 common frames omitted

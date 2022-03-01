@@ -1,4 +1,4 @@
-2022-03-01 12:37:46.386 [AMQP Connection 8.142.46.67:5672] ERROR com.rabbitmq.client.impl.ForgivingExceptionHandler - An unexpected connection driver error occured
+2022-02-28 16:13:41.620 [AMQP Connection 8.142.46.67:5672] ERROR com.rabbitmq.client.impl.ForgivingExceptionHandler - An unexpected connection driver error occured
 java.net.SocketException: Operation timed out (Read failed)
 	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
 	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
@@ -11,4 +11,4 @@ java.net.SocketException: Operation timed out (Read failed)
 	at com.rabbitmq.client.impl.SocketFrameHandler.readFrame(SocketFrameHandler.java:184)
 	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:598)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2022-03-01 12:37:46.506 [AMQP Connection 8.142.46.67:5672] ERROR o.s.a.rabbit.connection.CachingConnectionFactory - Channel shutdown: connection error
+2022-02-28 16:13:41.795 [AMQP Connection 8.142.46.67:5672] ERROR o.s.a.rabbit.connection.CachingConnectionFactory - Channel shutdown: connection error

@@ -7,6 +7,9 @@ import com.common.utils.PageUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hz.dao.DocDao;
+import com.hz.entity.DocumentMongo;
+import com.hz.mongo.MongoService;
+import com.hz.oss.cloud.OSSFactory;
 import com.hz.service.DocService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("docService")
@@ -24,6 +28,9 @@ public class DocServiceImpl implements DocService {
 
     @Autowired
     private DocDao docDao;
+
+    @Autowired
+    private MongoService mongoService;
 
     @Override
     public int createDocument(Document document) {
@@ -48,6 +55,24 @@ public class DocServiceImpl implements DocService {
     @Override
     public List<Document> getDocumentList(String userId) {
         return docDao.getDocs(userId);
+    }
+
+    @Override
+    public String uploadDoc(Document document,DocumentMongo documentMongo,byte[] bytes,Long size,String suffix){
+
+        //String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+        String url = OSSFactory.build().uploadSuffix(bytes,size, suffix);
+
+
+
+        docDao.addDoc(document);
+        ArrayList<String> objects = new ArrayList<>();
+        objects.add("1");
+
+        //objects.get(2);
+        mongoService.insert(documentMongo,"hz");
+
+        return url;
     }
 
     @Override

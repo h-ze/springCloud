@@ -26,12 +26,6 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JWTFilter.class);
 
-    @Autowired
-    private JWTUtil jwtUtil;
-
-    @Autowired
-    private RedisTemplate redisTemplate;
-
     /**
      * 如果带有 token，则对 token 进行检查，否则直接通过
      */
@@ -158,8 +152,8 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
         JSONObject jsonObject = new JSONObject(true);
         jsonObject.put("code","999999");
-        jsonObject.put("state",false);
-        jsonObject.put("msg",message);
+        jsonObject.put("message","TOKEN_ERROR");
+        jsonObject.put("data",message);
         response.setContentType("application/json;charset=UTF-8");
         try {
             response.getWriter().println(jsonObject.toString());

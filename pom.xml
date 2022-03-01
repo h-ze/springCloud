@@ -23,14 +23,12 @@
         <module>cloud-openFeignProvider8101</module>
         <module>cloud-openFeignConsumer8102</module>
         <module>cloud-hystrix8103</module>
-        <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-feign-order80</module>
         <module>cloud-hystrix-dashboard9001</module>
         <module>cloud-gateway9100</module>
         <module>cloud-config-center3344</module>
         <module>cloud-config-client3355</module>
         <module>cloud-config-client3366</module>
-        <module>cloud-server6001</module>
         <module>cloud-stream-rabbitmq-provider8801</module>
         <module>cloud-stream-rabbitmq-consumer8802</module>
         <module>cloud-stream-rabbitmq-consumer8803</module>
@@ -49,11 +47,10 @@
         <module>cloudAlibaba-seata-storage-service2002</module>
         <module>cloudAlibaba-seata-account-service2003</module>
         <module>cloud-gatewayOauth2-9999</module>
-        <module>cloud-commons</module>
 
         <module>oauth2</module>
         <module>support</module>
-        <module>cloud-oss</module>
+
         <module>cloud-grpc</module>
     </modules>
 
@@ -83,7 +80,7 @@
         <spring.boot.admin.version>2.3.1</spring.boot.admin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <!--<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>-->
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven.jar.version>3.2.0</maven.jar.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>
@@ -303,11 +300,11 @@
                     </executions>
                 </plugin>
                 <!-- java文档插件 -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                    <version>${maven-javadoc-plugin.version}</version>-->
+<!--                </plugin>-->
                 <!-- 版本号管理，https://blog.csdn.net/bluetjs/article/details/90295973，一键更新子模块版本号 mvn -N versions:update-child-modules,mvn versions:set -DnewVersion=1.0.0.RELEASE -DgenerateBackupPoms=false  -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -431,10 +428,10 @@
                 <service.redis.port>6379</service.redis.port>
                 <service.redis.password>hz15858</service.redis.password>
             </properties>
-            <activation>
-                <jdk>[1.8,)</jdk>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+<!--            <activation>-->
+<!--                <jdk>[1.8,)</jdk>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
         </profile>
         <profile>
             <id>fat</id>
@@ -511,6 +508,7 @@
                 <service.admin.password>admin</service.admin.password>
             </properties>
         </profile>
+
     </profiles>
 
 
