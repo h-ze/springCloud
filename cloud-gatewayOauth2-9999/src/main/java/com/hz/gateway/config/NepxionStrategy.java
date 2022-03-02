@@ -39,7 +39,7 @@ public class NepxionStrategy implements DiscoveryEnabledStrategy {
         //header传递的期望版本，这里只是演示全局统一版本号
         String targetVersion = gatewayStrategyContextHolder.getHeader("version");
         /*//当前网关服务版本
-        String currentVersion=gatewayStrategyContextHolder.getHeader("n-d-service-version");*/
+        String currentVersion=gatewayStrategyContextHolder.getHeader("n-d-hz.service-version");*/
         String serviceId = pluginAdapter.getServerServiceId(server);
         String version = pluginAdapter.getServerVersion(server);
         String region = pluginAdapter.getServerRegion(server);

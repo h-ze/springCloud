@@ -39,7 +39,7 @@ ACID，是指数据库管理系统（DBMS）在写入或更新资料的过程中
 
 Eureka是spring cloud中的一个负责服务注册与发现的组件。遵循着CAP理论中的A(可用性)P(分区容错性)。
 
-一个Eureka中分为eureka server和eureka client。其中eureka server是作为服务的注册与发现中心。eureka client既可以作为服务的生产者，又可以作为服务的消费者
+一个Eureka中分为eureka server和eureka hz.client。其中eureka server是作为服务的注册与发现中心。eureka client既可以作为服务的生产者，又可以作为服务的消费者
 对比zookeeper(zookeeper是一个cp系统)
 
 Eureka是Netflix开发的服务发现框架，SpringCloud将它集成在自己的子项目

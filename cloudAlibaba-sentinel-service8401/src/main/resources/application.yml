@@ -6,7 +6,7 @@ server:
 spring:
   #profiles.active: "@profileActive@"
   application:
-    name: cloudAlibaba-sentinel-service
+    name: cloudAlibaba-sentinel-hz.service
 
   cloud:
     nacos:
@@ -23,7 +23,7 @@ spring:
         ds1:
           nacos:
             server-addr: 8.142.46.67:8848
-            dataId: cloudAlibaba-sentinel-service
+            dataId: cloudAlibaba-sentinel-hz.service
             groupId: DEFAULT_GROUP
             data-type: json
             rule-type: flow

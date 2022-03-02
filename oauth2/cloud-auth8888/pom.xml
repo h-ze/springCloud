@@ -110,7 +110,7 @@
         </dependency>
         <dependency>
             <groupId>com.nepxion</groupId>
-            <artifactId>discovery-plugin-strategy-starter-service</artifactId>
+            <artifactId>discovery-plugin-strategy-starter-hz.service</artifactId>
             <version>${nepxion.version}</version>
         </dependency>-->
         <!-- spring boot admin-->
@@ -121,7 +121,7 @@
                 </dependency>-->
         <!--<dependency>
             <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <artifactId>spring-boot-admin-starter-hz.client</artifactId>
         </dependency>-->
         <!-- oauth2 -->
         <dependency>

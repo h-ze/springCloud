@@ -1,0 +1,12 @@
+
+#grpc.hz.client.grpc-server.host:127.0.0.1
+#grpc.hz.client.grpc-server.port:7052
+
+
+grpc:
+  client:
+    grpc-server:
+      host: 127.0.0.1
+      port: 7052
+server:
+  port: 9001

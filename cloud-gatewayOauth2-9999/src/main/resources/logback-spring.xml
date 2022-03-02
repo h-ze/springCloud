@@ -70,11 +70,11 @@
     </appender>-->
 
 
-    <logger name="com.alibaba.nacos.client" level="${log.level.nacos}" additivity="false">
+    <logger name="com.alibaba.nacos.hz.client" level="${log.level.nacos}" additivity="false">
         <appender-ref ref="ROOT_APPENDER"/>
     </logger>
 
-    <logger name="com.alibaba.nacos.client.config" level="${log.level.nacos}" additivity="false">
+    <logger name="com.alibaba.nacos.hz.client.config" level="${log.level.nacos}" additivity="false">
         <appender-ref ref="ROOT_APPENDER"/>
     </logger>
 

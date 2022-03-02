@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: grpc-server
+
+grpc:
+  server:
+    port: 7052
+
+server:
+  port: 9002

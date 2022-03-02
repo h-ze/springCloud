@@ -29,8 +29,8 @@ public class ApplicationContextListener implements ApplicationListener<ContextRe
             for(Object service : baseServices.values()) {
                 LOGGER.debug(">>>>> {}.initMapper()", service.getClass().getName());
                 /*try {
-                    Method initMapper = service.getClass().getMethod("initMapper");
-                    initMapper.invoke(service);
+                    Method initMapper = hz.service.getClass().getMethod("initMapper");
+                    initMapper.invoke(hz.service);
                 } catch (Exception e) {
                     LOGGER.error("初始化BaseService的initMapper方法异常", e);
                     e.printStackTrace();
@@ -39,11 +39,11 @@ public class ApplicationContextListener implements ApplicationListener<ContextRe
 
             // 系统入口初始化
             /*Map<String, BaseInterface> baseInterfaceBeans = contextRefreshedEvent.getApplicationContext().getBeansOfType(BaseInterface.class);
-            for(Object service : baseInterfaceBeans.values()) {
-                LOGGER.debug(">>>>> {}.init()", service.getClass().getName());
+            for(Object hz.service : baseInterfaceBeans.values()) {
+                LOGGER.debug(">>>>> {}.init()", hz.service.getClass().getName());
                 try {
-                    Method init = service.getClass().getMethod("init");
-                    init.invoke(service);
+                    Method init = hz.service.getClass().getMethod("init");
+                    init.invoke(hz.service);
                 } catch (Exception e) {
                     LOGGER.error("初始化BaseInterface的init方法异常", e);
                     e.printStackTrace();

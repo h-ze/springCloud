@@ -1,6 +1,6 @@
-service iptables status 防火墙的状态
-service iptables restart 重启防火墙
-service iptables stop/start 关闭/打开防火墙（其他服务类似）
+hz.service iptables status 防火墙的状态
+hz.service iptables restart 重启防火墙
+hz.service iptables stop/start 关闭/打开防火墙（其他服务类似）
 
 reboot 重启linux服务器
 

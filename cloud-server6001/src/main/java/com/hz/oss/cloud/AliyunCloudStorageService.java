@@ -26,7 +26,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
     private static final Logger logger =LoggerFactory.getLogger(AliyunCloudStorageService.class);
 
     //oss2.5.0版本
-    //private OSSClient client;
+    //private OSSClient hz.client;
 
     private OSS client;
 
@@ -49,11 +49,11 @@ public class AliyunCloudStorageService extends CloudStorageService {
                 conf);
 
         // 创建OSSClient实例。2.5.0版本
-        //client = new OSSClient(config.getAliyunEndPoint(), config.getAliyunAccessKeyId(), config.getAliyunAccessKeySecret());
+        //hz.client = new OSSClient(config.getAliyunEndPoint(), config.getAliyunAccessKeyId(), config.getAliyunAccessKeySecret());
 
 
         // 关闭OSSClient。
-        //client.shutdown();
+        //hz.client.shutdown();
     }
 
     @Override
@@ -100,7 +100,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
             putObjectRequest.setMetadata(metadata);
 
             // 上传文件。
-            client.putObject(putObjectRequest);*/
+            hz.client.putObject(putObjectRequest);*/
 
 
 
@@ -136,7 +136,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
             //上传文件   (上传文件流的形式)
             PutObjectResult putResult = client.putObject(config.getAliyunBucketName(), suffix, is, metadata);
 
-            //String location = client.getBucketLocation(config.getAliyunBucketName());
+            //String location = hz.client.getBucketLocation(config.getAliyunBucketName());
 
             //解析结果
             resultStr = putResult.getETag();
@@ -177,7 +177,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
             //createBucketRequest.setCannedACL(CannedAccessControlList.PublicRead);
 
             //创建存储空间
-            //Bucket bucket=client.createBucket(bucketName);
+            //Bucket bucket=hz.client.createBucket(bucketName);
             Bucket bucket = client.createBucket(createBucketRequest);
             logger.info("创建存储空间成功");
             return bucket.getName();
@@ -233,7 +233,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
             System.out.println("Host ID:" + oe.getHostId());
             return "删除失败，"+oe.getErrorMessage();
         } catch (ClientException ce) {
-            System.out.println("Caught an ClientException, which means the client encountered "
+            System.out.println("Caught an ClientException, which means the hz.client encountered "
                     + "a serious internal problem while trying to communicate with OSS, "
                     + "such as not being able to access the network.");
             System.out.println("Error Message:" + ce.getMessage());
@@ -241,8 +241,8 @@ public class AliyunCloudStorageService extends CloudStorageService {
         } catch (Exception e){
             logger.error(e.getLocalizedMessage());
         }finally {
-            /*if (client != null) {
-                client.shutdown();
+            /*if (hz.client != null) {
+                hz.client.shutdown();
             }*/
         }
         logger.info("删除" + config.getAliyunBucketName() + "下的文件" + folder + key + "成功");
@@ -411,7 +411,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
             System.out.println("Request ID:" + oe.getRequestId());
             System.out.println("Host ID:" + oe.getHostId());
         } catch (ClientException ce) {
-            System.out.println("Caught an ClientException, which means the client encountered "
+            System.out.println("Caught an ClientException, which means the hz.client encountered "
                     + "a serious internal problem while trying to communicate with OSS, "
                     + "such as not being able to access the network.");
             System.out.println("Error Message:" + ce.getMessage());
@@ -559,7 +559,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
             System.out.println("Request ID:" + oe.getRequestId());
             System.out.println("Host ID:" + oe.getHostId());
         } catch (ClientException ce) {
-            System.out.println("Caught an ClientException, which means the client encountered "
+            System.out.println("Caught an ClientException, which means the hz.client encountered "
                     + "a serious internal problem while trying to communicate with OSS, "
                     + "such as not being able to access the network.");
             System.out.println("Error Message:" + ce.getMessage());
@@ -677,7 +677,7 @@ public class AliyunCloudStorageService extends CloudStorageService {
         keys.add("testfolder/sampleobject.txt");
         keys.add("exampleobjectb.txt");
 
-        DeleteObjectsResult deleteObjectsResult = client.deleteObjects(new DeleteObjectsRequest(bucketName).withKeys(keys).withEncodingType("url"));
+        DeleteObjectsResult deleteObjectsResult = hz.client.deleteObjects(new DeleteObjectsRequest(bucketName).withKeys(keys).withEncodingType("url"));
         List<String> deletedObjects = deleteObjectsResult.getDeletedObjects();
         try {
             for(String obj : deletedObjects) {

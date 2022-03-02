@@ -95,7 +95,7 @@ mybatis :
 #    root: info
 #    com.hz.dao: debug
 #
-#    eureka.client.healthcheck.enabled: false
+#    eureka.hz.client.healthcheck.enabled: false
 
 
 #  file:

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-auth-feign-seata-sentinel-service-api9997</artifactId>
+    <artifactId>cloud-auth-feign-seata-sentinel-hz.service-api9997</artifactId>
 
     <dependencies>
 

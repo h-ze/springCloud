@@ -20,12 +20,12 @@ server:
 spring:
   #profiles.active: "@profileActive@"
   application:
-    name: cloudAlibaba-seata-order-service
+    name: cloudAlibaba-seata-order-hz.service
 
   cloud:
 #    alibaba:
 #      seata:
-#        tx-service-group: fsp_tx_group
+#        tx-hz.service-group: fsp_tx_group
     nacos:
       discovery:
         server-addr: 8.142.46.67:8848
