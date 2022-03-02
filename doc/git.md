@@ -67,21 +67,21 @@ git merge 则不会显示 feature，只保留单条分支记录。
 
 
 开发一个新功能或修复一个Bug，开发者应当总是从develop分支创建出一个feature分支
-，分支的命名建议为 feature/jira_id，比如： feature/PHANTOM-8638。功能开发完成后，
+，分支的命名建议为 feature/jira_id，比如： feature/test-1000。功能开发完成后，
 应当再次把develop分支合并入feature/jira_id，在本地做集成测试，确认后发起一个Merge Request，
 基于Merge Request开展code-review，code-review通过后由被授权的开发人员批准合并请求把代码合并入develop主干分支。
 为了确保提交日志能够被正确comment到JIRA任务单，git提交信息应该包含任务单编号，例如：
 
 # 创建feature分支
-$ git checkout -b feature/PHANTOM-8638 develop
-Switched to a new branch "feature/PHANTOM-8638"
+$ git checkout -b feature/test-1000 develop
+Switched to a new branch "feature/test-1000"
  
 # 在 feature/jira_id 分支提交代码， 如果你希望这条提交记录可以被自动comment到对应的jira任务单，那么请在提交描述信息里包含 jira_id，这是一个可选项。
-$ git commit -m "Resolves PHANTOM-8638, 其他描述本次提交的简短文字...."
+$ git commit -m "Resolves test-1000, 其他描述本次提交的简短文字...."
  
 # 再次把最新的develop分支代码合并入feature/JIRA_ID，
 $ git checkout develop && git pull
-$ git checkout feature/PHANTOM-8638 && git merge --no-ff develop
+$ git checkout feature/test-1000 && git merge --no-ff develop
  
 # 集成测试，在Gitlab的WebGUI上操作发起Merge Request
  
@@ -89,7 +89,7 @@ $ git checkout feature/PHANTOM-8638 && git merge --no-ff develop
 # code-review通过后，合并代码到develop分支
 $ git checkout develop
 Switched to branch 'develop'
-$ git merge --no-ff feature/PHANTOM-8638
+$ git merge --no-ff feature/test-1000
 Updating ea1b82a..05e9557
 (Summary of changes)
 
@@ -98,7 +98,7 @@ Updating ea1b82a..05e9557
 
 
 修复一个生产环境中的BUG，开发者首先要确定生产环境中代码的版本号，然后总是从master分支的指定tag创建出一个hotfix分支，
-分支的命名建议为 hotfix/jira_id，比如： hotfix/PHANTOM-x。问题修复完成后发起一个Merge Request，
+分支的命名建议为 hotfix/jira_id，比如： hotfix/test-x。问题修复完成后发起一个Merge Request，
 基于Merge Request开展code-review，code-review通过后由被授权的开发人员批准合并请求把代码合并入master主干分支，
 创建新的tag，然后部署到生产环境，同时把hotfix/jira_id合并入develop分支。
 
@@ -108,7 +108,7 @@ $ git checkout -b hotfix-1.2.1 master
 Switched to a new branch "hotfix-1.2.1"
  
 # 在 hotfix/jira_id 分支提交代码， 如果你希望这条提交记录可以被自动comment到对应的jira任务单，那么请在提交描述信息里包含 jira_id，这是一个可选项。
-$ git commit -a -m "Fixes PHANTOM-x, 其他描述本次提交的简短文字...."
+$ git commit -a -m "Fixes test-x, 其他描述本次提交的简短文字...."
 [hotfix-1.2.1 41e61bb] .....
 1 files changed, 1 insertions(+), 1 deletions(-)
  
