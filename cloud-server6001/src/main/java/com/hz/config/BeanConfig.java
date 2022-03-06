@@ -41,7 +41,4 @@ public class BeanConfig {
         return new RestTemplate();
     }
 
-    public static Boolean isOpenRedis(){
-        return true;
-    }
 }

@@ -5,12 +5,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @MapperScan("com.hz.dao")
 @EnableCaching
-
+@EnableAsync
 //该注解已停止使用
 //@EnableEurekaClient
 @EnableScheduling
@@ -20,6 +21,7 @@ public class ServerApplication extends SpringBootServletInitializer {
         SpringApplication.run(ServerApplication.class,args);
 
     }
+
     //war包打开 需要继承SpringBootServletInitializer
 //    @Override
 //    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {

@@ -26,5 +26,6 @@ public interface DocService {
      */
     PageResult getDocsPage(PageRequest pageRequest,String userId);
 
+    String convertDoc();
 
 }

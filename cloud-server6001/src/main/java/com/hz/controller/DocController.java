@@ -1,13 +1,11 @@
 package com.hz.controller;
 
 
-import com.common.entity.Document;
-import com.common.entity.PageRequest;
-import com.common.entity.PageResult;
-import com.common.entity.ResponseResult;
+import com.common.entity.*;
 import com.common.exception.RRException;
+import com.hz.annotation.SysLog;
 import com.hz.entity.DocumentMongo;
-import com.hz.oss.cloud.OSSFactory;
+import com.hz.service.AsyncService;
 import com.hz.service.DocService;
 import com.hz.utils.JWTUtil;
 import io.jsonwebtoken.Claims;
@@ -24,7 +22,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -37,6 +34,9 @@ public class DocController {
 
     @Autowired
     private DocService docService;
+
+    @Autowired
+    private AsyncService asyncService;
 
     @Autowired
     private JWTUtil jwtUtil;
@@ -68,11 +68,12 @@ public class DocController {
      * 获取文档列表
      * @return ConvertResult对象
      */
+    @SysLog
     @ApiOperation(value ="获取文档列表",notes="获取文档列表")
     @GetMapping("/document")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "page",value = "页数",paramType = "query",dataType = "Integer",required = true),
-            @ApiImplicitParam(name = "per_page",value = "每页数量",paramType = "query",dataType = "Integer",required = true)
+            @ApiImplicitParam(name = "page",value = "页数",paramType = "query",dataType = "int",required = true),
+            @ApiImplicitParam(name = "per_page",value = "每页数量",paramType = "query",dataType = "int",required = true)
     })
     public ResponseResult getDocList(@RequestParam("per_page")Integer per_page,
                                      @RequestParam("page")Integer page){
@@ -204,4 +205,18 @@ public class DocController {
 
     }
 
+    @PostMapping("convert")
+    @ApiOperation("转换文档")
+    public ResponseResult convertMethod(){
+        String convertDoc = docService.convertDoc();
+        return ResponseResult.successResult(100000,convertDoc);
+    }
+
+    @GetMapping("queryTask")
+    @ApiOperation("查询文档转换任务")
+    @ApiImplicitParam(name ="taskId",value = "任务id",paramType = "query",dataType = "String",required = true)
+    public ResponseResult queryTask(@RequestParam("taskId")String taskId){
+        DocTask task = asyncService.getTask(taskId);
+        return ResponseResult.successResult(100000,task);
+    }
 }

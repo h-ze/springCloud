@@ -4,9 +4,9 @@ import com.aliyun.oss.*;
 import com.aliyun.oss.common.comm.Protocol;
 import com.aliyun.oss.model.*;
 import com.common.exception.RRException;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.thymeleaf.util.StringUtils;
 
 import java.io.*;
 import java.net.URL;

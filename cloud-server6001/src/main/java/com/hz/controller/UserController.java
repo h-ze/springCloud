@@ -3,6 +3,7 @@ package com.hz.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.common.entity.*;
 import com.google.common.base.Objects;
+import com.hz.service.RedisService;
 import com.hz.service.UserInfoService;
 import com.hz.service.UserService;
 import com.hz.utils.*;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -27,7 +29,6 @@ import java.util.Map;
 
 import static com.common.constant.Constant.TOKEN;
 import static com.common.constant.Constant.USERROLES;
-import static com.hz.config.BeanConfig.isOpenRedis;
 
 @Controller
 @Api(tags = "用户管理接口")
@@ -45,8 +46,11 @@ public class UserController {
     @Autowired
     private JWTUtil jwtUtil;
 
+//    @Autowired
+//    private RedisUtil redisUtil;
+
     @Autowired
-    private RedisUtil redisUtil;
+    private RedisService redisService;
 
     @Autowired
     private RedisUtils redisUtils;
@@ -93,7 +97,12 @@ public class UserController {
         return "index";
     }
 
-
+    @GetMapping("/index")
+    public ModelAndView userIndex() {
+        ModelAndView view = new ModelAndView();
+        view.setViewName("userIndex");
+        return view;
+    }
 
 
     /**
@@ -188,18 +197,16 @@ public class UserController {
                 String token = jwtUtil.createJWT(user.getId().toString(),
                         user.getName(),user.getUserId(), user.getSalt());
                 log.info(token);
-                if (isOpenRedis()){
-                    //将登录的token存储到redis中
-                    JSONObject jsonObject = new JSONObject();
-                    jsonObject.put(TOKEN,token);
-                    jsonObject.put(USERROLES,user.getRoles());
-                    boolean set = redisUtils.set(user.getUserId(), jsonObject.toString(), 600);
-                    //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
-                    //log.info("结果: {}",set);
-                }
+                //将登录的token存储到redis中
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put(TOKEN,token);
+                jsonObject.put(USERROLES,user.getRoles());
+                boolean set = redisUtils.set(user.getUserId(), jsonObject.toString(), 60*60*24);
+                //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
+                //log.info("结果: {}",set);
                 return ResponseResult.successResult(100000,token);
             }else {
-                Integer errorNum=1;
+                int errorNum=1;
                 if (redisUtils.hasKey(user.getUserId())) {
                     String s = (String) redisUtils.get(user.getUserId());
                     JSONObject jsonObject = JSONObject.parseObject(s);
@@ -238,6 +245,8 @@ public class UserController {
         Subject subject = SecurityUtils.getSubject();
         String subjectPrincipal = (String) subject.getPrincipal();
         log.info("退出登录前的token:"+subjectPrincipal);
+        redisService.addExpireRedis();
+
         subject.logout();
 
         String kdTopic = "pos_message_all";
