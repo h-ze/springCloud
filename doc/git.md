@@ -182,3 +182,7 @@ feature 分支是临时的工作分支，用于执行develop分支或release/ver
 从 feature/jira_id 分支合并代码到 develop 分支或release/version分支必须先创建 merge request，并且 code-review合格后，才能由被授权的开发人员批准合并请求和执行代码合并。
 
 feature/jira_id 被合并到 develop分支或release/version分支后，执行该任务的开发人员可以决定是否保留 feature/jira_id 分支
+
+
+出现 fatal: Will not add file alias 'cloud-GRPC/pom.xml' ('cloud-grpc/pom.xml' already exists in index)问题时可以使用
+git rm -r --cached cloud-grpc/pom.xml
