@@ -2,7 +2,7 @@ server:
   port: 3355
 spring:
   application:
-    name: config-client
+    name: config-hz.client
   cloud:
     config:
       label: main #分支名称
@@ -23,7 +23,7 @@ eureka:
     healthcheck:
       enabled: true
   instance:
-    instance-id: config-client-3355
+    instance-id: config-hz.client-3355
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2

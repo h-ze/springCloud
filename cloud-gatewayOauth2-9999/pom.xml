@@ -83,7 +83,7 @@
         <!-- spring boot admin-->
         <!--<dependency>
             <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <artifactId>spring-boot-admin-starter-hz.client</artifactId>
         </dependency>-->
         <!-- oauth2 -->
         <dependency>
