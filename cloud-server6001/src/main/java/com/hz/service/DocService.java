@@ -3,6 +3,7 @@ package com.hz.service;
 import com.common.entity.Document;
 import com.common.entity.PageRequest;
 import com.common.entity.PageResult;
+import com.hz.entity.DocumentMongo;
 
 import java.util.List;
 
@@ -12,6 +13,8 @@ public interface DocService {
     int updateDocument(Document document);
     Document getDocument(String docId);
     List<Document> getDocumentList(String userId);
+
+    String uploadDoc(Document document,DocumentMongo documentMongo,byte[] bytes,Long size,String suffix);
 
     /**
      * 分页查询接口
@@ -23,5 +26,6 @@ public interface DocService {
      */
     PageResult getDocsPage(PageRequest pageRequest,String userId);
 
+    String convertDoc();
 
 }

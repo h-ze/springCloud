@@ -1,25 +1,13 @@
-package com.hz.controller; /**
- * Copyright (c) 2016-2019 人人开源 All rights reserved.
- *
- * https://www.renren.io
- *
- * 版权所有，侵权必究！
- */
+package com.hz.controller;
 
 import com.common.ConfigConstant;
 import com.common.entity.ResponseResult;
-import com.common.exception.RRException;
-import com.google.gson.Gson;
 import com.hz.entity.SysOss;
 import com.hz.oss.cloud.CloudStorageConfig;
-import com.hz.oss.cloud.OSSFactory;
 import com.hz.service.SysConfigService;
 import com.hz.utils.JWTUtil;
 import io.jsonwebtoken.Claims;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -27,10 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
@@ -81,17 +67,16 @@ public class SysOssController {
 	@RequiresRoles("superAdmin")
 	@ApiOperation(value ="创建配置",notes="超级管理员创建配置",response = ResponseResult.class)
 	//@ApiImplicitParam(name = "sysName",value = "服务名称",dataType = "com.hz.entity.SysOss",paramType = "body")
-
 	@ApiImplicitParams({
 			@ApiImplicitParam(name ="endpoint",value = "用户的endpoint",dataType = "String",paramType = "form",required = true),
 			@ApiImplicitParam(name ="accessKeyId",value = "用户的accessKeyId",dataType = "String",paramType = "form",required = true),
 			@ApiImplicitParam(name ="accessKeySecret",value = "用户的accessKeySecret",dataType = "String",paramType = "form",required = true),
 			@ApiImplicitParam(name ="bucketName",value = "用户的bucketName",dataType = "String",paramType = "form",required = true)
 	})
-	public ResponseResult saveConfig(/*@RequestBody SysOss sysOss*/@RequestParam("endpoint") String endpoint,
-																   @RequestParam("accessKeyId")String accessKeyId,
-																   @RequestParam("accessKeySecret")String accessKeySecret,
-																   @RequestParam("bucketName")String bucketName){
+	public ResponseResult saveConfig(@RequestParam("endpoint") String endpoint,
+									 @RequestParam("accessKeyId")String accessKeyId,
+									 @RequestParam("accessKeySecret")String accessKeySecret,
+									 @RequestParam("bucketName")String bucketName){
 
 		String principal = (String) SecurityUtils.getSubject().getPrincipal();
 		Claims claims = jwtUtil.parseJWT(principal);
@@ -140,8 +125,7 @@ public class SysOssController {
 	@PutMapping("config")
 	@ApiOperation(value ="修改配置",notes="超级管理员修改配置",response = ResponseResult.class)
 	@RequiresRoles("superAdmin")
-	@ApiImplicitParam(name = "sysName",value = "服务名称",dataType = "com.hz.entity.SysOss",paramType = "body")
-	public ResponseResult updateConfig(@RequestBody SysOss sysOss){
+	public ResponseResult updateConfig(@RequestBody @ApiParam(value = "服务对象",required = true) SysOss sysOss){
 		sysConfigService.update(sysOss);
 		return ResponseResult.successResult(100000,"更新成功");
 
@@ -152,7 +136,7 @@ public class SysOssController {
 	 */
 	@RequestMapping("/upload")
 	@RequiresPermissions("sys:oss:all")
-	public ResponseResult upload(@RequestParam("file") MultipartFile file) throws Exception {
+	public ResponseResult upload(@RequestParam("file") MultipartFile file){
 		return ResponseResult.successResult(100000,"保存成功");
 
 		/*if (file.isEmpty()) {

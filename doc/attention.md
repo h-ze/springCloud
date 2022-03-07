@@ -5,7 +5,7 @@ Service层处理逻辑
 
 2.redis 已使用部分内容 shiro中的缓存使用的是redis
 
-3.mongodb处理 未安装mongodb
+3.mongodb处理 已处理 已安装mongodb 需要注意用户的权限等内容
 
 4.单元测试 处理完成
 Service层进行单元测试
@@ -42,9 +42,9 @@ MockMvc实现了对Http请求的模拟，能够直接使用网络的形式，转
 分别使用logback和log4j2两种方式 需要放开不同的依赖
 不使用log4j日志方式
 
-6.jenkins自动化部署 
+6.jenkins自动化部署 未处理
 
-7.so文件位置
+7.so文件位置 
 
 8.mybatis配置文件
 
@@ -65,4 +65,4 @@ insert into t_user values(#{userId},#{username},#{age})
 11 oss阿里云 已购买 已经实现上传文件 接下来需要整合springboot
 oss的密码等内容需要入库处理
 
-12 null判断该如何处理
+12 null判断该如何处理 使用@RequestParam注解可以提前判断参数是否为空的问题

@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.listener.api.ChannelAwareMessageListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
@@ -16,7 +17,7 @@ import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-//@Component
+//@Configuration
 @Slf4j
 public class MyAckReceiver implements ChannelAwareMessageListener {
 
@@ -62,6 +63,8 @@ public class MyAckReceiver implements ChannelAwareMessageListener {
                 mailReceiver.sendEmail(email);
 
                 emailService.updateEmailStatus(email,1);
+                channel.basicAck(emailId,false);
+                //channel.basicPublish();
 
             }
 
@@ -79,7 +82,7 @@ public class MyAckReceiver implements ChannelAwareMessageListener {
 
             }
 
-            channel.basicAck(deliveryTag, true);
+            //channel.basicAck(deliveryTag, true);
 //			channel.basicReject(deliveryTag, true);//为true会重新放回队列
         } catch (Exception e) {
             channel.basicReject(deliveryTag, false);

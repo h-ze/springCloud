@@ -4,22 +4,22 @@ import com.common.entity.MailConstants;
 import com.hz.annotation.BaseService;
 import com.hz.dao.EmailDao;
 import com.hz.dao.UserDAO;
+import com.hz.service.RedisService;
 import com.hz.service.UserService;
 import com.common.entity.Email;
 import com.common.entity.User;
 import com.common.entity.UserRoles;
-import com.hz.utils.RedisUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
 
-import static com.hz.config.BeanConfig.isOpenRedis;
 
 @Service("userService")
 @Transactional
@@ -36,11 +36,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    @Autowired
+    private RedisService redisService;
+
     //@Autowired
     //private RedisUtils redisUtils;
 
     @Override
+    //@Async("asyncServiceExecutor")
     public int save(User user, UserRoles userRoles) {
+        //log.info("异步");
         //user.setId(UUID.randomUUID().toString().replace("-",""));
         user.setId(0);
         if (userRoles!=null){
@@ -52,10 +57,18 @@ public class UserServiceImpl implements UserService {
             email.setStatus(2);
             int i = emailDao.addEmailMessage(email);
 
-            rabbitTemplate.convertAndSend(MailConstants.MAIL_EXCHANGE_NAME, MailConstants.MAIL_QUEUE_NAME,email, new CorrelationData(String.valueOf(email.getEmailId())));
+            //rabbitTemplate.convertAndSend(MailConstants.MAIL_EXCHANGE_NAME, MailConstants.MAIL_QUEUE_NAME,email, new CorrelationData(String.valueOf(email.getEmailId())));
+
+            //CorrelationData correlationData = new CorrelationData();
+            //correlationData.setId(String.valueOf(email.getEmailId()));
+            //correlationData.setReturnedMessage();
+            //rabbitTemplate.convertAndSend(MailConstants.MAIL_EXCHANGE_NAME, MailConstants.MAIL_QUEUE_NAME,email, new CorrelationData(String.valueOf(email.getEmailId())));
 
 
-            log.info("i: {}",i);
+            //rabbitTemplate.convertAndSend("test.exchange", "test",email, new CorrelationData(String.valueOf(email.getEmailId())));
+
+
+            //log.info("i: {}",i);
         }
 
         return userDAO.save(user);
@@ -102,39 +115,29 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int deleteUser(String userId, String password) {
-        if (isOpenRedis()){
-            //将redis中的信息删除
-            //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
-            /*redisUtils.del(userId);
-            boolean deleteKey = redisUtils.hasKey(userId);
-            log.info("结果:",deleteKey);*/
+        int i = userDAO.deleteUserByOwner(userId, password);
+        if (i>0){
+            redisService.addExpireRedis();
         }
-        return userDAO.deleteUserByOwner(userId, password);
+        return i;
     }
 
     @Override
     public int deleteUser(String userId) {
-        if (isOpenRedis()){
-            //将redis中的信息删除
-            //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
-            /*redisUtils.del(userId);
-            boolean deleteKey = redisUtils.hasKey(userId);
-            log.info("结果:",deleteKey);*/
+        int i = userDAO.deleteUser(userId);
+        if (i>0){
+            redisService.addExpireRedis();
         }
-        return userDAO.deleteUser(userId);
+        return i;
     }
 
     @Override
     public int updateUserPassword(User user) {
-        if (isOpenRedis()){
-            String userId = user.getUserId();
-            //将redis中的信息删除
-            //boolean setRedisExpire = redisUtil.deleteRedisExpire(userId);
-            /*redisUtils.del(userId);
-            boolean deleteKey = redisUtils.hasKey(userId);
-            log.info("结果:",deleteKey);*/
-        }
-        return userDAO.updateUser(user);
+        int i = userDAO.updateUser(user);
+        if (i>0)
+            redisService.addExpireRedis();
+
+        return i;
     }
 
     @Override

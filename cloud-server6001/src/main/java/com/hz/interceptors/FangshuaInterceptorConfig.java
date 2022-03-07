@@ -1,7 +1,10 @@
 package com.hz.interceptors;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
 
 //@Configuration
 public class FangshuaInterceptorConfig implements WebMvcConfigurer/*extends WebMvcConfigurerAdapter*/ {
@@ -20,4 +23,6 @@ public class FangshuaInterceptorConfig implements WebMvcConfigurer/*extends WebM
                 .excludePathPatterns("/webjars/**")
                 .excludePathPatterns("/user/login","/user/addUser"); //用户登录等功能放行
     }
+
+
 }

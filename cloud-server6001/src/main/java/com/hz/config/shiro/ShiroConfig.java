@@ -2,6 +2,7 @@ package com.hz.config.shiro;
 
 
 
+import com.hz.interceptors.FangshuaInterceptor;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.mgt.SessionStorageEvaluator;
@@ -25,7 +26,6 @@ import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static com.hz.config.BeanConfig.isOpenRedis;
 
 /**
  * springboot整合shiro及jwt对用户的token进行认证判断
@@ -74,7 +74,6 @@ public class ShiroConfig {
         Map<String, Filter> filterMap = new LinkedHashMap<>();
         //设置我们自定义的JWT过滤器
         filterMap.put("jwt", new JWTFilter());
-
         //给filter设置安全管理器
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         shiroFilterFactoryBean.setFilters(filterMap);
@@ -106,16 +105,24 @@ public class ShiroConfig {
 
         filterChainDefinitionMap.put("/code/getLoginQr","anon");
 
+        filterChainDefinitionMap.put("index1.html","anon");
+
+        filterChainDefinitionMap.put("/index/login","anon");
+
+
+
+
         //拦截器需要放在最后 否则以上的放行可能会不生效
 
-        filterChainDefinitionMap.put("/**","jwt");
-
+        //filterChainDefinitionMap.put("/**","jwt");
 
         //默认认证界面路径
-        shiroFilterFactoryBean.setLoginUrl("/user/testRoles");
-        shiroFilterFactoryBean.setLoginUrl("/login"); // 首页get方式authc.loginUrl = /login
+        shiroFilterFactoryBean.setLoginUrl("/index/login");
+        //shiroFilterFactoryBean.setLoginUrl("/login"); // 首页get方式authc.loginUrl = /login
         shiroFilterFactoryBean.setSuccessUrl("/index"); // 错误页面，认证不通过跳转
         shiroFilterFactoryBean.setUnauthorizedUrl("/error");
+
+
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
 
@@ -193,7 +200,7 @@ public class ShiroConfig {
         redisCacheManager.setRedisManager(getRedisManager());
 
         //设置过期时间，单位是秒，20s
-        redisCacheManager.setExpire(20);
+        redisCacheManager.setExpire(60*10);
 
         //此处测试
         redisCacheManager.setPrincipalIdFieldName("userId");

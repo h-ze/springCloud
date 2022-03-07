@@ -1,20 +1,20 @@
 package com.hz.task;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.client.Channel;
 import com.common.entity.Email;
 import com.common.entity.MailConstants;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageProperties;
+import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.mail.MailProperties;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.mail.MailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.messaging.Message;
-import org.springframework.messaging.MessageHeaders;
 import org.springframework.stereotype.Component;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.Context;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
@@ -25,9 +25,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -42,35 +40,92 @@ public class MailReceiver {
     JavaMailSender javaMailSender;
     @Autowired
     MailProperties mailProperties;
-    @Autowired
-    TemplateEngine templateEngine;
+    //@Autowired
+    //TemplateEngine templateEngine;
     @Autowired
     StringRedisTemplate redisTemplate;
 
-    //@RabbitListener(queues = MailConstants.MAIL_QUEUE_NAME)
-    public void handler(Message message, Channel channel) throws IOException, MessagingException {
+    @RabbitListener(/*queues = MailConstants.MAIL_QUEUE_NAME*/
+            bindings = @QueueBinding(
+            value = @Queue(value = MailConstants.MAIL_QUEUE_NAME,durable = "true"),
+            exchange = @Exchange(name="order-exchange",durable = "true",type = "topic"),
+            key = "order.*"
+            )
+            )
+    public void handler(Message message, Channel channel) throws IOException {
+
+        long deliveryTag = message.getMessageProperties().getDeliveryTag();
+
+        try {
+            // 1.转换消息，传递过来的实体类会自动转为Message，我们需要再转换回来
+            ObjectMapper mapper = new ObjectMapper();
+            Email email = mapper.readValue(message.getBody(), Email.class);
+            log.info("收到邮件消息------------------{}", email.toString());
+
+            // 消息标识
+            Integer emailId = email.getEmailId();
+
+            // 消费幂等性，如果已经消费，不再重复发送邮件
+            //调用接口判断是否已经处理过
+//            MessageRecord messageRecord = messageRecordService.getById(msgId);
+//            if (messageRecord == null || messageRecord.getStatus().equals(MessageRecordConstant.CONSUMED_SUCCESS)) {
+//                log.info("重复消费, msgId: {}", msgId);
+//                return;
+//            }
+
+            boolean success=true;
+            // 2.处理业务逻辑（发送邮件）
+            //success= mailUtil.sendRegisterMail(mailMessage);
+            if (success) {
+                // 更新状态
+                //messageRecordService.updateStatus(msgId, MessageRecordConstant.CONSUMED_SUCCESS);
+                // 手动签收
+                channel.basicAck(deliveryTag, true);
+            } else {
+                throw new RuntimeException("邮件发送失败");
+            }
+        } catch (Exception exception) {
+            log.error("出现错误----------{}", exception.getMessage());
+
+            // 4.拒绝签收，并且不重新入队
+            channel.basicNack(deliveryTag, true, false);
+        }
+
+       /* ObjectMapper mapper = new ObjectMapper();
         log.info("message: ={}",message);
         log.info("channel: ={}",channel);
-        Email email = (Email) message.getPayload();
-        log.info("payload: ={}",email);
-        log.info("===========");
-        MessageHeaders headers = message.getHeaders();
-        Long tag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-        String msgId = (String) headers.get("spring_returned_message_correlation");
-        log.info("msgId: ={}",msgId);
-        log.info("tag: ={}",tag);
-        channel.basicAck(tag,false);
-        //Employee employee = (Employee) message.getPayload();
-        /*MessageHeaders headers = message.getHeaders();
-        Long tag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
-        String msgId = (String) headers.get("spring_returned_message_correlation");
-        if (redisTemplate.opsForHash().entries("mail_log").containsKey(msgId)) {
-            //redis 中包含该 key，说明该消息已经被消费过
-            log.info(msgId + ":消息已经被消费");
-            channel.basicAck(tag, false);//确认消息已消费
-            return;
-        }*/
-        sendEmail(email);
+        MessageProperties messageProperties = message.getMessageProperties();
+        log.info("message: {}",message);
+        long deliveryTag = message.getMessageProperties().getDeliveryTag();
+//        ByteArrayInputStream inputStream=new ByteArrayInputStream(message.getBody());
+//        ObjectInputStream oInputStream=new ObjectInputStream(inputStream);
+//        Object obj=oInputStream.readObject();
+//        Email email = (Email) obj;
+        Email email = mapper.readValue(message.getBody(), Email.class);
+        log.info("email:{}",email);
+        channel.basicAck(,false);*/
+
+    }
+
+    @RabbitListener(queues = "test")
+    public void test(Message message, Channel channel){
+        MessageProperties messageProperties = message.getMessageProperties();
+        log.info("test消息: {}",messageProperties);
+    }
+
+    //@RabbitHandler
+    //@RabbitListener(queues = "DL_QUEUE")//方法级注解
+    public void process(String msg, Channel channel, Message message){
+        log.info("死信DL_KEY收到  : " + msg );
+        //System.out.println(1/0);
+
+    }
+
+    //@RabbitHandler
+    //@RabbitListener(queues = "REDIRECT_QUEUE")
+    public void process1(String msg, Channel channel, Message message)throws Exception {
+        System.out.println("REDIRECT_QUEUE: " +msg);
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
     }
 
     public void sendEmail(Email email) throws MessagingException, UnsupportedEncodingException {
@@ -108,18 +163,19 @@ public class MailReceiver {
      * @return
      */
     private String setEmailContent(List<String> list,Email email){
-        Context context = new Context();
-        context.setVariable("name", "test");
-        context.setVariable("posName", "test");
-        context.setVariable("joblevelName", "test");
-        context.setVariable("departmentName", "test");
-        context.setVariable("test","test");
-        String mail = templateEngine.process("mail", context);
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String name : list) {
-            stringBuilder =stringBuilder.append("<img src='cid:"+name+"'/>");
-        }
-        return "<h1>Hello大家好，这是一封测试邮件"+stringBuilder.toString()+"</h1>"+mail;
+//        Context context = new Context();
+//        context.setVariable("name", "test");
+//        context.setVariable("posName", "test");
+//        context.setVariable("joblevelName", "test");
+//        context.setVariable("departmentName", "test");
+//        context.setVariable("test","test");
+//        String mail = templateEngine.process("mail", context);
+//        StringBuilder stringBuilder = new StringBuilder();
+//        for (String name : list) {
+//            stringBuilder =stringBuilder.append("<img src='cid:"+name+"'/>");
+//        }
+//        return "<h1>Hello大家好，这是一封测试邮件"+stringBuilder.toString()+"</h1>"+mail;
+        return "<h1>Hello大家好，这是一封测试邮件</h1>";
     }
 
     /**

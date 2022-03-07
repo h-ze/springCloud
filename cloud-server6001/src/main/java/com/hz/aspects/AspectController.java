@@ -18,7 +18,7 @@ import org.springframework.core.annotation.Order;
 @Order(1)
 public class AspectController {
     //前置通知方法 在目标方法执行之前执行操作
-    @Before("within(com.hz..service.impl.*ServiceImpl)")
+    @Before("within(com.hz.service.impl.*ServiceImpl)")
     public void before(JoinPoint joinPoint){
         System.out.println("目标方法名称："+joinPoint.getSignature().getName());
         System.out.println("目标方法参数："+joinPoint.getArgs());
@@ -26,13 +26,13 @@ public class AspectController {
         System.out.println("前置通知业务处理");
     }
 
-    @After("within(com.hz..service.impl.*ServiceImpl)")
+    @After("within(com.hz.service.impl.*ServiceImpl)")
     public void after(JoinPoint joinPoint){
         System.out.println("后置通知的业务处理");
     }
 
     //环绕通知 当目标方法执行时会先进入环绕通知，然后在环绕通知放行之后进入目标方法，然后执行目标方法，目标方法执行完成之后回到环绕通知
-    @Around("within(com.hz..service.impl.*ServiceImpl)")
+    @Around("within(com.hz.service.impl.*ServiceImpl)")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{
         System.out.println("进入环绕通知业务处理");
         Object proceed = proceedingJoinPoint.proceed();
@@ -45,7 +45,7 @@ public class AspectController {
 
 
     //环绕通知 当目标方法执行时会先进入环绕通知，然后在环绕通知放行之后进入目标方法，然后执行目标方法，目标方法执行完成之后回到环绕通知
-    @Around("within(com.hz..service.impl.*ServiceImpl)")
+    @Around("within(com.hz.service.impl.*ServiceImpl)")
     public Object around1(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{
         System.out.println("进入环绕通知业务处理");
         Object proceed = proceedingJoinPoint.proceed();

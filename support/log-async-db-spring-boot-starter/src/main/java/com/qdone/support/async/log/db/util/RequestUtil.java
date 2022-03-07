@@ -33,7 +33,7 @@ public class RequestUtil {
     public static final String CLIENT_APPNAME_HEADER = "Client-AppName";
     
     /**
-     * get real client ip
+     * get real hz.client ip
      *
      * <p>first use X-Forwarded-For header    https://zh.wikipedia.org/wiki/X-Forwarded-For next nginx X-Real-IP last
      * {@link HttpServletRequest#getRemoteAddr()}
@@ -51,7 +51,7 @@ public class RequestUtil {
     }
     
     /**
-     * Gets the name of the client application in the header.
+     * Gets the name of the hz.client application in the header.
      *
      * @param request {@link HttpServletRequest}
      * @return may be return null

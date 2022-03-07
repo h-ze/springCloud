@@ -16,7 +16,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.thymeleaf.util.ListUtils;
 
 /**
  * 自定义shiro的认证授权
@@ -63,7 +62,8 @@ public class ShiroCustomerRealm extends AuthorizingRealm {
         User rolesByUsername = userService.findRolesByUsername(subject);
         log.info("用户:"+rolesByUsername);
         //如果添加缓存之后在该方法下再次请求数据库将不会再向数据库发起请求
-        if (!ListUtils.isEmpty(rolesByUsername.getRoles())) {
+        boolean empty = rolesByUsername.getRoles().isEmpty();
+        if (!empty/*ListUtils.isEmpty(rolesByUsername.getRoles())*/) {
             SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
             log.info("权限",rolesByUsername.getRoles());
             rolesByUsername.getRoles().forEach(role-> simpleAuthorizationInfo.addRole(role.getName()));
@@ -107,7 +107,7 @@ public class ShiroCustomerRealm extends AuthorizingRealm {
             throw new AuthenticationException("该用户不存在！");
         }
 
-        RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
+        //RedisTemplate redisTemplate = (RedisTemplate) SpringContextUtils.getBean("redisTemplate");
         //String password = user.getPassword();
         //logger.info("密码:"+password);
 

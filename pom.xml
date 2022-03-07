@@ -23,14 +23,12 @@
         <module>cloud-openFeignProvider8101</module>
         <module>cloud-openFeignConsumer8102</module>
         <module>cloud-hystrix8103</module>
-        <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-feign-order80</module>
         <module>cloud-hystrix-dashboard9001</module>
         <module>cloud-gateway9100</module>
         <module>cloud-config-center3344</module>
         <module>cloud-config-client3355</module>
         <module>cloud-config-client3366</module>
-        <module>cloud-server6001</module>
         <module>cloud-stream-rabbitmq-provider8801</module>
         <module>cloud-stream-rabbitmq-consumer8802</module>
         <module>cloud-stream-rabbitmq-consumer8803</module>
@@ -49,12 +47,14 @@
         <module>cloudAlibaba-seata-storage-service2002</module>
         <module>cloudAlibaba-seata-account-service2003</module>
         <module>cloud-gatewayOauth2-9999</module>
-        <module>cloud-commons</module>
 
         <module>oauth2</module>
         <module>support</module>
-        <module>cloud-oss</module>
+
         <module>cloud-grpc</module>
+        <module>cloud-GRPC</module>
+        <module>cloud-GRPCSERVER</module>
+        <module>cloud-GRPCCLIENT</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -83,7 +83,7 @@
         <spring.boot.admin.version>2.3.1</spring.boot.admin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <!--<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>-->
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven.jar.version>3.2.0</maven.jar.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>
@@ -303,11 +303,11 @@
                     </executions>
                 </plugin>
                 <!-- java文档插件 -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                    <version>${maven-javadoc-plugin.version}</version>-->
+<!--                </plugin>-->
                 <!-- 版本号管理，https://blog.csdn.net/bluetjs/article/details/90295973，一键更新子模块版本号 mvn -N versions:update-child-modules,mvn versions:set -DnewVersion=1.0.0.RELEASE -DgenerateBackupPoms=false  -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -401,116 +401,117 @@
             <id>dev</id>
             <properties>
                 <profile.active>dev</profile.active>
-                <service.nacos.host>8.142.46.67</service.nacos.host>
-                <service.nacos.port>8848</service.nacos.port>
-                <service.nacos.username>nacos</service.nacos.username>
-                <service.nacos.password>nacos</service.nacos.password>
-                <service.nacos.namespace>37bbdab4-de3f-4c07-927a-7b0fdb66348e</service.nacos.namespace>
-                <service.seata.application>seata-server</service.seata.application>
-                <service.seata.tx-service-group>default_tx_group</service.seata.tx-service-group>
-                <service.group>SEATA_GROUP</service.group>
-                <service.metadata.group>discovery-guide-group</service.metadata.group>
-                <service.metadata.env>dev</service.metadata.env>
-                <service.metadata.version>${project.version}</service.metadata.version>
-                <service.metadata.region>qa</service.metadata.region>
-                <service.metadata.zone>zone</service.metadata.zone>
-                <service.log.root>/logs</service.log.root>
-                <service.admin.username>admin</service.admin.username>
-                <service.admin.password>admin</service.admin.password>
+                <hz.service.nacos.host>8.142.46.67</hz.service.nacos.host>
+                <hz.service.nacos.port>8848</hz.service.nacos.port>
+                <hz.service.nacos.username>nacos</hz.service.nacos.username>
+                <hz.service.nacos.password>nacos</hz.service.nacos.password>
+                <hz.service.nacos.namespace>37bbdab4-de3f-4c07-927a-7b0fdb66348e</hz.service.nacos.namespace>
+                <hz.service.seata.application>seata-server</hz.service.seata.application>
+                <hz.service.seata.tx-hz.service-group>default_tx_group</hz.service.seata.tx-hz.service-group>
+                <hz.service.group>SEATA_GROUP</hz.service.group>
+                <hz.service.metadata.group>discovery-guide-group</hz.service.metadata.group>
+                <hz.service.metadata.env>dev</hz.service.metadata.env>
+                <hz.service.metadata.version>${project.version}</hz.service.metadata.version>
+                <hz.service.metadata.region>qa</hz.service.metadata.region>
+                <hz.service.metadata.zone>zone</hz.service.metadata.zone>
+                <hz.service.log.root>/logs</hz.service.log.root>
+                <hz.service.admin.username>admin</hz.service.admin.username>
+                <hz.service.admin.password>admin</hz.service.admin.password>
 
-                <service.mysql.user>root</service.mysql.user>
-                <service.mysql.password>hz15858</service.mysql.password>
+                <hz.service.mysql.user>root</hz.service.mysql.user>
+                <hz.service.mysql.password>hz15858</hz.service.mysql.password>
 
-                <service.rabbit.user>hz</service.rabbit.user>
-                <service.rabbit.password>hz15858</service.rabbit.password>
-                <service.rabbit.port>5672</service.rabbit.port>
-                <service.rabbit.address>8.142.46.67</service.rabbit.address>
+                <hz.service.rabbit.user>hz</hz.service.rabbit.user>
+                <hz.service.rabbit.password>hz15858</hz.service.rabbit.password>
+                <hz.service.rabbit.port>5672</hz.service.rabbit.port>
+                <hz.service.rabbit.address>8.142.46.67</hz.service.rabbit.address>
 
-                <service.redis.address>8.142.46.67</service.redis.address>
-                <service.redis.database>0</service.redis.database>
-                <service.redis.port>6379</service.redis.port>
-                <service.redis.password>hz15858</service.redis.password>
+                <hz.service.redis.address>8.142.46.67</hz.service.redis.address>
+                <hz.service.redis.database>0</hz.service.redis.database>
+                <hz.service.redis.port>6379</hz.service.redis.port>
+                <hz.service.redis.password>hz15858</hz.service.redis.password>
             </properties>
-            <activation>
-                <jdk>[1.8,)</jdk>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+<!--            <activation>-->
+<!--                <jdk>[1.8,)</jdk>-->
+<!--                <activeByDefault>true</activeByDefault>-->
+<!--            </activation>-->
         </profile>
         <profile>
             <id>fat</id>
             <properties>
                 <profile.active>fat</profile.active>
-                <service.nacos.host>8.142.46.67</service.nacos.host>
-                <service.nacos.port>8848</service.nacos.port>
-                <service.nacos.username>nacos</service.nacos.username>
-                <service.nacos.password>nacos</service.nacos.password>
-                <service.nacos.namespace>b50dee18-942a-47fb-a13d-70c9b035b46a</service.nacos.namespace>
-                <service.seata.application>seata-server</service.seata.application>
-                <service.seata.tx-service-group>default_tx_group</service.seata.tx-service-group>
-                <service.group>SEATA_GROUP</service.group>
-                <service.metadata.group>discovery-guide-group</service.metadata.group>
-                <service.metadata.env>dev</service.metadata.env>
-                <service.metadata.version>${project.version}</service.metadata.version>
-                <service.metadata.region>qa</service.metadata.region>
-                <service.metadata.zone>zone</service.metadata.zone>
-                <service.log.root>/logs</service.log.root>
-                <service.admin.username>admin</service.admin.username>
-                <service.admin.password>admin</service.admin.password>
+                <hz.service.nacos.host>8.142.46.67</hz.service.nacos.host>
+                <hz.service.nacos.port>8848</hz.service.nacos.port>
+                <hz.service.nacos.username>nacos</hz.service.nacos.username>
+                <hz.service.nacos.password>nacos</hz.service.nacos.password>
+                <hz.service.nacos.namespace>b50dee18-942a-47fb-a13d-70c9b035b46a</hz.service.nacos.namespace>
+                <hz.service.seata.application>seata-server</hz.service.seata.application>
+                <hz.service.seata.tx-hz.service-group>default_tx_group</hz.service.seata.tx-hz.service-group>
+                <hz.service.group>SEATA_GROUP</hz.service.group>
+                <hz.service.metadata.group>discovery-guide-group</hz.service.metadata.group>
+                <hz.service.metadata.env>dev</hz.service.metadata.env>
+                <hz.service.metadata.version>${project.version}</hz.service.metadata.version>
+                <hz.service.metadata.region>qa</hz.service.metadata.region>
+                <hz.service.metadata.zone>zone</hz.service.metadata.zone>
+                <hz.service.log.root>/logs</hz.service.log.root>
+                <hz.service.admin.username>admin</hz.service.admin.username>
+                <hz.service.admin.password>admin</hz.service.admin.password>
 
-                <service.mysql.user>root</service.mysql.user>
-                <service.mysql.password>hz15858</service.mysql.password>
+                <hz.service.mysql.user>root</hz.service.mysql.user>
+                <hz.service.mysql.password>hz15858</hz.service.mysql.password>
 
-                <service.rabbit.user>hz</service.rabbit.user>
-                <service.rabbit.password>hz15858</service.rabbit.password>
-                <service.rabbit.port>5672</service.rabbit.port>
-                <service.rabbit.address>8.142.46.67</service.rabbit.address>
+                <hz.service.rabbit.user>hz</hz.service.rabbit.user>
+                <hz.service.rabbit.password>hz15858</hz.service.rabbit.password>
+                <hz.service.rabbit.port>5672</hz.service.rabbit.port>
+                <hz.service.rabbit.address>8.142.46.67</hz.service.rabbit.address>
 
-                <service.redis.address>8.142.46.67</service.redis.address>
-                <service.redis.database>0</service.redis.database>
-                <service.redis.port>6379</service.redis.port>
-                <service.redis.password>hz15858</service.redis.password>
+                <hz.service.redis.address>8.142.46.67</hz.service.redis.address>
+                <hz.service.redis.database>0</hz.service.redis.database>
+                <hz.service.redis.port>6379</hz.service.redis.port>
+                <hz.service.redis.password>hz15858</hz.service.redis.password>
             </properties>
         </profile>
         <profile>
             <id>uat</id>
             <properties>
                 <profile.active>uat</profile.active>
-                <service.nacos.host>127.0.0.1</service.nacos.host>
-                <service.nacos.port>8848</service.nacos.port>
-                <service.nacos.username>uat</service.nacos.username>
-                <service.nacos.password>123456</service.nacos.password>
-                <service.nacos.namespace>d6a6a5ee-533a-47a4-82e8-dd0a1cfc0bab</service.nacos.namespace>
-                <service.group>MALL_GROUP</service.group>
-                <service.metadata.group>discovery-guide-group</service.metadata.group>
-                <service.metadata.env>dev</service.metadata.env>
-                <service.metadata.version>${project.version}</service.metadata.version>
-                <service.metadata.region>qa</service.metadata.region>
-                <service.metadata.zone>zone</service.metadata.zone>
-                <service.log.root>/logs</service.log.root>
-                <service.admin.username>admin</service.admin.username>
-                <service.admin.password>admin</service.admin.password>
+                <hz.service.nacos.host>127.0.0.1</hz.service.nacos.host>
+                <hz.service.nacos.port>8848</hz.service.nacos.port>
+                <hz.service.nacos.username>uat</hz.service.nacos.username>
+                <hz.service.nacos.password>123456</hz.service.nacos.password>
+                <hz.service.nacos.namespace>d6a6a5ee-533a-47a4-82e8-dd0a1cfc0bab</hz.service.nacos.namespace>
+                <hz.service.group>MALL_GROUP</hz.service.group>
+                <hz.service.metadata.group>discovery-guide-group</hz.service.metadata.group>
+                <hz.service.metadata.env>dev</hz.service.metadata.env>
+                <hz.service.metadata.version>${project.version}</hz.service.metadata.version>
+                <hz.service.metadata.region>qa</hz.service.metadata.region>
+                <hz.service.metadata.zone>zone</hz.service.metadata.zone>
+                <hz.service.log.root>/logs</hz.service.log.root>
+                <hz.service.admin.username>admin</hz.service.admin.username>
+                <hz.service.admin.password>admin</hz.service.admin.password>
             </properties>
         </profile>
         <profile>
             <id>pro</id>
             <properties>
                 <profile.active>pro</profile.active>
-                <service.nacos.host>127.0.0.1</service.nacos.host>
-                <service.nacos.port>8848</service.nacos.port>
-                <service.nacos.username>pro</service.nacos.username>
-                <service.nacos.password>123456</service.nacos.password>
-                <service.nacos.namespace>6526a5ee-533a-47a4-82e8-dd0a1cfc0bab</service.nacos.namespace>
-                <service.group>MALL_GROUP</service.group>
-                <service.metadata.group>discovery-guide-group</service.metadata.group>
-                <service.metadata.env>dev</service.metadata.env>
-                <service.metadata.version>${project.version}</service.metadata.version>
-                <service.metadata.region>qa</service.metadata.region>
-                <service.metadata.zone>zone</service.metadata.zone>
-                <service.log.root>/logs</service.log.root>
-                <service.admin.username>admin</service.admin.username>
-                <service.admin.password>admin</service.admin.password>
+                <hz.service.nacos.host>127.0.0.1</hz.service.nacos.host>
+                <hz.service.nacos.port>8848</hz.service.nacos.port>
+                <hz.service.nacos.username>pro</hz.service.nacos.username>
+                <hz.service.nacos.password>123456</hz.service.nacos.password>
+                <hz.service.nacos.namespace>6526a5ee-533a-47a4-82e8-dd0a1cfc0bab</hz.service.nacos.namespace>
+                <hz.service.group>MALL_GROUP</hz.service.group>
+                <hz.service.metadata.group>discovery-guide-group</hz.service.metadata.group>
+                <hz.service.metadata.env>dev</hz.service.metadata.env>
+                <hz.service.metadata.version>${project.version}</hz.service.metadata.version>
+                <hz.service.metadata.region>qa</hz.service.metadata.region>
+                <hz.service.metadata.zone>zone</hz.service.metadata.zone>
+                <hz.service.log.root>/logs</hz.service.log.root>
+                <hz.service.admin.username>admin</hz.service.admin.username>
+                <hz.service.admin.password>admin</hz.service.admin.password>
             </properties>
         </profile>
+
     </profiles>
 
 
