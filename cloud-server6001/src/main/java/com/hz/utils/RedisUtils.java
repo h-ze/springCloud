@@ -240,7 +240,7 @@ public class RedisUtils {
      * @param key   键
      * @param item  项
      * @param value 值
-     * @param time  时间(秒) 注意:如果已存在的hash表有时间,这里将会替换原有的时间
+     * @param time  时间(秒) 注意:如果已存在的hash表有时间,这里将会替换原有的时间 无法保持原子性
      * @return true 成功 false失败
      */
     public boolean hset(String key, String item, Object value, long time) {

@@ -14,8 +14,7 @@ public class OssServiceImpl implements OssService {
 
     private final static Logger logger =LoggerFactory.getLogger(OssServiceImpl.class);
 
-    @Autowired
-    private AliyunConfig aliyunConfig;
+
 
     @Override
     public String initMultiPartUpload(String fileName, String filePath) {

@@ -1,8 +1,25 @@
 server :
   port : 6001
-  servlet.context-path : /springboot
+  #servlet.context-path : /springboot
 
 spring:
+
+#  data:
+#    mongodb:
+#      # 登录用户所在的数据库
+#      authentication-database: admin
+#      # 数据库的ip地址
+#      host: 8.142.46.67
+#      # MongoDB端口号
+#      port: 27017
+#      # 用户账号
+#      username: root
+#      # 用户密码
+#      password: hz15858
+#      # 指定使用的数据库
+#      # 不必预先创建，不存在该数据库会自动创建
+#      database: hz
+
   profiles.active: "@profileActive@"
   application:
     name: server
@@ -25,7 +42,7 @@ spring:
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:
-    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false&useSSL=false
     #driver-class-name: org.gjt.mm.mysql.Driver
     username: root
     password: hz15858
@@ -37,10 +54,31 @@ spring:
     multipart.max-request-size: 500MB
 
   redis:
+#    cluster:
+#      nodes:
+#        -
+    # Redis服务器连接端口
     port: 6379
+    # Redis服务器地址
     host: 8.142.46.67
+    # Redis数据库索引（默认为0）
     database: 0
+    # Redis服务器连接密码
     password: hz15858
+    # 连接超时时间（毫秒）
+    timeout: 1000
+    # 连接池最大连接数（使用负值表示没有限制）
+    jedis:
+      pool:
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-active: 20
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池中的最小空闲连接
+        min-idle: 1
+
 
 
   mail:
@@ -63,6 +101,27 @@ spring:
 #    #     新版本不支持content-type: text/html，故新写法
 #    servlet:
 #      content-type: text/html
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    mode: HTML
+#    cache: false
+#    servlet:
+#      content-type: text/html
+#    encoding: UTF-8
+  freemarker:
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    request-context-attribute: request
+    settings:
+      number_format: #
+    suffix: .ftl
+    template-loader-path: classpath:/templates/
+  mvc:
+    favicon:
+      enabled: false
 
 mybatis :
   mapper-locations: classpath:/com/hz/mapper/*.xml
@@ -78,7 +137,7 @@ mybatis :
 #    root: info
 #    com.hz.dao: debug
 #
-#    eureka.client.healthcheck.enabled: false
+#    eureka.hz.client.healthcheck.enabled: false
 
 
 #  file:
@@ -107,9 +166,62 @@ eureka:
 
 
 aliyun:
-  endpoint: oss-cn-beijing.aliyuncs.com
-  accessKeyId: LTAI5tDfnTsZCoBdpwHB1b2o
-  accessKeySecret: 6S96XJelwRUhDnQhoMmVDFFLZLYrmq
-  bucketName: oss-heze
-  urlPrefix: test
+  endpoint:
+  accessKeyId:
+  accessKeySecret:
+  bucketName:
+  urlPrefix:
+
+
+
+  #基础连接参数
+  #要连接的数据库
+mongodb:
+  database: hz
+  #用户名
+  username: root
+  #密码
+  password: hz15858
+  #IP和端口（host:port），例如127.0.0.1:27017。集群模式用,分隔开，例如host1:port1,host2:port2
+  address: 8.142.46.67:27017
+  #设置认证数据库，如果有的话
+  authenticationDatabase: admin
+
+  # 客户端连接池参数
+  #客户端的标识，用于定位请求来源等，一般用程序名
+  clientName: ${spring.application.name}
+  #TCP（socket）连接超时时间，毫秒
+  connectionTimeoutMs: 5000
+  #TCP（socket）连接闲置时间，毫秒
+  maxConnectionIdleTimeMs: 60000
+  #TCP（socket）连接最多可以使用多久，毫秒
+  maxConnectionLifeTimeMs: 300000
+  #TCP（socket）读取超时时间，毫秒
+  readTimeoutMs: 15000
+  #当连接池无可用连接时客户端阻塞等待的最大时长，毫秒
+  maxWaitTimeMs: 5000
+  #心跳检测发送频率，毫秒
+  heartbeatFrequencyMs: 20000
+  #最小的心跳检测发送频率，毫秒
+  minHeartbeatFrequencyMs: 8000
+  #心跳检测连接超时时间，毫秒
+  heartbeatConnectionTimeoutMs: 10000
+  #心跳检测读取超时时间，毫秒
+  heartbeatReadTimeoutMs: 15000
+  #线程池允许的最大连接数
+  connectionsPerHost: 100
+  #线程池空闲时保持的最小连接数
+  minConnectionsPerHost: 20
+  #计算允许多少个线程阻塞等待时的乘数，算法：threadsAllowedToBlockForConnectionMultiplier*maxConnectionsPerHost
+  threadsAllowedToBlockForConnectionMultiplier: 10
+
+#qrcode:
+#  login:
+#    url =http://localhost:7010/login/qrcode/login
+##ͼƬ��������ַ����ʹ��nginx���
+#img.server.url = http://localhost:80
+#qrcode.store.root.path=F:\\qrcode
+
+
+
 

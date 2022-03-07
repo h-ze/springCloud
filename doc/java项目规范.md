@@ -410,7 +410,7 @@
 ```cpp
  1.定义GAV遵从以下规则：
   1） GroupID格式：com.{公司/BU }.业务线 [.子业务线]，最多4级。 说明：{公司/BU} 例如：alibaba/taobao/tmall/aliexpress等BU一级；子业务线可选。 正例：com.taobao.jstorm 或 com.alibaba.dubbo.register 
-  2） ArtifactID格式：产品线名-模块名。语义不重复不遗漏，先到中央仓库去查证一下。 正例：dubbo-client / fastjson-api / jstorm-tool 
+  2） ArtifactID格式：产品线名-模块名。语义不重复不遗漏，先到中央仓库去查证一下。 正例：dubbo-hz.client / fastjson-api / jstorm-tool 
   3） Version：详细规定参考下方
  2. 二方库版本号命名方式：主版本号.次版本号.修订号 
   1）主版本号：产品方向改变，或者大规模API不兼容，或者架构不兼容升级。 

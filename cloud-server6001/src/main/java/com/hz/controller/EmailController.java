@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -24,7 +25,7 @@ public class EmailController {
     @PostMapping
     @ApiOperation(value ="重新发送邮件",notes="用户未收到邮件时再次发送")
     @ApiImplicitParam(name = "email", value = "用户邮箱",required = true, paramType="query")
-    public ResponseResult<String> resendEmail(String email){
+    public ResponseResult<String> resendEmail(@RequestParam(value = "email") String email){
         Email emailById = emailService.getEmail(email);
         int i;
         if (emailById !=null){

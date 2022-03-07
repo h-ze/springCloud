@@ -1,6 +1,6 @@
-service iptables status 防火墙的状态
-service iptables restart 重启防火墙
-service iptables stop/start 关闭/打开防火墙（其他服务类似）
+hz.service iptables status 防火墙的状态
+hz.service iptables restart 重启防火墙
+hz.service iptables stop/start 关闭/打开防火墙（其他服务类似）
 
 reboot 重启linux服务器
 
@@ -15,3 +15,13 @@ etc文件系统存放的是各种系统配置文件
 
 echo $PATH 显示当前PATH环境变量
 echo ￥JAVA_HOME 显示当前jdk安装路径，前提已经配置
+
+创建文件夹 mkdir
+创建文件 touch
+
+ ./nginx -s stop nginx停止运行
+ ./nginx 运行nginx
+ 
+
+wget 下载功能
+还有yum

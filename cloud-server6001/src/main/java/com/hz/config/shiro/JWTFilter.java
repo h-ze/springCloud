@@ -2,6 +2,8 @@ package com.hz.config.shiro;
 
 import com.alibaba.fastjson.JSONObject;
 import com.hz.utils.JWTUtil;
+import com.hz.utils.RedisUtils;
+import com.hz.utils.SpringContextUtils;
 import io.jsonwebtoken.*;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
@@ -20,17 +22,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 
-import static com.hz.config.BeanConfig.isOpenRedis;
+import static com.hz.constant.Constant.BLACKTOKEN;
+import static com.hz.constant.Constant.ISEXPIRE;
 
 public class JWTFilter extends BasicHttpAuthenticationFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JWTFilter.class);
-
-    @Autowired
-    private JWTUtil jwtUtil;
-
-    @Autowired
-    private RedisTemplate redisTemplate;
 
     /**
      * 如果带有 token，则对 token 进行检查，否则直接通过
@@ -95,8 +92,7 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
             token = httpServletRequest.getParameter("token");
         }
 
-        //在此处进行redis的验证
-        logger.info("redis中进行token验证");
+
 
         Claims claims = JWTUtil.parseJWT(token);
 
@@ -104,18 +100,32 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         logger.info(expiration.toString());
         logger.info("执行登录任务");
 
+        String userId = (String) claims.get("userId");
 
+        //在此处进行redis的验证
+        logger.info("redis中进行token验证");
+        RedisUtils redisUtils = SpringContextUtils.getBean(RedisUtils.class);
+        String blackToken =BLACKTOKEN+userId;
+        boolean b = redisUtils.hasKey(blackToken);
+        if (b){
+            //redisUtils.del(blackToken);
+            String s = (String) redisUtils.get(blackToken);
+            JSONObject jsonObject = JSONObject.parseObject(s);
+            if (jsonObject.containsKey(ISEXPIRE) && jsonObject.getBoolean(ISEXPIRE)){
+                throw new Exception("token已过期,请重新登录");
+
+            }
+
+        }
 
         //是否需要刷新token
         long currentTimeMillis = System.currentTimeMillis();
         long expirationTime = expiration.getTime();
         long l = expirationTime - currentTimeMillis;
         logger.info("距离过期时间:"+l);
-        if (isOpenRedis()){
-            if (l<3600000 && l >0){
-                refreshToken(claims);
-                throw new Exception("刷新token");
-            }
+        if (l<3600000 && l >0){
+            refreshToken(claims);
+            throw new Exception("刷新token");
         }
 
         JWTToken jwtToken = new JWTToken(token);
@@ -158,8 +168,8 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
 
         JSONObject jsonObject = new JSONObject(true);
         jsonObject.put("code","999999");
-        jsonObject.put("state",false);
-        jsonObject.put("msg",message);
+        jsonObject.put("message","TOKEN_ERROR");
+        jsonObject.put("data",message);
         response.setContentType("application/json;charset=UTF-8");
         try {
             response.getWriter().println(jsonObject.toString());

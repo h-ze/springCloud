@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 
-@FeignClient(value = "cloudAlibaba-seata-account-service",fallback = AccountServiceImpl.class)
+@FeignClient(value = "cloudAlibaba-seata-account-hz.service",fallback = AccountServiceImpl.class)
 public interface AccountService {
 
     @PostMapping("account/decrease")

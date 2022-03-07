@@ -69,7 +69,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
         //inMemory是存储到内存中 并未到数据库
         //未绑定数据库
         /*clients.inMemory()
-                .withClient("client-app")
+                .withClient("hz.client-app")
                 .secret(passwordEncoder.encode("123456"))
                 .scopes("all")
                 .authorizedGrantTypes("password", "refresh_token")

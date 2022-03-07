@@ -50,7 +50,7 @@ spring:
   cloud:
     #    alibaba:
     #      seata:
-    #        tx-service-group: fsp_tx_group
+    #        tx-hz.service-group: fsp_tx_group
     nacos:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.server-port}
@@ -86,7 +86,7 @@ mybatis :
 #seata:
 #  enabled: true
 #  application-id: ${spring.application.name}
-#  tx-service-group: ${nacos.seata.tx-service-group}
+#  tx-hz.service-group: ${nacos.seata.tx-hz.service-group}
 #  enable-auto-data-source-proxy: false
 #  registry:
 #    type: nacos
@@ -115,7 +115,7 @@ mybatis :
 #logging:
 #  config: classpath:log4j2-${spring.profiles.active}.yml
 #  file:
-#    name: ${spring.service-log-root}/${spring.application.name}-${spring.profiles.active}.log #springBootAdmin在线查看日志
+#    name: ${spring.hz.service-log-root}/${spring.application.name}-${spring.profiles.active}.log #springBootAdmin在线查看日志
 
 management:
   endpoints:

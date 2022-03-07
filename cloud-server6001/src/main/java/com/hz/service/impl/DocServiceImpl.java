@@ -1,5 +1,6 @@
 package com.hz.service.impl;
 
+import com.common.entity.DocTask;
 import com.common.entity.Document;
 import com.common.entity.PageRequest;
 import com.common.entity.PageResult;
@@ -7,6 +8,10 @@ import com.common.utils.PageUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hz.dao.DocDao;
+import com.hz.entity.DocumentMongo;
+import com.hz.mongo.MongoService;
+import com.hz.oss.cloud.OSSFactory;
+import com.hz.service.AsyncService;
 import com.hz.service.DocService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service("docService")
 @Transactional
@@ -24,6 +31,12 @@ public class DocServiceImpl implements DocService {
 
     @Autowired
     private DocDao docDao;
+
+    @Autowired
+    private AsyncService asyncService;
+
+    @Autowired
+    private MongoService mongoService;
 
     @Override
     public int createDocument(Document document) {
@@ -51,8 +64,42 @@ public class DocServiceImpl implements DocService {
     }
 
     @Override
+    public String uploadDoc(Document document,DocumentMongo documentMongo,byte[] bytes,Long size,String suffix){
+
+        //String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+        String url = OSSFactory.build().uploadSuffix(bytes,size, suffix);
+
+
+
+        docDao.addDoc(document);
+        ArrayList<String> objects = new ArrayList<>();
+        objects.add("1");
+
+        //objects.get(2);
+        mongoService.insert(documentMongo,"hz");
+
+        return url;
+    }
+
+    @Override
     public PageResult getDocsPage(PageRequest pageRequest,String userId) {
         return PageUtils.getPageResult(getPageInfo(pageRequest,userId));
+    }
+
+    @Override
+    public String convertDoc() {
+        String id = UUID.randomUUID().toString().replace("-", "");
+        DocTask docTask = new DocTask();
+        docTask.setTaskData("convert task");
+        docTask.setDocId("");
+        docTask.setDocName("");
+        docTask.setTaskId(id);
+        int task = asyncService.createTask(docTask);
+        logger.info("taskid:{}",task);
+        if (task>0){
+            asyncService.convert(docTask);
+        }
+        return id;
     }
 
     /**

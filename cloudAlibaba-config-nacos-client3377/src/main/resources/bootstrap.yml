@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: nacos-config-client
+    name: nacos-config-hz.client
 
   cloud:
     nacos:

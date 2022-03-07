@@ -83,7 +83,7 @@ action:
 - #### 1.https://github.com/linkedin/parseq
 - #### 2.https://github.com/linkedin/parseq/blob/master/subprojects/parseq-examples/src/main/java/com/linkedin/parseq/example/javadoc/JavadocExamples.java
 - #### 3.https://blog.csdn.net/chuaichi7065/article/details/100813551
-- #### 3.https://skyapm.github.io/document-cn-translation-of-skywalking/zh/8.0.0/setup/service-agent/java-agent/Application-toolkit-trace-cross-thread.html
+- #### 3.https://skyapm.github.io/document-cn-translation-of-skywalking/zh/8.0.0/setup/hz.service-agent/java-agent/Application-toolkit-trace-cross-thread.html
 
    
                

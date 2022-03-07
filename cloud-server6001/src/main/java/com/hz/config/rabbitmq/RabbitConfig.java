@@ -4,10 +4,7 @@ import com.hz.service.EmailService;
 import com.common.entity.MailConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.DirectExchange;
-import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
@@ -15,6 +12,9 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 //本项目主要使用定时器的方式进行rabbitmq的调用
@@ -43,8 +43,7 @@ public class RabbitConfig {
     @Bean
     RabbitTemplate rabbitTemplate(CachingConnectionFactory cachingConnectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(cachingConnectionFactory);
-        //设置开启Mandatory,才能触发回调函数,无论消息推送结果怎么样都强制调用回调函数
-        rabbitTemplate.setMandatory(true);
+
 
         //生产者推送消息的消息确认调用回调函数
         rabbitTemplate.setConfirmCallback((data, ack, cause) -> {
@@ -54,6 +53,8 @@ public class RabbitConfig {
 
             logger.info("test");
             String msgId = data.getId();
+            //MessageProperties messageProperties = data.getReturnedMessage().getMessageProperties();
+            logger.info("message:{}",data);
             if (ack) {
                 logger.info(msgId + ":消息发送成功");
                 //emailService.updateEmailStatus(Integer.valueOf(msgId),1);
@@ -62,6 +63,13 @@ public class RabbitConfig {
                 logger.info(msgId + ":消息发送失败");
             }
         });
+
+
+        //设置开启Mandatory,才能触发回调函数,无论消息推送结果怎么样都强制调用回调函数
+        // 触发setReturnCallback回调必须设置mandatory=true, 否则Exchange没有找到Queue就会丢弃掉消息, 而不会触发回调
+        rabbitTemplate.setMandatory(true);
+
+        // 消息是否从Exchange路由到Queue   注意: 只有消息从Exchange路由到Queue失败才会回调这个方法
         rabbitTemplate.setReturnCallback((msg, repCode, repText, exchange, routingKey) ->{
                 System.out.println("ReturnCallback:     "+"消息："+msg);
                 System.out.println("ReturnCallback:     "+"回应码："+repCode);
@@ -112,9 +120,102 @@ public class RabbitConfig {
         return BindingBuilder.bind(testQueue()).to(testExchange()).with("test");
     }
 
+    /*@Bean
+    FanoutExchange*/
+
+    /*@Bean
+    TopicExchange*/
+
+
+
+    // 配置一个测试工作模型队列 无实际意义
+    @Bean
+    Queue delayQueue() {
+        // 支持持久化
+        return new Queue("delay", true);
+
+    }
+
+    @Bean
+    DirectExchange delayExchange(){
+        return new DirectExchange("delay.exchange",true,false);
+    }
+
+    @Bean
+    Binding delayBinding() {
+        return BindingBuilder.bind(delayQueue()).to(delayExchange()).with("delay");
+    }
+
+
+    // 配置一个测试工作模型队列 无实际意义
+    @Bean
+    Queue delayQueue1() {
+        // 支持持久化
+        return new Queue("delay1", true);
+
+    }
+
+    @Bean
+    DirectExchange delayExchange1(){
+        return new DirectExchange("delay1.exchange",true,false);
+    }
+
+    @Bean
+    Binding delayBinding1() {
+        return BindingBuilder.bind(delayQueue1()).to(delayExchange1()).with("delay1");
+    }
+
     @Bean
     public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory){
         return new RabbitAdmin(connectionFactory);
+    }
+
+
+
+
+    //死信队里s
+
+    @Bean("deadLetterExchange")
+    public Exchange deadLetterExchange() {
+        return ExchangeBuilder.directExchange("DL_EXCHANGE").durable(true).build();
+    }
+
+
+    @Bean("deadLetterQueue")
+    public Queue deadLetterQueue() {
+        Map<String, Object> args = new HashMap<>(2);
+        //       x-dead-letter-exchange    声明  死信交换机
+        args.put("x-dead-letter-exchange", "DL_EXCHANGE");
+        //       x-dead-letter-routing-key    声明 死信路由键
+        args.put("x-dead-letter-routing-key", "KEY_R");
+        return QueueBuilder.durable("DL_QUEUE").withArguments(args).build();
+    }
+
+    @Bean("redirectQueue")
+    public Queue redirectQueue() {
+        return QueueBuilder.durable("REDIRECT_QUEUE").build();
+    }
+
+    /**
+     * 死信路由通过 DL_KEY 绑定键绑定到死信队列上.
+     *
+     * @return the binding
+     */
+    @Bean
+    public Binding deadLetterBinding() {
+        return new Binding("DL_QUEUE", Binding.DestinationType.QUEUE, "DL_EXCHANGE", "DL_KEY", null);
+
+    }
+
+
+    /**
+     * 死信路由通过 KEY_R 绑定键绑定到死信队列上.
+     *
+     * @return the binding
+     */
+    @Bean
+    public Binding redirectBinding() {
+        return new Binding("REDIRECT_QUEUE", Binding.DestinationType.QUEUE, "DL_EXCHANGE", "KEY_R", null);
     }
 
 }

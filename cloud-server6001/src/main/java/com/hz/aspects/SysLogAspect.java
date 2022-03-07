@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.hz.annotation.SysLog;
 import com.hz.utils.HttpContextUtils;
 import com.hz.utils.IPUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -20,6 +21,7 @@ import java.util.Date;
 
 @Aspect
 @Component
+@Slf4j
 public class SysLogAspect {
 
 
@@ -79,6 +81,8 @@ public class SysLogAspect {
 
         sysLog.setTime(time);
         sysLog.setCreateDate(new Date());
+
+        log.info("保存日志。。。。。。");
 
         //保存系统日志
         //sysLogService.save(sysLog);
