@@ -17,6 +17,7 @@ import java.util.Map;
 @Slf4j
 @Component
 /**
+ * springboot携带的websocket方式
  * 通过实现 HandshakeInterceptor 接口来定义握手拦截器，注意这里与上面 Handler 的事件是不同的，这里是建立握手时的事件，分为握手前与握手后，而  Handler 的事件是在握手成功后的基础上建立 socket 的连接。所以在如果把认证放在这个步骤相对来说最节省服务器资源。它主要有两个方法 beforeHandshake 与 **afterHandshake **，顾名思义一个在握手前触发，一个在握手后触发。
  */
 public class HandshakeInterceptor extends HttpSessionHandshakeInterceptor {

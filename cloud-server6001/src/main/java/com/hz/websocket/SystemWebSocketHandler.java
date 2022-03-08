@@ -13,11 +13,10 @@ import java.util.Map;
 
 
 /**
- * webSocket 通讯
+ * webSocket 通讯  springboot携带的方式
  * @author taoge
  * @version 1.0.2
  * @update  1.0.4
- * @create_at 2018年11月18日下午5:24:06
  */
 @Component
 @Slf4j

@@ -45,12 +45,12 @@ public class MailReceiver {
     @Autowired
     StringRedisTemplate redisTemplate;
 
-    @RabbitListener(/*queues = MailConstants.MAIL_QUEUE_NAME*/
-            bindings = @QueueBinding(
+    @RabbitListener(queues = MailConstants.MAIL_QUEUE_NAME
+            /*bindings = @QueueBinding(
             value = @Queue(value = MailConstants.MAIL_QUEUE_NAME,durable = "true"),
             exchange = @Exchange(name="order-exchange",durable = "true",type = "topic"),
             key = "order.*"
-            )
+            )*/
             )
     public void handler(Message message, Channel channel) throws IOException {
 
@@ -60,11 +60,22 @@ public class MailReceiver {
             // 1.转换消息，传递过来的实体类会自动转为Message，我们需要再转换回来
             ObjectMapper mapper = new ObjectMapper();
             Email email = mapper.readValue(message.getBody(), Email.class);
-            log.info("收到邮件消息------------------{}", email.toString());
+            log.info("收到邮件消息------------------{}", email);
+
+
+//            ObjectMapper mapper = new ObjectMapper();
+//            log.info("message: ={}",message);
+//            log.info("channel: ={}",channel);
+//            MessageProperties messageProperties = message.getMessageProperties();
+//            log.info("message: {}",message);
+//            ByteArrayInputStream inputStream=new ByteArrayInputStream(message.getBody());
+//            ObjectInputStream oInputStream=new ObjectInputStream(inputStream);
+//            Object obj=oInputStream.readObject();
+//            Email email = (Email) obj;
+//            Email email = mapper.readValue(message.getBody(), Email.class);
 
             // 消息标识
-            Integer emailId = email.getEmailId();
-
+            //Integer emailId = email.getEmailId();
             // 消费幂等性，如果已经消费，不再重复发送邮件
             //调用接口判断是否已经处理过
 //            MessageRecord messageRecord = messageRecordService.getById(msgId);
@@ -80,7 +91,7 @@ public class MailReceiver {
                 // 更新状态
                 //messageRecordService.updateStatus(msgId, MessageRecordConstant.CONSUMED_SUCCESS);
                 // 手动签收
-                channel.basicAck(deliveryTag, true);
+                channel.basicAck(deliveryTag, false);
             } else {
                 throw new RuntimeException("邮件发送失败");
             }
@@ -90,20 +101,6 @@ public class MailReceiver {
             // 4.拒绝签收，并且不重新入队
             channel.basicNack(deliveryTag, true, false);
         }
-
-       /* ObjectMapper mapper = new ObjectMapper();
-        log.info("message: ={}",message);
-        log.info("channel: ={}",channel);
-        MessageProperties messageProperties = message.getMessageProperties();
-        log.info("message: {}",message);
-        long deliveryTag = message.getMessageProperties().getDeliveryTag();
-//        ByteArrayInputStream inputStream=new ByteArrayInputStream(message.getBody());
-//        ObjectInputStream oInputStream=new ObjectInputStream(inputStream);
-//        Object obj=oInputStream.readObject();
-//        Email email = (Email) obj;
-        Email email = mapper.readValue(message.getBody(), Email.class);
-        log.info("email:{}",email);
-        channel.basicAck(,false);*/
 
     }
 

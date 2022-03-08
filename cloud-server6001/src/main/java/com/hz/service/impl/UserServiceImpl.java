@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
             email.setStatus(2);
             int i = emailDao.addEmailMessage(email);
 
-            //rabbitTemplate.convertAndSend(MailConstants.MAIL_EXCHANGE_NAME, MailConstants.MAIL_QUEUE_NAME,email, new CorrelationData(String.valueOf(email.getEmailId())));
+            rabbitTemplate.convertAndSend(MailConstants.MAIL_EXCHANGE_NAME, MailConstants.MAIL_QUEUE_NAME,email, new CorrelationData(String.valueOf(email.getEmailId())));
 
             //CorrelationData correlationData = new CorrelationData();
             //correlationData.setId(String.valueOf(email.getEmailId()));
