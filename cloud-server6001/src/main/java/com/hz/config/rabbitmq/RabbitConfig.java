@@ -5,10 +5,12 @@ import com.common.entity.MailConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,6 +39,14 @@ public class RabbitConfig {
     //@Autowired
     //MailSendLogService mailSendLogService;
 
+    //对应RabbitConfirmCallback类
+    @Autowired
+    private RabbitTemplate.ConfirmCallback confirmCallback;
+
+    //对应RabbitReturnCallback类
+    @Autowired
+    private RabbitTemplate.ReturnCallback returnCallback;
+
     @Autowired
     EmailService emailService;
 
@@ -44,25 +54,29 @@ public class RabbitConfig {
     RabbitTemplate rabbitTemplate(CachingConnectionFactory cachingConnectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(cachingConnectionFactory);
 
+        Jackson2JsonMessageConverter jackson2JsonMessageConverter = new Jackson2JsonMessageConverter();
+        rabbitTemplate.setMessageConverter(jackson2JsonMessageConverter);
 
         //生产者推送消息的消息确认调用回调函数
-        rabbitTemplate.setConfirmCallback((data, ack, cause) -> {
-            logger.info("相关数据 data: ={}",data);
-            logger.info("确认情况 ack: ={}",ack);
-            logger.info("原因 cause: ={}",cause);
-
-            logger.info("test");
-            String msgId = data.getId();
-            //MessageProperties messageProperties = data.getReturnedMessage().getMessageProperties();
-            logger.info("message:{}",data);
-            if (ack) {
-                logger.info(msgId + ":消息发送成功");
-                //emailService.updateEmailStatus(Integer.valueOf(msgId),1);
-                //mailSendLogService.updateMailSendLogStatus(msgId, 1);//修改数据库中的记录，消息投递成功
-            } else {
-                logger.info(msgId + ":消息发送失败");
-            }
-        });
+        rabbitTemplate.setConfirmCallback(confirmCallback);
+        rabbitTemplate.setReturnCallback(returnCallback);
+//        rabbitTemplate.setConfirmCallback((data, ack, cause) -> {
+//            logger.info("相关数据 data: ={}",data);
+//            logger.info("确认情况 ack: ={}",ack);
+//            logger.info("原因 cause: ={}",cause);
+//
+//            logger.info("test");
+//            String msgId = data.getId();
+//            //MessageProperties messageProperties = data.getReturnedMessage().getMessageProperties();
+//            logger.info("message:{}",data);
+//            if (ack) {
+//                logger.info(msgId + ":消息发送成功");
+//                //emailService.updateEmailStatus(Integer.valueOf(msgId),1);
+//                //mailSendLogService.updateMailSendLogStatus(msgId, 1);//修改数据库中的记录，消息投递成功
+//            } else {
+//                logger.info(msgId + ":消息发送失败");
+//            }
+//        });
 
 
         //设置开启Mandatory,才能触发回调函数,无论消息推送结果怎么样都强制调用回调函数
@@ -70,15 +84,27 @@ public class RabbitConfig {
         rabbitTemplate.setMandatory(true);
 
         // 消息是否从Exchange路由到Queue   注意: 只有消息从Exchange路由到Queue失败才会回调这个方法
-        rabbitTemplate.setReturnCallback((msg, repCode, repText, exchange, routingKey) ->{
-                System.out.println("ReturnCallback:     "+"消息："+msg);
-                System.out.println("ReturnCallback:     "+"回应码："+repCode);
-                System.out.println("ReturnCallback:     "+"回应信息："+repText);
-                System.out.println("ReturnCallback:     "+"交换机："+exchange);
-                System.out.println("ReturnCallback:     "+"路由键："+routingKey);
-                logger.info("消息return发送");
-        });
+//        rabbitTemplate.setReturnCallback((msg, repCode, repText, exchange, routingKey) ->{
+//                System.out.println("ReturnCallback:     "+"消息："+msg);
+//                System.out.println("ReturnCallback:     "+"回应码："+repCode);
+//                System.out.println("ReturnCallback:     "+"回应信息："+repText);
+//                System.out.println("ReturnCallback:     "+"交换机："+exchange);
+//                System.out.println("ReturnCallback:     "+"路由键："+routingKey);
+//                logger.info("消息return发送");
+//        });
         return rabbitTemplate;
+    }
+
+
+    //重写rabbitmq的序列化方式 保证后续监听时对对象的反序列化失败
+    @Bean
+    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(ConnectionFactory connectionFactory) {
+        SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
+        factory.setConnectionFactory(connectionFactory);
+        Jackson2JsonMessageConverter jackson2JsonMessageConverter = new Jackson2JsonMessageConverter();
+        factory.setMessageConverter(jackson2JsonMessageConverter);
+        factory.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+        return factory;
     }
 
     // 配置一个工作模型队列
@@ -119,14 +145,6 @@ public class RabbitConfig {
     Binding testBinding() {
         return BindingBuilder.bind(testQueue()).to(testExchange()).with("test");
     }
-
-    /*@Bean
-    FanoutExchange*/
-
-    /*@Bean
-    TopicExchange*/
-
-
 
     // 配置一个测试工作模型队列 无实际意义
     @Bean
@@ -169,7 +187,6 @@ public class RabbitConfig {
     public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory){
         return new RabbitAdmin(connectionFactory);
     }
-
 
 
 
@@ -217,5 +234,8 @@ public class RabbitConfig {
     public Binding redirectBinding() {
         return new Binding("REDIRECT_QUEUE", Binding.DestinationType.QUEUE, "DL_EXCHANGE", "KEY_R", null);
     }
+
+
+
 
 }
