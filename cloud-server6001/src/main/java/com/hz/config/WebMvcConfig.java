@@ -75,6 +75,7 @@ public class WebMvcConfig  implements WebMvcConfigurer/*extends WebMvcConfigurat
     public void addInterceptors(InterceptorRegistry registry) {
         //日志拦截器
         registry.addInterceptor(logInterceptor).addPathPatterns("/**").excludePathPatterns("/static/**","/favicon.ico");
+
     }
 
     /**

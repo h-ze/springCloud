@@ -1,7 +1,6 @@
 package com.hz.controller;
 
 import com.hz.test.MyClient;
-import com.hz.websocket.WebSocket;
 import com.common.entity.ResponseMessageWithoutException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +38,10 @@ public class WebSocketController {
             MyClient client = new MyClient();
             container.connectToServer(client, new URI("ws://localhost:"+serverPort+"/springboot/websocket/"+username+"?token="+token));
             client.send("客户端发送消息:" + message);
-            return successResult(0,"发送成功","测试websocket成功");
+            return successResult(100000,"发送成功","测试websocket成功");
         }catch (Exception e){
             e.printStackTrace();
-            return errorResult(0,"测试websocket失败");
+            return errorResult(100000,"测试websocket失败");
         }
     }
 
@@ -53,10 +52,10 @@ public class WebSocketController {
      * @return
      * @throws IOException
      */
-    @PostMapping("/push")
-    public ResponseEntity<String> pushToWeb(@RequestParam String message, @RequestParam String token) throws IOException {
-        WebSocket.sendInfo(message,"zhangsan");
-        return ResponseEntity.ok("MSG SEND SUCCESS");
-    }
+//    @PostMapping("/push")
+//    public ResponseEntity<String> pushToWeb(@RequestParam String message, @RequestParam String token) throws IOException {
+//        WebSocket.sendInfo(message,"zhangsan");
+//        return ResponseEntity.ok("MSG SEND SUCCESS");
+//    }
 
 }
