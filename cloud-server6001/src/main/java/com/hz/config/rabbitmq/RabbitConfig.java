@@ -34,8 +34,7 @@ import java.util.Map;
 @Configuration
 public class RabbitConfig {
     public final static Logger logger = LoggerFactory.getLogger(RabbitConfig.class);
-    //@Autowired
-    ;
+
     //@Autowired
     //MailSendLogService mailSendLogService;
 

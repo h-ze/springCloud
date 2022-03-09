@@ -280,3 +280,12 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: com.hz.entity.Sy
 	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
 	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
 	... 46 common frames omitted
+2022-03-09 11:36:03.869 [AMQP Connection 8.142.46.67:5672] ERROR com.rabbitmq.client.impl.ForgivingExceptionHandler - An unexpected connection driver error occured
+com.rabbitmq.client.MissedHeartbeatException: Heartbeat missing with heartbeat = 60 seconds
+	at com.rabbitmq.client.impl.AMQConnection.handleSocketTimeout(AMQConnection.java:780)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:680)
+	at com.rabbitmq.client.impl.AMQConnection.access$300(AMQConnection.java:48)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:599)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-03-09 11:36:03.870 [AMQP Connection 8.142.46.67:5672] ERROR o.s.a.rabbit.connection.CachingConnectionFactory - Channel shutdown: connection error
+2022-03-09 11:36:03.871 [AMQP Connection 8.142.46.67:5672] ERROR o.s.a.rabbit.connection.CachingConnectionFactory - Channel shutdown: connection error
