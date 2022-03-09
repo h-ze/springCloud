@@ -88,7 +88,7 @@ public class WebMvcConfig  implements WebMvcConfigurer/*extends WebMvcConfigurat
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
 
-        //registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 
 
@@ -137,12 +137,3 @@ public class WebMvcConfig  implements WebMvcConfigurer/*extends WebMvcConfigurat
     }
 
 }
-
-/**
- * 对入参的json进行转义
- */
-/*
-class JsonHtmlXssDeserializer  {
-
-
-}*/
