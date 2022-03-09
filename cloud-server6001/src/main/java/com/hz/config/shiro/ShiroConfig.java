@@ -114,7 +114,7 @@ public class ShiroConfig {
 
         //拦截器需要放在最后 否则以上的放行可能会不生效
 
-        //filterChainDefinitionMap.put("/**","jwt");
+        filterChainDefinitionMap.put("/**","jwt");
 
         //默认认证界面路径
         shiroFilterFactoryBean.setLoginUrl("/index/login");
