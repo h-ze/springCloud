@@ -6,6 +6,9 @@ import com.google.common.base.Objects;
 import com.hz.service.RedisService;
 import com.hz.service.UserInfoService;
 import com.hz.service.UserService;
+import com.hz.task.TaskListenListenner1;
+import com.hz.task.TaskManager;
+import com.hz.task.TaskParam;
 import com.hz.utils.*;
 import io.jsonwebtoken.Claims;
 import io.swagger.annotations.*;
@@ -22,6 +25,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -60,6 +64,10 @@ public class UserController {
     private HttpsUtils httpsUtils;
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
+
+    @Resource
+    private TaskManager taskManager;
 
     //@ResponseBody
     @GetMapping("/findAll")
@@ -204,6 +212,14 @@ public class UserController {
                 boolean set = redisUtils.set(user.getUserId(), jsonObject.toString(), 60*60*24);
                 //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
                 //log.info("结果: {}",set);
+
+
+                TaskParam taskParam = new TaskParam(TaskListenListenner1.class);
+                taskParam.put("param1", "test1");
+                taskParam.put("param2", "test2");
+                taskManager.pushTask(taskParam);
+
+
                 return ResponseResult.successResult(100000,token);
             }else {
                 int errorNum=1;
@@ -232,6 +248,8 @@ public class UserController {
         }else {
             return ResponseResult.successResult(100002,"登录失败,用户不存在");
         }
+
+
     }
 
     /**
