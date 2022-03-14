@@ -26,6 +26,7 @@ public class FangshuaInterceptor implements HandlerInterceptor {
         if(handler instanceof HandlerMethod){
 
             HandlerMethod hm = (HandlerMethod) handler;
+            //PermissionStrategy.validatePermission(hm.getMethod());
 
             //获取方法中的注解,看是否有该注解
             AccessLimit accessLimit = hm.getMethodAnnotation(AccessLimit.class);
