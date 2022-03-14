@@ -186,3 +186,8 @@ feature/jira_id 被合并到 develop分支或release/version分支后，执行�
 
 出现 fatal: Will not add file alias 'cloud-GRPC/pom.xml' ('cloud-grpc/pom.xml' already exists in index)问题时可以使用
 git rm -r --cached cloud-grpc/pom.xml
+
+git stash
+
+ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch E:/logs/springboot/web-warn-2022-03-11.0.log' --prune-empty --tag-name-filter cat -- --all
+
