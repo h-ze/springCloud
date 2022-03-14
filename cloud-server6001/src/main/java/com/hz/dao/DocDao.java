@@ -1,6 +1,7 @@
 package com.hz.dao;
 
 import com.common.entity.Document;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -11,4 +12,6 @@ public interface DocDao {
     Document getDoc(String docId);
     List<Document> getDocs(String userId);
     List<Document> getDocsPage(String userId);
+
+    int addDocs(@Param("documents") List<Document> documents);
 }

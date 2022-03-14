@@ -1,5 +1,6 @@
 package com.hz.controller;
 
+import com.common.entity.ResponseResult;
 import com.hz.test.MyClient;
 import com.common.entity.ResponseMessageWithoutException;
 import lombok.extern.slf4j.Slf4j;
@@ -32,16 +33,16 @@ public class WebSocketController {
     private String serverPort;
 
     @PostMapping("/sendMessage")
-    public ResponseMessageWithoutException<String> sendMessage(@RequestParam String message, @RequestParam String username, @RequestParam String token){
+    public ResponseResult sendMessage(@RequestParam String message, @RequestParam String username, @RequestParam String token){
         try {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             MyClient client = new MyClient();
-            container.connectToServer(client, new URI("ws://localhost:"+serverPort+"/springboot/websocket/"+username+"?token="+token));
+            container.connectToServer(client, new URI("ws://localhost:"+serverPort+"/websocket/"+username+"?token="+token));
             client.send("客户端发送消息:" + message);
-            return successResult(100000,"发送成功","测试websocket成功");
+            return ResponseResult.successResult(100000,"测试websocket成功");
         }catch (Exception e){
             e.printStackTrace();
-            return errorResult(100000,"测试websocket失败");
+            return ResponseResult.errorResult(999999,"测试websocket失败");
         }
     }
 

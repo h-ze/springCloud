@@ -17,6 +17,16 @@
         insert into document values (null ,#{userId},#{docId},#{cAppId},#{cmisId},#{docName},#{createDate},#{encryptConfig})
     </insert>
 
+    <insert id="addDocs" parameterType="java.util.List">
+        insert into document values
+        <foreach collection="documents" item="document" index="index" separator=",">
+            (
+            null ,#{document.userId},#{document.docId},#{document.cAppId},#{document.cmisId},
+            #{document.docName},#{document.createDate},#{document.encryptConfig}
+            )
+        </foreach>
+    </insert>
+
     <delete id="deleteDoc" parameterType="String">
         delete from document where docid=#{docId}
     </delete>

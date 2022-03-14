@@ -15,10 +15,12 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.mgt.DefaultWebSessionStorageEvaluator;
 import org.crazycake.shiro.RedisCacheManager;
 import org.crazycake.shiro.RedisManager;
+import org.crazycake.shiro.RedisSentinelManager;
 import org.crazycake.shiro.RedisSessionDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -31,6 +33,7 @@ import java.util.Map;
  * springboot整合shiro及jwt对用户的token进行认证判断
  * 用来整合shiro框架相关的配置项
  * shiro的filter
+ *
  */
 @Configuration
 public class ShiroConfig {
@@ -96,28 +99,30 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/user/user","anon");
 
         filterChainDefinitionMap.put("/user/registerUser","anon");
-        filterChainDefinitionMap.put("/server/server","anon");
-        filterChainDefinitionMap.put("/code/getLoginQr","anon");
 
+        filterChainDefinitionMap.put("/server/server","anon");
+
+        filterChainDefinitionMap.put("/code/getLoginQr","anon");
 
         filterChainDefinitionMap.put("/unauthorized/**", "anon");
-        filterChainDefinitionMap.put("/websocket/","anon");
 
-        filterChainDefinitionMap.put("/code/getLoginQr","anon");
+        filterChainDefinitionMap.put("/websocket/","anon");
 
         filterChainDefinitionMap.put("index1.html","anon");
 
         filterChainDefinitionMap.put("/index/login","anon");
 
+        filterChainDefinitionMap.put("/login/qrcode/**","anon");
 
+        filterChainDefinitionMap.put("/templates/login.ftl","anon");
 
 
         //拦截器需要放在最后 否则以上的放行可能会不生效
 
-        //filterChainDefinitionMap.put("/**","jwt");
+        filterChainDefinitionMap.put("/**","jwt");
 
         //默认认证界面路径
-        shiroFilterFactoryBean.setLoginUrl("/index/login");
+        shiroFilterFactoryBean.setLoginUrl("/templates/login");
         //shiroFilterFactoryBean.setLoginUrl("/login"); // 首页get方式authc.loginUrl = /login
         shiroFilterFactoryBean.setSuccessUrl("/index"); // 错误页面，认证不通过跳转
         shiroFilterFactoryBean.setUnauthorizedUrl("/error");
@@ -178,17 +183,28 @@ public class ShiroConfig {
 
 
     /**
+     * 这里需要重点注意
+     * 在这里使用redis哨兵模式 需要在配置文件中的redis sentinel中添加 host和password两项
+     * @return
+     */
+    @ConfigurationProperties("spring.redis.sentinel")
+    @Bean
+    public RedisSentinelManager redisSentinelManager() {
+        return new RedisSentinelManager();
+    }
+
+    /**
      * 配置redisManager
      */
-    public RedisManager getRedisManager(){
-        RedisManager redisManager = new RedisManager();
-        redisManager.setHost("8.142.46.67:6379");
-        redisManager.setPassword("hz15858");
-        redisManager.setDatabase(0);
-        redisManager.setTimeout(1600);
-        //redisManager.setPort(6379);
-        return redisManager;
-    }
+//    public RedisManager getRedisManager(){
+//        RedisManager redisManager = new RedisManager();
+//        redisManager.setHost("8.142.46.67:6379");
+//        redisManager.setPassword("hz15858");
+//        redisManager.setDatabase(0);
+//        redisManager.setTimeout(1600);
+//        //redisManager.setPort(6379);
+//        return redisManager;
+//    }
 
 
     /**
@@ -197,7 +213,7 @@ public class ShiroConfig {
      */
     public RedisCacheManager cacheManager(){
         RedisCacheManager redisCacheManager = new RedisCacheManager();
-        redisCacheManager.setRedisManager(getRedisManager());
+        redisCacheManager.setRedisManager(redisSentinelManager());
 
         //设置过期时间，单位是秒，20s
         redisCacheManager.setExpire(60*10);
@@ -230,7 +246,7 @@ public class ShiroConfig {
      */
     public RedisSessionDAO redisSessionDAO(){
         RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
-        redisSessionDAO.setRedisManager(getRedisManager());
+        redisSessionDAO.setRedisManager(redisSentinelManager());
 
         //设置sessionid生成器
         redisSessionDAO.setSessionIdGenerator(new CustomSessionIdGenerator());

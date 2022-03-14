@@ -54,8 +54,7 @@ public class SysConfigServiceImpl implements SysConfigService {
     @Override
     public String getValue(String key) {
         SysOss sysOss = sysConfigDao.selectOss(key);
-        String type = sysOss.getType();
-        return type;
+        return sysOss.getType();
 
         //此处需要研究  可能原因是由于从redis里读取的
         /*SysConfigEntity config = sysConfigRedis.get(key);
@@ -77,7 +76,7 @@ public class SysConfigServiceImpl implements SysConfigService {
         cloudStorageConfig.setAliyunEndPoint(sysOss.getEndpoint());
         cloudStorageConfig.setAliyunDomain("");
         cloudStorageConfig.setType(2);
-        String value = cloudStorageConfig.toString();
+        //String value = cloudStorageConfig.toString();
         return cloudStorageConfig;
        /* if(StringUtils.isNotBlank(value)){
             return new Gson().fromJson(value, clazz);

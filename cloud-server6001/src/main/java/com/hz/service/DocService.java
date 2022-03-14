@@ -28,4 +28,23 @@ public interface DocService {
 
     String convertDoc();
 
+
+    /**
+     * mybatis批量操作 批处理
+     * Mybatis内置的ExecutorType有3种，默认为simple,该模式下它为每个语句的执行创建一个新的预处理语句，单条提交sql；
+     * 而batch模式重复使用已经预处理的语句，并且批量执行所有更新语句，显然batch性能将更优；
+     * 但batch模式也有自己的问题，比如在Insert操作时，在事务没有提交之前，是没有办法获取到自增的id，这在某型情形下是不符合业务要求的
+     * @param documents
+     * @return
+     */
+    int createDocuments(List<Document> documents);
+
+
+    /**
+     * 拼接批量操作
+     * @param documents
+     * @return
+     */
+    int createDocumentsSeparator(List<Document> documents);
+
 }

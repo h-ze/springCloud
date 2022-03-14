@@ -1,6 +1,6 @@
 server :
   port : 6001
-  servlet.context-path : /springboot
+  #servlet.context-path : /springboot
 
 #grpc:
 #  server:
@@ -46,7 +46,7 @@ spring:
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:
-    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    url: jdbc:mysql://8.142.46.67:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&autoReconnect=true&failOverReadOnly=false&useSSL=false&allowMutiQueries=true
     #driver-class-name: org.gjt.mm.mysql.Driver
     username: root
     password: hz15858
@@ -58,13 +58,23 @@ spring:
     multipart.max-request-size: 500MB
 
   redis:
-#    cluster:
+    #spring boot初始化redisTemplate需要用到nodes这个字段，初始化RedisSentineManager需要用到host这个字段
+    sentinel:
+      master: mymaster
+      nodes: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+      host: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+      password: hz15858
+
+    #cluster:
+    #  nodes: 124.223.191.89:6379,8.142.46.67:6379,114.55.119.114:6379
+    #  max-redirects: 3
+    #    cluster:
 #      nodes:
 #        -
     # Redis服务器连接端口
-    port: 6379
+    #port: 6379
     # Redis服务器地址
-    host: 8.142.46.67
+    #host: 8.142.46.67
     # Redis数据库索引（默认为0）
     database: 0
     # Redis服务器连接密码
@@ -72,7 +82,9 @@ spring:
     # 连接超时时间（毫秒）
     timeout: 1000
     # 连接池最大连接数（使用负值表示没有限制）
+    #lettuce:
     jedis:
+
       pool:
         # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-active: 20
@@ -183,11 +195,11 @@ aliyun:
 mongodb:
   database: hz
   #用户名
-  username: root
+  username: admin
   #密码
   password: hz15858
   #IP和端口（host:port），例如127.0.0.1:27017。集群模式用,分隔开，例如host1:port1,host2:port2
-  address: 8.142.46.67:27017
+  address: 114.55.119.114:27117,114.55.119.114:27217,114.55.119.114:27317
   #设置认证数据库，如果有的话
   authenticationDatabase: admin
 
@@ -225,6 +237,17 @@ mongodb:
 ##ͼƬ��������ַ����ʹ��nginx���
 #img.server.url = http://localhost:80
 #qrcode.store.root.path=F:\\qrcode
+
+mqtt:
+  host: tcp://114.55.119.114:1883
+  #clientId: client_${random.value}
+  clientId: client_test1
+  topic: topic/test1
+  qoslevel: 1
+  username: mosquitto
+  password: mosquitto
+  timeout: 10000
+  keepalive: 20
 
 
 

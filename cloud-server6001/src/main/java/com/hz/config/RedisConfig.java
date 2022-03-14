@@ -1,98 +1,80 @@
 package com.hz.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.CachingConfigurerSupport;
-import org.springframework.cache.annotation.EnableCaching;
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.RedisPassword;
-import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
-import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisNode;
+import org.springframework.data.redis.connection.RedisSentinelConfiguration;
+import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettucePoolingClientConfiguration;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.RedisSerializer;
+import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import redis.clients.jedis.JedisPoolConfig;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //@Configuration
-@EnableCaching
-public class RedisConfig extends CachingConfigurerSupport {
-    @Value("${spring.redis.database}")
-    private int database;
+public class RedisConfig {
 
-    @Value("${spring.redis.host}")
-    private String host;
+    @Autowired
+    RedisProperties redisProperties;
 
-    @Value("${spring.redis.port}")
-    private int port;
-
-    @Value("${spring.redis.password}")
-    private String password;
-
-    @Value("${spring.redis.jedis.pool.max-total}")
-    private int maxTotal;
-
-    @Value("${spring.redis.jedis.pool.max-idle}")
-    private int maxIdle;
-
-    @Value("${spring.redis.jedis.pool.min-idle}")
-    private int minIdle;
-
-    @Value("${spring.redis.jedis.pool.max-wait}")
-    private long maxWaitMillis;
-
-//    @Bean
-//    public ConfigureRedisAction configureRedisAction() {
-//        return ConfigureRedisAction.NO_OP;
-//    }
-
+    //读取pool配置
     @Bean
-    public JedisConnectionFactory redisPoolFactory() {
-        RedisStandaloneConfiguration standaloneConfig = new RedisStandaloneConfiguration();
-        standaloneConfig.setDatabase(database);
-        standaloneConfig.setHostName(host);
-        standaloneConfig.setPort(port);
-        standaloneConfig.setPassword(RedisPassword.of(password));
-        JedisClientConfiguration.JedisPoolingClientConfigurationBuilder jpb = (JedisClientConfiguration.JedisPoolingClientConfigurationBuilder) JedisClientConfiguration
-                .builder();
-        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        jedisPoolConfig.setMaxTotal(maxTotal);
-        jedisPoolConfig.setMaxIdle(maxIdle);
-        jedisPoolConfig.setMinIdle(minIdle);
-        jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
-        jpb.poolConfig(jedisPoolConfig);
-        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(standaloneConfig, jpb.build());
-        return jedisConnectionFactory;
+    public GenericObjectPoolConfig poolConfig() {
+        GenericObjectPoolConfig config = new GenericObjectPoolConfig();
+        config.setMinIdle(redisProperties.getLettuce().getPool().getMinIdle());
+        config.setMaxIdle(redisProperties.getLettuce().getPool().getMaxIdle());
+        config.setMaxTotal(redisProperties.getLettuce().getPool().getMaxActive());
+        config.setMaxWaitMillis(redisProperties.getLettuce().getPool().getMaxWait().toMillis());
+        return config;
+    }
+    /**
+     * @Description:  将哨兵信息放到配置中
+     * @date 2020/6/7 14:42
+     */
+    @Bean
+    public RedisSentinelConfiguration configuration() {
+        RedisSentinelConfiguration redisConfig = new RedisSentinelConfiguration();
+        redisConfig.setMaster(redisProperties.getSentinel().getMaster());
+//        redisConfig.setPassword(RedisPassword.of(redisConfigThree.getPassword()));
+        if(redisProperties.getSentinel().getNodes()!=null) {
+            List<RedisNode> sentinelNode=new ArrayList<RedisNode>();
+            for(String sen : redisProperties.getSentinel().getNodes()) {
+                String[] arr = sen.split(":");
+                sentinelNode.add(new RedisNode(arr[0],Integer.parseInt(arr[1])));
+            }
+            redisConfig.setSentinels(sentinelNode);
+        }
+        return redisConfig;
+    }
+    @Bean("lettuceConnectionFactory")
+    public LettuceConnectionFactory lettuceConnectionFactory(@Qualifier("poolConfig") GenericObjectPoolConfig config,
+                                                             @Qualifier("configuration") RedisSentinelConfiguration redisConfig) {//注意传入的对象名和类型RedisSentinelConfiguration
+        LettuceClientConfiguration clientConfiguration = LettucePoolingClientConfiguration.builder().poolConfig(config).build();
+        return new LettuceConnectionFactory(redisConfig, clientConfiguration);
     }
 
-    @Bean
-    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate<String, String> redisTemplate = new RedisTemplate<String, String>();
-        // 字符序列化器
-        RedisSerializer<String> stringRedisSerializer = new StringRedisSerializer();
-        // 对象序列化器
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
+    @Bean("stringObjectRedisTemplate")
+    public RedisTemplate<String, Object> stringObjectRedisTemplate(@Qualifier("lettuceConnectionFactory")LettuceConnectionFactory connectionFactory) {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(connectionFactory);
 
-        redisTemplate.setConnectionFactory(factory);
+        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
+        GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer();
+
+        //设置序列化器
         redisTemplate.setKeySerializer(stringRedisSerializer);
-        redisTemplate.setValueSerializer(stringRedisSerializer);
+        redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
         redisTemplate.setHashKeySerializer(stringRedisSerializer);
-        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
+        redisTemplate.setHashValueSerializer(genericJackson2JsonRedisSerializer);
+        redisTemplate.afterPropertiesSet();
+
         return redisTemplate;
     }
-
-//    @Bean
-//    public RedisService redisService(RedisTemplate<String, String> redisTemplate) {
-//        RedisService redisService = new RedisService();
-//        redisService.setRedisTemplate(redisTemplate);
-//        return redisService;
-//    }
-
-
 }
-
