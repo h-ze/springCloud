@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.hz.interceptors.FangshuaInterceptor;
 import com.hz.interceptors.LogInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -65,6 +66,11 @@ public class WebMvcConfig  implements WebMvcConfigurer/*extends WebMvcConfigurat
     }
 
 
+    @Bean
+    FangshuaInterceptor getFangshuaInterceptor(){
+        return new FangshuaInterceptor();
+    }
+
     /**
      * 重写添加拦截器方法并添加配置拦截器
      *
@@ -75,7 +81,7 @@ public class WebMvcConfig  implements WebMvcConfigurer/*extends WebMvcConfigurat
     public void addInterceptors(InterceptorRegistry registry) {
         //日志拦截器
         registry.addInterceptor(logInterceptor).addPathPatterns("/**").excludePathPatterns("/static/**","/favicon.ico");
-
+        registry.addInterceptor(getFangshuaInterceptor()).addPathPatterns("/**");
     }
 
     /**

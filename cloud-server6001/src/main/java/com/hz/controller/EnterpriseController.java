@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "企业接口")
 public class EnterpriseController {
 
-    @Autowired
+    /*@Autowired
     private EnterpriseService enterpriseService;
 
     @Autowired
@@ -31,12 +31,11 @@ public class EnterpriseController {
     @ApiOperation(value = "获取企业信息",notes = "获取企业信息")
     public ResponseResult getEnterpriseInfo(){
 
-        /*String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
         Claims claims = jwtUtil.parseJWT(principal);
-        String userId = (String)claims.get("userId");*/
-        String userId ="1125";
+        String userId = (String)claims.get("userId");
         EnterpriseInfo enterpriseInfoByUserId = enterpriseService.getEnterpriseInfoByUserId(userId);
         return ResponseResult.successResult(100000,enterpriseInfoByUserId);
-    }
+    }*/
 
 }

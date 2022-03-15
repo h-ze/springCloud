@@ -29,7 +29,7 @@ import java.util.Map;
 @RequiresRoles("admin")
 public class AdminUserController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AdminUserController.class);
+    /*private static final Logger logger = LoggerFactory.getLogger(AdminUserController.class);
 
     @Autowired
     private UserService userService;
@@ -43,14 +43,13 @@ public class AdminUserController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    /**
+    *//**
      * 添加用户 管理员操作
      * @param username 添加的用户
      * @return ConvertResult对象
-     */
+     *//*
 
     @PostMapping(value = "/addUser")
-    //@RequiresRoles("admin")
     @ApiOperation(value ="添加用户",notes="管理员添加用户",response = ResponseResult.class)
     @ApiImplicitParam(name = "username",value = "用户名",dataType = "String",paramType = "query")
     public ResponseResult addUser(@RequestParam("username") String username){
@@ -79,11 +78,11 @@ public class AdminUserController {
         }
     }
 
-    /**
+    *//**
      * 管理员删除用户
      * @param userId 用户的userId
      * @return ConvertResult对象
-     */
+     *//*
     @ApiOperation(value ="删除用户",notes="管理员删除用户")
     @DeleteMapping("/user")
     @RequiresRoles("admin")
@@ -96,11 +95,11 @@ public class AdminUserController {
         }
     }
 
-    /**
+    *//**
      * 管理员冻结用户
      * @param userId 用户的userId type为3时为已冻结 为2时为以拒绝
      * @return ConvertResult对象
-     */
+     *//*
     @ApiOperation(value ="改变普通用户状态",notes="管理员改变普通用户状态，使用中或被冻结或被拒绝")
     @PutMapping("/freezeUser")
     @RequiresRoles("admin")
@@ -126,11 +125,11 @@ public class AdminUserController {
         }
     }
 
-    /**
+    *//**
      * 转让管理员
      * @param username 用户名
      * @return ConvertResult对象
-     */
+     *//*
     @ApiOperation(value ="转让管理员给其他用户",notes="管理员转移管理员权限给他人，被转的账号必须存在且必须是当前企业下的账号")
     @PutMapping("/transferAdmin")
     @RequiresRoles("admin")
@@ -143,14 +142,14 @@ public class AdminUserController {
         }
     }
 
-    /**
+    *//**
      * 获取各状态用户列表
      * @param type 状态 任务状态 0=申请中;1=使用中;2=已拒绝;3=已冻结
      * @param keyword 搜索关键字
      * @param page 页码
      * @param per_page 每页数据量
      * @return ConvertResult对象
-     */
+     *//*
     @ApiOperation(value ="用户列表",notes="获取各状态下的成员列表",response = PageResult.class)
     @GetMapping("/account")
     @ApiImplicitParams({
@@ -159,7 +158,6 @@ public class AdminUserController {
             @ApiImplicitParam(name = "page",dataType = "int",value = "页码", paramType = "query"),
             @ApiImplicitParam(name = "per_page",dataType = "int",value = "每页数据量", paramType = "query")
     })
-    //@RequiresRoles("admin")
     public ResponseResult getAccount(String type, String keyword, Integer page, Integer per_page){
         logger.info("page :{}",page);
 
@@ -173,15 +171,14 @@ public class AdminUserController {
     }
 
 
-    /**
+    *//**
      * 自助激活成员邮箱
      * @param cas_id 用户的cas_id
      * @return ConvertResult对象
-     */
+     *//*
     @ApiOperation(value ="激活成员邮箱",notes="自助激活成员邮箱，成员无需再次激活")
     @ApiImplicitParam(name = "cas_id",value = "用户id",dataType = "String",paramType = "query")
     @PostMapping("/active")
-    //@RequiresRoles("admin")
     public ResponseResult activeUser(String cas_id){
 
         int i = adminUserService.changeUserTypeByUserId("1",cas_id);
@@ -197,7 +194,6 @@ public class AdminUserController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "verifyType",value = "0 或其他双因子验证 1 单因子验证 2 双因子验证 建议双因子验证",paramType = "query",dataType = "String",allowableValues = "0,1,2", required = true)
     })
-    //@RequiresRoles("admin")
     public ResponseResult verifyCas(@RequestParam("verifyType") String verifyType){
         logger.info("verifyType :{}",verifyType);
         String principal = (String) SecurityUtils.getSubject().getPrincipal();
@@ -239,6 +235,6 @@ public class AdminUserController {
             return ResponseResult.successResult(100001,"转换失败");
 
         }
-    }
+    }*/
 
 }

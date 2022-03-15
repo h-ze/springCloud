@@ -54,7 +54,7 @@ public class ResponseResult<T> implements Serializable {
      * 失败的结果
      */
     public static ResponseResult errorResult(Integer code,Object data) {
-        return new ResponseResult(code,ResponseResult.FAIL,null);
+        return new ResponseResult(code,ResponseResult.FAIL,data);
     }
 
     /**

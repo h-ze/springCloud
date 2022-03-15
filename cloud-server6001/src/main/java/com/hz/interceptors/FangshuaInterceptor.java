@@ -1,12 +1,17 @@
 package com.hz.interceptors;
 
+import com.alibaba.fastjson.JSON;
+import com.common.entity.ResponseResult;
 import com.hz.annotation.AccessLimit;
+import com.hz.utils.RedisUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.OutputStream;
 
 /*import com.example.demo.action.AccessLimit;
 import com.example.demo.redis.RedisService;
@@ -18,6 +23,9 @@ public class FangshuaInterceptor implements HandlerInterceptor {
 
     //@Autowired
     //private RedisService redisService;
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -43,6 +51,8 @@ public class FangshuaInterceptor implements HandlerInterceptor {
                 //获取登录的session进行判断
                 //.....
                 key+=""+"1";  //这里假设用户是1,项目中是动态获取的userId
+                render(response); //这里的CodeMsg是一个返回参数
+                return false;
             }else {
                 log.info("不需要登录");
             }
@@ -66,12 +76,12 @@ public class FangshuaInterceptor implements HandlerInterceptor {
         return true;
 
     }
-//    private void render(HttpServletResponse response, CodeMsg cm)throws Exception {
-//        response.setContentType("application/json;charset=UTF-8");
-//        OutputStream out = response.getOutputStream();
-//        String str  = JSON.toJSONString(Result.error(cm));
-//        out.write(str.getBytes("UTF-8"));
-//        out.flush();
-//        out.close();
-//    }
+    private void render(HttpServletResponse response)throws Exception {
+        response.setContentType("application/json;charset=UTF-8");
+        OutputStream out = response.getOutputStream();
+        String str  = JSON.toJSONString(ResponseResult.errorResult(999999,"防止刷端口"));
+        out.write(str.getBytes("UTF-8"));
+        out.flush();
+        out.close();
+    }
 }

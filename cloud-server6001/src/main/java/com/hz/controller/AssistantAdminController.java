@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("assistantAdmin")
 //@RequiresRoles("admin")
 public class AssistantAdminController {
-    private static final Logger logger = LoggerFactory.getLogger(AssistantAdminController.class);
+    /*private static final Logger logger = LoggerFactory.getLogger(AssistantAdminController.class);
 
     @GetMapping("encryptConfig")
     @ApiOperation(value ="读取加密算法配置",notes="读取企业所选择加密算法配置")
@@ -40,5 +40,5 @@ public class AssistantAdminController {
     @ApiOperation(value = "设置ab管理员",notes = "有管理员则修改，没有则添加 返回state 【0：即刻生效 | 1：需要B管理同意】")
     public ConvertResult setAssistantAdmin(String email){
         return new ConvertResult();
-    }
+    }*/
 }

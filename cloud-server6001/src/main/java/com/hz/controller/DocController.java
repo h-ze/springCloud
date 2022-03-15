@@ -214,6 +214,14 @@ public class DocController {
         return ResponseResult.successResult(100000,convertDoc);
     }
 
+    @PostMapping("convertTask")
+    @ApiOperation("转换文档Task")
+    public ResponseResult convertTaskMethod(){
+        String convertDoc = docService.convertTaskDoc();
+        return ResponseResult.successResult(100000,convertDoc);
+    }
+
+
     @GetMapping("queryTask")
     @ApiOperation("查询文档转换任务")
     @ApiImplicitParam(name ="taskId",value = "任务id",paramType = "query",dataType = "String",required = true)
