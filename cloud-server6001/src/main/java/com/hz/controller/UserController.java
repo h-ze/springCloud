@@ -213,13 +213,6 @@ public class UserController {
                 //boolean setRedisExpire = redisUtil.setRedisExpire(token, 600);
                 //log.info("结果: {}",set);
 
-
-                TaskParam taskParam = new TaskParam(TaskListenListenner1.class);
-                taskParam.put("param1", "test1");
-                taskParam.put("param2", "test2");
-                taskManager.pushTask(taskParam);
-
-
                 return ResponseResult.successResult(100000,token);
             }else {
                 int errorNum=1;

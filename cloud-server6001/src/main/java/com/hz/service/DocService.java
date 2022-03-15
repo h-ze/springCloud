@@ -28,6 +28,8 @@ public interface DocService {
 
     String convertDoc();
 
+    String convertTaskDoc();
+
 
     /**
      * mybatis批量操作 批处理

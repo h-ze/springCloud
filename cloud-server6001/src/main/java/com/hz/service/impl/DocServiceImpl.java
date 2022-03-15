@@ -13,6 +13,9 @@ import com.hz.mongo.MongoService;
 import com.hz.oss.cloud.OSSFactory;
 import com.hz.service.AsyncService;
 import com.hz.service.DocService;
+import com.hz.task.TaskListenListenner1;
+import com.hz.task.TaskManager;
+import com.hz.task.TaskParam;
 import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -43,6 +46,9 @@ public class DocServiceImpl implements DocService {
 
     @Autowired
     private MongoService mongoService;
+
+    @Autowired
+    private TaskManager taskManager;
 
     @Override
     public int createDocument(Document document) {
@@ -109,6 +115,27 @@ public class DocServiceImpl implements DocService {
     }
 
     @Override
+    public String convertTaskDoc() {
+        String id = UUID.randomUUID().toString().replace("-", "");
+        DocTask docTask = new DocTask();
+        docTask.setTaskData("convert task");
+        docTask.setDocId("");
+        docTask.setDocName("");
+        docTask.setTaskId(id);
+        int task = asyncService.createTask(docTask);
+        logger.info("taskid:{}",task);
+        if (task>0){
+            TaskParam taskParam = new TaskParam(TaskListenListenner1.class);
+            taskParam.put("param1", "test1");
+            taskParam.put("param2", "test2");
+            taskParam.put("id",id);
+            taskManager.pushTask(taskParam);
+            //asyncService.convert(docTask);
+        }
+        return id;
+    }
+
+    @Override
     public int createDocuments(List<Document> documents) {
 
         //设置true的话以后的增删改就不用提交事务
@@ -131,8 +158,7 @@ public class DocServiceImpl implements DocService {
 
     @Override
     public int createDocumentsSeparator(List<Document> documents) {
-        int i = docDao.addDocs(documents);
-        return i;
+        return docDao.addDocs(documents);
     }
 
     /**
