@@ -42,7 +42,7 @@ public final class DeviceFixProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\013hello.proto\022\006device\"\037\n\021conditionsReque" +
       "st\022\n\n\002id\030\001 \001(\t\"\222\001\n\tdeviceFix\022\n\n\002id\030\001 \001(\t" +
       "\022\021\n\tserialNum\030\002 \001(\t\022\017\n\007userNum\030\003 \001(\t\022\016\n\006" +
@@ -77,25 +77,25 @@ public final class DeviceFixProto {
     internal_static_device_conditionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_device_conditionsRequest_descriptor,
-        new java.lang.String[] { "Id", });
+        new String[] { "Id", });
     internal_static_device_deviceFix_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_device_deviceFix_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_device_deviceFix_descriptor,
-        new java.lang.String[] { "Id", "SerialNum", "UserNum", "Status", "Type", "Address", "Createtime", "Updatetime", });
+        new String[] { "Id", "SerialNum", "UserNum", "Status", "Type", "Address", "Createtime", "Updatetime", });
     internal_static_device_booleanReply_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_device_booleanReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_device_booleanReply_descriptor,
-        new java.lang.String[] { "Reply", });
+        new String[] { "Reply", });
     internal_static_device_objectReply_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_device_objectReply_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_device_objectReply_descriptor,
-        new java.lang.String[] { "Reply", });
+        new String[] { "Reply", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

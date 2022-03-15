@@ -21,7 +21,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -218,5 +220,66 @@ public class DocController {
     public ResponseResult queryTask(@RequestParam("taskId")String taskId){
         DocTask task = asyncService.getTask(taskId);
         return ResponseResult.successResult(100000,task);
+    }
+
+    @PostMapping("addDocuments")
+    @ApiOperation("批量插入文件")
+    @ApiImplicitParam(name = "num",value = "批量插入数",paramType = "query",dataType = "int",required = true)
+    public ResponseResult addDocuments(int num){
+        long startTime = System.currentTimeMillis();
+        log.info("开始时间------>{}",startTime);
+        List<Document> documentList =new ArrayList<>();
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        Claims claims = jwtUtil.parseJWT(principal);
+        String userId = (String)claims.get("userId");
+        for (int i =0; i<num;i++){
+            Document document = new Document();
+            String uuid = UUID.randomUUID().toString().replace("-", "");
+            document.setDocId(uuid);
+            document.setDocName("test"+i+".pdf");
+            document.setUserId(userId);
+            document.setCAppId("111010");
+            document.setCmisId(uuid);
+            document.setCreateDate(new Date());
+            document.setEncryptConfig("1");
+            documentList.add(document);
+        }
+
+        docService.createDocuments(documentList);
+        long endTime = System.currentTimeMillis();
+        log.info("结束时间------>{}",endTime);
+
+        log.info("总用时为----->{}",endTime-startTime);
+        return ResponseResult.successResult(100000,"插入成功");
+    }
+
+    @PostMapping("addDocumentsSeparator")
+    @ApiOperation("拼接批量插入文件")
+    public ResponseResult addDocumentsSeparator(){
+        long startTime = System.currentTimeMillis();
+        log.info("开始时间------>{}",startTime);
+        List<Document> documentList =new ArrayList<>();
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        Claims claims = jwtUtil.parseJWT(principal);
+        String userId = (String)claims.get("userId");
+        for (int i =0; i<100;i++){
+            Document document = new Document();
+            String uuid = UUID.randomUUID().toString().replace("-", "");
+            document.setDocId(uuid);
+            document.setDocName("test"+i+".pdf");
+            document.setUserId(userId);
+            document.setCAppId("111010");
+            document.setCmisId(uuid);
+            document.setCreateDate(new Date());
+            document.setEncryptConfig("1");
+            documentList.add(document);
+        }
+
+        docService.createDocumentsSeparator(documentList);
+        long endTime = System.currentTimeMillis();
+        log.info("结束时间------>{}",endTime);
+
+        log.info("总用时为----->{}",endTime-startTime);
+        return ResponseResult.successResult(100000,"插入成功");
     }
 }

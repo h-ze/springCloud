@@ -22,7 +22,7 @@ public  final class booleanReply extends
     reply_ = false;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -65,14 +65,14 @@ public  final class booleanReply extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return hz.lib.DeviceFixProto.internal_static_device_booleanReply_descriptor;
+    return DeviceFixProto.internal_static_device_booleanReply_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return hz.lib.DeviceFixProto.internal_static_device_booleanReply_fieldAccessorTable
+    return DeviceFixProto.internal_static_device_booleanReply_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            hz.lib.booleanReply.class, hz.lib.booleanReply.Builder.class);
+            booleanReply.class, booleanReply.Builder.class);
   }
 
   public static final int REPLY_FIELD_NUMBER = 1;
@@ -115,15 +115,15 @@ public  final class booleanReply extends
   }
 
   private static final long serialVersionUID = 0L;
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof hz.lib.booleanReply)) {
+    if (!(obj instanceof booleanReply)) {
       return super.equals(obj);
     }
-    hz.lib.booleanReply other = (hz.lib.booleanReply) obj;
+    booleanReply other = (booleanReply) obj;
 
     boolean result = true;
     result = result && (getReply()
@@ -131,7 +131,7 @@ public  final class booleanReply extends
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -146,69 +146,69 @@ public  final class booleanReply extends
     return hash;
   }
 
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.booleanReply parseFrom(byte[] data)
+  public static booleanReply parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.booleanReply parseFrom(java.io.InputStream input)
+  public static booleanReply parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static hz.lib.booleanReply parseDelimitedFrom(java.io.InputStream input)
+  public static booleanReply parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static hz.lib.booleanReply parseDelimitedFrom(
+  public static booleanReply parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static hz.lib.booleanReply parseFrom(
+  public static booleanReply parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -220,7 +220,7 @@ public  final class booleanReply extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(hz.lib.booleanReply prototype) {
+  public static Builder newBuilder(booleanReply prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -228,7 +228,7 @@ public  final class booleanReply extends
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
       com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
@@ -244,17 +244,17 @@ public  final class booleanReply extends
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:device.booleanReply)
-      hz.lib.booleanReplyOrBuilder {
+          booleanReplyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return hz.lib.DeviceFixProto.internal_static_device_booleanReply_descriptor;
+      return DeviceFixProto.internal_static_device_booleanReply_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return hz.lib.DeviceFixProto.internal_static_device_booleanReply_fieldAccessorTable
+      return DeviceFixProto.internal_static_device_booleanReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              hz.lib.booleanReply.class, hz.lib.booleanReply.Builder.class);
+              booleanReply.class, booleanReply.Builder.class);
     }
 
     // Construct using hz.lib.booleanReply.newBuilder()
@@ -281,23 +281,23 @@ public  final class booleanReply extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return hz.lib.DeviceFixProto.internal_static_device_booleanReply_descriptor;
+      return DeviceFixProto.internal_static_device_booleanReply_descriptor;
     }
 
-    public hz.lib.booleanReply getDefaultInstanceForType() {
-      return hz.lib.booleanReply.getDefaultInstance();
+    public booleanReply getDefaultInstanceForType() {
+      return getDefaultInstance();
     }
 
-    public hz.lib.booleanReply build() {
-      hz.lib.booleanReply result = buildPartial();
+    public booleanReply build() {
+      booleanReply result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public hz.lib.booleanReply buildPartial() {
-      hz.lib.booleanReply result = new hz.lib.booleanReply(this);
+    public booleanReply buildPartial() {
+      booleanReply result = new booleanReply(this);
       result.reply_ = reply_;
       onBuilt();
       return result;
@@ -330,16 +330,16 @@ public  final class booleanReply extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof hz.lib.booleanReply) {
-        return mergeFrom((hz.lib.booleanReply)other);
+      if (other instanceof booleanReply) {
+        return mergeFrom((booleanReply)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(hz.lib.booleanReply other) {
-      if (other == hz.lib.booleanReply.getDefaultInstance()) return this;
+    public Builder mergeFrom(booleanReply other) {
+      if (other == getDefaultInstance()) return this;
       if (other.getReply() != false) {
         setReply(other.getReply());
       }
@@ -355,11 +355,11 @@ public  final class booleanReply extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      hz.lib.booleanReply parsedMessage = null;
+      booleanReply parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (hz.lib.booleanReply) e.getUnfinishedMessage();
+        parsedMessage = (booleanReply) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -380,7 +380,7 @@ public  final class booleanReply extends
      * <code>bool reply = 1;</code>
      */
     public Builder setReply(boolean value) {
-      
+
       reply_ = value;
       onChanged();
       return this;
@@ -389,7 +389,7 @@ public  final class booleanReply extends
      * <code>bool reply = 1;</code>
      */
     public Builder clearReply() {
-      
+
       reply_ = false;
       onChanged();
       return this;
@@ -409,12 +409,12 @@ public  final class booleanReply extends
   }
 
   // @@protoc_insertion_point(class_scope:device.booleanReply)
-  private static final hz.lib.booleanReply DEFAULT_INSTANCE;
+  private static final booleanReply DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new hz.lib.booleanReply();
+    DEFAULT_INSTANCE = new booleanReply();
   }
 
-  public static hz.lib.booleanReply getDefaultInstance() {
+  public static booleanReply getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -432,12 +432,12 @@ public  final class booleanReply extends
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<booleanReply> getParserForType() {
     return PARSER;
   }
 
-  public hz.lib.booleanReply getDefaultInstanceForType() {
+  public booleanReply getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

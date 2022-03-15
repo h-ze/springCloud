@@ -10,7 +10,7 @@ public interface deviceFixOrBuilder extends
   /**
    * <code>string id = 1;</code>
    */
-  java.lang.String getId();
+  String getId();
   /**
    * <code>string id = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface deviceFixOrBuilder extends
   /**
    * <code>string serialNum = 2;</code>
    */
-  java.lang.String getSerialNum();
+  String getSerialNum();
   /**
    * <code>string serialNum = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface deviceFixOrBuilder extends
   /**
    * <code>string userNum = 3;</code>
    */
-  java.lang.String getUserNum();
+  String getUserNum();
   /**
    * <code>string userNum = 3;</code>
    */
@@ -50,7 +50,7 @@ public interface deviceFixOrBuilder extends
   /**
    * <code>string address = 6;</code>
    */
-  java.lang.String getAddress();
+  String getAddress();
   /**
    * <code>string address = 6;</code>
    */
@@ -60,7 +60,7 @@ public interface deviceFixOrBuilder extends
   /**
    * <code>string createtime = 7;</code>
    */
-  java.lang.String getCreatetime();
+  String getCreatetime();
   /**
    * <code>string createtime = 7;</code>
    */
@@ -70,7 +70,7 @@ public interface deviceFixOrBuilder extends
   /**
    * <code>string updatetime = 8;</code>
    */
-  java.lang.String getUpdatetime();
+  String getUpdatetime();
   /**
    * <code>string updatetime = 8;</code>
    */

@@ -4,23 +4,15 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.redis.core.BoundHashOperations;
-import org.springframework.data.redis.core.RedisTemplate;
 
-import java.util.Set;
+public class TestJob1 extends BaseJob {
 
-public class ExamCountJob extends BaseJob {
+    private final Logger logger = LoggerFactory.getLogger(TestJob1.class);
 
-    private final Logger logger = LoggerFactory.getLogger(ExamCountJob.class);
 
-    /**
-     * 定时同步试卷考试人数到mysql 数据库 (每隔5分钟执行一次)
-     * @param jobExecutionContext
-     * @throws JobExecutionException
-     */
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        logger.info("ExamCountJob---------->消息");
+        logger.info("定时器测试1---------->消息");
         /*RedisTemplate redisTemplate = SpringBeanManager.getBean(SystemConstants.REDIS_TEMPLATE_BEAN_NAME);
         BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(CacheKey.EXAM_MONITOR_CACHE_KEY);
         Set<Integer> testPaperIds = boundHashOperations.keys();

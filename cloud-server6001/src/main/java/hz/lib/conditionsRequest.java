@@ -5,29 +5,29 @@ package hz.lib;
 
 /**
  * <pre>
- * The response message
+ * The request message .
  * </pre>
  *
- * Protobuf type {@code device.objectReply}
+ * Protobuf type {@code device.conditionsRequest}
  */
-public  final class objectReply extends
+public  final class conditionsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:device.objectReply)
-    objectReplyOrBuilder {
-  // Use objectReply.newBuilder() to construct.
-  private objectReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:device.conditionsRequest)
+    conditionsRequestOrBuilder {
+  // Use conditionsRequest.newBuilder() to construct.
+  private conditionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private objectReply() {
-    reply_ = false;
+  private conditionsRequest() {
+    id_ = "";
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private objectReply(
+  private conditionsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -47,9 +47,10 @@ public  final class objectReply extends
             }
             break;
           }
-          case 8: {
+          case 10: {
+            String s = input.readStringRequireUtf8();
 
-            reply_ = input.readBool();
+            id_ = s;
             break;
           }
         }
@@ -65,23 +66,48 @@ public  final class objectReply extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return hz.lib.DeviceFixProto.internal_static_device_objectReply_descriptor;
+    return DeviceFixProto.internal_static_device_conditionsRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return hz.lib.DeviceFixProto.internal_static_device_objectReply_fieldAccessorTable
+    return DeviceFixProto.internal_static_device_conditionsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            hz.lib.objectReply.class, hz.lib.objectReply.Builder.class);
+            conditionsRequest.class, conditionsRequest.Builder.class);
   }
 
-  public static final int REPLY_FIELD_NUMBER = 1;
-  private boolean reply_;
+  public static final int ID_FIELD_NUMBER = 1;
+  private volatile Object id_;
   /**
-   * <code>bool reply = 1;</code>
+   * <code>string id = 1;</code>
    */
-  public boolean getReply() {
-    return reply_;
+  public String getId() {
+    Object ref = id_;
+    if (ref instanceof String) {
+      return (String) ref;
+    } else {
+      com.google.protobuf.ByteString bs =
+          (com.google.protobuf.ByteString) ref;
+      String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string id = 1;</code>
+   */
+  public com.google.protobuf.ByteString
+      getIdBytes() {
+    Object ref = id_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -96,8 +122,8 @@ public  final class objectReply extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (reply_ != false) {
-      output.writeBool(1, reply_);
+    if (!getIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
   }
 
@@ -106,109 +132,107 @@ public  final class objectReply extends
     if (size != -1) return size;
 
     size = 0;
-    if (reply_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, reply_);
+    if (!getIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     memoizedSize = size;
     return size;
   }
 
   private static final long serialVersionUID = 0L;
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof hz.lib.objectReply)) {
+    if (!(obj instanceof conditionsRequest)) {
       return super.equals(obj);
     }
-    hz.lib.objectReply other = (hz.lib.objectReply) obj;
+    conditionsRequest other = (conditionsRequest) obj;
 
     boolean result = true;
-    result = result && (getReply()
-        == other.getReply());
+    result = result && getId()
+        .equals(other.getId());
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + REPLY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getReply());
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.objectReply parseFrom(byte[] data)
+  public static conditionsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.objectReply parseFrom(java.io.InputStream input)
+  public static conditionsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static hz.lib.objectReply parseDelimitedFrom(java.io.InputStream input)
+  public static conditionsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static hz.lib.objectReply parseDelimitedFrom(
+  public static conditionsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static hz.lib.objectReply parseFrom(
+  public static conditionsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -220,7 +244,7 @@ public  final class objectReply extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(hz.lib.objectReply prototype) {
+  public static Builder newBuilder(conditionsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -228,7 +252,7 @@ public  final class objectReply extends
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
       com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
@@ -236,28 +260,28 @@ public  final class objectReply extends
   }
   /**
    * <pre>
-   * The response message
+   * The request message .
    * </pre>
    *
-   * Protobuf type {@code device.objectReply}
+   * Protobuf type {@code device.conditionsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:device.objectReply)
-      hz.lib.objectReplyOrBuilder {
+      // @@protoc_insertion_point(builder_implements:device.conditionsRequest)
+          conditionsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return hz.lib.DeviceFixProto.internal_static_device_objectReply_descriptor;
+      return DeviceFixProto.internal_static_device_conditionsRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return hz.lib.DeviceFixProto.internal_static_device_objectReply_fieldAccessorTable
+      return DeviceFixProto.internal_static_device_conditionsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              hz.lib.objectReply.class, hz.lib.objectReply.Builder.class);
+              conditionsRequest.class, conditionsRequest.Builder.class);
     }
 
-    // Construct using hz.lib.objectReply.newBuilder()
+    // Construct using hz.lib.conditionsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -274,31 +298,31 @@ public  final class objectReply extends
     }
     public Builder clear() {
       super.clear();
-      reply_ = false;
+      id_ = "";
 
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return hz.lib.DeviceFixProto.internal_static_device_objectReply_descriptor;
+      return DeviceFixProto.internal_static_device_conditionsRequest_descriptor;
     }
 
-    public hz.lib.objectReply getDefaultInstanceForType() {
-      return hz.lib.objectReply.getDefaultInstance();
+    public conditionsRequest getDefaultInstanceForType() {
+      return getDefaultInstance();
     }
 
-    public hz.lib.objectReply build() {
-      hz.lib.objectReply result = buildPartial();
+    public conditionsRequest build() {
+      conditionsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public hz.lib.objectReply buildPartial() {
-      hz.lib.objectReply result = new hz.lib.objectReply(this);
-      result.reply_ = reply_;
+    public conditionsRequest buildPartial() {
+      conditionsRequest result = new conditionsRequest(this);
+      result.id_ = id_;
       onBuilt();
       return result;
     }
@@ -330,18 +354,19 @@ public  final class objectReply extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof hz.lib.objectReply) {
-        return mergeFrom((hz.lib.objectReply)other);
+      if (other instanceof conditionsRequest) {
+        return mergeFrom((conditionsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(hz.lib.objectReply other) {
-      if (other == hz.lib.objectReply.getDefaultInstance()) return this;
-      if (other.getReply() != false) {
-        setReply(other.getReply());
+    public Builder mergeFrom(conditionsRequest other) {
+      if (other == getDefaultInstance()) return this;
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        onChanged();
       }
       onChanged();
       return this;
@@ -355,11 +380,11 @@ public  final class objectReply extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      hz.lib.objectReply parsedMessage = null;
+      conditionsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (hz.lib.objectReply) e.getUnfinishedMessage();
+        parsedMessage = (conditionsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -369,28 +394,71 @@ public  final class objectReply extends
       return this;
     }
 
-    private boolean reply_ ;
+    private Object id_ = "";
     /**
-     * <code>bool reply = 1;</code>
+     * <code>string id = 1;</code>
      */
-    public boolean getReply() {
-      return reply_;
+    public String getId() {
+      Object ref = id_;
+      if (!(ref instanceof String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (String) ref;
+      }
     }
     /**
-     * <code>bool reply = 1;</code>
+     * <code>string id = 1;</code>
      */
-    public Builder setReply(boolean value) {
-      
-      reply_ = value;
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public Builder setId(
+        String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+
+      id_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool reply = 1;</code>
+     * <code>string id = 1;</code>
      */
-    public Builder clearReply() {
-      
-      reply_ = false;
+    public Builder clearId() {
+
+      id_ = getDefaultInstance().getId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public Builder setIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+
+      id_ = value;
       onChanged();
       return this;
     }
@@ -405,39 +473,39 @@ public  final class objectReply extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:device.objectReply)
+    // @@protoc_insertion_point(builder_scope:device.conditionsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:device.objectReply)
-  private static final hz.lib.objectReply DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:device.conditionsRequest)
+  private static final conditionsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new hz.lib.objectReply();
+    DEFAULT_INSTANCE = new conditionsRequest();
   }
 
-  public static hz.lib.objectReply getDefaultInstance() {
+  public static conditionsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<objectReply>
-      PARSER = new com.google.protobuf.AbstractParser<objectReply>() {
-    public objectReply parsePartialFrom(
+  private static final com.google.protobuf.Parser<conditionsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<conditionsRequest>() {
+    public conditionsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new objectReply(input, extensionRegistry);
+        return new conditionsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<objectReply> parser() {
+  public static com.google.protobuf.Parser<conditionsRequest> parser() {
     return PARSER;
   }
 
-  @java.lang.Override
-  public com.google.protobuf.Parser<objectReply> getParserForType() {
+  @Override
+  public com.google.protobuf.Parser<conditionsRequest> getParserForType() {
     return PARSER;
   }
 
-  public hz.lib.objectReply getDefaultInstanceForType() {
+  public conditionsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

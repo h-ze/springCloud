@@ -13,6 +13,9 @@ import com.hz.mongo.MongoService;
 import com.hz.oss.cloud.OSSFactory;
 import com.hz.service.AsyncService;
 import com.hz.service.DocService;
+import org.apache.ibatis.session.ExecutorType;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +34,9 @@ public class DocServiceImpl implements DocService {
 
     @Autowired
     private DocDao docDao;
+
+    @Autowired
+    private SqlSessionFactory sqlSessionFactory;
 
     @Autowired
     private AsyncService asyncService;
@@ -100,6 +106,33 @@ public class DocServiceImpl implements DocService {
             asyncService.convert(docTask);
         }
         return id;
+    }
+
+    @Override
+    public int createDocuments(List<Document> documents) {
+
+        //设置true的话以后的增删改就不用提交事务
+        try (SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH,false)) {
+
+            DocDao mapper = sqlSession.getMapper(DocDao.class);
+            for (int i=0;i<documents.size();i++){
+                mapper.addDoc(documents.get(i));
+                if (i%1000 ==999){
+                    sqlSession.commit();
+                    sqlSession.clearCache();
+                }
+            }
+            sqlSession.commit();
+            sqlSession.clearCache();
+        }
+
+        return 0;
+    }
+
+    @Override
+    public int createDocumentsSeparator(List<Document> documents) {
+        int i = docDao.addDocs(documents);
+        return i;
     }
 
     /**

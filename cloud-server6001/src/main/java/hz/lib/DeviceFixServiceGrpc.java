@@ -1,10 +1,10 @@
 package hz.lib;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import io.grpc.stub.ClientCalls;
+
 import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
@@ -24,52 +24,52 @@ public final class DeviceFixServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<hz.lib.deviceFix,
-      hz.lib.booleanReply> METHOD_INSERT_DEVICE_FIX =
-      io.grpc.MethodDescriptor.<hz.lib.deviceFix, hz.lib.booleanReply>newBuilder()
+  public static final io.grpc.MethodDescriptor<deviceFix,
+          booleanReply> METHOD_INSERT_DEVICE_FIX =
+      io.grpc.MethodDescriptor.<deviceFix, booleanReply>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
               "device.DeviceFixService", "insertDeviceFix"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.deviceFix.getDefaultInstance()))
+              deviceFix.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.booleanReply.getDefaultInstance()))
+              booleanReply.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<hz.lib.deviceFix,
-      hz.lib.booleanReply> METHOD_UPDATE_DEVICE_FIX =
-      io.grpc.MethodDescriptor.<hz.lib.deviceFix, hz.lib.booleanReply>newBuilder()
+  public static final io.grpc.MethodDescriptor<deviceFix,
+          booleanReply> METHOD_UPDATE_DEVICE_FIX =
+      io.grpc.MethodDescriptor.<deviceFix, booleanReply>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
               "device.DeviceFixService", "updateDeviceFix"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.deviceFix.getDefaultInstance()))
+              deviceFix.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.booleanReply.getDefaultInstance()))
+              booleanReply.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<hz.lib.conditionsRequest,
-      hz.lib.deviceFix> METHOD_SEARCH_DEVICE_FIX =
-      io.grpc.MethodDescriptor.<hz.lib.conditionsRequest, hz.lib.deviceFix>newBuilder()
+  public static final io.grpc.MethodDescriptor<conditionsRequest,
+          deviceFix> METHOD_SEARCH_DEVICE_FIX =
+      io.grpc.MethodDescriptor.<conditionsRequest, deviceFix>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
               "device.DeviceFixService", "searchDeviceFix"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.conditionsRequest.getDefaultInstance()))
+              conditionsRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.deviceFix.getDefaultInstance()))
+              deviceFix.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<hz.lib.conditionsRequest,
-      hz.lib.booleanReply> METHOD_DELETE_DEVICE_FIX =
-      io.grpc.MethodDescriptor.<hz.lib.conditionsRequest, hz.lib.booleanReply>newBuilder()
+  public static final io.grpc.MethodDescriptor<conditionsRequest,
+          booleanReply> METHOD_DELETE_DEVICE_FIX =
+      io.grpc.MethodDescriptor.<conditionsRequest, booleanReply>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
               "device.DeviceFixService", "deleteDeviceFix"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.conditionsRequest.getDefaultInstance()))
+              conditionsRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              hz.lib.booleanReply.getDefaultInstance()))
+              booleanReply.getDefaultInstance()))
           .build();
 
   /**
@@ -107,61 +107,61 @@ public final class DeviceFixServiceGrpc {
      * Sends a message
      * </pre>
      */
-    public void insertDeviceFix(hz.lib.deviceFix request,
-                                io.grpc.stub.StreamObserver<hz.lib.booleanReply> responseObserver) {
+    public void insertDeviceFix(deviceFix request,
+                                io.grpc.stub.StreamObserver<booleanReply> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_INSERT_DEVICE_FIX, responseObserver);
     }
 
     /**
      */
-    public void updateDeviceFix(hz.lib.deviceFix request,
-                                io.grpc.stub.StreamObserver<hz.lib.booleanReply> responseObserver) {
+    public void updateDeviceFix(deviceFix request,
+                                io.grpc.stub.StreamObserver<booleanReply> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_UPDATE_DEVICE_FIX, responseObserver);
     }
 
     /**
      */
-    public void searchDeviceFix(hz.lib.conditionsRequest request,
-                                io.grpc.stub.StreamObserver<hz.lib.deviceFix> responseObserver) {
+    public void searchDeviceFix(conditionsRequest request,
+                                io.grpc.stub.StreamObserver<deviceFix> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_SEARCH_DEVICE_FIX, responseObserver);
     }
 
     /**
      */
-    public void deleteDeviceFix(hz.lib.conditionsRequest request,
-                                io.grpc.stub.StreamObserver<hz.lib.booleanReply> responseObserver) {
+    public void deleteDeviceFix(conditionsRequest request,
+                                io.grpc.stub.StreamObserver<booleanReply> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_DELETE_DEVICE_FIX, responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             METHOD_INSERT_DEVICE_FIX,
             asyncUnaryCall(
               new MethodHandlers<
-                hz.lib.deviceFix,
-                hz.lib.booleanReply>(
+                      deviceFix,
+                      booleanReply>(
                   this, METHODID_INSERT_DEVICE_FIX)))
           .addMethod(
             METHOD_UPDATE_DEVICE_FIX,
             asyncUnaryCall(
               new MethodHandlers<
-                hz.lib.deviceFix,
-                hz.lib.booleanReply>(
+                      deviceFix,
+                      booleanReply>(
                   this, METHODID_UPDATE_DEVICE_FIX)))
           .addMethod(
             METHOD_SEARCH_DEVICE_FIX,
             asyncUnaryCall(
               new MethodHandlers<
-                hz.lib.conditionsRequest,
-                hz.lib.deviceFix>(
+                      conditionsRequest,
+                      deviceFix>(
                   this, METHODID_SEARCH_DEVICE_FIX)))
           .addMethod(
             METHOD_DELETE_DEVICE_FIX,
             asyncUnaryCall(
               new MethodHandlers<
-                hz.lib.conditionsRequest,
-                hz.lib.booleanReply>(
+                      conditionsRequest,
+                      booleanReply>(
                   this, METHODID_DELETE_DEVICE_FIX)))
           .build();
     }
@@ -182,7 +182,7 @@ public final class DeviceFixServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected DeviceFixServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new DeviceFixServiceStub(channel, callOptions);
@@ -193,33 +193,33 @@ public final class DeviceFixServiceGrpc {
      * Sends a message
      * </pre>
      */
-    public void insertDeviceFix(hz.lib.deviceFix request,
-                                io.grpc.stub.StreamObserver<hz.lib.booleanReply> responseObserver) {
-      asyncUnaryCall(
+    public void insertDeviceFix(deviceFix request,
+                                io.grpc.stub.StreamObserver<booleanReply> responseObserver) {
+      ClientCalls.asyncUnaryCall(
           getChannel().newCall(METHOD_INSERT_DEVICE_FIX, getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void updateDeviceFix(hz.lib.deviceFix request,
-                                io.grpc.stub.StreamObserver<hz.lib.booleanReply> responseObserver) {
-      asyncUnaryCall(
+    public void updateDeviceFix(deviceFix request,
+                                io.grpc.stub.StreamObserver<booleanReply> responseObserver) {
+      ClientCalls.asyncUnaryCall(
           getChannel().newCall(METHOD_UPDATE_DEVICE_FIX, getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void searchDeviceFix(hz.lib.conditionsRequest request,
-                                io.grpc.stub.StreamObserver<hz.lib.deviceFix> responseObserver) {
-      asyncUnaryCall(
+    public void searchDeviceFix(conditionsRequest request,
+                                io.grpc.stub.StreamObserver<deviceFix> responseObserver) {
+      ClientCalls.asyncUnaryCall(
           getChannel().newCall(METHOD_SEARCH_DEVICE_FIX, getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void deleteDeviceFix(hz.lib.conditionsRequest request,
-                                io.grpc.stub.StreamObserver<hz.lib.booleanReply> responseObserver) {
-      asyncUnaryCall(
+    public void deleteDeviceFix(conditionsRequest request,
+                                io.grpc.stub.StreamObserver<booleanReply> responseObserver) {
+      ClientCalls.asyncUnaryCall(
           getChannel().newCall(METHOD_DELETE_DEVICE_FIX, getCallOptions()), request, responseObserver);
     }
   }
@@ -239,7 +239,7 @@ public final class DeviceFixServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected DeviceFixServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new DeviceFixServiceBlockingStub(channel, callOptions);
@@ -250,28 +250,28 @@ public final class DeviceFixServiceGrpc {
      * Sends a message
      * </pre>
      */
-    public hz.lib.booleanReply insertDeviceFix(hz.lib.deviceFix request) {
+    public booleanReply insertDeviceFix(deviceFix request) {
       return blockingUnaryCall(
           getChannel(), METHOD_INSERT_DEVICE_FIX, getCallOptions(), request);
     }
 
     /**
      */
-    public hz.lib.booleanReply updateDeviceFix(hz.lib.deviceFix request) {
+    public booleanReply updateDeviceFix(deviceFix request) {
       return blockingUnaryCall(
           getChannel(), METHOD_UPDATE_DEVICE_FIX, getCallOptions(), request);
     }
 
     /**
      */
-    public hz.lib.deviceFix searchDeviceFix(hz.lib.conditionsRequest request) {
+    public deviceFix searchDeviceFix(conditionsRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_SEARCH_DEVICE_FIX, getCallOptions(), request);
     }
 
     /**
      */
-    public hz.lib.booleanReply deleteDeviceFix(hz.lib.conditionsRequest request) {
+    public booleanReply deleteDeviceFix(conditionsRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_DELETE_DEVICE_FIX, getCallOptions(), request);
     }
@@ -292,7 +292,7 @@ public final class DeviceFixServiceGrpc {
       super(channel, callOptions);
     }
 
-    @java.lang.Override
+    @Override
     protected DeviceFixServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new DeviceFixServiceFutureStub(channel, callOptions);
@@ -303,32 +303,32 @@ public final class DeviceFixServiceGrpc {
      * Sends a message
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<hz.lib.booleanReply> insertDeviceFix(
-        hz.lib.deviceFix request) {
+    public com.google.common.util.concurrent.ListenableFuture<booleanReply> insertDeviceFix(
+        deviceFix request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_INSERT_DEVICE_FIX, getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<hz.lib.booleanReply> updateDeviceFix(
-        hz.lib.deviceFix request) {
+    public com.google.common.util.concurrent.ListenableFuture<booleanReply> updateDeviceFix(
+        deviceFix request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_UPDATE_DEVICE_FIX, getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<hz.lib.deviceFix> searchDeviceFix(
-        hz.lib.conditionsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<deviceFix> searchDeviceFix(
+        conditionsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_SEARCH_DEVICE_FIX, getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<hz.lib.booleanReply> deleteDeviceFix(
-        hz.lib.conditionsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<booleanReply> deleteDeviceFix(
+        conditionsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_DELETE_DEVICE_FIX, getCallOptions()), request);
     }
@@ -352,33 +352,33 @@ public final class DeviceFixServiceGrpc {
       this.methodId = methodId;
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_INSERT_DEVICE_FIX:
-          serviceImpl.insertDeviceFix((hz.lib.deviceFix) request,
-              (io.grpc.stub.StreamObserver<hz.lib.booleanReply>) responseObserver);
+          serviceImpl.insertDeviceFix((deviceFix) request,
+              (io.grpc.stub.StreamObserver<booleanReply>) responseObserver);
           break;
         case METHODID_UPDATE_DEVICE_FIX:
-          serviceImpl.updateDeviceFix((hz.lib.deviceFix) request,
-              (io.grpc.stub.StreamObserver<hz.lib.booleanReply>) responseObserver);
+          serviceImpl.updateDeviceFix((deviceFix) request,
+              (io.grpc.stub.StreamObserver<booleanReply>) responseObserver);
           break;
         case METHODID_SEARCH_DEVICE_FIX:
-          serviceImpl.searchDeviceFix((hz.lib.conditionsRequest) request,
-              (io.grpc.stub.StreamObserver<hz.lib.deviceFix>) responseObserver);
+          serviceImpl.searchDeviceFix((conditionsRequest) request,
+              (io.grpc.stub.StreamObserver<deviceFix>) responseObserver);
           break;
         case METHODID_DELETE_DEVICE_FIX:
-          serviceImpl.deleteDeviceFix((hz.lib.conditionsRequest) request,
-              (io.grpc.stub.StreamObserver<hz.lib.booleanReply>) responseObserver);
+          serviceImpl.deleteDeviceFix((conditionsRequest) request,
+              (io.grpc.stub.StreamObserver<booleanReply>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @java.lang.Override
-    @java.lang.SuppressWarnings("unchecked")
+    @Override
+    @SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -389,9 +389,9 @@ public final class DeviceFixServiceGrpc {
   }
 
   private static final class DeviceFixServiceDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return hz.lib.DeviceFixProto.getDescriptor();
+      return DeviceFixProto.getDescriptor();
     }
   }
 

@@ -25,7 +25,7 @@ public  final class deviceFix extends
     updatetime_ = "";
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -51,19 +51,19 @@ public  final class deviceFix extends
             break;
           }
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             id_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             serialNum_ = s;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             userNum_ = s;
             break;
@@ -79,19 +79,19 @@ public  final class deviceFix extends
             break;
           }
           case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             address_ = s;
             break;
           }
           case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             createtime_ = s;
             break;
           }
           case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             updatetime_ = s;
             break;
@@ -109,29 +109,29 @@ public  final class deviceFix extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return hz.lib.DeviceFixProto.internal_static_device_deviceFix_descriptor;
+    return DeviceFixProto.internal_static_device_deviceFix_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return hz.lib.DeviceFixProto.internal_static_device_deviceFix_fieldAccessorTable
+    return DeviceFixProto.internal_static_device_deviceFix_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            hz.lib.deviceFix.class, hz.lib.deviceFix.Builder.class);
+            deviceFix.class, deviceFix.Builder.class);
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  private volatile Object id_;
   /**
    * <code>string id = 1;</code>
    */
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getId() {
+    Object ref = id_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       id_ = s;
       return s;
     }
@@ -141,11 +141,11 @@ public  final class deviceFix extends
    */
   public com.google.protobuf.ByteString
       getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+    Object ref = id_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       id_ = b;
       return b;
     } else {
@@ -154,18 +154,18 @@ public  final class deviceFix extends
   }
 
   public static final int SERIALNUM_FIELD_NUMBER = 2;
-  private volatile java.lang.Object serialNum_;
+  private volatile Object serialNum_;
   /**
    * <code>string serialNum = 2;</code>
    */
-  public java.lang.String getSerialNum() {
-    java.lang.Object ref = serialNum_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getSerialNum() {
+    Object ref = serialNum_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       serialNum_ = s;
       return s;
     }
@@ -175,11 +175,11 @@ public  final class deviceFix extends
    */
   public com.google.protobuf.ByteString
       getSerialNumBytes() {
-    java.lang.Object ref = serialNum_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+    Object ref = serialNum_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       serialNum_ = b;
       return b;
     } else {
@@ -188,18 +188,18 @@ public  final class deviceFix extends
   }
 
   public static final int USERNUM_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userNum_;
+  private volatile Object userNum_;
   /**
    * <code>string userNum = 3;</code>
    */
-  public java.lang.String getUserNum() {
-    java.lang.Object ref = userNum_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getUserNum() {
+    Object ref = userNum_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       userNum_ = s;
       return s;
     }
@@ -209,11 +209,11 @@ public  final class deviceFix extends
    */
   public com.google.protobuf.ByteString
       getUserNumBytes() {
-    java.lang.Object ref = userNum_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+    Object ref = userNum_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       userNum_ = b;
       return b;
     } else {
@@ -240,18 +240,18 @@ public  final class deviceFix extends
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 6;
-  private volatile java.lang.Object address_;
+  private volatile Object address_;
   /**
    * <code>string address = 6;</code>
    */
-  public java.lang.String getAddress() {
-    java.lang.Object ref = address_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getAddress() {
+    Object ref = address_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       address_ = s;
       return s;
     }
@@ -261,11 +261,11 @@ public  final class deviceFix extends
    */
   public com.google.protobuf.ByteString
       getAddressBytes() {
-    java.lang.Object ref = address_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+    Object ref = address_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       address_ = b;
       return b;
     } else {
@@ -274,18 +274,18 @@ public  final class deviceFix extends
   }
 
   public static final int CREATETIME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object createtime_;
+  private volatile Object createtime_;
   /**
    * <code>string createtime = 7;</code>
    */
-  public java.lang.String getCreatetime() {
-    java.lang.Object ref = createtime_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getCreatetime() {
+    Object ref = createtime_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       createtime_ = s;
       return s;
     }
@@ -295,11 +295,11 @@ public  final class deviceFix extends
    */
   public com.google.protobuf.ByteString
       getCreatetimeBytes() {
-    java.lang.Object ref = createtime_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+    Object ref = createtime_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       createtime_ = b;
       return b;
     } else {
@@ -308,18 +308,18 @@ public  final class deviceFix extends
   }
 
   public static final int UPDATETIME_FIELD_NUMBER = 8;
-  private volatile java.lang.Object updatetime_;
+  private volatile Object updatetime_;
   /**
    * <code>string updatetime = 8;</code>
    */
-  public java.lang.String getUpdatetime() {
-    java.lang.Object ref = updatetime_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getUpdatetime() {
+    Object ref = updatetime_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
+      com.google.protobuf.ByteString bs =
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       updatetime_ = s;
       return s;
     }
@@ -329,11 +329,11 @@ public  final class deviceFix extends
    */
   public com.google.protobuf.ByteString
       getUpdatetimeBytes() {
-    java.lang.Object ref = updatetime_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
+    Object ref = updatetime_;
+    if (ref instanceof String) {
+      com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       updatetime_ = b;
       return b;
     } else {
@@ -415,15 +415,15 @@ public  final class deviceFix extends
   }
 
   private static final long serialVersionUID = 0L;
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof hz.lib.deviceFix)) {
+    if (!(obj instanceof deviceFix)) {
       return super.equals(obj);
     }
-    hz.lib.deviceFix other = (hz.lib.deviceFix) obj;
+    deviceFix other = (deviceFix) obj;
 
     boolean result = true;
     result = result && getId()
@@ -445,7 +445,7 @@ public  final class deviceFix extends
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -473,69 +473,69 @@ public  final class deviceFix extends
     return hash;
   }
 
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.deviceFix parseFrom(byte[] data)
+  public static deviceFix parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static hz.lib.deviceFix parseFrom(java.io.InputStream input)
+  public static deviceFix parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static hz.lib.deviceFix parseDelimitedFrom(java.io.InputStream input)
+  public static deviceFix parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static hz.lib.deviceFix parseDelimitedFrom(
+  public static deviceFix parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static hz.lib.deviceFix parseFrom(
+  public static deviceFix parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -547,7 +547,7 @@ public  final class deviceFix extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(hz.lib.deviceFix prototype) {
+  public static Builder newBuilder(deviceFix prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -555,7 +555,7 @@ public  final class deviceFix extends
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
       com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
@@ -567,17 +567,17 @@ public  final class deviceFix extends
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:device.deviceFix)
-      hz.lib.deviceFixOrBuilder {
+          deviceFixOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return hz.lib.DeviceFixProto.internal_static_device_deviceFix_descriptor;
+      return DeviceFixProto.internal_static_device_deviceFix_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return hz.lib.DeviceFixProto.internal_static_device_deviceFix_fieldAccessorTable
+      return DeviceFixProto.internal_static_device_deviceFix_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              hz.lib.deviceFix.class, hz.lib.deviceFix.Builder.class);
+              deviceFix.class, deviceFix.Builder.class);
     }
 
     // Construct using hz.lib.deviceFix.newBuilder()
@@ -618,23 +618,23 @@ public  final class deviceFix extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return hz.lib.DeviceFixProto.internal_static_device_deviceFix_descriptor;
+      return DeviceFixProto.internal_static_device_deviceFix_descriptor;
     }
 
-    public hz.lib.deviceFix getDefaultInstanceForType() {
-      return hz.lib.deviceFix.getDefaultInstance();
+    public deviceFix getDefaultInstanceForType() {
+      return getDefaultInstance();
     }
 
-    public hz.lib.deviceFix build() {
-      hz.lib.deviceFix result = buildPartial();
+    public deviceFix build() {
+      deviceFix result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public hz.lib.deviceFix buildPartial() {
-      hz.lib.deviceFix result = new hz.lib.deviceFix(this);
+    public deviceFix buildPartial() {
+      deviceFix result = new deviceFix(this);
       result.id_ = id_;
       result.serialNum_ = serialNum_;
       result.userNum_ = userNum_;
@@ -674,16 +674,16 @@ public  final class deviceFix extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof hz.lib.deviceFix) {
-        return mergeFrom((hz.lib.deviceFix)other);
+      if (other instanceof deviceFix) {
+        return mergeFrom((deviceFix)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(hz.lib.deviceFix other) {
-      if (other == hz.lib.deviceFix.getDefaultInstance()) return this;
+    public Builder mergeFrom(deviceFix other) {
+      if (other == getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
@@ -726,11 +726,11 @@ public  final class deviceFix extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      hz.lib.deviceFix parsedMessage = null;
+      deviceFix parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (hz.lib.deviceFix) e.getUnfinishedMessage();
+        parsedMessage = (deviceFix) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -740,20 +740,20 @@ public  final class deviceFix extends
       return this;
     }
 
-    private java.lang.Object id_ = "";
+    private Object id_ = "";
     /**
      * <code>string id = 1;</code>
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getId() {
+      Object ref = id_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         id_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -761,11 +761,11 @@ public  final class deviceFix extends
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
-      java.lang.Object ref = id_;
+      Object ref = id_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         id_ = b;
         return b;
       } else {
@@ -776,11 +776,11 @@ public  final class deviceFix extends
      * <code>string id = 1;</code>
      */
     public Builder setId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       id_ = value;
       onChanged();
       return this;
@@ -789,7 +789,7 @@ public  final class deviceFix extends
      * <code>string id = 1;</code>
      */
     public Builder clearId() {
-      
+
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
@@ -803,26 +803,26 @@ public  final class deviceFix extends
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+
       id_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object serialNum_ = "";
+    private Object serialNum_ = "";
     /**
      * <code>string serialNum = 2;</code>
      */
-    public java.lang.String getSerialNum() {
-      java.lang.Object ref = serialNum_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getSerialNum() {
+      Object ref = serialNum_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         serialNum_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -830,11 +830,11 @@ public  final class deviceFix extends
      */
     public com.google.protobuf.ByteString
         getSerialNumBytes() {
-      java.lang.Object ref = serialNum_;
+      Object ref = serialNum_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         serialNum_ = b;
         return b;
       } else {
@@ -845,11 +845,11 @@ public  final class deviceFix extends
      * <code>string serialNum = 2;</code>
      */
     public Builder setSerialNum(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       serialNum_ = value;
       onChanged();
       return this;
@@ -858,7 +858,7 @@ public  final class deviceFix extends
      * <code>string serialNum = 2;</code>
      */
     public Builder clearSerialNum() {
-      
+
       serialNum_ = getDefaultInstance().getSerialNum();
       onChanged();
       return this;
@@ -872,26 +872,26 @@ public  final class deviceFix extends
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+
       serialNum_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object userNum_ = "";
+    private Object userNum_ = "";
     /**
      * <code>string userNum = 3;</code>
      */
-    public java.lang.String getUserNum() {
-      java.lang.Object ref = userNum_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getUserNum() {
+      Object ref = userNum_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         userNum_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -899,11 +899,11 @@ public  final class deviceFix extends
      */
     public com.google.protobuf.ByteString
         getUserNumBytes() {
-      java.lang.Object ref = userNum_;
+      Object ref = userNum_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         userNum_ = b;
         return b;
       } else {
@@ -914,11 +914,11 @@ public  final class deviceFix extends
      * <code>string userNum = 3;</code>
      */
     public Builder setUserNum(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       userNum_ = value;
       onChanged();
       return this;
@@ -927,7 +927,7 @@ public  final class deviceFix extends
      * <code>string userNum = 3;</code>
      */
     public Builder clearUserNum() {
-      
+
       userNum_ = getDefaultInstance().getUserNum();
       onChanged();
       return this;
@@ -941,7 +941,7 @@ public  final class deviceFix extends
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+
       userNum_ = value;
       onChanged();
       return this;
@@ -958,7 +958,7 @@ public  final class deviceFix extends
      * <code>int32 status = 4;</code>
      */
     public Builder setStatus(int value) {
-      
+
       status_ = value;
       onChanged();
       return this;
@@ -967,7 +967,7 @@ public  final class deviceFix extends
      * <code>int32 status = 4;</code>
      */
     public Builder clearStatus() {
-      
+
       status_ = 0;
       onChanged();
       return this;
@@ -984,7 +984,7 @@ public  final class deviceFix extends
      * <code>int32 type = 5;</code>
      */
     public Builder setType(int value) {
-      
+
       type_ = value;
       onChanged();
       return this;
@@ -993,26 +993,26 @@ public  final class deviceFix extends
      * <code>int32 type = 5;</code>
      */
     public Builder clearType() {
-      
+
       type_ = 0;
       onChanged();
       return this;
     }
 
-    private java.lang.Object address_ = "";
+    private Object address_ = "";
     /**
      * <code>string address = 6;</code>
      */
-    public java.lang.String getAddress() {
-      java.lang.Object ref = address_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getAddress() {
+      Object ref = address_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         address_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1020,11 +1020,11 @@ public  final class deviceFix extends
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
-      java.lang.Object ref = address_;
+      Object ref = address_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         address_ = b;
         return b;
       } else {
@@ -1035,11 +1035,11 @@ public  final class deviceFix extends
      * <code>string address = 6;</code>
      */
     public Builder setAddress(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       address_ = value;
       onChanged();
       return this;
@@ -1048,7 +1048,7 @@ public  final class deviceFix extends
      * <code>string address = 6;</code>
      */
     public Builder clearAddress() {
-      
+
       address_ = getDefaultInstance().getAddress();
       onChanged();
       return this;
@@ -1062,26 +1062,26 @@ public  final class deviceFix extends
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+
       address_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object createtime_ = "";
+    private Object createtime_ = "";
     /**
      * <code>string createtime = 7;</code>
      */
-    public java.lang.String getCreatetime() {
-      java.lang.Object ref = createtime_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getCreatetime() {
+      Object ref = createtime_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         createtime_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1089,11 +1089,11 @@ public  final class deviceFix extends
      */
     public com.google.protobuf.ByteString
         getCreatetimeBytes() {
-      java.lang.Object ref = createtime_;
+      Object ref = createtime_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         createtime_ = b;
         return b;
       } else {
@@ -1104,11 +1104,11 @@ public  final class deviceFix extends
      * <code>string createtime = 7;</code>
      */
     public Builder setCreatetime(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       createtime_ = value;
       onChanged();
       return this;
@@ -1117,7 +1117,7 @@ public  final class deviceFix extends
      * <code>string createtime = 7;</code>
      */
     public Builder clearCreatetime() {
-      
+
       createtime_ = getDefaultInstance().getCreatetime();
       onChanged();
       return this;
@@ -1131,26 +1131,26 @@ public  final class deviceFix extends
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+
       createtime_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object updatetime_ = "";
+    private Object updatetime_ = "";
     /**
      * <code>string updatetime = 8;</code>
      */
-    public java.lang.String getUpdatetime() {
-      java.lang.Object ref = updatetime_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getUpdatetime() {
+      Object ref = updatetime_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         updatetime_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -1158,11 +1158,11 @@ public  final class deviceFix extends
      */
     public com.google.protobuf.ByteString
         getUpdatetimeBytes() {
-      java.lang.Object ref = updatetime_;
+      Object ref = updatetime_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         updatetime_ = b;
         return b;
       } else {
@@ -1173,11 +1173,11 @@ public  final class deviceFix extends
      * <code>string updatetime = 8;</code>
      */
     public Builder setUpdatetime(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       updatetime_ = value;
       onChanged();
       return this;
@@ -1186,7 +1186,7 @@ public  final class deviceFix extends
      * <code>string updatetime = 8;</code>
      */
     public Builder clearUpdatetime() {
-      
+
       updatetime_ = getDefaultInstance().getUpdatetime();
       onChanged();
       return this;
@@ -1200,7 +1200,7 @@ public  final class deviceFix extends
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
+
       updatetime_ = value;
       onChanged();
       return this;
@@ -1220,12 +1220,12 @@ public  final class deviceFix extends
   }
 
   // @@protoc_insertion_point(class_scope:device.deviceFix)
-  private static final hz.lib.deviceFix DEFAULT_INSTANCE;
+  private static final deviceFix DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new hz.lib.deviceFix();
+    DEFAULT_INSTANCE = new deviceFix();
   }
 
-  public static hz.lib.deviceFix getDefaultInstance() {
+  public static deviceFix getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -1243,12 +1243,12 @@ public  final class deviceFix extends
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<deviceFix> getParserForType() {
     return PARSER;
   }
 
-  public hz.lib.deviceFix getDefaultInstanceForType() {
+  public deviceFix getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

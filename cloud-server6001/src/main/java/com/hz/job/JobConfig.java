@@ -14,8 +14,8 @@ public class JobConfig {
 
     @Bean
     public JobDetail examCountJob() {
-        return JobBuilder.newJob(ExamCountJob.class)
-                .withIdentity(ExamCountJob.class.getSimpleName(), DEFAULT_GROUP_JOB)
+        return JobBuilder.newJob(TestJob1.class)
+                .withIdentity(TestJob1.class.getSimpleName(), DEFAULT_GROUP_JOB)
                 .storeDurably().build();
     }
 
@@ -24,15 +24,15 @@ public class JobConfig {
         CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("*/1 * * * * ?");
         return TriggerBuilder.newTrigger().forJob(examCountJob().getKey())
                 // .startAt(new Date(System.currentTimeMillis() + 1000 * 60))
-                .withIdentity(ExamCountJob.class.getSimpleName())
+                .withIdentity(TestJob1.class.getSimpleName())
                 .withSchedule(scheduleBuilder)
                 .build();
     }
 
     @Bean
     public JobDetail rabbitMqMessageJob() {
-        return JobBuilder.newJob(RabbitMqMessageJob.class)
-                .withIdentity(RabbitMqMessageJob.class.getSimpleName(), DEFAULT_GROUP_JOB)
+        return JobBuilder.newJob(TestJob2.class)
+                .withIdentity(TestJob2.class.getSimpleName(), DEFAULT_GROUP_JOB)
                 .storeDurably().build();
     }
 
@@ -40,7 +40,7 @@ public class JobConfig {
     public Trigger rabbitMqMessageTaskTrigger() {
         CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule("0 */5 * * * ?");
         return TriggerBuilder.newTrigger().forJob(rabbitMqMessageJob().getKey())
-                .withIdentity(RabbitMqMessageJob.class.getSimpleName())
+                .withIdentity(TestJob2.class.getSimpleName())
                 .withSchedule(scheduleBuilder)
                 .build();
     }

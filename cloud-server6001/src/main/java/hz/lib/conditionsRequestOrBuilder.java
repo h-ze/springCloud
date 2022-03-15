@@ -10,7 +10,7 @@ public interface conditionsRequestOrBuilder extends
   /**
    * <code>string id = 1;</code>
    */
-  java.lang.String getId();
+  String getId();
   /**
    * <code>string id = 1;</code>
    */
