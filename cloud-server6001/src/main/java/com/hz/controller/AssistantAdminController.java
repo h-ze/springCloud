@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("assistantAdmin")
 //@RequiresRoles("admin")
 public class AssistantAdminController {
-    /*private static final Logger logger = LoggerFactory.getLogger(AssistantAdminController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AssistantAdminController.class);
 
-    @GetMapping("encryptConfig")
+    /*@GetMapping("encryptConfig")
     @ApiOperation(value ="读取加密算法配置",notes="读取企业所选择加密算法配置")
     @RequiresRoles("assistantAdmin")
     public ConvertResult getEncryptConfig(){

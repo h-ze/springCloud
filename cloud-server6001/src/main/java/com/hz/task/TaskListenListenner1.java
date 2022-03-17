@@ -21,6 +21,9 @@ public class TaskListenListenner1 implements TaskListener{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        logger.info("异步任务------->");
+
         logger.info("TaskListenListenner1------->");
     }
 }

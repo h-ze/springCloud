@@ -21,13 +21,14 @@ import static springfox.documentation.builders.PathSelectors.regex;
  */
 @Configuration
 @EnableSwagger2
-//springboot swagger访问地址 http://localhost:8082/springboot/swagger-ui.html
+//springboot swagger访问地址 http://localhost:6001/swagger-ui.html
 public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("SWAGGER-API").description("SWAGGER API提供一系列关于springboot项目解决方法，您可以在下面的参考资料和操作部分中浏览受支持的操作，这些操作按其应用的资源进行分类，支持“Try it out!”功能直接从Swagger页面调用操作！")
                 // .termsOfServiceUrl("")
-                .contact(new Contact("heze", "https//www.javahz.xyz", "hz15858@163.com")).license("GitHub address")
+                //.contact(new Contact("heze", "http//www.javahz.xyz", "hz15858@163.com"))
+                .license("GitHub address")
                 .licenseUrl("https://github.com/h-ze/springCloud").version("1.0").build();
     }
 
