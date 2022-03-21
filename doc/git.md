@@ -1,3 +1,4 @@
+
 git checkout heze 切换到本地分支
 git add .
 git commit -m "操作"
@@ -8,14 +9,33 @@ git branch 查看分支
 git branch -D 删除某一个分支
 git checkout -b 分支  创建分支并切换到该分支（）
 
+
+
 设置个人token
 git remote set-url origin https://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@github.com/h-ze/springCloud.git/
 
+
+
 git checkout -b local origin/WUYINGYUN 创建分支并切换到该分支并拉取远端分支的代码
+这个操作可能会出问题
+Git拉取分支报错(fatal:‘XXX' is not a commit and a branch ‘XXX' cannot be created from it)
+一、问题出现
+1.当远程仓库分支上有一个本地仓库没有的分支时
+2.本地使用git checkout命令检索这个远程分支
+git checkout -b 本地分支名 远程分支名
+当出现上述情况时，就会出现报错：fatal:‘XXX' is not a commit and a branch ‘XXX' cannot be created from it
+二、问题原因
+远程新建的分支没有更新到本地。实际上，git仓库分为本地仓库和远程仓库，我们用checkout命令是从本地仓库中找要检出的分支的。本地仓库只有在进行网络请求时才会跟远程仓库交互，比如fetch命令。
+三、问题解决
+更新远程仓库数据到本地，可以使用两个命令：
+1.fetch命令
+git fetch origin
+2.update命令
+git remote update origin --prune
+最后我们再使用git checkout命令即可检索出新建的分支
 
 
 git merge 分支   merge某个分支到当前分支
-
 如果一直弹出登录框可以将http改成ssh协议；这是你github上拉取项目时的SSH地址
 git remote set-url origin git地址
 查看远程仓库
@@ -186,11 +206,22 @@ feature/jira_id 被合并到 develop分支或release/version分支后，执行�
 
 出现 fatal: Will not add file alias 'cloud-GRPC/pom.xml' ('cloud-grpc/pom.xml' already exists in index)问题时可以使用
 git rm -r --cached cloud-grpc/pom.xml
-<<<<<<< HEAD
-=======
-
 git stash
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch E:/logs/springboot/web-warn-2022-03-11.0.log' --prune-empty --tag-name-filter cat -- --all
 
- git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch E:/logs/springboot/web-warn-2022-03-11.0.log' --prune-empty --tag-name-filter cat -- --all
 
->>>>>>> 9c02f5819cf566ad88582fc8b80d2cfa96c70405
+
+
+
+
+
+
+
+//删除与远程分支的关联
+git remote rm origin
+
+//建立与远程分支的关联
+git remote set-url origin  git@121.4.54.189:root/springCloud.git
+
+
+
