@@ -6,7 +6,7 @@ git pull origin heze 从heze分支上往下拉代码
 git push origin heze 上传到heze分支上
 git log 查看日志记录
 git branch 查看分支
-git branch -D 删除某一个分支
+git branch -D 强制删除某一个分支
 git checkout -b 分支  创建分支并切换到该分支（）
 
 
@@ -222,6 +222,9 @@ git remote rm origin
 
 //建立与远程分支的关联
 git remote set-url origin  git@121.4.54.189:root/springCloud.git
+
+git remote set-url 是修改远程的url的命令,前提是要先有远程url
+git remote add origin "xxx.git"
 
 
 
