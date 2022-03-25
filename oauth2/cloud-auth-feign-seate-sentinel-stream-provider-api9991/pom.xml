@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-auth-feign-seate-sentinel-stream-provicder-api9991</artifactId>
+    <artifactId>cloud-auth-feign-seate-sentinel-stream-provider-api9991</artifactId>
 
     <dependencies>
 
